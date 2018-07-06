@@ -6,6 +6,8 @@
 //  Copyright © 2018 52inc. All rights reserved.
 //
 
+import UIKit
+
 public extension UIViewController {
 
     /// If this viewController pertences to a PulleyViewController, return it.

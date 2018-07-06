@@ -8,7 +8,6 @@
 
 import UIKit
 import Mapbox
-import Pulley
 
 class MapViewController: UIViewController {
     

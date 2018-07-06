@@ -18,6 +18,13 @@
 		68E397AA20EFEEEC005C0722 /* UIViewController+PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */; };
 		68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */; };
 		68E397AC20EFEEEC005C0722 /* UIView+constrainToParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A820EFEEEC005C0722 /* UIView+constrainToParent.swift */; };
+		68E397BB20EFF0F3005C0722 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; };
+		68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */; };
+		68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E397B420EFF0F3005C0722 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; };
+		68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		68E397D120EFF517005C0722 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397D020EFF516005C0722 /* Mapbox.framework */; };
+		68E397D220EFF517005C0722 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397D020EFF516005C0722 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +43,43 @@
 			remoteGlobalIDString = 684BE20620E99C1D00E74FE5;
 			remoteInfo = Aerivo;
 		};
+		68E397BC20EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68E397B120EFF0F3005C0722;
+			remoteInfo = AerivoKit;
+		};
+		68E397BE20EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 684BE20620E99C1D00E74FE5;
+			remoteInfo = Aerivo;
+		};
+		68E397C520EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68E397B120EFF0F3005C0722;
+			remoteInfo = AerivoKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		68E397CC20EFF0F3005C0722 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */,
+				68E397D220EFF517005C0722 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +100,14 @@
 		68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PulleyViewController.swift"; sourceTree = "<group>"; };
 		68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
 		68E397A820EFEEEC005C0722 /* UIView+constrainToParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constrainToParent.swift"; sourceTree = "<group>"; };
+		68E397B220EFF0F3005C0722 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68E397B420EFF0F3005C0722 /* AerivoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AerivoKit.h; sourceTree = "<group>"; };
+		68E397B520EFF0F3005C0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
+		68E397C320EFF0F3005C0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68E397D020EFF516005C0722 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		68E397D420EFF547005C0722 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "../../Downloads/mapbox-ios-sdk-4/dynamic/Mapbox.framework"; sourceTree = "<group>"; };
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
+				68E397D120EFF517005C0722 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +132,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68E397AE20EFF0F3005C0722 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68E397B720EFF0F3005C0722 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E397BB20EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +169,11 @@
 				684BE20920E99C1D00E74FE5 /* Aerivo */,
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
+				68E397B320EFF0F3005C0722 /* AerivoKit */,
+				68E397C020EFF0F3005C0722 /* AerivoKitTests */,
+				68E397D020EFF516005C0722 /* Mapbox.framework */,
 				684BE20820E99C1D00E74FE5 /* Products */,
+				68E397D320EFF547005C0722 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +183,8 @@
 				684BE20720E99C1D00E74FE5 /* Aerivo.app */,
 				684BE21B20E99C1F00E74FE5 /* AerivoTests.xctest */,
 				684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */,
+				68E397B220EFF0F3005C0722 /* AerivoKit.framework */,
+				68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +229,32 @@
 			path = Pulley;
 			sourceTree = "<group>";
 		};
+		68E397B320EFF0F3005C0722 /* AerivoKit */ = {
+			isa = PBXGroup;
+			children = (
+				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
+				68E397B520EFF0F3005C0722 /* Info.plist */,
+			);
+			path = AerivoKit;
+			sourceTree = "<group>";
+		};
+		68E397C020EFF0F3005C0722 /* AerivoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */,
+				68E397C320EFF0F3005C0722 /* Info.plist */,
+			);
+			path = AerivoKitTests;
+			sourceTree = "<group>";
+		};
+		68E397D320EFF547005C0722 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E397D420EFF547005C0722 /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68F3A29120E9CA420096D60A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +268,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		68E397AF20EFF0F3005C0722 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		684BE20620E99C1D00E74FE5 /* Aerivo */ = {
 			isa = PBXNativeTarget;
@@ -176,10 +287,13 @@
 				684BE20320E99C1D00E74FE5 /* Sources */,
 				684BE20420E99C1D00E74FE5 /* Frameworks */,
 				684BE20520E99C1D00E74FE5 /* Resources */,
+				68E397CC20EFF0F3005C0722 /* Embed Frameworks */,
+				68E397D620EFF576005C0722 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				68E397C620EFF0F3005C0722 /* PBXTargetDependency */,
 			);
 			name = Aerivo;
 			productName = Aerivo;
@@ -222,6 +336,43 @@
 			productReference = 684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		68E397B120EFF0F3005C0722 /* AerivoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68E397C920EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKit" */;
+			buildPhases = (
+				68E397AD20EFF0F3005C0722 /* Sources */,
+				68E397AE20EFF0F3005C0722 /* Frameworks */,
+				68E397AF20EFF0F3005C0722 /* Headers */,
+				68E397B020EFF0F3005C0722 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AerivoKit;
+			productName = AerivoKit;
+			productReference = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		68E397B920EFF0F3005C0722 /* AerivoKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68E397CD20EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */;
+			buildPhases = (
+				68E397B620EFF0F3005C0722 /* Sources */,
+				68E397B720EFF0F3005C0722 /* Frameworks */,
+				68E397B820EFF0F3005C0722 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68E397BD20EFF0F3005C0722 /* PBXTargetDependency */,
+				68E397BF20EFF0F3005C0722 /* PBXTargetDependency */,
+			);
+			name = AerivoKitTests;
+			productName = AerivoKitTests;
+			productReference = 68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,6 +399,13 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 684BE20620E99C1D00E74FE5;
 					};
+					68E397B120EFF0F3005C0722 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					68E397B920EFF0F3005C0722 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 684BE20620E99C1D00E74FE5;
+					};
 				};
 			};
 			buildConfigurationList = 684BE20220E99C1D00E74FE5 /* Build configuration list for PBXProject "Aerivo" */;
@@ -266,6 +424,8 @@
 				684BE20620E99C1D00E74FE5 /* Aerivo */,
 				684BE21A20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
+				68E397B120EFF0F3005C0722 /* AerivoKit */,
+				68E397B920EFF0F3005C0722 /* AerivoKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,7 +455,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68E397B020EFF0F3005C0722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68E397B820EFF0F3005C0722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68E397D620EFF576005C0722 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		684BE20320E99C1D00E74FE5 /* Sources */ = {
@@ -328,6 +518,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68E397AD20EFF0F3005C0722 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68E397B620EFF0F3005C0722 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -340,6 +545,21 @@
 			isa = PBXTargetDependency;
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
 			targetProxy = 684BE22720E99C1F00E74FE5 /* PBXContainerItemProxy */;
+		};
+		68E397BD20EFF0F3005C0722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68E397B120EFF0F3005C0722 /* AerivoKit */;
+			targetProxy = 68E397BC20EFF0F3005C0722 /* PBXContainerItemProxy */;
+		};
+		68E397BF20EFF0F3005C0722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
+			targetProxy = 68E397BE20EFF0F3005C0722 /* PBXContainerItemProxy */;
+		};
+		68E397C620EFF0F3005C0722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68E397B120EFF0F3005C0722 /* AerivoKit */;
+			targetProxy = 68E397C520EFF0F3005C0722 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -484,6 +704,10 @@
 				CODE_SIGN_ENTITLEMENTS = Aerivo/Aerivo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +727,10 @@
 				CODE_SIGN_ENTITLEMENTS = Aerivo/Aerivo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -597,6 +825,106 @@
 			};
 			name = Release;
 		};
+		68E397CA20EFF0F3005C0722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AerivoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		68E397CB20EFF0F3005C0722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AerivoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		68E397CE20EFF0F3005C0722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
+			};
+			name = Debug;
+		};
+		68E397CF20EFF0F3005C0722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -632,6 +960,24 @@
 			buildConfigurations = (
 				684BE23620E99C1F00E74FE5 /* Debug */,
 				684BE23720E99C1F00E74FE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68E397C920EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E397CA20EFF0F3005C0722 /* Debug */,
+				68E397CB20EFF0F3005C0722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68E397CD20EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E397CE20EFF0F3005C0722 /* Debug */,
+				68E397CF20EFF0F3005C0722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
