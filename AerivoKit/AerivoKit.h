@@ -7,10 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-#if !TARGET_OS_TV
-#import <Contacts/Contacts.h>
-#endif
 
 //! Project version number for AerivoKit.
 FOUNDATION_EXPORT double AerivoKitVersionNumber;

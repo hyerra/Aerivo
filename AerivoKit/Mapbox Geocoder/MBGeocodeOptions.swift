@@ -1,3 +1,4 @@
+import CoreLocation
 #if !os(tvOS)
     import Contacts
 #endif
