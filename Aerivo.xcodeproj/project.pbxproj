@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8320F059F90018D812 /* MBPlacemark.swift */; };
+		6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */; };
+		6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */; };
+		6837BB8C20F059FA0018D812 /* MBGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8620F059F90018D812 /* MBGeocoder.swift */; };
+		6837BB8D20F059FA0018D812 /* MBPlacemarkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 6837BB8720F059F90018D812 /* MBPlacemarkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6837BB8E20F059FA0018D812 /* MBRectangularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -82,6 +88,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6837BB8320F059F90018D812 /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
+		6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
+		6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
+		6837BB8620F059F90018D812 /* MBGeocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocoder.swift; sourceTree = "<group>"; };
+		6837BB8720F059F90018D812 /* MBPlacemarkScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlacemarkScope.h; sourceTree = "<group>"; };
+		6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRectangularRegion.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		684BE20F20E99C1D00E74FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +165,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6837BB8220F059E20018D812 /* Mapbox Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */,
+				6837BB8620F059F90018D812 /* MBGeocoder.swift */,
+				6837BB8320F059F90018D812 /* MBPlacemark.swift */,
+				6837BB8720F059F90018D812 /* MBPlacemarkScope.h */,
+				6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */,
+				6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */,
+			);
+			path = "Mapbox Geocoder";
+			sourceTree = "<group>";
+		};
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
+				6837BB8220F059E20018D812 /* Mapbox Geocoder */,
 				68E397B520EFF0F3005C0722 /* Info.plist */,
 			);
 			path = AerivoKit;
@@ -274,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */,
+				6837BB8D20F059FA0018D812 /* MBPlacemarkScope.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +428,7 @@
 					};
 					68E397B120EFF0F3005C0722 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					68E397B920EFF0F3005C0722 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -522,6 +550,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6837BB8E20F059FA0018D812 /* MBRectangularRegion.swift in Sources */,
+				6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */,
+				6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */,
+				6837BB8C20F059FA0018D812 /* MBGeocoder.swift in Sources */,
+				6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +733,7 @@
 		684BE23020E99C1F00E74FE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Aerivo/Aerivo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -723,6 +757,7 @@
 		684BE23120E99C1F00E74FE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Aerivo/Aerivo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -828,6 +863,7 @@
 		68E397CA20EFF0F3005C0722 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -847,6 +883,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -857,6 +894,7 @@
 		68E397CB20EFF0F3005C0722 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

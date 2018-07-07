@@ -46,6 +46,14 @@ class MapViewController: UIViewController {
     
 }
 
+// MARK: - Search bar delegate
+
+extension MapViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+}
+
 // MARK: - Pulley primary content controller delegate
 
 extension MapViewController: PulleyPrimaryContentControllerDelegate { }

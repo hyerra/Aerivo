@@ -10,7 +10,7 @@ import UIKit
 
 class PlacesViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placesTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var topGripperView: UIView!
@@ -24,7 +24,7 @@ class PlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
+        placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
         searchBar.delegate = self
     }
     
@@ -45,9 +45,9 @@ class PlacesViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
         blurEffectView.contentView.addSubview(vibrancyEffectView)
-        blurEffectView.frame = tableView.bounds
+        blurEffectView.frame = placesTableView.bounds
         vibrancyEffectView.frame = blurEffectView.bounds
-        tableView.backgroundView = blurEffectView
+        placesTableView.backgroundView = blurEffectView
     }
     
     private func createBottomViewBlurEffect() {
@@ -80,15 +80,15 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
     
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
         loadViewIfNeeded()
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
+        placesTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            tableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 68 + bottomSafeArea)
+            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: 68 + bottomSafeArea)
         } else {
-            tableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 68)
+            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: 68)
         }
                 
-        tableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
+        placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
         if drawer.drawerPosition != .open { searchBar.resignFirstResponder() }
         
         if drawer.currentDisplayMode == .leftSide {

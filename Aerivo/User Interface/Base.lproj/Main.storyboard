@@ -167,8 +167,8 @@
                         <outlet property="bottomGripperView" destination="1Gg-4E-DX1" id="a7G-Dh-0RV"/>
                         <outlet property="bottomSeparatorView" destination="NXg-IS-ZPo" id="CoY-EX-ng9"/>
                         <outlet property="bottomView" destination="yb8-WH-SVH" id="P4r-UZ-5Kn"/>
+                        <outlet property="placesTableView" destination="zSO-BQ-p5X" id="Gm6-mS-drq"/>
                         <outlet property="searchBar" destination="gvj-nq-wK8" id="Oca-bU-PyJ"/>
-                        <outlet property="tableView" destination="zSO-BQ-p5X" id="7fZ-Fe-e5E"/>
                         <outlet property="topGripperView" destination="wvD-af-gu4" id="0ve-Ee-361"/>
                         <outlet property="topSeparatorView" destination="sXk-9D-NvD" id="W9v-iT-YB4"/>
                     </connections>
