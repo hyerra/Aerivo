@@ -24,6 +24,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     let blurEffect = UIBlurEffect(style: .extraLight)
     
     var previousMapSearchTask: URLSessionDataTask?
+    
+    var shouldShowDefaultResults = true { didSet { placesTableView.reloadData() } }
+    var defaultResults: [GeocodedPlacemark] = []
     var mapSearchResults: [GeocodedPlacemark] = [] { didSet { placesTableView.reloadData() } }
     
     override func viewDidLoad() {
@@ -33,6 +36,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.delegate = self
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
         searchBar.delegate = self
+        generateDefaultResults()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,12 +82,12 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mapSearchResults.count
+        return !shouldShowDefaultResults ? mapSearchResults.count : defaultResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
-        let result = mapSearchResults[indexPath.row]
+        let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
         
         let imageName = result.imageName ?? "marker"
         cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
@@ -101,9 +105,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .leastNormalMagnitude
-    }
 }
 
 // MARK: - Pulley drawer delegate
@@ -127,6 +128,8 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         } else {
             placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: 68)
         }
+        
+        placesTableView.tableHeaderView = placesTableView.tableHeaderView // Sometimes the changes in the header view's frame don't take effect unless it is reset like this.
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
         if drawer.drawerPosition != .open { searchBar.resignFirstResponder() }
@@ -159,9 +162,25 @@ extension PlacesViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else { shouldShowDefaultResults = true; return }
+        shouldShowDefaultResults = false
         previousMapSearchTask?.cancel()
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         perform(#selector(searchMap(for:)), with: searchText, afterDelay: 0.5)
+    }
+    
+    @objc private func generateDefaultResults() {
+        let location = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView.userLocation?.location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
+        let options = ReverseGeocodeOptions(location: location)
+        options.maximumResultCount = 5
+        options.allowedScopes = .landmark
+        options.locale = Locale.autoupdatingCurrent
+        
+        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            self.defaultResults = placemarks ?? []
+            if self.shouldShowDefaultResults { self.placesTableView.reloadData() }
+        }
+        task.resume()
     }
     
     @objc private func searchMap(for query: String) {
