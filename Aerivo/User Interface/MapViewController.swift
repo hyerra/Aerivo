@@ -12,7 +12,7 @@ import Mapbox
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,14 +44,6 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-}
-
-// MARK: - Search bar delegate
-
-extension MapViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
 }
 
 // MARK: - Pulley primary content controller delegate
