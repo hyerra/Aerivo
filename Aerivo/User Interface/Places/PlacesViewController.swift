@@ -29,6 +29,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var defaultResults: [GeocodedPlacemark] = []
     var mapSearchResults: [GeocodedPlacemark] = [] { didSet { placesTableView.reloadData() } }
     
+    var annotationBackgroundColor: UIColor?
+    var annotationImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -89,12 +92,14 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
         let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
         
+        cell.placemark = result
+        
         let imageName = result.imageName ?? "marker"
         cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
-            
+        
         cell.placeName.text = result.formattedName
-        // TODO: If the wikidata entry is there use that and fall back on the qualified name if it isn't present.
         cell.secondaryDetail.text = result.qualifiedName
+        cell.iconBackgroundView.backgroundColor = result.scope.displayColor
         
         return cell
     }
@@ -103,6 +108,29 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if pulleyViewController?.drawerPosition == .open { pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true) }
+        
+        guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
+        
+        mapView.removeAnnotations(mapView.annotations ?? [])
+        
+        if let placemark = (tableView.cellForRow(at: indexPath) as? PlacesTableViewCell)?.placemark, let coordinate = placemark.location?.coordinate {
+            annotationBackgroundColor = placemark.scope.displayColor
+            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
+            
+            let pointAnnotation = MGLPointAnnotation()
+            pointAnnotation.coordinate = coordinate
+            pointAnnotation.title = placemark.formattedName
+            pointAnnotation.subtitle = placemark.genres?.first
+            mapView.addAnnotation(pointAnnotation)
+            
+            let camera = MGLMapCamera()
+            camera.centerCoordinate = coordinate
+            camera.altitude = 8000
+            mapView.fly(to: camera) {
+                mapView.setCenter(coordinate, animated: true)
+            }
+        }
     }
     
 }

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AerivoKit
 
 class PlacesTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "placesCell"
+    
+    var placemark: GeocodedPlacemark!
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var iconBackgroundView: UIView!

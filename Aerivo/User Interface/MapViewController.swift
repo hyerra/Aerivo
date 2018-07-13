@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import AerivoKit
 
 class MapViewController: UIViewController {
     
@@ -55,5 +56,17 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate { }
 extension MapViewController: MGLMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         positionMapboxAttribution()
+    }
+    
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        return true
+    }
+    
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AOAnnotationView.reuseIdentifier) as? AOAnnotationView ?? AOAnnotationView(reuseIdentifier: AOAnnotationView.reuseIdentifier)
+        annotationView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        annotationView.backgroundColor = (pulleyViewController?.drawerContentViewController as? PlacesViewController)?.annotationBackgroundColor
+        annotationView.annotationImage.image = (pulleyViewController?.drawerContentViewController as? PlacesViewController)?.annotationImage
+        return annotationView
     }
 }
