@@ -9,6 +9,8 @@
 import UIKit
 
 extension MBPlacemarkScope {
+    
+    /// A color that matches well with each scope. Used for display purposes.
     public var displayColor: UIColor {
         switch self {
         case .country: return #colorLiteral(red: 0.9843137255, green: 0.3960784314, blue: 0.2588235294, alpha: 1)
