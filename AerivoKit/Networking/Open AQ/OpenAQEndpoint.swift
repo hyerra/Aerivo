@@ -21,7 +21,7 @@ enum OpenAQEndpoint: Endpoint {
     case fetchSources(parameters: SourcesParameters)
     
     var baseURL: URL {
-        return URL(string: "api.openaq.org")!
+        return URL(string: "https://api.openaq.org")!
     }
     
     var version: Float {
@@ -59,11 +59,14 @@ enum OpenAQEndpoint: Endpoint {
     }
     
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
+        let versionString = String(format: "%g", version)
+        
+        let url = baseURL.appendingPathComponent("v\(versionString)").appendingPathComponent(path)
         var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
-        if let parameters = parameters {
+        params: if let parameters = parameters {
             let dict = try JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
+            guard !dict.isEmpty else { break params }
             urlComps?.queryItems = dict.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
         }
         

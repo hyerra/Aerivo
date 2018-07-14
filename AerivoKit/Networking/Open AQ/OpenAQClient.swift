@@ -15,7 +15,7 @@ public class OpenAQClient: APIClient {
     static let shared = OpenAQClient()
     
     /// Returns a new instance of Open AQ Client.
-    private init() { }
+    public init() { }
     
     /// Fetches a listing of cities supported in Open AQ.
     ///
@@ -123,18 +123,15 @@ public class OpenAQClient: APIClient {
                 let parsedValue = parse(response)
                 completion(parsedValue)
             } else {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601FS
+                guard let data = response.data else { completion(.failure(response.error!)); return }
                 do {
-                    let decoder = JSONDecoder()
-                    guard let data = response.data else { completion(.failure(response.error!)); return }
-                    do {
-                        let result = try decoder.decode(T.self, from: data)
-                        completion(.success(result))
-                    } catch {
-                        let error = try decoder.decode(OpenAQError.self, from: data)
-                        completion(.failure(error))
-                    }
+                    let result = try decoder.decode(T.self, from: data)
+                    completion(.success(result))
                 } catch let error {
-                    completion(.failure(error))
+                    guard let aqError = try? decoder.decode(OpenAQError.self, from: data) else { completion(.failure(error)) ;return }
+                    completion(.failure(aqError))
                 }
             }
         }

@@ -15,5 +15,5 @@ public struct OpenAQError: Codable, Error {
     /// The error's name.
     public var error: String
     /// The error's message.
-    public var message: String
+    public var message: String?
 }

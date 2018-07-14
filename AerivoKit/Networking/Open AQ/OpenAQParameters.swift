@@ -182,17 +182,17 @@ public struct LatestAQParameters: OpenAQParameters {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(city, forKey: .city)
-        try container.encode(country, forKey: .country)
-        try container.encode(location, forKey: .location)
-        try container.encode(parameter, forKey: .parameter)
-        try container.encode(hasGeo, forKey: .hasGeo)
+        if let city = city { try container.encode(city, forKey: .city) }
+        if let country = country { try container.encode(country, forKey: .country) }
+        if let location = location { try container.encode(location, forKey: .location) }
+        if let parameter = parameter { try container.encode(parameter, forKey: .parameter) }
+        if let hasGeo = hasGeo { try container.encode(hasGeo, forKey: .hasGeo) }
         if let coordinates = coordinates { try container.encode("\(coordinates.latitude),\(coordinates.longitude)", forKey: .coordinates) }
-        try container.encode(radius, forKey: .radius)
-        try container.encode(orderBy, forKey: .orderBy)
-        try container.encode(sort, forKey: .sort)
-        try container .encode(limit, forKey: .limit)
-        try container.encode(page, forKey: .page)
+        if let radius = radius { try container.encode(radius, forKey: .radius) }
+        if let orderBy = orderBy { try container.encode(orderBy, forKey: .orderBy) }
+        if let sort = sort { try container.encode(sort, forKey: .sort) }
+        if let limit = limit { try container .encode(limit, forKey: .limit) }
+        if let page = page { try container.encode(page, forKey: .page) }
     }
     
 }
@@ -262,17 +262,17 @@ public struct LocationsParameters: OpenAQParameters {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(city, forKey: .city)
-        try container.encode(country, forKey: .country)
-        try container.encode(location, forKey: .location)
-        try container.encode(parameter, forKey: .parameter)
-        try container.encode(hasGeo, forKey: .hasGeo)
+        if let city = city { try container.encode(city, forKey: .city) }
+        if let country = country { try container.encode(country, forKey: .country) }
+        if let location = location { try container.encode(location, forKey: .location) }
+        if let parameter = parameter { try container.encode(parameter, forKey: .parameter) }
+        if let hasGeo = hasGeo { try container.encode(hasGeo, forKey: .hasGeo) }
         if let coordinates = coordinates { try container.encode("\(coordinates.latitude),\(coordinates.longitude)", forKey: .coordinates) }
-        try container.encode(radius, forKey: .radius)
-        try container.encode(orderBy, forKey: .orderBy)
-        try container.encode(sort, forKey: .sort)
-        try container .encode(limit, forKey: .limit)
-        try container.encode(page, forKey: .page)
+        if let radius = radius { try container.encode(radius, forKey: .radius) }
+        if let orderBy = orderBy { try container.encode(orderBy, forKey: .orderBy) }
+        if let sort = sort { try container.encode(sort, forKey: .sort) }
+        if let limit = limit { try container .encode(limit, forKey: .limit) }
+        if let page = page { try container.encode(page, forKey: .page) }
     }
     
 }
@@ -371,23 +371,23 @@ public struct MeasurementsParameters: OpenAQParameters {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(country, forKey: .country)
-        try container.encode(city, forKey: .city)
-        try container.encode(location, forKey: .location)
-        try container.encode(parameter, forKey: .parameter)
-        try container.encode(hasGeo, forKey: .hasGeo)
+        if let country = country { try container.encode(country, forKey: .country) }
+        if let city = city { try container.encode(city, forKey: .city) }
+        if let location = location { try container.encode(location, forKey: .location) }
+        if let parameter = parameter { try container.encode(parameter, forKey: .parameter) }
+        if let hasGeo = hasGeo { try container.encode(hasGeo, forKey: .hasGeo) }
         if let coordinates = coordinates { try container.encode("\(coordinates.latitude),\(coordinates.longitude)", forKey: .coordinates) }
-        try container.encode(radius, forKey: .radius)
-        try container.encode(valueFrom, forKey: .valueFrom)
-        try container.encode(valueTo, forKey: .valueTo)
-        try container.encode(dateFrom, forKey: .dateFrom)
-        try container.encode(dateTo, forKey: .dateTo)
-        try container.encode(orderBy, forKey: .orderBy)
-        try container.encode(sort, forKey: .sort)
-        try container.encode(includeFields, forKey: .includeFields)
-        try container .encode(limit, forKey: .limit)
-        try container.encode(page, forKey: .page)
-        try container.encode(format, forKey: .format)
+        if let radius = radius { try container.encode(radius, forKey: .radius) }
+        if let valueFrom = valueFrom { try container.encode(valueFrom, forKey: .valueFrom) }
+        if let valueTo = valueTo { try container.encode(valueTo, forKey: .valueTo) }
+        if let dateFrom = dateFrom { try container.encode(dateFrom, forKey: .dateFrom) }
+        if let dateTo = dateTo { try container.encode(dateTo, forKey: .dateTo) }
+        if let orderBy = orderBy { try container.encode(orderBy, forKey: .orderBy) }
+        if let sort = sort { try container.encode(sort, forKey: .sort) }
+        if let includeFields = includeFields { try container.encode(includeFields, forKey: .includeFields) }
+        if let limit = limit { try container .encode(limit, forKey: .limit) }
+        if let page = page { try container.encode(page, forKey: .page) }
+        if let format = format { try container.encode(format, forKey: .format) }
     }
     
 }

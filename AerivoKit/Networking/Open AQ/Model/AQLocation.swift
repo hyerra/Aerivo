@@ -27,7 +27,7 @@ public struct Location: OpenAQResponse {
         /// The number of measurements, cumulative by specificity level.
         public var count: Int
         /// Distance to the specified coordinates, present when `coordinates` was sent with the request.
-        public var distance: Double
+        public var distance: Double?
         /// Can follow this to determine active adapter used for this location.
         public var sourceName: String
         /// When the data was first used from this location.
@@ -37,20 +37,7 @@ public struct Location: OpenAQResponse {
         /// List of parameters present for this location.
         public var parameters: [AirQualityParameter]
         /// The coordinates of the location.
-        public var coordinate: Coordinate
-        
-        /// Represents a coordinate on Earth.
-        public struct Coordinate: Codable {
-            /// The latitude of the coordinate.
-            public var latitude: Double
-            /// The longitude of the coordinate.
-            public var longitude: Double
-            
-            /// A coordinate fit for use with `Core Location`.
-            public var coreLocationCoordinate: CLLocationCoordinate2D {
-                return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            }
-        }
+        public var coordinates: CodableCoordinate?
         
         private enum CodingKeys: String, CodingKey {
             case id = "location"
@@ -62,7 +49,7 @@ public struct Location: OpenAQResponse {
             case firstUpdated
             case lastUpdated
             case parameters
-            case coordinate
+            case coordinates
         }
     }
     

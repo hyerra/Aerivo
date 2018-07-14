@@ -30,8 +30,6 @@ public struct Fetch: OpenAQResponse {
         public struct Result: Codable {
             /// A message about the fetch.
             var message: String
-            /// Any associated errors about the fetch.
-            var failures: [String: Int]
             /// The count of new, inserted measurements.
             var count: Int
             /// The duration of each fetch.

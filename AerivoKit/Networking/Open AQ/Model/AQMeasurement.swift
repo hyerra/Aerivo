@@ -20,8 +20,6 @@ public struct Measurement: OpenAQResponse {
     public struct Result: Codable {
         /// The name of the parameter.
         public var parameter: String
-        /// The date and time of the measurement in both local and utc time.
-        public var date: DateMetadata
         /// The value of the measurment.
         public var value: Double
         /// The unit of the measurment.
@@ -33,34 +31,13 @@ public struct Measurement: OpenAQResponse {
         /// The city the measurement was taken in.
         public var city: String
         /// The coordinates of where the measurement was taken in.
-        public var coordinates: Coordinate
+        public var coordinates: CodableCoordinate?
         /// The name of the source matching to sources table for reference.
         public var sourceName: String?
         /// The attribution information for this measurement.
         public var attribution: Attribution?
         /// The averaging period information for this measurement.
         public var averagingPeriod: AveragingPeriod?
-        
-        /// The date information pertaining to this measurement.
-        public struct DateMetadata: Codable {
-            /// The date in UTC the measurment was taken at.
-            public var utc: Date
-            /// The local time the measurement was taken at.
-            public var local: Date
-        }
-        
-        /// Represents a coordinate on Earth.
-        public struct Coordinate: Codable {
-            /// The latitude of the coordinate.
-            public var latitude: Double
-            /// The longitude of the coordinate.
-            public var longitude: Double
-            
-            /// A coordinate fit for use with `Core Location`.
-            public var coreLocationCoordinate: CLLocationCoordinate2D {
-                return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            }
-        }
         
         /// Represents the attribution information for this measurement.
         public struct Attribution: Codable {
@@ -80,7 +57,6 @@ public struct Measurement: OpenAQResponse {
         
         private enum CodingKeys: String, CodingKey {
             case parameter
-            case date
             case value
             case unit
             case location

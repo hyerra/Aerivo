@@ -24,7 +24,7 @@ public struct Source: OpenAQResponse {
         /// The name of the source.
         public var name: String
         /// The city where the data is being gathered.
-        public var city: String
+        public var city: String?
         /// The two letter ISO country code where the data is being gathered.
         public var isoCountryCode: String
         /// A description of the data source.
