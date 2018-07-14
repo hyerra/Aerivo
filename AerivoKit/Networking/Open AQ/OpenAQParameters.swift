@@ -15,7 +15,7 @@ protocol OpenAQParameters: Parameters { }
 // MARK: - Cities
 
 /// Represents the parameters that can be used to fetch a simple listing of cities supported by Open AQ.
-public struct AQCityParameters: OpenAQParameters {
+public struct AQCitiesParameters: OpenAQParameters {
     
     /// The countries to limit results by.
     public var country: String?
@@ -54,7 +54,7 @@ public struct AQCityParameters: OpenAQParameters {
 // MARK: - Countries
 
 /// Represents the parameters that can be used to fetch a simple listing of countries supported by Open AQ.
-public struct AQCountryParameters: OpenAQParameters {
+public struct AQCountriesParameters: OpenAQParameters {
     
     /// The method to order results by.
     public var orderBy: OrderBy?

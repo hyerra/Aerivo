@@ -9,9 +9,16 @@
 import Foundation
 
 /// Represents the endpoints that belong to Open AQ.
-protocol OpenAQEndpoint: Endpoint { }
-
-extension OpenAQEndpoint {
+enum OpenAQEndpoint: Endpoint {
+    
+    case fetchCities(parameters: AQCitiesParameters)
+    case fetchCountries(parameters: AQCountriesParameters)
+    case retrieveFetches(parameters: AQFetchParameters)
+    case fetchLatestAQ(parameters: AQFetchParameters)
+    case fetchLocations(parameters: AQLocationsParameters)
+    case fetchMeasurementsInfo(parameters: AQMeasurementsParameters)
+    case fetchParameters(parameters: AQParametersParameters)
+    
     var baseURL: URL {
         return URL(string: "api.openaq.org")!
     }
@@ -20,8 +27,32 @@ extension OpenAQEndpoint {
         return 1
     }
     
+    var path: String {
+        switch self {
+        case .fetchCities: return "cities"
+        case .fetchCountries: return "countries"
+        case .retrieveFetches: return "fetches"
+        case .fetchLatestAQ: return "latest"
+        case .fetchLocations: return "locations"
+        case .fetchMeasurementsInfo: return "measurements"
+        case .fetchParameters: return "parameters"
+        }
+    }
+    
     var method: HTTPMethod {
         return .get
+    }
+    
+    var parameters: Data? {
+        switch self {
+        case .fetchCities(parameters: let params): return try? convert(parameters: params)
+        case .fetchCountries(parameters: let params): return try? convert(parameters: params)
+        case .retrieveFetches(parameters: let params): return try? convert(parameters: params)
+        case .fetchLatestAQ(parameters: let params): return try? convert(parameters: params)
+        case .fetchLocations(parameters: let params): return try? convert(parameters: params)
+        case .fetchMeasurementsInfo(parameters: let params): return try? convert(parameters: params)
+        case .fetchParameters(parameters: let params): return try? convert(parameters: params)
+        }
     }
     
     func asURLRequest() throws -> URLRequest {
