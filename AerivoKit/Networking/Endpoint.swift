@@ -30,6 +30,9 @@ public enum HTTPMethod: String {
     case connect = "CONNECT"
 }
 
+/// Represents parameters that can be used in a network request.
+protocol Parameters: Encodable { }
+
 /// Represents an Endpoint for networking.
 protocol Endpoint: URLRequestConvertible {
     /// The url without any parameters or paths.
@@ -42,21 +45,4 @@ protocol Endpoint: URLRequestConvertible {
     var method: HTTPMethod { get }
     /// The parameters to send with the request.
     var parameters: Data? { get }
-}
-
-extension Endpoint {
-    /// Converts `parameters` to `Data` for use with `URLRequest`.
-    ///
-    /// - Parameter parameters: The parameters to be encoded.
-    /// - Returns: The data that was generated from the parameters.
-    /// - Throws: An error that explains what went wrong in the encoding process.
-    func convert<EncodableType: Encodable>(parameters: EncodableType) throws -> Data {
-        let encoder = JSONEncoder()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        encoder.dateEncodingStrategy = .formatted(dateFormatter)
-        
-        return try encoder.encode(parameters)
-    }
 }
