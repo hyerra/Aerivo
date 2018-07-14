@@ -37,6 +37,7 @@
 		68DD5B9A20FA551F0083B943 /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
 		68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
 		68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
+		68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA020FA6B020083B943 /* OpenAQTests.swift */; };
 		68E397A920EFEEEC005C0722 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A520EFEEEC005C0722 /* PulleyViewController.swift */; };
 		68E397AA20EFEEEC005C0722 /* UIViewController+PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */; };
 		68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */; };
@@ -144,6 +145,7 @@
 		68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQResponse.swift; sourceTree = "<group>"; };
 		68DD5B9B20FA566E0083B943 /* AQSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQSource.swift; sourceTree = "<group>"; };
 		68DD5B9D20FA57750083B943 /* OpenAQError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQError.swift; sourceTree = "<group>"; };
+		68DD5BA020FA6B020083B943 /* OpenAQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQTests.swift; sourceTree = "<group>"; };
 		68E397A520EFEEEC005C0722 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
 		68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PulleyViewController.swift"; sourceTree = "<group>"; };
 		68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
@@ -335,6 +337,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		68DD5B9F20FA6ADD0083B943 /* Open AQ */ = {
+			isa = PBXGroup;
+			children = (
+				68DD5BA020FA6B020083B943 /* OpenAQTests.swift */,
+			);
+			path = "Open AQ";
+			sourceTree = "<group>";
+		};
 		68E397A420EFEEEC005C0722 /* Pulley */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */,
+				68DD5B9F20FA6ADD0083B943 /* Open AQ */,
 				68E397C320EFF0F3005C0722 /* Info.plist */,
 			);
 			path = AerivoKitTests;
@@ -695,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */,
+				68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

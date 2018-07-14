@@ -9,7 +9,7 @@
 import Foundation
 
 /// The latest Open AQ Data for a location.
-public struct Latest: OpenAQResponse {
+public struct LatestAQ: OpenAQResponse {
     /// The meta information containing name, licensing info, etc.
     public var meta: Meta
     /// The result data that provides the contents of the latest measurement data.

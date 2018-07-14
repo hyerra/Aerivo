@@ -15,7 +15,7 @@ protocol OpenAQParameters: Parameters { }
 // MARK: - Cities
 
 /// Represents the parameters that can be used to fetch a simple listing of cities supported by Open AQ.
-public struct AQCitiesParameters: OpenAQParameters {
+public struct CitiesParameters: OpenAQParameters {
     
     /// The countries to limit results by.
     public var country: String?
@@ -54,7 +54,7 @@ public struct AQCitiesParameters: OpenAQParameters {
 // MARK: - Countries
 
 /// Represents the parameters that can be used to fetch a simple listing of countries supported by Open AQ.
-public struct AQCountriesParameters: OpenAQParameters {
+public struct CountriesParameters: OpenAQParameters {
     
     /// The method to order results by.
     public var orderBy: OrderBy?
@@ -91,7 +91,7 @@ public struct AQCountriesParameters: OpenAQParameters {
 // MARK: - Fetch
 
 /// Represents the parameters that can be used to provide data about individual fetch operations that are used to populate data on Open AQ.
-public struct AQFetchParameters: OpenAQParameters {
+public struct FetchParameters: OpenAQParameters {
     
     /// The method to order results by.
     public var orderBy: OrderBy?
@@ -126,7 +126,7 @@ public struct AQFetchParameters: OpenAQParameters {
 // MARK: - Latest
 
 /// Represents the parameters that can be used to fetch the latest air quality data.
-public struct AQLatestParameters: OpenAQParameters {
+public struct LatestAQParameters: OpenAQParameters {
     
     /// The city to limit results by.
     public var city: String?
@@ -200,7 +200,7 @@ public struct AQLatestParameters: OpenAQParameters {
 // MARK: - Locations
 
 /// Represents the parameters that can be used to fetch the latest air quality data.
-public struct AQLocationsParameters: OpenAQParameters {
+public struct LocationsParameters: OpenAQParameters {
     
     /// The city to limit results by.
     public var city: String?
@@ -280,7 +280,7 @@ public struct AQLocationsParameters: OpenAQParameters {
 // MARK: - Measurements
 
 /// Represents the parameters that can be used to fetch data about individual measurements.
-public struct AQMeasurementsParameters: OpenAQParameters {
+public struct MeasurementsParameters: OpenAQParameters {
     
     /// The country to limit results by.
     public var country: String?
@@ -395,7 +395,7 @@ public struct AQMeasurementsParameters: OpenAQParameters {
 // MARK: - Parameters
 
 /// Represents the parameters that can be used to fetch a simple listing of parameters within the Open AQ.
-public struct AQParametersParameters: OpenAQParameters {
+public struct ParameterParameters: OpenAQParameters {
     public var orderBy: OrderBy?
     public var sort: SortOrder?
     
@@ -422,7 +422,7 @@ public struct AQParametersParameters: OpenAQParameters {
 // MARK: - Sources
 
 /// Represents the parameters that can be used to fetch a list of data sources.
-public struct AQSourcesParameters: OpenAQParameters {
+public struct SourcesParameters: OpenAQParameters {
     public var orderBy: OrderBy?
     public var sort: SortOrder?
     public var limit: Int?

@@ -11,13 +11,14 @@ import Foundation
 /// Represents the endpoints that belong to Open AQ.
 enum OpenAQEndpoint: Endpoint {
     
-    case fetchCities(parameters: AQCitiesParameters)
-    case fetchCountries(parameters: AQCountriesParameters)
-    case retrieveFetches(parameters: AQFetchParameters)
-    case fetchLatestAQ(parameters: AQFetchParameters)
-    case fetchLocations(parameters: AQLocationsParameters)
-    case fetchMeasurementsInfo(parameters: AQMeasurementsParameters)
-    case fetchParameters(parameters: AQParametersParameters)
+    case fetchCities(parameters: CitiesParameters)
+    case fetchCountries(parameters: CountriesParameters)
+    case retrieveFetches(parameters: FetchParameters)
+    case fetchLatestAQ(parameters: LatestAQParameters)
+    case fetchLocations(parameters: LocationsParameters)
+    case fetchMeasurementsInfo(parameters: MeasurementsParameters)
+    case fetchParameters(parameters: ParameterParameters)
+    case fetchSources(parameters: SourcesParameters)
     
     var baseURL: URL {
         return URL(string: "api.openaq.org")!
@@ -36,6 +37,7 @@ enum OpenAQEndpoint: Endpoint {
         case .fetchLocations: return "locations"
         case .fetchMeasurementsInfo: return "measurements"
         case .fetchParameters: return "parameters"
+        case .fetchSources: return "sources"
         }
     }
     
@@ -52,6 +54,7 @@ enum OpenAQEndpoint: Endpoint {
         case .fetchLocations(parameters: let params): return try? convert(parameters: params)
         case .fetchMeasurementsInfo(parameters: let params): return try? convert(parameters: params)
         case .fetchParameters(parameters: let params): return try? convert(parameters: params)
+        case .fetchSources(parameters: let params): return try? convert(parameters: params)
         }
     }
     
