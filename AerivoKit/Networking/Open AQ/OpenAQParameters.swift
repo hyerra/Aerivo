@@ -151,23 +151,13 @@ public struct AQLatestParameters: OpenAQParameters {
     /// The page you are on for result pagination.
     public var page: Int?
     
-    /// The different parameters that can be used to measure air pollution.
-    public enum AirQualityParameter: String, Encodable {
-        case pm25
-        case pm10
-        case so2
-        case no2
-        case o3
-        case co
-        case bc
-    }
-    
     /// Represents the field to order results by.
     public enum OrderBy: String, Encodable {
         case location
         case country
         case city
         case measurements
+        case distance
     }
     
     /// Represents the method to sort results by.
@@ -234,17 +224,6 @@ public struct AQLocationsParameters: OpenAQParameters {
     public var limit: Int?
     /// The page you are on for result pagination.
     public var page: Int?
-    
-    /// The different parameters that can be used to measure air pollution.
-    public enum AirQualityParameter: String, Encodable {
-        case pm25
-        case pm10
-        case so2
-        case no2
-        case o3
-        case co
-        case bc
-    }
     
     /// Represents the field to order results by.
     public enum OrderBy: String, Encodable {
@@ -337,17 +316,6 @@ public struct AQMeasurementsParameters: OpenAQParameters {
     public var page: Int?
     /// The format to return the results in.
     public var format: Format?
-    
-    /// The different parameters that can be used to measure air pollution.
-    public enum AirQualityParameter: String, Encodable {
-        case pm25
-        case pm10
-        case so2
-        case no2
-        case o3
-        case co
-        case bc
-    }
     
     /// Represents the field to order results by.
     public enum OrderBy: String, Encodable {
