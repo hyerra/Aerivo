@@ -14,17 +14,17 @@ protocol OpenAQResponse: Decodable { }
 /// Represents the information containing name, licensing info, etc.
 public struct Meta: Codable {
     /// The name of the fetch.
-    var name: String
+    public var name: String
     /// The licensing info pertaining to the fetch.
-    var license: String
+    public var license: String
     /// A website linking to the source of the fetch.
-    var website: URL
+    public var website: URL
     /// The page you are on for result pagination.
-    var page: Int?
+    public var page: Int?
     /// The maximum results that can be returned.
-    var limit: Int?
+    public var limit: Int?
     /// The number of fetches found.
-    var found: Int?
+    public var found: Int?
 }
 
 /// The different parameters that can be used to measure air pollution.
