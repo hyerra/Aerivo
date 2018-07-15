@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a response within Open AQ.
-protocol OpenAQResponse: Codable { }
+protocol OpenAQResponse: Decodable { }
 
 /// Represents the information containing name, licensing info, etc.
 public struct Meta: Codable {
