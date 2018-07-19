@@ -15,9 +15,15 @@ extension Formatter {
         return formatter
     }()
     
-    static let nwqpFormat: DateFormatter = {
+    static let nwqpEncoderFormat: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-DD-YYYY"
+        formatter.dateFormat = "MM-dd-yyyy"
+        return formatter
+    }()
+    
+    static let nwqpDecoderFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
 }
@@ -30,7 +36,7 @@ extension JSONEncoder.DateEncodingStrategy {
     
     static let nwqpFormat = custom { date, encoder throws in
         var container = encoder.singleValueContainer()
-        try container.encode(Formatter.nwqpFormat.string(from: date))
+        try container.encode(Formatter.nwqpEncoderFormat.string(from: date))
     }
 }
 
@@ -45,7 +51,7 @@ extension JSONDecoder.DateDecodingStrategy {
     static let nwqpFormat = custom { decoder throws -> Date in
         let container = try decoder.singleValueContainer()
         let string = try container.decode(String.self)
-        guard let date = Formatter.nwqpFormat.date(from: string) else { throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)") }
+        guard let date = Formatter.nwqpDecoderFormat.date(from: string) else { throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)") }
         return date
     }
 }

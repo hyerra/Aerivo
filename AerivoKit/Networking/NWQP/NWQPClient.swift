@@ -50,15 +50,14 @@ public class NWQPClient: APIClient {
                 let parsedValue = parse(response)
                 completion(parsedValue)
             } else {
-                let decoder = JSONDecoder()
+                let decoder = XMLDecoder()
                 decoder.dateDecodingStrategy = .nwqpFormat
                 guard let data = response.data else { completion(.failure(response.error!)); return }
                 do {
                     let result = try decoder.decode(T.self, from: data)
                     completion(.success(result))
                 } catch let error {
-                    guard let aqError = try? decoder.decode(OpenAQError.self, from: data) else { completion(.failure(error)) ;return }
-                    completion(.failure(aqError))
+                    completion(.failure(error))
                 }
             }
         }

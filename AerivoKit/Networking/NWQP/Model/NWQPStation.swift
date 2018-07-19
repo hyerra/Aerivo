@@ -17,7 +17,7 @@ public struct NWQPStation: Codable {
         /// A description of the information of the organization.
         public var description: Description
         /// The monitoring location that belongs to the organiation.
-        public var monitoringLocation: MonitoringLocation
+        public var monitoringLocation: [MonitoringLocation]
         
         /// Represents a description of the organization.
         public struct Description: Codable {
@@ -50,7 +50,7 @@ public struct NWQPStation: Codable {
                 /// The huc eight digit code of the location.
                 public var huc: String
                 /// The drainage area of the location.
-                public var drainageArea: DrainageArea
+                public var drainageArea: DrainageArea?
                 
                 /// Represents the drainage area of the location.
                 public struct DrainageArea: Codable {
@@ -86,21 +86,21 @@ public struct NWQPStation: Codable {
                 /// The longitude of the location.
                 public var longitude: Double
                 /// The scale numeric for the source map.
-                public var sourceMapScaleNumeric: Double
+                public var sourceMapScaleNumeric: Double?
                 /// The horizontal accuracy of the geospatial data.
-                public var horizontalAccuracy: HorizontalAccuracy
+                public var horizontalAccuracy: HorizontalAccuracy?
                 /// The collection method name for the horizontal dimension.
-                public var horizontalCollectionMethodName: String
+                public var horizontalCollectionMethodName: String?
                 /// The horizontal coordinate reference system datum name.
-                public var horizontalCoordinateReferenceSystemDatumName: String
+                public var horizontalCoordinateReferenceSystemDatumName: String?
                 /// The vertical measurement for the geospatial data.
-                public var verticalMeasurement: VerticalMeasurement
+                public var verticalMeasurement: VerticalMeasurement?
                 /// The vertical accuracy of the geospatial data.
-                public var verticalAccuracy: VerticalAccuracy
+                public var verticalAccuracy: VerticalAccuracy?
                 /// The collection method name for the vertical dimension.
-                public var verticalCollectionMethodName: String
+                public var verticalCollectionMethodName: String?
                 /// The vertical coordinate reference system datum name.
-                public var verticalCoordinateReferenceSystemDatumName: String
+                public var verticalCoordinateReferenceSystemDatumName: String?
                 /// The country code for the monitoring location.
                 public var countryCode: String
                 /// The state code for the monitoring location.
@@ -111,13 +111,16 @@ public struct NWQPStation: Codable {
                 /// Represents the horizontal accuracy for the geospatial data.
                 public struct HorizontalAccuracy: Codable {
                     /// The value of the horizontal accuracy.
-                    public var value: Double
+                    public var value: String
                     /// The unit code of the horizontal accuracy.
                     public var unitCode: UnitCode
                     
                     /// Represents a unit code for the horizontal accuracy.
                     public enum UnitCode: String, Codable {
                         case seconds
+                        case minutes
+                        case m
+                        case unknown = "Unknown"
                     }
                     
                     private enum CodingKeys: String, CodingKey {
@@ -136,6 +139,8 @@ public struct NWQPStation: Codable {
                     /// Represents a unit code for the vertical measurement.
                     public enum UnitCode: String, Codable {
                         case feet
+                        case ft
+                        case m
                     }
                     
                     private enum CodingKeys: String, CodingKey {
@@ -153,7 +158,7 @@ public struct NWQPStation: Codable {
                     
                     /// Represents a unit code for the vertical accuracy.
                     public enum UnitCode: String, Codable {
-                        case seconds
+                        case feet
                     }
                     
                     private enum CodingKeys: String, CodingKey {

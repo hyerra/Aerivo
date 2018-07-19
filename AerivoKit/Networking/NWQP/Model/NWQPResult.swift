@@ -86,7 +86,7 @@ public struct NWQPResult: Codable {
                 /// Represents the method used for collecting the sample.
                 public struct CollectionMethod: Codable {
                     /// The identifier of the collection method.
-                    public var id: Int
+                    public var id: String
                     /// The collection method identifier context.
                     public var identifierContext: String
                     /// The name of the method used to collect the data.
@@ -129,7 +129,7 @@ public struct NWQPResult: Codable {
                     
                     /// Represents a name of the characteristics.
                     public enum CharacteristicName: String, Codable {
-                        case temperature = "Temperature, water"
+                        case waterTemperature = "Temperature, water"
                     }
                     
                     /// Represents a measurement for the result.

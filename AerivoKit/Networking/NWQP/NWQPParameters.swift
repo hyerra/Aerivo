@@ -31,7 +31,7 @@ public struct NWQPParameters: Parameters {
     /// Characteristic names identify different types of environmental measurements. The names are derived from the [USEPA Substance Registry System](http://iaspub.epa.gov/sor_internet/registry/substreg/home/overview/home.do) (SRS). USGS uses parameter codes for the same purpose and has [associated most parameters](http://www.waterqualitydata.us/public_srsnames.jsp) to SRS names.
     public var characteristicName: CharacteristicName?
     /// Include the parameter to stream compressed data. Compression often greatly increases throughput, thus expediting the request. Kml files will be returned in the kml-specific zip format, .kmz.
-    public var zip: Bool?
+    public var zip: ShouldZip?
     /// By default, requests are submitted to all the data providers. However, a particular provider may be specified using this parameter.
     public var providers: Providers?
     /// Date of earliest desired data-collection activity.
@@ -42,6 +42,8 @@ public struct NWQPParameters: Parameters {
     public var pageSize: Int?
     /// Allows for results to be paginated (especially useful for endpoints with many valid responses, allows for infinite scrolling). Use along with page size.
     public var page: Int?
+    /// The mime type for the data to be returned in.
+    public var mimeType: MimeType = .xml
     
     /// The characteristic type to be queried for.
     public enum CharacteristicType: String, Codable {
@@ -82,6 +84,17 @@ public struct NWQPParameters: Parameters {
         case stewards = "STEWARDS"
     }
     
+    /// Determines whether the results should be zipped or not.
+    public enum ShouldZip: String, Codable {
+        case yes
+        case no
+    }
+    
+    /// Determines whether the results should be returned in xml or json.
+    public enum MimeType: String, Codable {
+        case xml
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case latitude = "lat"
         case longitude = "long"
@@ -99,5 +112,6 @@ public struct NWQPParameters: Parameters {
         case endDate = "startDateHi"
         case pageSize = "pagesize"
         case page = "pagenumber"
+        case mimeType
     }
 }

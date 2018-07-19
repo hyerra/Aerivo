@@ -11,6 +11,7 @@
 		680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209821010F9200EDDBB5 /* NWQPTests.swift */; };
 		680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
 		680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
+		680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
 		6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8320F059F90018D812 /* MBPlacemark.swift */; };
 		6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */; };
 		6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */; };
@@ -57,7 +58,7 @@
 		68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
 		68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
 		68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA020FA6B020083B943 /* OpenAQTests.swift */; };
-		68DD5BA320FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift */; };
+		68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
 		68E397A920EFEEEC005C0722 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A520EFEEEC005C0722 /* PulleyViewController.swift */; };
 		68E397AA20EFEEEC005C0722 /* UIViewController+PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */; };
 		68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */; };
@@ -132,6 +133,7 @@
 		680A209821010F9200EDDBB5 /* NWQPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPTests.swift; sourceTree = "<group>"; };
 		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
+		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
 		6837BB8320F059F90018D812 /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
 		6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
 		6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 		68DD5B9B20FA566E0083B943 /* AQSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQSource.swift; sourceTree = "<group>"; };
 		68DD5B9D20FA57750083B943 /* OpenAQError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQError.swift; sourceTree = "<group>"; };
 		68DD5BA020FA6B020083B943 /* OpenAQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQTests.swift; sourceTree = "<group>"; };
-		68DD5BA220FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+ISO8601FS.swift"; sourceTree = "<group>"; };
+		68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+CustomDates.swift"; sourceTree = "<group>"; };
 		68E397A520EFEEEC005C0722 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
 		68E397A620EFEEEC005C0722 /* UIViewController+PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PulleyViewController.swift"; sourceTree = "<group>"; };
 		68E397A720EFEEEC005C0722 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
@@ -408,7 +410,8 @@
 				68B7648B20F848B1005A6EB1 /* Endpoint.swift */,
 				68B7648D20F848CE005A6EB1 /* APIClient.swift */,
 				6801C17220FA965B00E75F01 /* CodableCoordinate.swift */,
-				68DD5BA220FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift */,
+				68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */,
+				680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */,
 				68B7648F20F84C3D005A6EB1 /* Open AQ */,
 				6894019A20FE72F000C7D8FA /* NWQP */,
 			);
@@ -797,6 +800,7 @@
 				68622DAB210045C00002103F /* XMLUnkeyedDecodingContainer.swift in Sources */,
 				68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */,
 				68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */,
+				680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */,
 				6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */,
 				68622DAC210045C00002103F /* XMLKeyedDecodingContainer.swift in Sources */,
 				68622DA6210045C00002103F /* XMLReferencingEncoder.swift in Sources */,
@@ -808,7 +812,7 @@
 				680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */,
 				6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */,
 				6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */,
-				68DD5BA320FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift in Sources */,
+				68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */,
 				68622DA7210045C00002103F /* EncodingErrorExtension.swift in Sources */,
 				68B7649120F84D25005A6EB1 /* OpenAQEndpoint.swift in Sources */,
 				68622DAE210045C00002103F /* XMLDecoder.swift in Sources */,
