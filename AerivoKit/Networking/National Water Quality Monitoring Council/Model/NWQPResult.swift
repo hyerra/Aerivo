@@ -24,8 +24,13 @@ public struct NWQPResult: Codable {
         public struct Description: Codable {
             /// The `id` of the organization.
             public var id: String
-            /// The name of the organization.
-            public var name: String
+            /// The formal name of the organization.
+            public var formalName: String
+            
+            private enum CodingKeys: String, CodingKey {
+                case id = "OrganizationIdentifier"
+                case formalName = "OrganizationFormalName"
+            }
         }
         
         /// Represents activity coming from the organization.
@@ -57,6 +62,18 @@ public struct NWQPResult: Codable {
                 public var hydrolicCondition: String
                 /// The name of the hydrolic event.
                 public var hydrolicEvent: String
+                
+                private enum CodingKeys: String, CodingKey {
+                    case id = "ActivityIdentifier"
+                    case typeCode = "ActivityTypeCode"
+                    case mediaName = "ActivityMediaName"
+                    case mediaSubdivisionName = "ActivityMediaSubdivisionName"
+                    case startDate = "ActivityStartDate"
+                    case conductionOrganization = "ActivityConductingOrganizationText"
+                    case monitoringLocationID = "MonitoringLocationIdentifier"
+                    case hydrolicCondition = "HydrologicCondition"
+                    case hydrolicEvent = "HydrologicEvent"
+                }
             }
             
             /// Represents a description of the sample.
@@ -69,11 +86,22 @@ public struct NWQPResult: Codable {
                 /// Represents the method used for collecting the sample.
                 public struct CollectionMethod: Codable {
                     /// The identifier of the collection method.
-                    public var identifier: Int
+                    public var id: Int
                     /// The collection method identifier context.
                     public var identifierContext: String
                     /// The name of the method used to collect the data.
                     public var name: String
+                    
+                    private enum CodingKeys: String, CodingKey {
+                        case id = "MethodIdentifier"
+                        case identifierContext = "MethodIdentifierContext"
+                        case name = "MethodName"
+                    }
+                }
+                
+                private enum CodingKeys: String, CodingKey {
+                    case collectionMethod = "SampleCollectionMethod"
+                    case equipmentName = "SampleCollectionEquipmentName"
                 }
             }
             
@@ -115,6 +143,19 @@ public struct NWQPResult: Codable {
                         public enum UnitCode: String, Codable {
                             case celsius = "deg C"
                         }
+                        
+                        private enum CodingKeys: String, CodingKey {
+                            case value = "ResultMeasureValue"
+                            case unitCode = "MeasureUnitCode"
+                        }
+                    }
+                    
+                    private enum CodingKeys: String, CodingKey {
+                        case characteristicName = "CharacteristicName"
+                        case measurement = "ResultMeasure"
+                        case statusID = "ResultStatusIdentifier"
+                        case valueType = "ResultValueTypeName"
+                        case usgspCode = "USGSPCode"
                     }
                 }
                 
@@ -128,14 +169,46 @@ public struct NWQPResult: Codable {
                     public var name: String
                     /// The description of the analytical method.
                     public var descriptionText: String
+                    
+                    private enum CodingKeys: String, CodingKey {
+                        case id = "MethodIdentifier"
+                        case identifierContext = "MethodIdentifierContext"
+                        case name = "MethodName"
+                        case descriptionText = "MethodDescriptionText"
+                    }
                 }
                 
                 /// Represents the laboratory information of the lab that produced the result.
                 public struct LabInformation: Codable {
                     /// The name of the laboratory that produced the result.
                     public var name: String
+                    
+                    private enum CodingKeys: String, CodingKey {
+                        case name = "LaboratoryName"
+                    }
+                }
+                
+                private enum CodingKeys: String, CodingKey {
+                    case description = "ResultDescription"
+                    case analyticalMethod = "ResultAnalyticalMethod"
+                    case labInformation = "ResultLabInformation"
                 }
             }
+            
+            private enum CodingKeys: String, CodingKey {
+                case description = "ActivityDescription"
+                case sample = "SampleDescription"
+                case result = "Result"
+            }
         }
+        
+        private enum CodingKeys: String, CodingKey {
+            case description = "OrganizationDescription"
+            case activity = "Activity"
+        }
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case organization = "Organization"
     }
 }
