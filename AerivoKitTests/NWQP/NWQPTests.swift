@@ -26,7 +26,7 @@ class NWQPTests: XCTestCase {
         let components = Calendar(identifier: .gregorian).dateComponents([.month, .year], from: Date())
         params.startDate = Calendar(identifier: .gregorian).date(from: components)
         params.stateCode = "US:06"
-        params.characteristicName = "Temperature, water"
+        params.characteristicName = .waterTemperature
         params.zip = false
         
         //let endpoint = NWQPEndpoint.results(parameters: params)

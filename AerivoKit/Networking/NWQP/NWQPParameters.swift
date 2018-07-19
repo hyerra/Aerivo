@@ -29,7 +29,7 @@ public struct NWQPParameters: Parameters {
     /// These groups will be expanded as part of the ongoing collaboration between USGS and USEPA. See [domain service](http://www.waterqualitydata.us/Codes/Characteristictype?mimeType=xml) for valid types.
     public var characteristicType: CharacteristicType?
     /// Characteristic names identify different types of environmental measurements. The names are derived from the [USEPA Substance Registry System](http://iaspub.epa.gov/sor_internet/registry/substreg/home/overview/home.do) (SRS). USGS uses parameter codes for the same purpose and has [associated most parameters](http://www.waterqualitydata.us/public_srsnames.jsp) to SRS names.
-    public var characteristicName: String?
+    public var characteristicName: CharacteristicName?
     /// Include the parameter to stream compressed data. Compression often greatly increases throughput, thus expediting the request. Kml files will be returned in the kml-specific zip format, .kmz.
     public var zip: Bool?
     /// By default, requests are submitted to all the data providers. However, a particular provider may be specified using this parameter.
@@ -63,6 +63,16 @@ public struct NWQPParameters: Parameters {
         case sediment = "Sediment"
         case stableIsotopes = "Stable Isotopes"
         case toxicity = "Toxicity"
+    }
+    
+    /// The characteristic name to be queried for.
+    public enum CharacteristicName: String, Codable {
+        case beckBioticIndex = "Beck Biotic Index"
+        case brillouinTaxonomicDiversityIndex = "Brillouin Taxonomic Diversity Index"
+        case dissolvedOxygen = "Dissolved oxygen (DO)"
+        case waterTemperature = "Temperature, water"
+        case turbiditySeverity = "Turbidity"
+        case hydrocarbons = "C12 Hydrocarbons"
     }
     
     /// The providers that can be used to fetch data from.

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
 		680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209821010F9200EDDBB5 /* NWQPTests.swift */; };
+		680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
+		680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
 		6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8320F059F90018D812 /* MBPlacemark.swift */; };
 		6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */; };
 		6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */; };
@@ -128,6 +130,8 @@
 /* Begin PBXFileReference section */
 		6801C17220FA965B00E75F01 /* CodableCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoordinate.swift; sourceTree = "<group>"; };
 		680A209821010F9200EDDBB5 /* NWQPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPTests.swift; sourceTree = "<group>"; };
+		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
+		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		6837BB8320F059F90018D812 /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
 		6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
 		6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 		68622DB1210046530002103F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				680A209C2101162F00EDDBB5 /* NWQPStation.swift */,
 				68622DB22100469C0002103F /* NWQPResult.swift */,
 			);
 			path = Model;
@@ -375,6 +380,7 @@
 			children = (
 				6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */,
 				6894019D20FEC99400C7D8FA /* NWQPParameters.swift */,
+				680A209A2101123E00EDDBB5 /* NWQPClient.swift */,
 				68622DB1210046530002103F /* Model */,
 			);
 			path = NWQP;
@@ -787,6 +793,7 @@
 				68622DB32100469C0002103F /* NWQPResult.swift in Sources */,
 				68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */,
 				68DD5B9020F9AB1E0083B943 /* AQLatest.swift in Sources */,
+				680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */,
 				68622DAB210045C00002103F /* XMLUnkeyedDecodingContainer.swift in Sources */,
 				68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */,
 				68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */,
@@ -798,6 +805,7 @@
 				68622DA8210045C00002103F /* XMLEncoder.swift in Sources */,
 				6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */,
 				6837BB8E20F059FA0018D812 /* MBRectangularRegion.swift in Sources */,
+				680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */,
 				6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */,
 				6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */,
 				68DD5BA320FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift in Sources */,

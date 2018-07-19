@@ -10,7 +10,7 @@ import Foundation
 
 /// Represents the endpoints that belong to the National Water Quality Endpoint.
 public enum NWQPEndpoint: Endpoint {
-    case sites(parameters: NWQPParameters)
+    case stations(parameters: NWQPParameters)
     case results(parameters: NWQPParameters)
     case activityData(parameters: NWQPParameters)
     case activityMetricData(parameters: NWQPParameters)
@@ -21,7 +21,7 @@ public enum NWQPEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .sites: return "data/Station/search"
+        case .stations: return "data/Station/search"
         case .results: return "data/Result/search"
         case .activityData: return "data/Activity/search"
         case .activityMetricData: return "data/ActivityMetric/search"
@@ -38,7 +38,7 @@ public enum NWQPEndpoint: Endpoint {
     
     var parameters: Data? {
         switch self {
-        case .sites(let params): return try? convert(parameters: params)
+        case .stations(let params): return try? convert(parameters: params)
         case .results(let params): return try? convert(parameters: params)
         case .activityData(let params): return try? convert(parameters: params)
         case .activityMetricData(let params): return try? convert(parameters: params)

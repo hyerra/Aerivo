@@ -11,7 +11,7 @@ import Foundation
 /// Represents a result returned by the National Water Quality Portal.
 public struct NWQPResult: Codable {
     /// The organization that provided the result.
-    public var organization: Organization
+    public var organization: [Organization]
     
     /// Represents an organization within the National Water Quality Portal.
     public struct Organization: Codable {
