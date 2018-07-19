@@ -15,6 +15,16 @@ public struct CodableCoordinate: Codable {
     public var latitude: Double
     /// The longitude of the coordinate.
     public var longitude: Double
+    
+    /// Creates a new coordinate based off of a specified latitude and longitude.
+    ///
+    /// - Parameters:
+    ///   - latitude: The latitude of the coordinate.
+    ///   - longitude: The longitude of the coordinate.
+    public init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }
 
 extension CLLocationCoordinate2D {

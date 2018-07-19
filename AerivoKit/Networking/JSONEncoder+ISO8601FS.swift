@@ -14,6 +14,12 @@ extension Formatter {
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return formatter
     }()
+    
+    static let nwqpFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-DD-YYYY"
+        return formatter
+    }()
 }
 
 extension JSONEncoder.DateEncodingStrategy {
@@ -21,15 +27,25 @@ extension JSONEncoder.DateEncodingStrategy {
         var container = encoder.singleValueContainer()
         try container.encode(Formatter.iso8601FS.string(from: date))
     }
+    
+    static let nwqpFormat = custom { date, encoder throws in
+        var container = encoder.singleValueContainer()
+        try container.encode(Formatter.nwqpFormat.string(from: date))
+    }
 }
 
 extension JSONDecoder.DateDecodingStrategy {
     static let iso8601FS = custom { decoder throws -> Date in
         let container = try decoder.singleValueContainer()
         let string = try container.decode(String.self)
-        if let date = Formatter.iso8601FS.date(from: string) {
-            return date
-        }
-        throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)")
+        guard let date = Formatter.iso8601FS.date(from: string) else { throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)") }
+        return date
+    }
+    
+    static let nwqpFormat = custom { decoder throws -> Date in
+        let container = try decoder.singleValueContainer()
+        let string = try container.decode(String.self)
+        guard let date = Formatter.nwqpFormat.date(from: string) else { throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)") }
+        return date
     }
 }
