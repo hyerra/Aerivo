@@ -16,6 +16,12 @@ public struct NWQPParameters: Parameters {
     public var longitude: Double?
     /// Distance for radial search, expressed in decimal miles.
     public var within: Double?
+    /// Two-character Federal Information Processing Standard (FIPS) country code.
+    public var countryCode: String?
+    /// Two-character Federal Information Processing Standard (FIPS) country code, followed by a URL-encoded colon ("%3A"), followed by a two-digit FIPS state code.
+    public var stateCode: String?
+    /// Two-character Federal Information Processing Standard (FIPS) country code, followed by a URL-encoded colon ("%3A"), followed by a two-digit FIPS state code, followed by a URL-encoded colon ("%3A"), followed by a three-digit FIPS county code.
+    public var countyCode: String?
     /// Each data collection station is assigned a unique site-identification number. Other agencies often use different site identification numbers for the same stations.
     public var siteID: String?
     /// For USGS organization IDs, append an upper-case postal-service state abbreviation to "USGS-" to identify the USGS office managing the data collection station records. However, a few US states are serviced by one USGS office.
@@ -70,6 +76,9 @@ public struct NWQPParameters: Parameters {
         case latitude = "lat"
         case longitude = "long"
         case within
+        case countryCode = "countrycode"
+        case stateCode = "statecode"
+        case countyCode = "countycode"
         case siteID = "siteid"
         case huc
         case characteristicType

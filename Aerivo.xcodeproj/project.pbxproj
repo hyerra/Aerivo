@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
+		680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209821010F9200EDDBB5 /* NWQPTests.swift */; };
 		6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8320F059F90018D812 /* MBPlacemark.swift */; };
 		6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */; };
 		6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */; };
@@ -126,6 +127,7 @@
 
 /* Begin PBXFileReference section */
 		6801C17220FA965B00E75F01 /* CodableCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoordinate.swift; sourceTree = "<group>"; };
+		680A209821010F9200EDDBB5 /* NWQPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPTests.swift; sourceTree = "<group>"; };
 		6837BB8320F059F90018D812 /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
 		6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
 		6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
@@ -239,6 +241,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		680A209721010F6500EDDBB5 /* NWQP */ = {
+			isa = PBXGroup;
+			children = (
+				680A209821010F9200EDDBB5 /* NWQPTests.swift */,
+			);
+			path = NWQP;
+			sourceTree = "<group>";
+		};
 		6837BB8220F059E20018D812 /* Mapbox Geocoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,14 +370,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6894019A20FE72F000C7D8FA /* National Water Quality Monitoring Council */ = {
+		6894019A20FE72F000C7D8FA /* NWQP */ = {
 			isa = PBXGroup;
 			children = (
 				6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */,
 				6894019D20FEC99400C7D8FA /* NWQPParameters.swift */,
 				68622DB1210046530002103F /* Model */,
 			);
-			path = "National Water Quality Monitoring Council";
+			path = NWQP;
 			sourceTree = "<group>";
 		};
 		68B7647C20F6EDC1005A6EB1 /* Annotation View */ = {
@@ -394,7 +404,7 @@
 				6801C17220FA965B00E75F01 /* CodableCoordinate.swift */,
 				68DD5BA220FA8AE70083B943 /* JSONEncoder+ISO8601FS.swift */,
 				68B7648F20F84C3D005A6EB1 /* Open AQ */,
-				6894019A20FE72F000C7D8FA /* National Water Quality Monitoring Council */,
+				6894019A20FE72F000C7D8FA /* NWQP */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -465,6 +475,7 @@
 			children = (
 				68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */,
 				68DD5B9F20FA6ADD0083B943 /* Open AQ */,
+				680A209721010F6500EDDBB5 /* NWQP */,
 				68E397C320EFF0F3005C0722 /* Info.plist */,
 			);
 			path = AerivoKitTests;
@@ -814,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */,
+				680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */,
 				68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
