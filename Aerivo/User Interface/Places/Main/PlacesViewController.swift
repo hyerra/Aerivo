@@ -12,6 +12,8 @@ import AerivoKit
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    static let identifier = "placesVC"
+    
     @IBOutlet weak var placesTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -131,6 +133,12 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 mapView.setCenter(coordinate, animated: true)
             }
         }
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) {
+            present(vc, animated: true) {
+                self.view.alpha = 0
+            }
+        }
     }
     
 }
@@ -160,7 +168,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         placesTableView.tableHeaderView = placesTableView.tableHeaderView // Sometimes the changes in the header view's frame don't take effect unless it is reset like this.
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
-        if drawer.drawerPosition != .open { searchBar.resignFirstResponder() }
+        if drawer.drawerPosition != .open { searchBar.text = nil; searchBar.resignFirstResponder() }
         
         if drawer.currentDisplayMode == .leftSide {
             topSeparatorView.isHidden = drawer.drawerPosition == .collapsed

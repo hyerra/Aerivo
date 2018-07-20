@@ -38,6 +38,7 @@
 		68622DAF210045C00002103F /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA3210045C00002103F /* ISO8601DateFormatter.swift */; };
 		68622DB0210045C00002103F /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA4210045C00002103F /* XMLKey.swift */; };
 		68622DB32100469C0002103F /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
+		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
 		6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
 		6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
@@ -167,6 +168,7 @@
 		68622DA4210045C00002103F /* XMLKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKey.swift; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
+		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		6891C3BE20EA933D0051563F /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
@@ -377,6 +379,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		688C863A2102692B000C47FF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6891C3BE20EA933D0051563F /* PlacesViewController.swift */,
+				68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		688C863B21026935000C47FF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				688C863C21026944000C47FF /* PlacesDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		6894019A20FE72F000C7D8FA /* NWQP */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,8 +528,8 @@
 		68EADBBC20F30D9900DB3425 /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				6891C3BE20EA933D0051563F /* PlacesViewController.swift */,
-				68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */,
+				688C863A2102692B000C47FF /* Main */,
+				688C863B21026935000C47FF /* Detail */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -758,6 +777,7 @@
 			files = (
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
 				68E397AC20EFEEEC005C0722 /* UIView+constrainToParent.swift in Sources */,
+				688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
 				68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */,

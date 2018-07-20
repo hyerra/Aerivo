@@ -12,6 +12,8 @@ import AerivoKit
 
 class MapViewController: UIViewController {
     
+    static let identifier = "mapVC"
+    
     @IBOutlet weak var mapView: MGLMapView!
         
     override func viewDidLoad() {
