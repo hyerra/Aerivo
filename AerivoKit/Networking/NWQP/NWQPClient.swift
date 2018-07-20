@@ -8,17 +8,30 @@
 
 import Foundation
 
+/// Represents a National Water Quality Portal client used to retrieve data from the National Water Quality Portal.
 public class NWQPClient: APIClient {
     
+    /// Returns a `shared` singleton National Water Quality Portal Client object.
     public static let shared = NWQPClient()
     
+    /// Returns a new instance of the National Water Quality Portal Client.
     public init() { }
     
+    /// Fetch the stations that are available from the National Water Quality Portal.
+    ///
+    /// - Parameters:
+    ///   - parameters: Parameters to be used when fetching the stations.
+    ///   - completion: If successful, the stations will be provided. If a failure occured, an error will be returned explaining what went wrong.
     public func fetchStations(using parameters: NWQPParameters, completion: @escaping(APIResult<NWQPStation>) -> Void) {
         let nwqpStationEndpoint = NWQPEndpoint.stations(parameters: parameters)
         connect(to: nwqpStationEndpoint, completion: completion)
     }
     
+    /// Fetch the data that is available from the National Water Quality Portal.
+    ///
+    /// - Parameters:
+    ///   - parameters: Parameters to be used when fetching the results.
+    ///   - completion: If successful, the data will be provided. If a failure occured, an error will be returned explaining what went wrong.
     public func fetchResults(using parameters: NWQPParameters, completion: @escaping (APIResult<NWQPResult>) -> Void) {
         let nwqpResultEndpoint = NWQPEndpoint.results(parameters: parameters)
         connect(to: nwqpResultEndpoint, completion: completion)

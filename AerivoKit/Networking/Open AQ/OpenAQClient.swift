@@ -14,7 +14,7 @@ public class OpenAQClient: APIClient {
     /// Returns a `shared` singleton Open AQ Client object.
     public static let shared = OpenAQClient()
     
-    /// Returns a new instance of Open AQ Client.
+    /// Returns a new instance of the Open AQ Client.
     public init() { }
     
     /// Fetches a listing of cities supported in Open AQ.
