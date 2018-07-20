@@ -11,13 +11,13 @@ import Foundation
 /// Represents the stations available in the National Water Quality Portal.
 public struct NWQPStation: Codable {
     /// The organization that the station belongs to.
-    public var organization: [Organization]
+    public var organizations: [Organization]?
     
     public struct Organization: Codable {
         /// A description of the information of the organization.
         public var description: Description
         /// The monitoring location that belongs to the organiation.
-        public var monitoringLocation: [MonitoringLocation]
+        public var monitoringLocations: [MonitoringLocation]
         
         /// Represents a description of the organization.
         public struct Description: Codable {
@@ -192,11 +192,11 @@ public struct NWQPStation: Codable {
         
         private enum CodingKeys: String, CodingKey {
             case description = "OrganizationDescription"
-            case monitoringLocation = "MonitoringLocation"
+            case monitoringLocations = "MonitoringLocation"
         }
     }
     
     private enum CodingKeys: String, CodingKey {
-        case organization = "Organization"
+        case organizations = "Organization"
     }
 }
