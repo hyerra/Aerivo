@@ -31,17 +31,6 @@ class MapViewController: UIViewController {
         pulleyViewController?.drawerBackgroundVisualEffectView = nil
     }
     
-    private func positionMapboxAttribution() {
-        guard let pulleyVC = pulleyViewController else { return }
-        guard pulleyVC.currentDisplayMode == .bottomDrawer else { return }
-        let distance = pulleyVC.drawerDistanceFromBottom
-        mapView.logoView.translatesAutoresizingMaskIntoConstraints = true
-        mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = true
-        let distanceFromBottom = distance.distance + distance.bottomSafeArea + 4
-        mapView.logoView.frame = CGRect(x: mapView.logoView.frame.minX, y: view.bounds.height - distanceFromBottom, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-        mapView.attributionButton.frame = CGRect(x: mapView.attributionButton.frame.minX, y: view.bounds.height - distanceFromBottom, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,10 +45,6 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate { }
 // MARK: - Map view delegate
 
 extension MapViewController: MGLMapViewDelegate {
-    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        positionMapboxAttribution()
-    }
-    
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }

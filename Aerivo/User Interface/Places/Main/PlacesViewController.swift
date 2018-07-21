@@ -34,6 +34,11 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var annotationBackgroundColor: UIColor?
     var annotationImage: UIImage?
     
+    lazy var cachedHeaderHeight: CGFloat = {
+        let height = placesTableView.tableHeaderView!.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        return height
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,6 +60,8 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after the view laid out the subviews.
         createTableViewBlurEffect()
         createBottomViewBlurEffect()
+        sizeHeaderToFit()
+        if let bottomDistance = pulleyViewController?.drawerDistanceFromBottom.distance { positionMapboxAttribution(with: bottomDistance) }
     }
     
     private func createTableViewBlurEffect() {
@@ -73,6 +80,22 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         blurEffectView.frame = bottomView.bounds
         vibrancyEffectView.frame = blurEffectView.bounds
         bottomView.insertSubview(blurEffectView, at: 0)
+    }
+    
+    private func sizeHeaderToFit() {
+        placesTableView.tableHeaderView?.frame.size.height = cachedHeaderHeight
+        placesTableView.tableHeaderView = placesTableView.tableHeaderView
+    }
+    
+    private func positionMapboxAttribution(with bottomDistance: CGFloat) {
+        guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
+        guard let pulleyVC = pulleyViewController else { return }
+        guard pulleyVC.currentDisplayMode == .bottomDrawer else { return }
+        guard pulleyVC.drawerPosition != .open else { return }
+        mapView.logoView.translatesAutoresizingMaskIntoConstraints = true
+        mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = true
+        mapView.logoView.frame = CGRect(x: view.directionalLayoutMargins.leading, y: view.bounds.height - (bottomDistance - 8), width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
+        mapView.attributionButton.frame = CGRect(x: view.bounds.maxX - view.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: view.bounds.height - (bottomDistance - 8), width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,7 +157,8 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
+            vc.placemark = mapSearchResults[indexPath.row]
             present(vc, animated: true) {
                 self.view.alpha = 0
             }
@@ -148,21 +172,34 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
 extension PlacesViewController: PulleyDrawerViewControllerDelegate {
     
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return 68 + bottomSafeArea
+        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
+            if let height = presentedVC.collapsedDrawerHeight?(bottomSafeArea: bottomSafeArea) {
+                return height
+            }
+        }
+        
+        return cachedHeaderHeight + bottomSafeArea
     }
     
     func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
+            if let height = presentedVC.partialRevealDrawerHeight?(bottomSafeArea: bottomSafeArea) {
+                return height
+            }
+        }
+        
         return 264 + bottomSafeArea
     }
     
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
+        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate { presentedVC.drawerPositionDidChange?(drawer: drawer, bottomSafeArea: bottomSafeArea) }
         loadViewIfNeeded()
         placesTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: 68 + bottomSafeArea)
+            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: cachedHeaderHeight + bottomSafeArea)
         } else {
-            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: 68)
+            placesTableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: placesTableView.bounds.width, height: cachedHeaderHeight)
         }
         
         placesTableView.tableHeaderView = placesTableView.tableHeaderView // Sometimes the changes in the header view's frame don't take effect unless it is reset like this.
@@ -179,7 +216,12 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         }
     }
     
+    func drawerChangedDistanceFromBottom(drawer: PulleyViewController, distance: CGFloat, bottomSafeArea: CGFloat) {
+        positionMapboxAttribution(with: distance)
+    }
+    
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
+        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate { presentedVC.drawerDisplayModeDidChange?(drawer: drawer) }
         if drawer.currentDisplayMode == .bottomDrawer {
             topGripperView.alpha = 1
             bottomGripperView.alpha = 0
