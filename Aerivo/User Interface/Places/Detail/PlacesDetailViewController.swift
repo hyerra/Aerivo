@@ -18,6 +18,8 @@ class PlacesDetailViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var close: UIButton!
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var topGripperView: UIView!
     @IBOutlet weak var bottomGripperView: UIView!
@@ -53,6 +55,9 @@ class PlacesDetailViewController: UIViewController {
         // Do any additional setup after the view laid out the subviews.
         createViewBlurEffect()
         sizeHeaderToFit()
+        
+        close.layer.cornerRadius = close.layer.bounds.width/2
+        close.layer.masksToBounds = true
     }
     
     private func createViewBlurEffect() {

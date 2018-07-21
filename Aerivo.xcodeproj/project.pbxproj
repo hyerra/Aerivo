@@ -74,6 +74,7 @@
 		68EADBBB20F2F72800DB3425 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
+		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,7 @@
 		68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AerivoKit.xcassets; sourceTree = "<group>"; };
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,6 +541,7 @@
 			children = (
 				684BE20E20E99C1D00E74FE5 /* Main.storyboard */,
 				68F3A28F20E9CA250096D60A /* MapViewController.swift */,
+				68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */,
 				68EADBBC20F30D9900DB3425 /* Places */,
 				68B7647C20F6EDC1005A6EB1 /* Annotation View */,
 				684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */,
@@ -780,6 +783,7 @@
 				688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
+				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,
 				68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */,
 				68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */,
 				68E397AA20EFEEEC005C0722 /* UIViewController+PulleyViewController.swift in Sources */,
