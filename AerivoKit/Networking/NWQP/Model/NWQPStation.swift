@@ -21,9 +21,9 @@ public struct NWQPStation: Codable {
         
         /// Represents a description of the organization.
         public struct Description: Codable {
-            /// The `id` of the organization.
+            /// A designator used to uniquely identify a unique business establishment within a context.
             public var id: String
-            /// The formal name of the organization.
+            /// The legal designator of an organization.
             public var formalName: String
             
             private enum CodingKeys: String, CodingKey {
@@ -34,29 +34,29 @@ public struct NWQPStation: Codable {
         
         /// Represents a monitoring location.
         public struct MonitoringLocation: Codable {
-            /// Identifying information for the monitoring location.
+            /// A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
             public var identity: Identity
             /// The geospatial information of the monitoring location.
             public var geospatial: Geospatial
             
             /// Represents the identifying information for the monitoring location.
             public struct Identity: Codable {
-                /// The identifier of the location.
+                /// A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
                 public var locationID: String
-                /// The name of the location.
+                /// The designator specified by the sampling organization for the site at which sampling or other activities are conducted.
                 public var locationName: String
-                /// The type of the location.
+                /// The descriptive name for a type of monitoring location.
                 public var locationType: String
-                /// The huc eight digit code of the location.
+                /// The 8 digit federal code used to identify the hydrologic unit of the monitoring location to the cataloging unit level of precision.
                 public var huc: String
-                /// The drainage area of the location.
+                /// The drainage basin of a lake, stream, wetland, or estuary site.
                 public var drainageArea: DrainageArea?
                 
                 /// Represents the drainage area of the location.
                 public struct DrainageArea: Codable {
-                    /// The value of the drainage area.
+                    /// The drainage basin of a lake, stream, wetland, or estuary site.
                     public var value: Double
-                    /// The unit code of the drainage.
+                    /// The code that represents the unit for measuring the item.
                     public var unitCode: UnitCode
                     
                     /// Represents a unit code for the drainage area.
@@ -81,38 +81,38 @@ public struct NWQPStation: Codable {
             
             /// Represents the geospatial information for the location.
             public struct Geospatial: Codable {
-                /// The latitude of the location.
+                /// The measure of the angular distance on a meridian north or south of the equator.
                 public var latitude: Double
-                /// The longitude of the location.
+                /// The measure of the angular distance on a meridian east or west of the prime meridian.
                 public var longitude: Double
-                /// The scale numeric for the source map.
+                /// The number that represents the proportional distance on the ground for one unit of measure on the map or photo.
                 public var sourceMapScaleNumeric: Double?
-                /// The horizontal accuracy of the geospatial data.
+                /// The horizontal measure of the relative accuracy of the latitude and longitude coordinates.
                 public var horizontalAccuracy: HorizontalAccuracy?
-                /// The collection method name for the horizontal dimension.
+                /// The name that identifies the method used to determine the latitude and longitude coordinates for a point on the earth.
                 public var horizontalCollectionMethodName: String?
-                /// The horizontal coordinate reference system datum name.
+                /// The name that describes the reference datum used in determining latitude and longitude coordinates.
                 public var horizontalCoordinateReferenceSystemDatumName: String?
-                /// The vertical measurement for the geospatial data.
+                /// The measure of elevation, above or below a reference datum.
                 public var verticalMeasurement: VerticalMeasurement?
-                /// The vertical accuracy of the geospatial data.
+                /// The vertical measure of the relative accuracy of the latitude and longitude coordinates.
                 public var verticalAccuracy: VerticalAccuracy?
-                /// The collection method name for the vertical dimension.
+                /// The name that identifies the method used to collect the vertical measure of a reference point.
                 public var verticalCollectionMethodName: String?
-                /// The vertical coordinate reference system datum name.
+                /// The name of the reference datum used to determine the vertical measure.
                 public var verticalCoordinateReferenceSystemDatumName: String?
-                /// The country code for the monitoring location.
+                /// A code designator used to identify a primary geopolitical unit of the world.
                 public var countryCode: String
-                /// The state code for the monitoring location.
+                /// A code designator used to identify a principal administrative subdivision of the United States, Canada, or Mexico.
                 public var stateCode: String
-                /// The country code for the monitoring location.
+                /// A code designator used to identify a U.S. county or county equivalent.
                 public var countyCode: String
                 
                 /// Represents the horizontal accuracy for the geospatial data.
                 public struct HorizontalAccuracy: Codable {
-                    /// The value of the horizontal accuracy.
+                    /// The horizontal measure of the relative accuracy of the latitude and longitude coordinates.
                     public var value: String
-                    /// The unit code of the horizontal accuracy.
+                    /// The code that represents the unit for measuring the item.
                     public var unitCode: UnitCode
                     
                     /// Represents a unit code for the horizontal accuracy.
@@ -131,9 +131,9 @@ public struct NWQPStation: Codable {
                 
                 /// Represents the vertical measurement for the geospatial data.
                 public struct VerticalMeasurement: Codable {
-                    /// The value of the vertical measurement.
+                    /// The measure of elevation, above or below a reference datum.
                     public var value: Double
-                    /// The unit code of the vertical measurement.
+                    /// The code that represents the unit for measuring the item.
                     public var unitCode: UnitCode
                     
                     /// Represents a unit code for the vertical measurement.
@@ -151,9 +151,9 @@ public struct NWQPStation: Codable {
                 
                 /// Represents the vertical accuracy of the geospatial data.
                 public struct VerticalAccuracy: Codable {
-                    /// The value of the vertical accuracy.
+                    /// The vertical measure of the relative accuracy of the latitude and longitude coordinates.
                     public var value: Double
-                    /// The unit code of the vertical accuracy.
+                    /// The code that represents the unit for measuring the item.
                     public var unitCode: UnitCode
                     
                     /// Represents a unit code for the vertical accuracy.

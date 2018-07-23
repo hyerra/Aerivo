@@ -146,7 +146,7 @@ public struct LatestAQParameters: OpenAQParameters {
     public var hasGeo: Bool?
     /// Center point used to get results within a certain area. Must be used with `radius`.
     public var coordinates: CLLocationCoordinate2D?
-    /// The radius used to get measurements within a certain area. Must be used with `coordinates`.
+    /// The radius (in meters) used to get measurements within a certain area. Must be used with `coordinates`.
     public var radius: Int?
     /// The method to order results by.
     public var orderBy: OrderBy?

@@ -22,9 +22,9 @@ public struct NWQPResult: Codable {
         
         /// Represents a description of the organization.
         public struct Description: Codable {
-            /// The `id` of the organization.
+            /// A designator used to uniquely identify a unique business establishment within a context.
             public var id: String?
-            /// The formal name of the organization.
+            /// The legal designator of an organization.
             public var formalName: String?
             
             private enum CodingKeys: String, CodingKey {
@@ -36,7 +36,7 @@ public struct NWQPResult: Codable {
         /// Represents activity coming from the organization.
         public struct Activity: Codable {
             /// A description of the activity.
-            public var description: Description?
+            public var description: Description
             /// A description of the sample.
             public var sample: Sample?
             /// A description of the result.
@@ -44,23 +44,23 @@ public struct NWQPResult: Codable {
             
             /// Represents a description of the activity.
             public struct Description: Codable {
-                /// The `id` of the activity.
-                public var id: String?
-                /// The type of the activity.
-                public var typeCode: String?
-                /// The media name of the activity
-                public var mediaName: String?
-                /// The media subdivision name of the activity.
+                /// Designator that uniquely identifies an activity within an organization.
+                public var id: String
+                /// The text describing the type of activity.
+                public var typeCode: String
+                /// Name or code indicating the environmental medium where the sample was taken.
+                public var mediaName: String
+                /// Name or code indicating the environmental matrix as a subdivision of the sample media.
                 public var mediaSubdivisionName: String?
-                /// The activity start date.
-                public var startDate: Date?
-                /// The organization conducting the activity.
-                public var conductionOrganization: String?
-                /// The id of the monitoring location.
-                public var monitoringLocationID: String?
-                /// The condition of the hydrolics.
+                /// The calendar date on which the field activity is started.
+                public var startDate: Date
+                /// A name of the Organization conducting an activity.
+                public var conductingOrganization: String?
+                /// A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+                public var monitoringLocationID: String
+                /// Hydrologic condition is the hydrologic condition that is represented by the sample collected (i.e. ? normal, falling, rising, peak stage).
                 public var hydrolicCondition: String?
-                /// The name of the hydrolic event.
+                /// A hydrologic event that is represented by the sample collected (i.e. - storm, drought, snowmelt).
                 public var hydrolicEvent: String?
                 
                 private enum CodingKeys: String, CodingKey {
@@ -69,7 +69,7 @@ public struct NWQPResult: Codable {
                     case mediaName = "ActivityMediaName"
                     case mediaSubdivisionName = "ActivityMediaSubdivisionName"
                     case startDate = "ActivityStartDate"
-                    case conductionOrganization = "ActivityConductingOrganizationText"
+                    case conductingOrganization = "ActivityConductingOrganizationText"
                     case monitoringLocationID = "MonitoringLocationIdentifier"
                     case hydrolicCondition = "HydrologicCondition"
                     case hydrolicEvent = "HydrologicEvent"
@@ -79,18 +79,18 @@ public struct NWQPResult: Codable {
             /// Represents a description of the sample.
             public struct Sample: Codable {
                 /// The method used for collecting the sample.
-                public var collectionMethod: CollectionMethod?
+                public var collectionMethod: CollectionMethod
                 /// The name of the equipment that produced the sample.
-                public var equipmentName: String?
+                public var equipmentName: String
                 
                 /// Represents the method used for collecting the sample.
                 public struct CollectionMethod: Codable {
-                    /// The identifier of the collection method.
-                    public var id: String?
-                    /// The collection method identifier context.
-                    public var identifierContext: String?
-                    /// The name of the method used to collect the data.
-                    public var name: String?
+                    /// The identification number or code assigned by the method publisher.
+                    public var id: String
+                    /// Identifies the source or data system that created or defined the identifier.
+                    public var identifierContext: String
+                    /// The title that appears on the method from the method publisher.
+                    public var name: String
                     
                     private enum CodingKeys: String, CodingKey {
                         case id = "MethodIdentifier"
@@ -116,15 +116,15 @@ public struct NWQPResult: Codable {
                 
                 /// Represents a description of the result.
                 public struct Description: Codable {
-                    /// The name of the characteristic this result is providing information about.
+                    /// The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
                     public var characteristicName: CharacteristicName
                     /// The measurement information.
                     public var measurement: Measurement
-                    /// The `id` of the status.
+                    /// Indicates the acceptability of the result with respect to QA/QC criteria.
                     public var statusID: String?
-                    /// The value type of the result.
-                    public var valueType: String?
-                    /// The USGSP code for the information.
+                    /// A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated).
+                    public var valueType: String
+                    /// 5-digit number used in the US Geological Survey computerized data system, National Water Information System (NWIS), to uniquely identify a specific constituent.
                     public var usgspCode: String?
                     
                     /// Represents a name of the characteristics.
@@ -139,9 +139,9 @@ public struct NWQPResult: Codable {
                     
                     /// Represents a measurement for the result.
                     public struct Measurement: Codable {
-                        /// The value of the measurement.
+                        /// The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed.
                         public var value: Double
-                        /// The unit code of the measurement.
+                        /// The code that represents the unit for measuring the item.
                         public var unitCode: UnitCode
                         
                         /// Represents a unit code for the measurement.
@@ -171,13 +171,13 @@ public struct NWQPResult: Codable {
                 
                 /// Represents the analytical method used to produce the result.
                 public struct AnalyticalMethod: Codable {
-                    /// The id of the analytical method.
-                    public var id: String?
-                    /// The identifier context of the analytical method.
-                    public var identifierContext: String?
-                    /// The name of the analytical method.
+                    /// The identification number or code assigned by the method publisher.
+                    public var id: String
+                    /// Identifies the source or data system that created or defined the identifier.
+                    public var identifierContext: String
+                    /// The title that appears on the method from the method publisher.
                     public var name: String?
-                    /// The description of the analytical method.
+                    /// A brief summary that provides general information about the method.
                     public var descriptionText: String?
                     
                     private enum CodingKeys: String, CodingKey {
@@ -190,7 +190,7 @@ public struct NWQPResult: Codable {
                 
                 /// Represents the laboratory information of the lab that produced the result.
                 public struct LabInformation: Codable {
-                    /// The name of the laboratory that produced the result.
+                    /// The name of the lab responsible for the result.
                     public var name: String?
                     
                     private enum CodingKeys: String, CodingKey {

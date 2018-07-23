@@ -45,6 +45,8 @@ public struct NWQPParameters: Parameters {
     /// The mime type for the data to be returned in.
     public var mimeType: MimeType = .xml
     
+    public init() { }
+    
     /// The characteristic type to be queried for.
     public enum CharacteristicType: String, Codable {
         case biological = "Biological"
