@@ -16,6 +16,7 @@ class PlacesDetailViewController: UIViewController {
     var placemark: GeocodedPlacemark!
     let blurEffect = UIBlurEffect(style: .extraLight)
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var close: UIButton!
@@ -76,6 +77,12 @@ class PlacesDetailViewController: UIViewController {
         headerHeightConstraint = newConstraint
     }
     
+    // MARK: - Actions
+    
+    @IBAction func contactOfficial(_ sender: UIButton) {
+        
+    }
+    
 }
 
 // MARK: - Pulley drawer delegate
@@ -92,6 +99,7 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
     
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
         loadViewIfNeeded()
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
             if let constraint = headerHeightConstraint { NSLayoutConstraint.deactivate([constraint]) }
