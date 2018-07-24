@@ -12,4 +12,5 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "placesDetailCell"
     
+    @IBOutlet weak var detailLabel: UILabel!
 }
