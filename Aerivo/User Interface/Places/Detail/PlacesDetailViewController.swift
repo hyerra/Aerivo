@@ -226,6 +226,22 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "placesDetailHeading", for: indexPath)
+        if indexPath.section == 0 {
+            if latestAQ?.results.first != nil /* Return air quality data in this section. */ {
+                (headerView.viewWithTag(1) as? UILabel)?.text = NSLocalizedString("Air Quality", comment: "The air quality at a specified location.")
+            } else /* Return water quality data in this section. */ {
+                (headerView.viewWithTag(1) as? UILabel)?.text = NSLocalizedString("Water Quality", comment: "The water quality at a specified location.")
+            }
+        } else if indexPath.section == 1 /* Return water quality data in this section. */ {
+            (headerView.viewWithTag(1) as? UILabel)?.text = NSLocalizedString("Water Quality", comment: "The water quality at a specified location.")
+        } else {
+            fatalError("Unexpected amount of collection view sections.")
+        }
+        return headerView
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlacesDetailCollectionViewCell.reuseIdentifier, for: indexPath) as! PlacesDetailCollectionViewCell
         
