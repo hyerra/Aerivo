@@ -37,3 +37,23 @@ public enum AirQualityParameter: String, Codable {
     case co
     case bc
 }
+
+/// Represents a unit code for the air quality measurement.
+public enum AirQualityUnitCode: String, Codable {
+    case microgramsPerCubicMeter = "µg/m³"
+    case partsPerMillion = "ppm"
+    
+    public var standardizedUnit: Unit {
+        switch self {
+        case .microgramsPerCubicMeter: return UnitConcentrationMass.microgramsPerCubicMeter
+        case .partsPerMillion: return UnitDispersion.partsPerMillion
+        }
+    }
+    
+    public var isCustomUnit: Bool {
+        switch self {
+        case .microgramsPerCubicMeter: return true
+        case .partsPerMillion: return false
+        }
+    }
+}

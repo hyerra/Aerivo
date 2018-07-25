@@ -75,6 +75,7 @@
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
+		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
 		7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */; };
 		7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */; };
@@ -210,6 +211,7 @@
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
+		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkeningButton.swift; sourceTree = "<group>"; };
 		7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
+				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
 				68B7648620F81A41005A6EB1 /* Geocoder Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
@@ -854,6 +857,7 @@
 				68622DAE210045C00002103F /* XMLDecoder.swift in Sources */,
 				68622DB0210045C00002103F /* XMLKey.swift in Sources */,
 				68622DA5210045C00002103F /* XMLStackParser.swift in Sources */,
+				7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */,
 				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
 				68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */,
 				68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */,

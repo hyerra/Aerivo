@@ -9,7 +9,7 @@
 import UIKit
 import AerivoKit
 
-class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     static let identifier = "placesDetailVC"
     
@@ -41,18 +41,22 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
+    var parametersInfo: AerivoKit.Parameter?
     
     lazy var nwqpClient: NWQPClient = .shared
-    var nwqpResults: [NWQPResult] = []
+    var nwqpResults: [NWQPResult] = [] {
+        didSet {
+            nwqpResults = nwqpResults.filter { $0.organizations?.first?.activity.last?.results.last?.description.measurement != nil }
+        }
+    }
     
     var isAQDataLoaded = false {
         didSet {
-            if isAQDataLoaded && isNWQPDataLoaded {
+            if isAQDataLoaded {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
-                    self.collectionView.layoutIfNeeded()
-                    self.collectionViewHeightConstraint.constant = self.collectionView.contentSize.height
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+                    if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
         }
@@ -60,12 +64,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var isNWQPDataLoaded = false {
         didSet {
-            if isAQDataLoaded && isNWQPDataLoaded {
+            if isNWQPDataLoaded {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
-                    self.collectionView.layoutIfNeeded()
-                    self.collectionViewHeightConstraint.constant = self.collectionView.contentSize.height
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+                    if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
         }
@@ -78,8 +81,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         detail.text = placemark.genres?.first ?? placemark.address ?? ""
         address.text = placemark.formattedAddressLines.joined(separator: "\n")
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
-        collectionViewHeightConstraint.constant = 0
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = CGSize(width: 200, height: 100) }
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize }
+        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         fetchAirQualityData()
         fetchWaterQualityData()
@@ -102,16 +105,34 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     private func fetchAirQualityData() {
         guard let coordinate = placemark.location?.coordinate else { return }
-        var params = LatestAQParameters()
-        params.coordinates = coordinate
-        params.radius = 800000
-        params.orderBy = .distance
-        params.limit = 1
-        openAQClient.fetchLatestAQ(using: params) { result in
+        var latestAQParams = LatestAQParameters()
+        latestAQParams.coordinates = coordinate
+        latestAQParams.radius = 800000
+        latestAQParams.orderBy = .distance
+        latestAQParams.limit = 1
+        
+        var isLatestAQLoaded = false
+        var isParametersInfoLoaded = false
+        
+        var allDataIsLoaded: Bool {
+            return isLatestAQLoaded && isParametersInfoLoaded
+        }
+        
+        openAQClient.fetchLatestAQ(using: latestAQParams) { result in
             guard case let .success(latestAQ) = result else { return }
             self.latestAQ = latestAQ
-            self.isAQDataLoaded = true
+            isLatestAQLoaded = true
+            if allDataIsLoaded { self.isAQDataLoaded = true }
         }
+        
+        let parametersParams = ParameterParameters()
+        openAQClient.fetchParameters(using: parametersParams) { result in
+            guard case let .success(parameters) = result else { return }
+            self.parametersInfo = parameters
+            isParametersInfoLoaded = true
+            if allDataIsLoaded { self.isAQDataLoaded = true }
+        }
+        
     }
     
     private func fetchWaterQualityData() {
@@ -247,17 +268,19 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         
         if indexPath.section == 0, let latestAQ = latestAQ /* Return air quality data in this section. */ {
             guard let aqResult = latestAQ.results.first?.measurements[indexPath.row] else { return cell }
-            let measurement = Measurement(value: aqResult.value, unit: Unit(symbol: aqResult.unit))
+            guard let parameterInfo = parametersInfo?.results.filter({ $0.id == aqResult.parameter.rawValue }).first else { return cell }
+            let measurement = Measurement(value: aqResult.value, unit: aqResult.unit.standardizedUnit)
             let measurementFormatter = MeasurementFormatter()
-            measurementFormatter.unitStyle = .short
+            if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("%@: %@", aqResult.parameter.rawValue, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat("%@: %@", parameterInfo.name, localizedMeasurement)
             cell.detailLabel.text = localizedString
         } else /* Return water quality data in this section. */ {
-            guard let nwqpResult = nwqpResults[indexPath.row].organizations?.first?.activity.first?.results.first else { return cell }
-            let measurement = Measurement(value: nwqpResult.description.measurement.value, unit: Unit(symbol: nwqpResult.description.measurement.unitCode.rawValue))
+            guard let nwqpResult = nwqpResults[indexPath.row].organizations?.first?.activity.last?.results.last else { return cell }
+            guard let measurementInfo = nwqpResult.description.measurement else { return cell }
+            let measurement = Measurement(value: measurementInfo.value, unit: measurementInfo.unitCode.standardizedUnit)
             let measurementFormatter = MeasurementFormatter()
-            measurementFormatter.unitStyle = .short
+            if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("%@: %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             cell.detailLabel.text = localizedString
@@ -268,13 +291,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     // MARK: - Collection view delegate
     
-    // MARK: - Collection view delegate flow layout
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let cell = collectionView.cellForItem(at: indexPath) else { return CGSize(width: 200, height: 100) }
-        return cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-    }
-        
     // MARK: - Actions
     
     @IBAction func contactOfficial(_ sender: UIButton) {

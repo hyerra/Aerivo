@@ -23,7 +23,7 @@ public struct Measurement: OpenAQResponse {
         /// The value of the measurment.
         public var value: Double
         /// The unit of the measurment.
-        public var unit: String
+        public var unit: AirQualityUnitCode
         /// The location name of the measurment.
         public var location: String
         /// The two letter ISO country code for the measurement.

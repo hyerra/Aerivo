@@ -35,7 +35,7 @@ public struct LatestAQ: OpenAQResponse {
             /// The last time the measurement was updated.
             public var lastUpdated: Date
             /// The unit of the parameter.
-            public var unit: String
+            public var unit: AirQualityUnitCode
             /// The name of where the measurement originated from.
             public var sourceName: String
         }

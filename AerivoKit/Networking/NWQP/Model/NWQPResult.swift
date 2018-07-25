@@ -119,7 +119,7 @@ public struct NWQPResult: Codable {
                     /// The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
                     public var characteristicName: CharacteristicName
                     /// The measurement information.
-                    public var measurement: Measurement
+                    public var measurement: Measurement?
                     /// Indicates the acceptability of the result with respect to QA/QC criteria.
                     public var statusID: String?
                     /// A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated).
@@ -152,6 +152,28 @@ public struct NWQPResult: Codable {
                             case nephelometricTurbidityRatioUnit = "NTRU"
                             case formazinNephelometricUnits = "FNU"
                             case nephelometricTurbidityUnits = "NTU"
+                            
+                            public var standardizedUnit: Unit {
+                                switch self {
+                                case .fahrenheit: return UnitTemperature.fahrenheit
+                                case .celsius: return UnitTemperature.celsius
+                                case .milligramsPerLiter: return UnitConcentrationMass.milligramsPerLiter
+                                case .nephelometricTurbidityRatioUnit: return UnitTurbidity.nephelometricTurbidityRatioUnit
+                                case .formazinNephelometricUnits: return UnitTurbidity.formazinNephelometricUnit
+                                case .nephelometricTurbidityUnits: return UnitTurbidity.nephelometricTurbidityRatioUnit
+                                }
+                            }
+                            
+                            public var isCustomUnit: Bool {
+                                switch self {
+                                case .fahrenheit: return false
+                                case .celsius: return false
+                                case .milligramsPerLiter: return true
+                                case .nephelometricTurbidityRatioUnit: return true
+                                case .formazinNephelometricUnits: return true
+                                case .nephelometricTurbidityUnits: return true
+                                }
+                            }
                         }
                         
                         private enum CodingKeys: String, CodingKey {

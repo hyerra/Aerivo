@@ -24,7 +24,7 @@ public struct Parameter: OpenAQResponse {
         /// The description pertaining to the parameter.
         public var description: String
         /// The parameter's prefered unit.
-        public var preferredUnit: String
+        public var preferredUnit: AirQualityUnitCode
     }
     
 }
