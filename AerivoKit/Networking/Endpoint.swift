@@ -38,7 +38,7 @@ protocol Endpoint: URLRequestConvertible {
     /// The url without any parameters or paths.
     var baseURL: URL { get }
     /// The version of the API.
-    var version: Float { get }
+    var version: String { get }
     /// The path to the resource.
     var path: String { get }
     /// The HTTP Method to use for the request.
