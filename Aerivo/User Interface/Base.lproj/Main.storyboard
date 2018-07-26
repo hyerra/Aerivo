@@ -318,7 +318,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reR-fh-CtN" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                         <rect key="frame" x="-0.5" y="0.5" width="300" height="55"/>
-                                                        <color key="backgroundColor" name="System Red Color"/>
+                                                        <color key="backgroundColor" name="System Green Color"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -377,7 +377,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="20"/>
-                                                                        <color key="tintColor" name="System Red Color"/>
+                                                                        <color key="tintColor" name="System Green Color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" placeholder="YES" id="UoX-Dp-sIJ"/>
                                                                         </constraints>
@@ -385,7 +385,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu">
                                                                         <rect key="frame" x="0.0" y="27" width="45" height="150.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="System Red Color"/>
+                                                                        <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -421,7 +421,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="33" height="20"/>
-                                                                        <color key="tintColor" name="System Red Color"/>
+                                                                        <color key="tintColor" name="System Green Color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" placeholder="YES" id="xap-Sm-VRE"/>
                                                                         </constraints>
@@ -429,7 +429,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV">
                                                                         <rect key="frame" x="0.0" y="27" width="33" height="150.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="System Red Color"/>
+                                                                        <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -719,8 +719,8 @@
         <image name="favorite" width="29" height="27"/>
         <image name="marker-11" width="9" height="11"/>
         <image name="share" width="18" height="25"/>
-        <namedColor name="System Red Color">
-            <color red="1" green="0.23100000619888306" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="System Green Color">
+            <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -275,7 +275,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.name, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
-            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Red Color")!)
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = parameterInfo.information
         } else /* Return water quality data in this section. */ {
@@ -287,7 +287,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
-            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Red Color")!)
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = nwqpResult.description.information
         }

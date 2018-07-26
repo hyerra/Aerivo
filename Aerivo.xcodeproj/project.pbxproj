@@ -451,6 +451,7 @@
 				680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */,
 				68B7648F20F84C3D005A6EB1 /* Open AQ */,
 				6894019A20FE72F000C7D8FA /* NWQP */,
+				7DAD9EDB21097C99003B1671 /* Civic Information */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -565,6 +566,13 @@
 				684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		7DAD9EDB21097C99003B1671 /* Civic Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Civic Information";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
