@@ -102,7 +102,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         close.layer.masksToBounds = true
         if !initialHeaderHeightSet { headerViewHeightConstraint.constant = cachedHeaderHeight; initialHeaderHeightSet = true }
     }
-    
+        
     private func fetchAirQualityData() {
         guard let coordinate = placemark.location?.coordinate else { return }
         var latestAQParams = LatestAQParameters()
@@ -273,8 +273,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let measurementFormatter = MeasurementFormatter()
             if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("%@: %@", parameterInfo.name, localizedMeasurement)
-            cell.detailLabel.text = localizedString
+            let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.name, localizedMeasurement)
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Red Color")!)
+            cell.detail.setAttributedTitle(attributedString, for: .normal)
+            cell.parameterDescription = parameterInfo.information
         } else /* Return water quality data in this section. */ {
             guard let nwqpResult = nwqpResults[indexPath.row].organizations?.first?.activity.last?.results.last else { return cell }
             guard let measurementInfo = nwqpResult.description.measurement else { return cell }
@@ -282,9 +285,14 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let measurementFormatter = MeasurementFormatter()
             if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("%@: %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
-            cell.detailLabel.text = localizedString
+            let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Red Color")!)
+            cell.detail.setAttributedTitle(attributedString, for: .normal)
+            cell.parameterDescription = nwqpResult.description.information
         }
+        
+        cell.parameterDescriptionDelegate = self
         
         return cell
     }
@@ -300,6 +308,14 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBAction func close(_ sender: UIButton) {
         presentingViewController?.view.alpha = 1
         dismiss(animated: true)
+    }
+}
+
+// MARK: - Parameter description delegate
+
+extension PlacesDetailViewController: ParameterDescriptionDelegate {
+    func show(parameterDescription: ParameterDescriptionPopoverViewController) {
+        present(parameterDescription, animated: true)
     }
 }
 

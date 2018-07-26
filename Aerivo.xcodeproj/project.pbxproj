@@ -76,6 +76,8 @@
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
+		7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */; };
+		7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
 		7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */; };
 		7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */; };
@@ -212,6 +214,8 @@
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
+		7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionPopoverViewController.swift; sourceTree = "<group>"; };
+		7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionDelegate.swift; sourceTree = "<group>"; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkeningButton.swift; sourceTree = "<group>"; };
 		7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -404,6 +408,8 @@
 			children = (
 				688C863C21026944000C47FF /* PlacesDetailViewController.swift */,
 				7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */,
+				7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */,
+				7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -791,11 +797,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
+				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
 				68E397AC20EFEEEC005C0722 /* UIView+constrainToParent.swift in Sources */,
 				688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */,
 				7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
+				7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
 				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,
 				68E397AB20EFEEEC005C0722 /* PulleyPassthroughScrollView.swift in Sources */,

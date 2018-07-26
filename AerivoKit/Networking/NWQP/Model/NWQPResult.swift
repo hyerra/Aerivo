@@ -182,6 +182,17 @@ public struct NWQPResult: Codable {
                         }
                     }
                     
+                    public var information: String {
+                        switch characteristicName {
+                        case .beckBioticIndex: return NSLocalizedString("Beck Biotic Index: A method for showing the quality of an environment by indicating the types of organisms present in it and their ability to live in polluted enviornments.", comment: "Description of the beck biotic index for measuring water quality.")
+                        case .brillouinTaxonomicDiversityIndex: return NSLocalizedString("Brillouin Taxonomic Diversity Index: An index representing the diversity of organisims living in a body of water.", comment: "Description of the brillouin taxonomic diversity index for measuring water quality..")
+                        case .dissolvedOxygen: return NSLocalizedString("Dissolved Oxygen: Amount of gaseous oxygen dissolved in the water. As dissolved oxygen levels drop below 5.0 mg/L, the aquatic life is put under stress.", comment: "Description of the dissolved oxygen for measuring water quality.")
+                        case .waterTemperature: return NSLocalizedString("Water Temperature: Represents the temperature recorded in the water. The temperature of the water can influence many things such as the amount of oxygen and pH of the water. High temperatures can have a negative effect on the life in the water.", comment: "Description of the water temperature for measuring water quality.")
+                        case .turbiditySeverity: return NSLocalizedString("Turbidity Severity: A measurement of how cloudy, opaque, or thick the water is. High amounts of turbidity can block light and smother/contaminate organisms. During periods of low flow, the turbidity should be less than 10 NTU.", comment: "Description of the turbidity severity for measuring water quality.")
+                        case .hydrocarbons: return NSLocalizedString("Hydrocarbons: Natural sources of hydrocarbons include petroleum and natural gas deposits. Can be toxic to organisms if found in high amounts.", comment: "Description of hydrocarbons for measuring water quality.")
+                        }
+                    }
+                    
                     private enum CodingKeys: String, CodingKey {
                         case characteristicName = "CharacteristicName"
                         case measurement = "ResultMeasure"
@@ -189,6 +200,7 @@ public struct NWQPResult: Codable {
                         case valueType = "ResultValueTypeName"
                         case usgspCode = "USGSPCode"
                     }
+                    
                 }
                 
                 /// Represents the analytical method used to produce the result.

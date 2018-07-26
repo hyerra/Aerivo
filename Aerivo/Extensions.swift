@@ -37,3 +37,43 @@ extension UIColor {
         return UIColor(red: min(r + percentage/100, 1.0), green: min(g + percentage/100, 1.0), blue: min(b + percentage/100, 1.0), alpha: a)
     }
 }
+
+extension NSAttributedString {
+    
+    /// Concatenates two attributed strings together.
+    ///
+    /// - Parameters:
+    ///   - left: The left hand attributed text.
+    ///   - right: The right hand attributed text.
+    /// - Returns: The combined attributed text.
+    static func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
+        let result = NSMutableAttributedString()
+        result.append(lhs)
+        result.append(rhs)
+        return result
+    }
+}
+
+extension NSMutableAttributedString {
+    
+    /// Highlights certain keywords in blue that are present within the string that are between a specified delimiter. Removes the specified delimiter after highlighting is complete.
+    ///
+    /// - Parameters:
+    ///   - delimiter: A character that marks off what words should be highlighted. All words in between a pair of this delimiter will be highlighted.
+    ///   - color: The color that should be used to highlight the text.
+    func highlightKeywords(between delimiter: Character, with color: UIColor) {
+        let asString = string
+        
+        guard let signUpRegex = try? NSRegularExpression(pattern:"\(delimiter)(.*?)\(delimiter)", options: []) else { return }
+        
+        var signUpRange: NSRange?
+        signUpRegex.enumerateMatches(in: asString, options: [], range: NSRange(location: 0, length: asString.utf16.count)) { result, flags, stop in
+            guard let range = result?.range(at: 1) else { return }
+            signUpRange = range
+        }
+        
+        guard let range = signUpRange else { return }
+        addAttribute(.foregroundColor, value: color, range: range)
+        mutableString.replaceOccurrences(of: "\(delimiter)", with: "", options: .literal, range: NSRange(location: 0, length: asString.utf16.count))
+    }
+}
