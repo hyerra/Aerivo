@@ -1,35 +1,29 @@
 //
-//  NWQPEndpoint.swift
+//  CivicInformationEndpoint.swift
 //  AerivoKit
 //
-//  Created by Harish Yerra on 7/17/18.
+//  Created by Harish Yerra on 7/26/18.
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
 import Foundation
 
-/// Represents the endpoints that belong to the National Water Quality Endpoint.
-public enum NWQPEndpoint: Endpoint {
-    case stations(parameters: NWQPParameters)
-    case results(parameters: NWQPParameters)
-    case activityData(parameters: NWQPParameters)
-    case activityMetricData(parameters: NWQPParameters)
+/// Represents the endpoints that belong to Google's Civic Information.
+public enum CivicInformationEndpoint: Endpoint {
+    case representativeInfoByAddress(parameters: RepresentativeInfoByAddressParameters)
     
     var baseURL: URL {
-        return URL(string: "https://www.waterqualitydata.us")!
+        return URL(string: "https://www.googleapis.com/civicinfo")!
+    }
+    
+    var version: String {
+        return "2"
     }
     
     var path: String {
         switch self {
-        case .stations: return "data/Station/search"
-        case .results: return "data/Result/search"
-        case .activityData: return "data/Activity/search"
-        case .activityMetricData: return "data/ActivityMetric/search"
+        case .representativeInfoByAddress: return "representatives"
         }
-    }
-    
-    var version: String {
-        fatalError("This API doesn't have versioning yet.")
     }
     
     var method: HTTPMethod {
@@ -38,15 +32,12 @@ public enum NWQPEndpoint: Endpoint {
     
     var parameters: Data? {
         switch self {
-        case .stations(let params): return try? convert(parameters: params)
-        case .results(let params): return try? convert(parameters: params)
-        case .activityData(let params): return try? convert(parameters: params)
-        case .activityMetricData(let params): return try? convert(parameters: params)
+        case .representativeInfoByAddress(let params): return try? convert(parameters: params)
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(path)
+        let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
         var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
         params: if let parameters = parameters {
@@ -68,7 +59,7 @@ public enum NWQPEndpoint: Endpoint {
     /// - Throws: An error that explains what went wrong in the encoding process.
     func convert<EncodableType: Encodable>(parameters: EncodableType) throws -> Data {
         let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .nwqpFormat
+        encoder.dateEncodingStrategy = .iso8601FS
         let json = try encoder.encode(parameters)
         return json
     }

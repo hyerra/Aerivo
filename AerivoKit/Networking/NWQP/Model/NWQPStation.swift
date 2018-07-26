@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents the stations available in the National Water Quality Portal.
-public struct NWQPStation: Codable {
+public struct NWQPStation: NWQPResponse {
     /// The organization that the station belongs to.
     public var organizations: [Organization]?
     

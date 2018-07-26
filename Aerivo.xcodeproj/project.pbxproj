@@ -78,6 +78,12 @@
 		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */; };
 		7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */; };
+		7DAD9EDD210A332F003B1671 /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
+		7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
+		7DAD9EE4210A4F91003B1671 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
+		7DAD9EE6210A4FB9003B1671 /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
+		7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
+		7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
 		7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */; };
 		7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */; };
@@ -216,6 +222,12 @@
 		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
 		7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionPopoverViewController.swift; sourceTree = "<group>"; };
 		7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionDelegate.swift; sourceTree = "<group>"; };
+		7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationEndpoint.swift; sourceTree = "<group>"; };
+		7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationParameters.swift; sourceTree = "<group>"; };
+		7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeInfoByAddress.swift; sourceTree = "<group>"; };
+		7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResponse.swift; sourceTree = "<group>"; };
+		7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationResponse.swift; sourceTree = "<group>"; };
+		7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationClient.swift; sourceTree = "<group>"; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkeningButton.swift; sourceTree = "<group>"; };
 		7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -388,6 +400,7 @@
 		68622DB1210046530002103F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */,
 				680A209C2101162F00EDDBB5 /* NWQPStation.swift */,
 				68622DB22100469C0002103F /* NWQPResult.swift */,
 			);
@@ -571,8 +584,21 @@
 		7DAD9EDB21097C99003B1671 /* Civic Information */ = {
 			isa = PBXGroup;
 			children = (
+				7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */,
+				7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */,
+				7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */,
+				7DAD9EE2210A3F54003B1671 /* Model */,
 			);
 			path = "Civic Information";
+			sourceTree = "<group>";
+		};
+		7DAD9EE2210A3F54003B1671 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */,
+				7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -845,12 +871,16 @@
 			files = (
 				68B7648C20F848B1005A6EB1 /* Endpoint.swift in Sources */,
 				68622DAF210045C00002103F /* ISO8601DateFormatter.swift in Sources */,
+				7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */,
 				68DD5B8720F993960083B943 /* OpenAQClient.swift in Sources */,
+				7DAD9EE4210A4F91003B1671 /* RepresentativeInfoByAddress.swift in Sources */,
 				68DD5B8E20F9A4810083B943 /* AQFetch.swift in Sources */,
 				68DD5B8A20F996D10083B943 /* AQCity.swift in Sources */,
 				68622DB32100469C0002103F /* NWQPResult.swift in Sources */,
 				68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */,
 				68DD5B9020F9AB1E0083B943 /* AQLatest.swift in Sources */,
+				7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */,
+				7DAD9EDD210A332F003B1671 /* CivicInformationEndpoint.swift in Sources */,
 				680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */,
 				68622DAB210045C00002103F /* XMLUnkeyedDecodingContainer.swift in Sources */,
 				68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */,
@@ -871,11 +901,13 @@
 				68622DA7210045C00002103F /* EncodingErrorExtension.swift in Sources */,
 				68B7649120F84D25005A6EB1 /* OpenAQEndpoint.swift in Sources */,
 				68622DAE210045C00002103F /* XMLDecoder.swift in Sources */,
+				7DAD9EE6210A4FB9003B1671 /* NWQPResponse.swift in Sources */,
 				68622DB0210045C00002103F /* XMLKey.swift in Sources */,
 				68622DA5210045C00002103F /* XMLStackParser.swift in Sources */,
 				7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */,
 				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
 				68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */,
+				7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */,
 				68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */,
 				683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */,
 				68622DA9210045C00002103F /* XMLEncodingStorage.swift in Sources */,

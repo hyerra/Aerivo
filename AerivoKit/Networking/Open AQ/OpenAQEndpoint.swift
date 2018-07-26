@@ -24,8 +24,8 @@ enum OpenAQEndpoint: Endpoint {
         return URL(string: "https://api.openaq.org")!
     }
     
-    var version: Float {
-        return 1
+    var version: String {
+        return "1"
     }
     
     var path: String {
@@ -59,9 +59,7 @@ enum OpenAQEndpoint: Endpoint {
     }
     
     func asURLRequest() throws -> URLRequest {
-        let versionString = String(format: "%g", version)
-        
-        let url = baseURL.appendingPathComponent("v\(versionString)").appendingPathComponent(path)
+        let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
         var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
         params: if let parameters = parameters {
