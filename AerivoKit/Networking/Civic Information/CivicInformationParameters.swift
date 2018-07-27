@@ -24,6 +24,8 @@ public struct RepresentativeInfoByAddressParameters: CivicInformationParameters 
     /// The API Key that should be included with all requests to identify this project.
     public var key: String? = "***REMOVED***"
     
+    public init() { }
+    
     /// The office level that should be used to filter results.
     public enum Level: String, Codable {
         case administrativeArea1
