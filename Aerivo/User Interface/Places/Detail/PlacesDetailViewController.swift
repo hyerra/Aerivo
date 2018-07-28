@@ -328,10 +328,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         representativeInfoParams.levels = [.administrativeArea1, .administrativeArea2, .locality, .regional, .special, .subLocality1, .subLocality2]
         representativeInfoParams.roles = [.deputyHeadOfGovernment, .executiveCouncil, .governmentOfficer, .headOfGovernment, .headOfState, .legislatorLowerBody, .legislatorUpperBody]
         civicInformationClient.fetchRepresentativeInfo(using: representativeInfoParams) { result in
+            self.activityIndicator.stopAnimating()
+            sender.isUserInteractionEnabled = true
+            
             if case let .success(representativeInfo) = result {
-                self.activityIndicator.stopAnimating()
-                sender.isUserInteractionEnabled = true
-                
                 func showNoDataAlert() {
                     let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
                     let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: "\(appName) \(NSLocalizedString("doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "Message of alert controller for not enough data error."))", preferredStyle: .alert)
@@ -450,16 +450,33 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: "\(appName) \(NSLocalizedString("is having trouble getting government representative information.", comment: "Message of alert controller for network error."))", preferredStyle: .alert)
+                let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: "\(appName) \(NSLocalizedString("is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", comment: "Message of alert controller for network error."))", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
             }
         }
     }
     
+    @IBAction func showInfo(_ sender: UIButton) {
+        if let wikiID = placemark.wikidataItemIdentifier {
+            guard let url = URL(string: "https://www.wikidata.org/wiki/\(wikiID)") else { return }
+            UIApplication.shared.open(url)
+        } else {
+            guard var urlComps = URLComponents(string: "https://www.google.com/search") else { return }
+            let searchQuery = URLQueryItem(name: "q", value: placemark.qualifiedName ?? placemark.formattedName)
+            urlComps.queryItems = [searchQuery]
+            guard let url = urlComps.url else { return }
+            UIApplication.shared.open(url)
+        }
+    }
+    
     @IBAction func close(_ sender: UIButton) {
         presentingViewController?.view.alpha = 1
-        dismiss(animated: true)
+        let tempPresentingViewController = presentingViewController // Retain a reference to the presenting view controller before dismissing.
+        dismiss(animated: true) {
+            guard let mapView = (tempPresentingViewController?.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
+            mapView.removeAnnotations(mapView.annotations ?? [])
+        }
     }
 }
 
