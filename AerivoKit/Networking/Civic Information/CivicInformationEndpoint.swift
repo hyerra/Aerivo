@@ -38,15 +38,28 @@ public enum CivicInformationEndpoint: Endpoint {
     
     func asURLRequest() throws -> URLRequest {
         let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
-        var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         
         params: if let parameters = parameters {
             let dict = try JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
             guard !dict.isEmpty else { break params }
-            urlComps?.queryItems = dict.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+            
+            var urlQueryItems: [[URLQueryItem]] = []
+            
+            urlQueryItems = dict.map { item -> [URLQueryItem] in
+                if let array = item.value as? Array<Any> {
+                    var items: [URLQueryItem] = []
+                    array.forEach { items.append(URLQueryItem(name: item.key, value: String(describing: $0))) }
+                    return items
+                }
+                
+                return [URLQueryItem(name: item.key, value: "\(item.value)")]
+            }
+            
+            urlComps.queryItems = urlQueryItems.flatMap { $0 }
         }
         
-        var urlRequest = URLRequest(url: urlComps!.url!)
+        var urlRequest = URLRequest(url: urlComps.url!)
         urlRequest.httpMethod = method.rawValue
         
         return urlRequest

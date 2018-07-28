@@ -75,6 +75,8 @@
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
+		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
+		7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
 		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */; };
 		7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */; };
@@ -220,6 +222,8 @@
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
+		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
+		7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationMessage.swift; sourceTree = "<group>"; };
 		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
 		7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionPopoverViewController.swift; sourceTree = "<group>"; };
 		7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionDelegate.swift; sourceTree = "<group>"; };
@@ -590,6 +594,7 @@
 				7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */,
 				7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */,
 				7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */,
+				7D5D434A210BB3A600E6886A /* CivicInformationError.swift */,
 				7DAD9EE2210A3F54003B1671 /* Model */,
 			);
 			path = "Civic Information";
@@ -600,6 +605,7 @@
 			children = (
 				7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */,
 				7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */,
+				7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -919,6 +925,7 @@
 				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
 				68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */,
 				7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */,
+				7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */,
 				68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */,
 				683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */,
 				68622DA9210045C00002103F /* XMLEncodingStorage.swift in Sources */,
@@ -928,6 +935,7 @@
 				68622DAA210045C00002103F /* DecodingErrorExtension.swift in Sources */,
 				68DD5B9A20FA551F0083B943 /* OpenAQResponse.swift in Sources */,
 				68B7648820F81C01005A6EB1 /* MGPlacemarkScope+Color.swift in Sources */,
+				7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

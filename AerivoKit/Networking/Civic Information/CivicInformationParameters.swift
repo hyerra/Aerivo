@@ -27,7 +27,7 @@ public struct RepresentativeInfoByAddressParameters: CivicInformationParameters 
     public init() { }
     
     /// The office level that should be used to filter results.
-    public enum Level: String, Codable {
+    public enum Level: String, Encodable {
         case administrativeArea1
         case administrativeArea2
         case country
@@ -40,7 +40,7 @@ public struct RepresentativeInfoByAddressParameters: CivicInformationParameters 
     }
     
     /// The office role that should be used to filter results.
-    public enum Role: String, Codable {
+    public enum Role: String, Encodable {
         case deputyHeadOfGovernment
         case executiveCouncil
         case governmentOfficer
@@ -53,4 +53,5 @@ public struct RepresentativeInfoByAddressParameters: CivicInformationParameters 
         case schoolBoard
         case specialPurposeOfficer
     }
+    
 }
