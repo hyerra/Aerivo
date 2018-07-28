@@ -115,15 +115,17 @@ public struct RepresentativeInfoByAddress: CivicInformationResponse {
         /// The full name of the party the official belongs to.
         public var party: String?
         /// Addresses at which to contact the official.
-        public var address: [Address]
+        public var address: [Address]?
         /// The direct email addresses for the official.
         public var emails: [String]?
         /// The official's public contact phone numbers.
-        public var phones: [String]
+        public var phones: [String]?
         /// A URL for a photo of the official.
         public var photoURL: URL?
         /// The official's public website URLs.
         public var urls: [URL]?
+        /// A list of known (social) media channels for this official.
+        public var channels: [Channel]?
         
         public struct Channel: Codable {
             public var id: String
@@ -138,6 +140,7 @@ public struct RepresentativeInfoByAddress: CivicInformationResponse {
             case phones
             case photoURL = "photoUrl"
             case urls
+            case channels
         }
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import AerivoKit
+import MessageUI
 
 class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -21,6 +22,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var close: UIButton!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var topGripperView: UIView!
@@ -49,6 +52,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             nwqpResults = nwqpResults.filter { $0.organizations?.first?.activity.last?.results.last?.description.measurement != nil }
         }
     }
+    
+    lazy var civicInformationClient: CivicInformationClient = .shared
     
     var isAQDataLoaded = false {
         didSet {
@@ -101,6 +106,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         close.layer.cornerRadius = close.layer.bounds.width/2
         close.layer.masksToBounds = true
         if !initialHeaderHeightSet { headerViewHeightConstraint.constant = cachedHeaderHeight; initialHeaderHeightSet = true }
+        
+        activityIndicator.widthAnchor.constraint(equalToConstant: activityIndicator.bounds.width + 15).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: activityIndicator.bounds.height + 15).isActive = true
+        activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
+        activityIndicator.layer.masksToBounds = true
     }
         
     private func fetchAirQualityData() {
@@ -302,7 +312,142 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     // MARK: - Actions
     
     @IBAction func contactOfficial(_ sender: UIButton) {
+        presentingViewController?.pulleyViewController?.setDrawerPosition(position: .open, animated: true)
+        activityIndicator.startAnimating()
+        sender.isUserInteractionEnabled = false
         
+        var representativeInfoParams = RepresentativeInfoByAddressParameters()
+        representativeInfoParams.address = placemark.formattedAddressLines.joined(separator: " ")
+        representativeInfoParams.levels = [.administrativeArea1, .administrativeArea2, .locality, .regional, .special, .subLocality1, .subLocality2]
+        representativeInfoParams.roles = [.deputyHeadOfGovernment, .executiveCouncil, .governmentOfficer, .headOfGovernment, .headOfState, .legislatorLowerBody, .legislatorUpperBody]
+        civicInformationClient.fetchRepresentativeInfo(using: representativeInfoParams) { result in
+            if case let .success(representativeInfo) = result {
+                self.activityIndicator.stopAnimating()
+                sender.isUserInteractionEnabled = true
+                
+                func showNoDataAlert() {
+                    let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
+                    let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: "\(appName) \(NSLocalizedString("doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "Message of alert controller for not enough data error."))", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                    self.present(alertController, animated: true)
+                }
+                
+                guard let officials = representativeInfo.officials else { showNoDataAlert(); return }
+                let filteredOfficials = officials.filter { $0.emails != nil || $0.phones != nil || $0.channels != nil }
+                
+                let alertController = UIAlertController(title: NSLocalizedString("Government Officials", comment: "Title for a list of governement officials a user can contact."), message: NSLocalizedString("Choose one of the government officials you wish to contact.", comment: "Message for a list of government officials a user can contact."), preferredStyle: .actionSheet)
+                
+                for official in filteredOfficials {
+                    let title = official.name + (official.party != nil ? "" : "")
+                    let action = UIAlertAction(title: title, style: .default) { action in
+                        let alertController = UIAlertController(title: NSLocalizedString("Contact Methods", comment: "Title for how the user would like to contact their governement official."), message: NSLocalizedString("How would you like to contact him/her?", comment: "Message for how the user would like to contact their government official."), preferredStyle: .actionSheet)
+                        
+                        if let phones = official.phones, !phones.isEmpty {
+                            let action = UIAlertAction(title: NSLocalizedString("Phone", comment: "Tells the user they can call their governement official."), style: .default) { action in
+                                let alertController = UIAlertController(title: NSLocalizedString("Phone", comment: "Tells the user they can call their governement official."), message: NSLocalizedString("Choose a number to call your government official.", comment: "Message that tells the user to select a phone number."), preferredStyle: .actionSheet)
+                                
+                                for phone in phones {
+                                    let action = UIAlertAction(title: NSLocalizedString(phone, comment: "Tells the user they can call their governement official."), style: .default) { action in
+                                        guard let url = URL(string: "telprompt://\(phone)") else { return }
+                                        UIApplication.shared.open(url)
+                                    }
+                                    alertController.addAction(action)
+                                }
+                                
+                                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                
+                                self.present(alertController, animated: true)
+                            }
+                            alertController.addAction(action)
+                        }
+                        
+                        if let emails = official.emails, !emails.isEmpty {
+                            let action = UIAlertAction(title: NSLocalizedString("Email", comment: "Tells the user they can email their governement official."), style: .default) { action in
+                                func showEmailCannotBeSentAlert() {
+                                    let alertController = UIAlertController(title: NSLocalizedString("Email Cannot Be Sent", comment: "Title of error telling the user that an email cannot be sent."), message: NSLocalizedString("This device cannot send emails.", comment: "Message of error telling the user that email cannot be sent."), preferredStyle: .alert)
+                                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                    self.present(alertController, animated: true)
+                                }
+                                
+                                let alertController = UIAlertController(title: NSLocalizedString("Email", comment: "Tells the user they can email their governement official."), message: NSLocalizedString("Choose an email to contact your government official.", comment: "Message that tells the user to select an email."), preferredStyle: .actionSheet)
+                                
+                                for email in emails {
+                                    let action = UIAlertAction(title: email, style: .default) { action in
+                                        guard MFMailComposeViewController.canSendMail() else { showEmailCannotBeSentAlert(); return }
+                                        let composeVC = MFMailComposeViewController()
+                                        composeVC.mailComposeDelegate = self
+                                        composeVC.setToRecipients([email])
+                                        composeVC.setSubject(CivicInformationMessage.subject(placeName: self.placemark.formattedName).messageValue)
+                                        composeVC.setMessageBody(CivicInformationMessage.messageBody(officialsName: official.name, placeName: self.placemark.formattedName).messageValue, isHTML: false)
+                                        self.present(composeVC, animated: true)
+                                    }
+                                    alertController.addAction(action)
+                                }
+                                
+                                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                self.present(alertController, animated: true)
+                            }
+                            alertController.addAction(action)
+                        }
+                        
+                        if let channels = official.channels, !channels.isEmpty {
+                            let action = UIAlertAction(title: NSLocalizedString("Social Media", comment: "Tells the connect with the official using social media."), style: .default) { action in
+                                let alertController = UIAlertController(title: NSLocalizedString("Social Media", comment: "Tells the connect with the official using social media."), message: NSLocalizedString("Choose a social media platform to contact your government official.", comment: "Message that tells the user to select a social media account."), preferredStyle: .actionSheet)
+                                
+                                for channel in channels {
+                                    switch channel.type {
+                                    case "GooglePlus":
+                                        let action = UIAlertAction(title: channel.type, style: .default) { action in
+                                            guard let url = URL(string: "https://plus.google.com/\(channel.id)") else { return }
+                                            UIApplication.shared.open(url)
+                                        }
+                                        alertController.addAction(action)
+                                    case "YouTube":
+                                        let action = UIAlertAction(title: channel.type, style: .default) { action in
+                                            guard let url = URL(string: "https://www.youtube.com/user/\(channel.id)") else { return }
+                                            UIApplication.shared.open(url)
+                                        }
+                                        alertController.addAction(action)
+                                    case "Facebook":
+                                        let action = UIAlertAction(title: channel.type, style: .default) { action in
+                                            guard let url = URL(string: "https://www.facebook.com/\(channel.id)") else { return }
+                                            UIApplication.shared.open(url)
+                                        }
+                                        alertController.addAction(action)
+                                    case "Twitter":
+                                        let action = UIAlertAction(title: channel.type, style: .default) { action in
+                                            guard let url = URL(string: "https://twitter.com/\(channel.id)") else { return }
+                                            UIApplication.shared.open(url)
+                                        }
+                                        alertController.addAction(action)
+                                    default:
+                                        break
+                                    }
+                                }
+                                
+                                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                self.present(alertController, animated: true)
+                            }
+                            
+                            alertController.addAction(action)
+                        }
+                        
+                        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                        
+                        self.present(alertController, animated: true)
+                    }
+                    alertController.addAction(action)
+                }
+                
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                self.present(alertController, animated: true)
+            } else {
+                let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
+                let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: "\(appName) \(NSLocalizedString("is having trouble getting government representative information.", comment: "Message of alert controller for network error."))", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                self.present(alertController, animated: true)
+            }
+        }
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -347,5 +492,18 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
             topGripperView.alpha = 0
             bottomGripperView.alpha = 1
         }
+    }
+}
+
+// MARK: - Mail compose delegate
+
+extension PlacesDetailViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if case .failed = result, let error = error {
+            let alertController = UIAlertController(title: NSLocalizedString("Email Cannot Be Sent", comment: "Title of error telling the user that an email cannot be sent."), message: error.localizedDescription, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+            present(alertController, animated: true)
+        }
+        controller.dismiss(animated: true)
     }
 }

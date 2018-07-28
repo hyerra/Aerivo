@@ -343,13 +343,19 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-uy-Naa">
+                                                        <rect key="frame" x="140" y="18" width="20" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="DjB-be-D9U" firstAttribute="top" secondItem="Mot-uk-qtQ" secondAttribute="top" constant="10" id="Bw6-zW-fKk"/>
                                                     <constraint firstItem="reR-fh-CtN" firstAttribute="width" secondItem="Mot-uk-qtQ" secondAttribute="width" id="J31-aS-S4X"/>
                                                     <constraint firstItem="reR-fh-CtN" firstAttribute="centerY" secondItem="Mot-uk-qtQ" secondAttribute="centerY" id="KeB-ep-1yO"/>
+                                                    <constraint firstItem="VzW-uy-Naa" firstAttribute="centerY" secondItem="Mot-uk-qtQ" secondAttribute="centerY" id="R5N-d8-Rrf"/>
                                                     <constraint firstAttribute="bottom" secondItem="DjB-be-D9U" secondAttribute="bottom" constant="10" id="SFE-Bq-l92"/>
+                                                    <constraint firstItem="VzW-uy-Naa" firstAttribute="centerX" secondItem="Mot-uk-qtQ" secondAttribute="centerX" id="WXn-03-5uX"/>
                                                     <constraint firstItem="DjB-be-D9U" firstAttribute="centerY" secondItem="Mot-uk-qtQ" secondAttribute="centerY" id="jKN-cM-Pwp"/>
                                                     <constraint firstItem="reR-fh-CtN" firstAttribute="height" secondItem="Mot-uk-qtQ" secondAttribute="height" id="jRE-Ym-166"/>
                                                     <constraint firstItem="DjB-be-D9U" firstAttribute="centerX" secondItem="Mot-uk-qtQ" secondAttribute="centerX" id="s0f-da-DX7"/>
@@ -596,6 +602,7 @@
                         <viewLayoutGuide key="safeArea" id="R2o-c1-DLL"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="VzW-uy-Naa" id="FEO-O4-rKx"/>
                         <outlet property="address" destination="9Hu-mx-JoD" id="yc2-Uz-WDy"/>
                         <outlet property="bottomGripperView" destination="cEZ-oX-ZLZ" id="bKc-mF-s2n"/>
                         <outlet property="close" destination="4T8-za-xSz" id="nAf-13-7sv"/>

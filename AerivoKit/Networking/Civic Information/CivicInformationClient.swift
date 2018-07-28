@@ -33,10 +33,12 @@ public class CivicInformationClient: APIClient {
             let session = URLSession.shared
             
             let dataTask = session.dataTask(with: request) { data, response, error in
-                #if DEBUG
-                print(response as Any)
-                #endif
-                completion((data, response, error))
+                DispatchQueue.main.async {
+                    #if DEBUG
+                    print(response as Any)
+                    #endif
+                    completion((data, response, error))
+                }
             }
             
             dataTask.resume()
@@ -58,8 +60,8 @@ public class CivicInformationClient: APIClient {
                     let result = try decoder.decode(T.self, from: data)
                     completion(.success(result))
                 } catch let error {
-                    guard let aqError = try? decoder.decode(OpenAQError.self, from: data) else { completion(.failure(error)) ;return }
-                    completion(.failure(aqError))
+                    guard let civicInformationError = try? decoder.decode(CivicInformationError.self, from: data) else { completion(.failure(error)) ;return }
+                    completion(.failure(civicInformationError))
                 }
             }
         }
