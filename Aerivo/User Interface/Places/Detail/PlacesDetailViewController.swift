@@ -26,7 +26,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var topGripperView: UIView!
+    @IBOutlet weak var bottomSeparatorView: UIView!
     @IBOutlet weak var bottomGripperView: UIView!
     
     @IBOutlet weak var placeName: UILabel!
@@ -98,12 +100,16 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        // Do any additional setup before the view will layout the subviews.
+        createViewBlurEffect()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Do any additional setup after the view laid out the subviews.
-        createViewBlurEffect()
-        
-        close.layer.cornerRadius = close.layer.bounds.width/2
+        close.layer.cornerRadius = close.layer.bounds.width / 2
         close.layer.masksToBounds = true
         if !initialHeaderHeightSet { headerViewHeightConstraint.constant = cachedHeaderHeight; initialHeaderHeightSet = true }
         
@@ -226,6 +232,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     private func createViewBlurEffect() {
+        if let blurEffectView = view.subviews.first as? UIVisualEffectView { blurEffectView.frame = view.bounds; return }
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
         blurEffectView.contentView.addSubview(vibrancyEffectView)
@@ -491,6 +498,14 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
         } else {
             topGripperView.alpha = 0
             bottomGripperView.alpha = 1
+        }
+        
+        if drawer.currentDisplayMode == .leftSide {
+            topSeparatorView.isHidden = drawer.drawerPosition == .collapsed
+            bottomSeparatorView.isHidden = drawer.drawerPosition == .collapsed
+        } else {
+            topSeparatorView.isHidden = false
+            bottomSeparatorView.isHidden = true
         }
     }
 }
