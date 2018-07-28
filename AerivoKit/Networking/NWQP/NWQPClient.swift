@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a National Water Quality Portal client used to retrieve data from the National Water Quality Portal.
-public class NWQPClient: APIClient {
+public final class NWQPClient: APIClient {
     
     /// Returns a `shared` singleton National Water Quality Portal Client object.
     public static let shared = NWQPClient()

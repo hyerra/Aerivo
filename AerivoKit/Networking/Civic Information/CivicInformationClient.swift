@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a Civic Information client used to retrieve representative information from Google's Civic Information.
-public class CivicInformationClient: APIClient {
+public final class CivicInformationClient: APIClient {
     
     /// Returns a `shared` singleton Civic Information Client object.
     public static let shared = CivicInformationClient()

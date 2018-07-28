@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents an Open AQ client used to retrieve data from Open AQ.
-public class OpenAQClient: APIClient {
+public final class OpenAQClient: APIClient {
     
     /// Returns a `shared` singleton Open AQ Client object.
     public static let shared = OpenAQClient()
