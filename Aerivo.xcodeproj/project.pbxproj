@@ -83,6 +83,7 @@
 		7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
 		7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
 		7DAD9EEF210A6E45003B1671 /* CivicInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */; };
+		7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
 		7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */; };
 		7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */; };
@@ -230,6 +231,7 @@
 		7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationResponse.swift; sourceTree = "<group>"; };
 		7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationClient.swift; sourceTree = "<group>"; };
 		7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationTests.swift; sourceTree = "<group>"; };
+		7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkeningButton.swift; sourceTree = "<group>"; };
 		7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */,
 				68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
 				68E397D120EFF517005C0722 /* Mapbox.framework in Frameworks */,
 			);
@@ -538,6 +541,7 @@
 		68E397D320EFF547005C0722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */,
 				68E397D420EFF547005C0722 /* Mapbox.framework */,
 			);
 			name = Frameworks;
@@ -740,6 +744,12 @@
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
