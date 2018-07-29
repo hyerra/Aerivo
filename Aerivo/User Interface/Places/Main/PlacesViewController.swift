@@ -60,15 +60,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // Do any additional setup after the view appeared.
-        if let pulleyVC = pulleyViewController {
-            let bottomDistance = pulleyVC.drawerDistanceFromBottom.distance
-            positionMapboxAttribution(in: pulleyVC, with: bottomDistance)
-        }
-    }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         // Do any additional setup before the view will layout the subviews.
@@ -96,9 +87,15 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     private func positionMapboxAttribution(in pulleyVC: PulleyViewController, with bottomDistance: CGFloat) {
         guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
-        guard pulleyVC.currentDisplayMode == .bottomDrawer else { return }
-        mapView.logoView.translatesAutoresizingMaskIntoConstraints = true
-        mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = true
+        mapView.logoView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = false
+        guard pulleyVC.currentDisplayMode == .bottomDrawer else {
+            // Set the frame in case the view was rotated.
+            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
+            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
+            return
+        }
+        
         mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - bottomDistance - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
         mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - bottomDistance - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
     }
@@ -244,6 +241,9 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
             topSeparatorView.isHidden = false
             bottomSeparatorView.isHidden = true
         }
+        
+        let bottomDistance = drawer.drawerDistanceFromBottom.distance
+        positionMapboxAttribution(in: drawer, with: bottomDistance)
     }
 }
 
