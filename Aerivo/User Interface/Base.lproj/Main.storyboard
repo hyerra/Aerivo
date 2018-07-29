@@ -35,7 +35,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.89411764705882346" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="P6D-9P-y7e" firstAttribute="trailing" secondItem="OkA-Cl-Psq" secondAttribute="trailing" id="GQP-ep-A3h"/>
                             <constraint firstItem="XRo-bJ-SjC" firstAttribute="leading" secondItem="OkA-Cl-Psq" secondAttribute="leading" id="IJy-DV-OFs"/>
@@ -48,6 +48,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OkA-Cl-Psq"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundDimmingColor">
+                            <color key="value" red="0.90196078431372551" green="0.89411764705882346" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="drawerContentContainerView" destination="P6D-9P-y7e" id="Ivr-Gg-awY"/>
                         <outlet property="primaryContentContainerView" destination="XRo-bJ-SjC" id="3CQ-hh-FDe"/>
@@ -195,7 +200,7 @@
                                     </view>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a place or body of water" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-nq-wK8">
                                         <rect key="frame" x="0.0" y="9" width="375" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -203,11 +208,11 @@
                                     <constraint firstAttribute="trailing" secondItem="sXk-9D-NvD" secondAttribute="trailing" id="3WE-7a-jZc"/>
                                     <constraint firstAttribute="height" constant="68" id="DmW-8d-125"/>
                                     <constraint firstItem="wvD-af-gu4" firstAttribute="top" secondItem="AsB-FS-leQ" secondAttribute="top" constant="6" id="KQE-n3-IIN"/>
-                                    <constraint firstAttribute="bottom" secondItem="sXk-9D-NvD" secondAttribute="bottom" id="MrH-2V-Wgq"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sXk-9D-NvD" secondAttribute="bottom" id="MrH-2V-Wgq"/>
                                     <constraint firstItem="sXk-9D-NvD" firstAttribute="leading" secondItem="AsB-FS-leQ" secondAttribute="leading" id="NS8-UR-dMm"/>
                                     <constraint firstItem="gvj-nq-wK8" firstAttribute="leading" secondItem="AsB-FS-leQ" secondAttribute="leading" id="ZZe-ko-mAB"/>
                                     <constraint firstItem="wvD-af-gu4" firstAttribute="centerX" secondItem="AsB-FS-leQ" secondAttribute="centerX" id="ekC-WL-zgY"/>
-                                    <constraint firstItem="sXk-9D-NvD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gvj-nq-wK8" secondAttribute="bottom" constant="2.5" id="lTV-ni-bQC"/>
+                                    <constraint firstItem="sXk-9D-NvD" firstAttribute="top" secondItem="gvj-nq-wK8" secondAttribute="bottom" constant="2.5" id="lTV-ni-bQC"/>
                                     <constraint firstItem="gvj-nq-wK8" firstAttribute="top" secondItem="wvD-af-gu4" secondAttribute="bottom" constant="-2" id="mKj-QP-FBE"/>
                                     <constraint firstAttribute="trailing" secondItem="gvj-nq-wK8" secondAttribute="trailing" id="nAD-hA-JCz"/>
                                 </constraints>
@@ -733,7 +738,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.89411764705882346" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XUh-Af-rqj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="7Se-lH-EeH"/>
                             <constraint firstItem="XUh-Af-rqj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9xR-Ak-Sqv"/>
