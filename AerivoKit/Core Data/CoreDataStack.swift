@@ -48,7 +48,7 @@ public final class DataController: NSObject {
     }()
     
     /// Returns the managed object context that works as a *scratchpad* for changes before they get persisted.
-    public private(set) lazy var managedObjectContext: NSManagedObjectContext = {
+    public internal(set) lazy var managedObjectContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         return managedObjectContext
