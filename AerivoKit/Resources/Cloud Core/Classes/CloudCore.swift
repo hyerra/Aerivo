@@ -57,7 +57,11 @@ open class CloudCore {
 	public static var config = CloudCoreConfig()
 	
 	/// `Tokens` object, read more at class description. By default variable is loaded from User Defaults.
-	public static var tokens = Tokens.loadFromUserDefaults()
+    public static var tokens = Tokens.loadFromUserDefaults() {
+        didSet {
+            tokens.saveToUserDefaults()
+        }
+    }
 	
 	/// Error and sync actions are reported to that delegate
 	public static weak var delegate: CloudCoreDelegate? {
