@@ -26,32 +26,29 @@ public final class DataController: NSObject {
         return url!
     }()
     
-    /// Returns the app's managed object model.
-    private lazy var managedObjectModel: NSManagedObjectModel = {
-        let bundle = Bundle(identifier: "com.harishyerra.AerivoKit")!
-        let modelURL = bundle.url(forResource: "Aerivo", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-    
-    /// Returns the persistent store coordinator for coordinating the persisting of data.
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        let url = applicationSharedGroupContainer.appendingPathComponent("Aerivo.sqlite")
+    /// Returns a persistent container that encapsulates the Core Data stack into the application.
+    public internal(set) lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Aerivo")
         
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
-        } catch let error {
-            fatalError("There was an error initalizing the application's stored data: \(error)!")
+        #if os(iOS)
+        let description = NSPersistentStoreDescription(url: applicationSharedGroupContainer.appendingPathComponent("Aerivo.sqlite"))
+        container.persistentStoreDescriptions = [description]
+        #endif
+        
+        container.loadPersistentStores { storeDescription, error in
+            #if DEBUG
+            fatalError(error?.localizedDescription ?? "Error initializing core data stack.")
+            #endif
         }
         
-        return coordinator
+        CloudCore.enable(persistentContainer: container)
+        
+        return container
     }()
     
     /// Returns the managed object context that works as a *scratchpad* for changes before they get persisted.
     public internal(set) lazy var managedObjectContext: NSManagedObjectContext = {
-        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        return managedObjectContext
+        return persistentContainer.viewContext
     }()
     
     /// Persists the changes in the managed object context. Optionally pushing changes to CloudKit..
