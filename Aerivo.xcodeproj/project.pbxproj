@@ -510,14 +510,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		68DD5B9F20FA6ADD0083B943 /* Open AQ */ = {
-			isa = PBXGroup;
-			children = (
-				68DD5BA020FA6B020083B943 /* OpenAQTests.swift */,
-			);
-			path = "Open AQ";
-			sourceTree = "<group>";
-		};
 		68E397B320EFF0F3005C0722 /* AerivoKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,7 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */,
-				68DD5B9F20FA6ADD0083B943 /* Open AQ */,
+				7D36D59A210D4577000BF77B /* Open AQ */,
 				680A209721010F6500EDDBB5 /* NWQP */,
 				7DAD9EEB210A6E1B003B1671 /* Civic Information */,
 				68E397C320EFF0F3005C0722 /* Info.plist */,
@@ -584,6 +576,14 @@
 				684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		7D36D59A210D4577000BF77B /* Open AQ */ = {
+			isa = PBXGroup;
+			children = (
+				68DD5BA020FA6B020083B943 /* OpenAQTests.swift */,
+			);
+			path = "Open AQ";
 			sourceTree = "<group>";
 		};
 		7DAD9EDB21097C99003B1671 /* Civic Information */ = {
