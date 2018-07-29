@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 import AerivoKit
+import Contacts
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -117,7 +118,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
         
         cell.placeName.text = result.formattedName
-        cell.secondaryDetail.text = result.qualifiedName
+        cell.secondaryDetail.text = result.formattedAddressLines.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
         cell.iconBackgroundView.backgroundColor = result.scope.displayColor
         
         return cell
