@@ -6,7 +6,6 @@
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
 /// A container that encapsulates the Core Data stack into the application.
