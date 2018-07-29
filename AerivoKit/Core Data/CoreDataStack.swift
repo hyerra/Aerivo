@@ -9,6 +9,22 @@
 import UIKit
 import CoreData
 
+/// A container that encapsulates the Core Data stack into the application.
+public class AEPersistentContainer: NSPersistentContainer {
+    
+    #if os(iOS)
+    /// The url for the shared container in the app group for iOS.
+    private static let applicationSharedGroupContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.harishyerra.Aerivo")!
+    #endif
+    
+    public override class func defaultDirectoryURL() -> URL {
+        #if os(iOS)
+        return applicationSharedGroupContainer.appendingPathComponent("AerivoModel")
+        #endif
+        return super.defaultDirectoryURL().appendingPathComponent("AerivoModel")
+    }
+}
+
 /// A data controller that simplifies the interface of interacting with Core Data.
 public final class DataController: NSObject {
     
@@ -20,29 +36,18 @@ public final class DataController: NSObject {
     
     // MARK: - Core Data Stack
     
-    /// The url for the shared container in the app group.
-    private lazy var applicationSharedGroupContainer: URL = {
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.harishyerra.Aerivo")
-        return url!
-    }()
-    
     /// Returns a persistent container that encapsulates the Core Data stack into the application.
     public internal(set) lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Aerivo")
-        
-        #if os(iOS)
-        let description = NSPersistentStoreDescription(url: applicationSharedGroupContainer.appendingPathComponent("Aerivo.sqlite"))
-        container.persistentStoreDescriptions = [description]
-        #endif
+        let container = AEPersistentContainer(name: "Aerivo")
         
         container.loadPersistentStores { storeDescription, error in
             #if DEBUG
-            fatalError(error?.localizedDescription ?? "Error initializing core data stack.")
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
             #endif
         }
-        
-        CloudCore.enable(persistentContainer: container)
-        
+                
         return container
     }()
     
@@ -51,11 +56,10 @@ public final class DataController: NSObject {
         return persistentContainer.viewContext
     }()
     
-    /// Persists the changes in the managed object context. Optionally pushing changes to CloudKit..
+    /// Persists the changes in the managed object context.
     ///
-    /// - Parameter shouldPushChangesToCloudKit: Whether or not to push changes to CloudKit.
     /// - Throws: Throws any errors that can occur when attempting to save.
-    public func saveContext(pushingChangesToCloudKit shouldPushChangesToCloudKit: Bool) throws {
+    public func saveContext() throws {
         guard managedObjectContext.hasChanges else { return }
         try managedObjectContext.save()
     }
