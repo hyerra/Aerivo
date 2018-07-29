@@ -102,7 +102,6 @@
 		7D336331210E3CF000491C3A /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
 		7D336332210E3CF000491C3A /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
 		7D336333210E3CF000491C3A /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
-		7D336334210E3CF000491C3A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D33630F210E3CF000491C3A /* Info.plist */; };
 		7D336335210E3CF000491C3A /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
 		7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
 		7D336337210E3CF000491C3A /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
@@ -288,7 +287,6 @@
 		7D33630A210E3CF000491C3A /* FetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResult.swift; sourceTree = "<group>"; };
 		7D33630B210E3CF000491C3A /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCoreDelegate.swift; sourceTree = "<group>"; };
-		7D33630F210E3CF000491C3A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D336311210E3CF000491C3A /* NSEntityDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSEntityDescription.swift; sourceTree = "<group>"; };
 		7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
 		7D336313210E3CF000491C3A /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
@@ -659,7 +657,6 @@
 				7D336310210E3CF000491C3A /* Extensions */,
 				7D3362E4210E3CEF00491C3A /* Model */,
 				7D33630C210E3CF000491C3A /* Protocols */,
-				7D33630E210E3CF000491C3A /* Resources */,
 			);
 			path = "Cloud Core";
 			sourceTree = "<group>";
@@ -777,14 +774,6 @@
 				7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		7D33630E210E3CF000491C3A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7D33630F210E3CF000491C3A /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		7D336310210E3CF000491C3A /* Extensions */ = {
@@ -1057,7 +1046,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D336334210E3CF000491C3A /* Info.plist in Resources */,
 				68EADBBB20F2F72800DB3425 /* AerivoKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
