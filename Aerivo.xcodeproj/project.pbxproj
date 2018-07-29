@@ -518,6 +518,7 @@
 				68B7648620F81A41005A6EB1 /* Geocoder Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
+				7D3362C3210D842D00491C3A /* Cloud Kit */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
 			);
 			path = AerivoKit;
@@ -576,6 +577,13 @@
 				684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		7D3362C3210D842D00491C3A /* Cloud Kit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cloud Kit";
 			sourceTree = "<group>";
 		};
 		7D36D59A210D4577000BF77B /* Open AQ */ = {

@@ -54,8 +54,11 @@ public final class DataController: NSObject {
         return managedObjectContext
     }()
     
-    /// Persists the changes in the managed object context.
-    public func saveContext() throws {
+    /// Persists the changes in the managed object context. Optionally pushing changes to CloudKit..
+    ///
+    /// - Parameter shouldPushChangesToCloudKit: Whether or not to push changes to CloudKit.
+    /// - Throws: Throws any errors that can occur when attempting to save.
+    public func saveContext(pushingChangesToCloudKit shouldPushChangesToCloudKit: Bool) throws {
         guard managedObjectContext.hasChanges else { return }
         try managedObjectContext.save()
     }
