@@ -14,7 +14,9 @@ class ParameterDescriptionPopoverViewController: UIViewController {
     
     let blurEffect = UIBlurEffect(style: .extraLight)
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var parameterDescription: UILabel!
+    @IBOutlet weak var parameterDescriptionHeightConstraint: NSLayoutConstraint!
     
     var parameterInfo: String?
     
@@ -29,6 +31,7 @@ class ParameterDescriptionPopoverViewController: UIViewController {
         // Do any additional setup after the view laid out the subviews.
         let spacingValue = UIFontMetrics(forTextStyle: .callout).scaledValue(for: 15)
         preferredContentSize = CGSize(width: parameterDescription.intrinsicContentSize.width + spacingValue, height: parameterDescription.intrinsicContentSize.height + spacingValue)
+        parameterDescriptionHeightConstraint.constant = max(parameterDescription.intrinsicContentSize.height, scrollView.bounds.height)
         createViewBlurEffect()
     }
     

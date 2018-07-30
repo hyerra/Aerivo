@@ -65,8 +65,6 @@
 		68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E397B420EFF0F3005C0722 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; };
 		68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		68E397D120EFF517005C0722 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397D020EFF516005C0722 /* Mapbox.framework */; };
-		68E397D220EFF517005C0722 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397D020EFF516005C0722 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68EADBBB20F2F72800DB3425 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
@@ -106,6 +104,9 @@
 		7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
 		7D336337210E3CF000491C3A /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
 		7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
+		7D33637F210EB26A00491C3A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33637E210EB26A00491C3A /* Mapbox.framework */; };
+		7D336380210EB26A00491C3A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33637E210EB26A00491C3A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */; };
 		7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
 		7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
@@ -176,7 +177,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */,
-				68E397D220EFF517005C0722 /* Mapbox.framework in Embed Frameworks */,
+				7D336380210EB26A00491C3A /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +251,6 @@
 		68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
 		68E397C320EFF0F3005C0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68E397D020EFF516005C0722 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		68E397D420EFF547005C0722 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "../../Downloads/mapbox-ios-sdk-4/dynamic/Mapbox.framework"; sourceTree = "<group>"; };
 		68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AerivoKit.xcassets; sourceTree = "<group>"; };
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
@@ -291,6 +291,8 @@
 		7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
 		7D336313210E3CF000491C3A /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		7D336314210E3CF000491C3A /* CKRecordID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKRecordID.swift; sourceTree = "<group>"; };
+		7D33637E210EB26A00491C3A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		7D36D598210D3A33000BF77B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
 		7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationMessage.swift; sourceTree = "<group>"; };
@@ -322,7 +324,7 @@
 			files = (
 				7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */,
 				68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
-				68E397D120EFF517005C0722 /* Mapbox.framework in Frameworks */,
+				7D33637F210EB26A00491C3A /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +399,7 @@
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
 				68E397B320EFF0F3005C0722 /* AerivoKit */,
 				68E397C020EFF0F3005C0722 /* AerivoKitTests */,
-				68E397D020EFF516005C0722 /* Mapbox.framework */,
+				7D33637E210EB26A00491C3A /* Mapbox.framework */,
 				684BE20820E99C1D00E74FE5 /* Products */,
 				68E397D320EFF547005C0722 /* Frameworks */,
 			);
@@ -504,6 +506,7 @@
 			children = (
 				688C863C21026944000C47FF /* PlacesDetailViewController.swift */,
 				7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */,
+				7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */,
 				7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */,
 				7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */,
 			);
@@ -1092,6 +1095,7 @@
 				7DD4DD4C210C3B6F004512BA /* UIViewController+PulleyViewController.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
 				7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */,
+				7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
 				7DD4DD4D210C3B6F004512BA /* PulleyPassthroughScrollView.swift in Sources */,
 				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,

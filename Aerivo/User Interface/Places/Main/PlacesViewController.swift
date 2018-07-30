@@ -20,7 +20,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var headerWasSized = false
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerSpacingConstraint: NSLayoutConstraint!
     @IBOutlet weak var topGripperView: UIView!
     @IBOutlet weak var bottomGripperView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -37,12 +37,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var annotationBackgroundColor: UIColor?
     var annotationImage: UIImage?
-    
-    var initialHeaderHeightSet = false
-    lazy var cachedHeaderHeight: CGFloat = {
-        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-        return height
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,15 +58,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewWillLayoutSubviews()
         // Do any additional setup before the view will layout the subviews.
         createViewBlurEffect()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // Do any additional setup after the view laid out the subviews.
-        if !initialHeaderHeightSet {
-            headerHeightConstraint.constant = cachedHeaderHeight
-            initialHeaderHeightSet = true
-        }
     }
     
     private func createViewBlurEffect() {
@@ -151,7 +136,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
-    
 }
 
 // MARK: - Pulley drawer delegate
@@ -164,7 +148,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
             }
         }
         
-        return cachedHeaderHeight + bottomSafeArea
+        return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
     }
     
     func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
@@ -183,9 +167,9 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         placesTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            headerHeightConstraint.constant = drawer.collapsedDrawerHeight(bottomSafeArea: bottomSafeArea)
+            headerSpacingConstraint.constant = bottomSafeArea
         } else {
-            headerHeightConstraint.constant = cachedHeaderHeight
+            headerSpacingConstraint.constant = 0
         }
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide

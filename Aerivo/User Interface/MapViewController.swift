@@ -15,6 +15,9 @@ class MapViewController: UIViewController {
     static let identifier = "mapVC"
     
     @IBOutlet weak var mapView: MGLMapView!
+    
+    private let mapboxAttributionNonBottomDrawerSeperation: CGFloat = 2
+    private let mapboxAttributionBottomDrawerSeperation: CGFloat = 10
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,13 @@ class MapViewController: UIViewController {
         mapView.userTrackingMode = .follow
         mapView.styleURL = MGLStyle.outdoorsStyleURL
         mapView.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if let pulleyVC = pulleyViewController {
+            positionMapboxAttribution(in: pulleyVC, with: pulleyVC.drawerDistanceFromBottom.distance)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +51,11 @@ class MapViewController: UIViewController {
 
 extension MapViewController: PulleyPrimaryContentControllerDelegate {
     func makeUIAdjustmentsForFullscreen(progress: CGFloat, bottomSafeArea: CGFloat) {
-        guard let drawer = pulleyViewController, drawer.currentDisplayMode == .bottomDrawer else { return }
+        guard let drawer = pulleyViewController, drawer.currentDisplayMode == .bottomDrawer else {
+            mapView.logoView.alpha = 1.0
+            mapView.attributionButton.alpha = 1.0
+            return
+        }
         mapView.logoView.alpha = 1.0 - progress
         mapView.attributionButton.alpha = 1.0 - progress
     }
@@ -59,13 +73,13 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
         mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = false
         guard pulleyVC.currentDisplayMode == .bottomDrawer else {
             // Set the frame in case the view was rotated.
-            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
+            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - mapView.logoView.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
+            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - mapView.attributionButton.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
             return
         }
         
-        mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - bottomDistance - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-        mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - bottomDistance - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
+        mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - bottomDistance - mapView.logoView.bounds.height - mapboxAttributionBottomDrawerSeperation, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
+        mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - bottomDistance - mapView.attributionButton.bounds.height - mapboxAttributionBottomDrawerSeperation, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
     }
 }
 
