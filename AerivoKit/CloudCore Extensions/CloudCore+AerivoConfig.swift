@@ -13,6 +13,10 @@ extension CloudCoreConfig {
     public static var aerivoConfig: CloudCoreConfig {
         var aerivoConfig = CloudCoreConfig()
         aerivoConfig.zoneID = CKRecordZoneID(zoneName: "Aerivo", ownerName: CKCurrentUserDefaultName)
+        aerivoConfig.subscriptionIDForPrivateDB = "AerivoPrivate"
+        aerivoConfig.subscriptionIDForSharedDB = "AerivoShared"
+        aerivoConfig.publicSubscriptionIDPrefix = "Aerivo-"
+        aerivoConfig.contextName = "AerivoFetchAndSave"
         aerivoConfig.userDefaultsKeyTokens = "AerivoCloudKitTokens"
         return aerivoConfig
     }
