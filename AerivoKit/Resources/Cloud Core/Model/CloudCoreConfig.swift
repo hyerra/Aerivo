@@ -25,6 +25,10 @@ import CloudKit
 */
 public struct CloudCoreConfig {
 	
+    // MARK: - Init
+    
+    public init() { }
+    
 	// MARK: CloudKit
 	
     /// The CKContainer to store CoreData. Set this to a custom container to
