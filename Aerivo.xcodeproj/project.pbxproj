@@ -109,6 +109,7 @@
 		7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */; };
 		7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		7D51A334210FA13F00E4969B /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
+		7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
 		7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
 		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
@@ -296,6 +297,7 @@
 		7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		7D36D598210D3A33000BF77B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Placemark.swift"; sourceTree = "<group>"; };
+		7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudCore+AerivoConfig.swift"; sourceTree = "<group>"; };
 		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
 		7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationMessage.swift; sourceTree = "<group>"; };
 		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
 				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
 				68B7648620F81A41005A6EB1 /* Geocoder Extensions */,
+				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
@@ -798,6 +801,14 @@
 				68DD5BA020FA6B020083B943 /* OpenAQTests.swift */,
 			);
 			path = "Open AQ";
+			sourceTree = "<group>";
+		};
+		7D51A335210FA95F00E4969B /* CloudCore Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */,
+			);
+			path = "CloudCore Extensions";
 			sourceTree = "<group>";
 		};
 		7DAD9EDB21097C99003B1671 /* Civic Information */ = {
@@ -1209,6 +1220,7 @@
 				6837BB8C20F059FA0018D812 /* MBGeocoder.swift in Sources */,
 				7D336322210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift in Sources */,
 				7D33631D210E3CF000491C3A /* FetchAndSaveOperation.swift in Sources */,
+				7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */,
 				6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */,
 				7D336315210E3CF000491C3A /* Tokens.swift in Sources */,
 				7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */,
