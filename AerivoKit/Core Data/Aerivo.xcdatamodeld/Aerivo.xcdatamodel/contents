@@ -2,12 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
         <attribute name="formattedAddressLines" attributeType="Transformable" valueTransformerName="" customClassName="[String]" syncable="YES"/>
-        <attribute name="id" attributeType="String" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="genres" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="maki" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="placeType" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="qualifiedName" attributeType="String" syncable="YES"/>
         <attribute name="recordData" optional="YES" attributeType="Binary" syncable="YES">
             <userInfo>
                 <entry key="CloudCoreType" value="recordData"/>
@@ -18,8 +18,8 @@
         <fetchIndex name="byRecordID">
             <fetchIndexElement property="recordID" type="Binary" order="ascending"/>
         </fetchIndex>
-        <fetchIndex name="byID">
-            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+        <fetchIndex name="byQualifiedName">
+            <fetchIndexElement property="qualifiedName" type="Binary" order="ascending"/>
         </fetchIndex>
         <userInfo>
             <entry key="CloudCoreType" value="recordID"/>

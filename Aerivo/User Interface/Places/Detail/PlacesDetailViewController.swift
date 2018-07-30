@@ -8,6 +8,7 @@
 
 import UIKit
 import AerivoKit
+import CoreData
 import MessageUI
 
 class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -36,8 +37,23 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var address: UILabel!
     
+    @IBOutlet weak var favoriteIcon: UIImageView!
+    @IBOutlet weak var favoriteLabel: UILabel!
+    
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerSpacingConstraint: NSLayoutConstraint!
+    
+    var favorite: Favorite? = nil {
+        didSet {
+            if favorite != nil {
+                favoriteIcon.tintColor = UIColor(named: "System Red Color")
+                favoriteLabel.textColor = UIColor(named: "System Red Color")
+            } else {
+                favoriteIcon.tintColor = UIColor(named: "System Green Color")
+                favoriteLabel.textColor = UIColor(named: "System Green Color")
+            }
+        }
+    }
     
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
@@ -80,7 +96,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         placeName.text = placemark.formattedName
-        detail.text = placemark.genres?.first ?? placemark.address ?? ""
+        detail.text = placemark.genres?.first ?? placemark.address ?? placemark.qualifiedName
         address.text = placemark.formattedAddressLines.joined(separator: "\n")
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize }
@@ -93,6 +109,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
+        checkIfFavoritedLocation()
         NotificationCenter.default.addObserver(self, selector: #selector(invalidateCollectionViewLayout), name: .UIContentSizeCategoryDidChange, object: nil)
     }
     
@@ -127,6 +144,22 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @objc private func invalidateCollectionViewLayout() {
         collectionView.reloadData()
         collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+    }
+    
+    private func checkIfFavoritedLocation() {
+        guard let qualifiedName = placemark.qualifiedName else { return } // Make sure the qualified name is there or we have nothing to check if this placemark exists.
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        let predicate = NSPredicate(format: "qualifiedName = %@", qualifiedName)
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = 1
+        do {
+            let favorites = try DataController.shared.managedObjectContext.fetch(fetchRequest)
+            favorite = favorites.first
+        } catch let error {
+            #if DEBUG
+            print(error)
+            #endif
+        }
     }
         
     private func fetchAirQualityData() {
@@ -469,6 +502,32 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
                 let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: "\(appName) \(NSLocalizedString("is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", comment: "Message of alert controller for network error."))", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                self.present(alertController, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func favoritePlacemark(_ sender: UIButton) {
+        let dataController = DataController.shared
+        if favorite == nil {
+            let favorite = Favorite(placemark: placemark, insertInto: dataController.managedObjectContext)
+            
+            do {
+                try dataController.saveContext()
+                self.favorite = favorite
+            } catch {
+                let alertController = UIAlertController(title: NSLocalizedString("Couldn't Favorite Location", comment: "Title of alert that tells the user that there was an error saving the location to their favorites."), message: NSLocalizedString("There was an issue saving this location to your favorites.", comment: "Message of alert that tells the user that there was an error saving the location to their favorites."), preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                self.present(alertController, animated: true)
+            }
+        } else if let favorite = favorite {
+            dataController.managedObjectContext.delete(favorite)
+            do {
+                try dataController.saveContext()
+                self.favorite = nil
+            } catch {
+                let alertController = UIAlertController(title: NSLocalizedString("Couldn't Remove Favorite Location", comment: "Title of alert that tells the user that there was an error removing the location from their favorites."), message: NSLocalizedString("There was an issue removing this location from your favorites.", comment: "Message of alert that tells the user that there was an error removing the location from their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
             }

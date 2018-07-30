@@ -382,7 +382,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-uy-Naa">
-                                                        <rect key="frame" x="141" y="18.5" width="20" height="20"/>
+                                                        <rect key="frame" x="140" y="18.5" width="20" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="VzW-uy-Naa" secondAttribute="height" multiplier="1:1" id="H5j-NT-xqn"/>
@@ -420,18 +420,20 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-x4-cwZ" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="-0.5" width="173.5" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="favoritePlacemark:" destination="Big-CG-Gn8" eventType="touchUpInside" id="sH0-bG-pKf"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YY5-hI-641">
-                                                                <rect key="frame" x="63.5" y="20" width="45" height="167.5"/>
+                                                                <rect key="frame" x="63.5" y="20" width="45.5" height="167.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="146"/>
-                                                                        <color key="tintColor" name="System Green Color"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="146"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu">
-                                                                        <rect key="frame" x="0.0" y="153" width="45" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="153" width="45.5" height="14.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="System Green Color"/>
+                                                                        <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -676,6 +678,8 @@
                         <outlet property="collectionViewHeightConstraint" destination="niU-XK-h25" id="jZG-Nz-fQs"/>
                         <outlet property="contentView" destination="gMM-ea-kdl" id="Wxx-uU-OUH"/>
                         <outlet property="detail" destination="AH1-Ja-Wid" id="o4w-df-i4e"/>
+                        <outlet property="favoriteIcon" destination="3HI-Tp-mlc" id="vrl-hk-0RG"/>
+                        <outlet property="favoriteLabel" destination="p7J-AP-LJu" id="cib-IX-ltK"/>
                         <outlet property="headerSpacingConstraint" destination="YHL-5O-cAJ" id="4hx-Ix-ePk"/>
                         <outlet property="headerView" destination="dbo-K7-cz4" id="qum-6P-mEV"/>
                         <outlet property="placeName" destination="rZk-9q-vWd" id="XT9-OE-pFv"/>
