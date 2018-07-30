@@ -21,6 +21,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
         super.awakeFromNib()
         // Initialization code
         detail.contentEdgeInsets = UIEdgeInsetsMake(.leastNormalMagnitude, .leastNormalMagnitude, .leastNormalMagnitude, .leastNormalMagnitude) /* Get rid of extra button padding. */
+        detail.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

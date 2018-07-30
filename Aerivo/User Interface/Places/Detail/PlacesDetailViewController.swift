@@ -10,7 +10,7 @@ import UIKit
 import AerivoKit
 import MessageUI
 
-class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     static let identifier = "placesDetailVC"
     
@@ -24,6 +24,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var close: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var topSeparatorView: UIView!
@@ -36,13 +37,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var address: UILabel!
     
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
-    
-    var initialHeaderHeightSet = false
-    lazy var cachedHeaderHeight: CGFloat = {
-        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-        return height
-    }()
+    @IBOutlet weak var headerSpacingConstraint: NSLayoutConstraint!
     
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
@@ -95,6 +90,18 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         fetchWaterQualityData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Do any additional setup right before the view will appear.
+        NotificationCenter.default.addObserver(self, selector: #selector(invalidateCollectionViewLayout), name: .UIContentSizeCategoryDidChange, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // Do any cleanup after the view has disappeared.
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -111,12 +118,15 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Do any additional setup after the view laid out the subviews.
         close.layer.cornerRadius = close.layer.bounds.width / 2
         close.layer.masksToBounds = true
-        if !initialHeaderHeightSet { headerViewHeightConstraint.constant = cachedHeaderHeight; initialHeaderHeightSet = true }
         
-        activityIndicator.widthAnchor.constraint(equalToConstant: activityIndicator.bounds.width + 15).isActive = true
-        activityIndicator.heightAnchor.constraint(equalToConstant: activityIndicator.bounds.height + 15).isActive = true
+        activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
         activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
         activityIndicator.layer.masksToBounds = true
+    }
+    
+    @objc private func invalidateCollectionViewLayout() {
+        collectionView.reloadData()
+        collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
     }
         
     private func fetchAirQualityData() {
@@ -265,7 +275,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "placesDetailHeading", for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PlacesDetailHeaderCollectionReusableView.reuseIdentifier, for: indexPath)
         if indexPath.section == 0 {
             if latestAQ?.results.first != nil /* Return air quality data in this section. */ {
                 (headerView.viewWithTag(1) as? UILabel)?.text = NSLocalizedString("Air Quality", comment: "The air quality at a specified location.")
@@ -277,6 +287,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         } else {
             fatalError("Unexpected amount of collection view sections.")
         }
+        
         return headerView
     }
     
@@ -315,6 +326,13 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     // MARK: - Collection view delegate
+    
+    // MARK: - Collection view delegate flow layout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        // TODO: Once self sizing headers come out use those. For now we need to generate the height of the cell hackily.
+        return CGSize(width: collectionView.bounds.width, height: UIFont.preferredFont(forTextStyle: .headline).lineHeight + 16)
+    }
     
     // MARK: - Actions
     
@@ -492,7 +510,7 @@ extension PlacesDetailViewController: ParameterDescriptionDelegate {
 
 extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
-        return cachedHeaderHeight + bottomSafeArea
+        return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
     }
     
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
@@ -500,9 +518,9 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            headerViewHeightConstraint.constant = drawer.collapsedDrawerHeight(bottomSafeArea: bottomSafeArea)
+            headerSpacingConstraint.constant = bottomSafeArea
         } else {
-            headerViewHeightConstraint.constant = cachedHeaderHeight
+            headerSpacingConstraint.constant = 0
         }
         
     }
