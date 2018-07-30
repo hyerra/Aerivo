@@ -85,21 +85,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         view.insertSubview(blurEffectView, at: 0)
     }
     
-    private func positionMapboxAttribution(in pulleyVC: PulleyViewController, with bottomDistance: CGFloat) {
-        guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
-        mapView.logoView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = false
-        guard pulleyVC.currentDisplayMode == .bottomDrawer else {
-            // Set the frame in case the view was rotated.
-            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
-            return
-        }
-        
-        mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - bottomDistance - mapView.logoView.bounds.height - 8, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-        mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - bottomDistance - mapView.attributionButton.bounds.height - 8, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -172,19 +157,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
 // MARK: - Pulley drawer delegate
 
 extension PlacesViewController: PulleyDrawerViewControllerDelegate {
-    
-    func makeUIAdjustmentsForFullscreen(progress: CGFloat, bottomSafeArea: CGFloat) {
-        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate { presentedVC.makeUIAdjustmentsForFullscreen?(progress: progress, bottomSafeArea: bottomSafeArea) }
-        
-        guard let drawer = pulleyViewController, drawer.currentDisplayMode == .bottomDrawer else { return }
-        
-        if let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView {
-            mapView.logoView.alpha = 1.0 - progress
-            mapView.attributionButton.alpha = 1.0 - progress
-        }
-        
-    }
-    
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
             if let height = presentedVC.collapsedDrawerHeight?(bottomSafeArea: bottomSafeArea) {
@@ -220,10 +192,6 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         if drawer.drawerPosition != .open { searchBar.text = nil; searchBar.resignFirstResponder() }
     }
     
-    func drawerChangedDistanceFromBottom(drawer: PulleyViewController, distance: CGFloat, bottomSafeArea: CGFloat) {
-        positionMapboxAttribution(in: drawer, with: distance)
-    }
-    
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
         if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate { presentedVC.drawerDisplayModeDidChange?(drawer: drawer) }
         if drawer.currentDisplayMode == .bottomDrawer {
@@ -241,9 +209,6 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
             topSeparatorView.isHidden = false
             bottomSeparatorView.isHidden = true
         }
-        
-        let bottomDistance = drawer.drawerDistanceFromBottom.distance
-        positionMapboxAttribution(in: drawer, with: bottomDistance)
     }
 }
 
