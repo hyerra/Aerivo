@@ -469,14 +469,14 @@
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-PR-RPP">
-                                                                <rect key="frame" x="53.5" y="20" width="65.5" height="167.5"/>
+                                                                <rect key="frame" x="54" y="20" width="65" height="167.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="146"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="146"/>
                                                                         <color key="tintColor" name="System Green Color"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV">
-                                                                        <rect key="frame" x="0.0" y="153" width="65.5" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="153" width="65" height="14.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
