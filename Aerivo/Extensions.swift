@@ -77,3 +77,18 @@ extension NSMutableAttributedString {
         mutableString.replaceOccurrences(of: "\(delimiter)", with: "", options: .literal, range: NSRange(location: 0, length: asString.utf16.count))
     }
 }
+
+extension UISearchBar {
+    /// Returns the text field that is contained within the search bar.
+    var textField: UITextField? {
+        var _textField: UITextField? = nil
+        subviews.forEach {
+            $0.subviews.forEach {
+                if let textField = $0 as? UITextField {
+                    _textField = textField
+                }
+            }
+        }
+        return _textField
+    }
+}

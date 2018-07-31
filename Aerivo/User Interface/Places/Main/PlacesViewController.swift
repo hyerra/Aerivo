@@ -75,6 +75,17 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//        searchBar.textField?.font = UIFont.preferredFont(forTextStyle: .body)
+//        if let textFieldFrame = searchBar.textField?.frame {
+//            //CGRect(x: textFieldFrame.minX, y: textFieldFrame.minY, width: textFieldFrame.width, height: UIFontMetrics.default.scaledValue(for: textFieldFrame.height))
+//            var frame = textFieldFrame
+//            frame.size.height = UIFontMetrics.default.scaledValue(for: textFieldFrame.height)
+//            searchBar.textField?.frame = frame
+//        }
+//    }
+    
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,7 +124,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         
         if let placemark = (tableView.cellForRow(at: indexPath) as? PlacesTableViewCell)?.placemark, let coordinate = placemark.location?.coordinate {
             annotationBackgroundColor = placemark.scope.displayColor
-            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
+            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
             
             let pointAnnotation = MGLPointAnnotation()
             pointAnnotation.coordinate = coordinate
