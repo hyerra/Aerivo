@@ -19,6 +19,7 @@ class AOAnnotationView: MGLAnnotationView {
         super.draw(rect)
         // Draw the view's content here.
         annotationImage.contentMode = .scaleAspectFit
+        annotationImage.adjustsImageSizeForAccessibilityContentSizeCategory = true
         addSubview(annotationImage)
     }
     

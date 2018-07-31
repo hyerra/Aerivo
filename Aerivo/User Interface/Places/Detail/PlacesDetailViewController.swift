@@ -37,6 +37,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var address: UILabel!
     
+    @IBOutlet weak var optionsStackView: UIStackView!
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     
@@ -110,13 +111,14 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
         checkIfFavoritedLocation()
-        NotificationCenter.default.addObserver(self, selector: #selector(invalidateCollectionViewLayout), name: .UIContentSizeCategoryDidChange, object: nil)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        // Do any cleanup after the view has disappeared.
-        NotificationCenter.default.removeObserver(self)
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        // Do any layout related work when the interface environment changes.
+        optionsStackView.axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? .vertical : .horizontal
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
     override func didReceiveMemoryWarning() {
@@ -139,11 +141,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
         activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
         activityIndicator.layer.masksToBounds = true
-    }
-    
-    @objc private func invalidateCollectionViewLayout() {
-        collectionView.reloadData()
-        collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
     private func checkIfFavoritedLocation() {
