@@ -126,17 +126,13 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        // Do any additional setup before the view will layout the subviews.
-        createViewBlurEffect()
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Do any additional setup after the view laid out the subviews.
         close.layer.cornerRadius = close.layer.bounds.width / 2
         close.layer.masksToBounds = true
+        
+        createViewBlurEffect()
         
         activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
         activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8

@@ -16,7 +16,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
     
-    private let mapboxAttributionNonBottomDrawerSeperation: CGFloat = 2
+    private let mapboxAttributionNonBottomDrawerSeperation: CGFloat = 4
     private let mapboxAttributionBottomDrawerSeperation: CGFloat = 10
         
     override func viewDidLoad() {
@@ -73,8 +73,8 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
         mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = false
         guard pulleyVC.currentDisplayMode == .bottomDrawer else {
             // Set the frame in case the view was rotated.
-            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.bounds.height - mapView.logoView.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
-            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.bounds.height - mapView.attributionButton.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
+            mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.directionalLayoutMargins.bottom - mapView.logoView.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
+            mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.directionalLayoutMargins.bottom - mapView.attributionButton.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)
             return
         }
         
