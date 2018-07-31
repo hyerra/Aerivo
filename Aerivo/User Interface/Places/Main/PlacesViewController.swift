@@ -54,9 +54,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        // Do any additional setup before the view will layout the subviews.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Do any additional setup after the view laid out the subviews.
         createViewBlurEffect()
     }
     
@@ -78,12 +78,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
 //    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 //        super.traitCollectionDidChange(previousTraitCollection)
 //        searchBar.textField?.font = UIFont.preferredFont(forTextStyle: .body)
-//        if let textFieldFrame = searchBar.textField?.frame {
-//            //CGRect(x: textFieldFrame.minX, y: textFieldFrame.minY, width: textFieldFrame.width, height: UIFontMetrics.default.scaledValue(for: textFieldFrame.height))
-//            var frame = textFieldFrame
-//            frame.size.height = UIFontMetrics.default.scaledValue(for: textFieldFrame.height)
-//            searchBar.textField?.frame = frame
-//        }
 //    }
     
     // MARK: - Table view data source
@@ -159,7 +153,8 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
             }
         }
         
-        return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
+        view.layoutIfNeeded()
+        return headerView.bounds.height + bottomSafeArea
     }
     
     func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
@@ -178,9 +173,9 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         placesTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            headerSpacingConstraint.constant = bottomSafeArea
+            //headerSpacingConstraint.constant = bottomSafeArea
         } else {
-            headerSpacingConstraint.constant = 0
+            //headerSpacingConstraint.constant = 0
         }
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
