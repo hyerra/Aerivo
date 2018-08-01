@@ -75,11 +75,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//        searchBar.textField?.font = UIFont.preferredFont(forTextStyle: .body)
-//    }
-    
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,7 +149,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         }
         
         view.layoutIfNeeded()
-        return headerView.bounds.height + bottomSafeArea
+        return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
     }
     
     func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
@@ -173,9 +168,9 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         placesTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
         if drawer.drawerPosition == .collapsed {
-            //headerSpacingConstraint.constant = bottomSafeArea
+            headerSpacingConstraint.constant = bottomSafeArea
         } else {
-            //headerSpacingConstraint.constant = 0
+            headerSpacingConstraint.constant = 0
         }
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
