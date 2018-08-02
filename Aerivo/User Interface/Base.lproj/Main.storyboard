@@ -274,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-K7-cz4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="84"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="79.5"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-en-Qdq">
                                         <rect key="frame" x="169.5" y="6" width="36" height="5"/>
@@ -290,7 +290,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SR-0g-ckK">
-                                        <rect key="frame" x="0.0" y="73.5" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="69" width="375" height="1"/>
                                         <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="AbO-qa-nLF"/>
@@ -327,7 +327,7 @@
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVb-kS-7SN">
-                                        <rect key="frame" x="0.0" y="74" width="375" height="10"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="375" height="10"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="YHL-5O-cAJ"/>
@@ -339,7 +339,7 @@
                                     <constraint firstItem="PXr-Fl-VFE" firstAttribute="leading" secondItem="dbo-K7-cz4" secondAttribute="leadingMargin" constant="2" id="7k8-Fo-jLg"/>
                                     <constraint firstItem="xs1-en-Qdq" firstAttribute="top" secondItem="dbo-K7-cz4" secondAttribute="top" constant="6" id="H4H-oO-Mez"/>
                                     <constraint firstAttribute="trailing" secondItem="8SR-0g-ckK" secondAttribute="trailing" id="L0s-Em-Cl4"/>
-                                    <constraint firstItem="SVb-kS-7SN" firstAttribute="firstBaseline" secondItem="PXr-Fl-VFE" secondAttribute="baseline" constant="15" id="T2S-nt-9U5"/>
+                                    <constraint firstItem="SVb-kS-7SN" firstAttribute="firstBaseline" secondItem="PXr-Fl-VFE" secondAttribute="baseline" constant="10.5" symbolType="layoutAnchor" id="T2S-nt-9U5"/>
                                     <constraint firstItem="4T8-za-xSz" firstAttribute="top" secondItem="PXr-Fl-VFE" secondAttribute="top" id="Vz4-Mf-MHS"/>
                                     <constraint firstAttribute="bottom" secondItem="SVb-kS-7SN" secondAttribute="bottom" id="XZN-Ku-gHA"/>
                                     <constraint firstItem="SVb-kS-7SN" firstAttribute="top" secondItem="8SR-0g-ckK" secondAttribute="bottom" id="YvZ-Iv-3ia"/>
@@ -353,7 +353,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-9W-LN2">
-                                <rect key="frame" x="0.0" y="104" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="539.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-ea-kdl" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
@@ -564,10 +564,10 @@
                                                         </view>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="centerX" secondItem="YHq-r5-1a4" secondAttribute="centerX" id="3Ny-vv-OLw"/>
-                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="height" secondItem="YHq-r5-1a4" secondAttribute="height" id="Zxc-uM-GdU"/>
-                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="width" secondItem="YHq-r5-1a4" secondAttribute="width" id="fxH-xc-qbE"/>
-                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="centerY" secondItem="YHq-r5-1a4" secondAttribute="centerY" id="rGr-YM-O16"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3Ze-dL-cm0" secondAttribute="trailing" id="9uF-bM-pe6"/>
+                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="top" secondItem="YHq-r5-1a4" secondAttribute="top" id="LnZ-mC-lYY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3Ze-dL-cm0" secondAttribute="bottom" id="U8N-0h-iyT"/>
+                                                            <constraint firstItem="3Ze-dL-cm0" firstAttribute="leading" secondItem="YHq-r5-1a4" secondAttribute="leading" id="ez8-i2-6cU"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="detail" destination="3Ze-dL-cm0" id="4go-2q-jQu"/>

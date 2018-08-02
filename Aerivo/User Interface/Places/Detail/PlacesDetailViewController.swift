@@ -75,6 +75,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+                    self.view.layoutIfNeeded()
                     if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
@@ -87,6 +88,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+                    self.view.layoutIfNeeded()
                     if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
@@ -117,8 +119,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         super.traitCollectionDidChange(previousTraitCollection)
         // Do any layout related work when the interface environment changes.
         optionsStackView.axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? .vertical : .horizontal
-        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
         collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+        view.layoutIfNeeded()
     }
     
     override func didReceiveMemoryWarning() {
@@ -485,9 +489,12 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBAction func close(_ sender: UIButton) {
         presentingViewController?.view.alpha = 1
+        presentingViewController?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
         let tempPresentingViewController = presentingViewController // Retain a reference to the presenting view controller before dismissing.
         dismiss(animated: true) {
-            guard let mapView = (tempPresentingViewController?.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
+            guard let tempPresentingViewController = tempPresentingViewController else { return }
+            tempPresentingViewController.pulleyViewController?.setDrawerContentViewController(controller: tempPresentingViewController, animated: false)
+            guard let mapView = (tempPresentingViewController.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
             mapView.removeAnnotations(mapView.annotations ?? [])
         }
     }
