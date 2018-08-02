@@ -79,12 +79,6 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
 // MARK: - Map view delegate
 
 extension MapViewController: MGLMapViewDelegate {
-    func mapViewDidFinishRenderingMap(_ mapView: MGLMapView, fullyRendered: Bool) {
-        if let pulleyVC = pulleyViewController {
-            positionMapboxAttribution(in: pulleyVC, with: pulleyVC.drawerDistanceFromBottom.distance)
-        }
-    }
-    
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
