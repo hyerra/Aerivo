@@ -201,69 +201,12 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         nwqpParameters.page = 1
         nwqpParameters.startDate = startDate
         
-        var isBeckBioticIndexLoaded = false
-        var isBrillouinTaxonomicDiversityIndexLoaded = false
-        var isDissolvedOxygenLoaded = false
-        var isWaterTemperatureLoaded = false
-        var isTurbiditySeverityLoaded = false
-        var isHydrocarbonsLoaded = false
-        
-        var allDataIsLoaded: Bool {
-            return isBeckBioticIndexLoaded && isBrillouinTaxonomicDiversityIndexLoaded && isDissolvedOxygenLoaded && isWaterTemperatureLoaded && isTurbiditySeverityLoaded && isHydrocarbonsLoaded
-        }
-        
-        // Beck Biotic Index
-        nwqpParameters.characteristicName = .beckBioticIndex
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(beckBioticIndexResult) = result else { return }
-            self.nwqpResults.append(beckBioticIndexResult)
-            isBeckBioticIndexLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
-        }
-        
-        // Brillouin Taxonomic Diversity Index
-        nwqpParameters.characteristicName = .brillouinTaxonomicDiversityIndex
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(brillouinTaxonomicDiversityIndexResult) = result else { return }
-            self.nwqpResults.append(brillouinTaxonomicDiversityIndexResult)
-            isBrillouinTaxonomicDiversityIndexLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
-        }
-        
-        // Dissolved Oxygen
-        nwqpParameters.characteristicName = .dissolvedOxygen
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(dissolvedOxygen) = result else { return }
-            self.nwqpResults.append(dissolvedOxygen)
-            isDissolvedOxygenLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
-        }
-        
-        // Water Temperature
-        nwqpParameters.characteristicName = .waterTemperature
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(waterTemperature) = result else { return }
-            self.nwqpResults.append(waterTemperature)
-            isWaterTemperatureLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
-        }
-        
-        // Turbidity Severity
-        nwqpParameters.characteristicName = .turbiditySeverity
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(turbiditySeverity) = result else { return }
-            self.nwqpResults.append(turbiditySeverity)
-            isTurbiditySeverityLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
-        }
-        
-        // Hydrocarbons
-        nwqpParameters.characteristicName = .hydrocarbons
-        nwqpClient.fetchResults(using: nwqpParameters) { result in
-            guard case let .success(hydrocarbons) = result else { return }
-            self.nwqpResults.append(hydrocarbons)
-            isHydrocarbonsLoaded = true
-            if allDataIsLoaded { self.isNWQPDataLoaded = true }
+        nwqpClient.fetchAllResults(using: nwqpParameters) { results in
+            for result in results {
+                guard case let .success(parameter) = result else { return }
+                self.nwqpResults.append(parameter)
+                self.isNWQPDataLoaded = true
+            }
         }
     }
     
