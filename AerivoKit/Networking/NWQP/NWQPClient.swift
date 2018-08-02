@@ -37,6 +37,25 @@ public final class NWQPClient: APIClient {
         connect(to: nwqpResultEndpoint, completion: completion)
     }
     
+    /// Fetches all the characteristic names that are supported by Aerivo and are available from the National Water Quality Portal.
+    ///
+    /// - Parameters:
+    ///   - parameters: Parameters to be used when fetching the results. The `characteristicName` will be ignored as it'll be supplied by this method to fetch all the characteristic names supported.
+    ///   - completion: If successful, the data will be provided. If a failure occured, an error will be returned explaining what went wrong.
+    public func fetchAllResults(using parameters: NWQPParameters, completion: @escaping ([APIResult<NWQPResult>]) -> Void) {
+        var responses: [APIResult<NWQPResult>] = []
+        let totalExpectedResponses = NWQPParameters.CharacteristicName.allCases.count
+        
+        var modifiedParameters = parameters
+        for parameter in NWQPParameters.CharacteristicName.allCases {
+            modifiedParameters.characteristicName = parameter
+            fetchResults(using: modifiedParameters) {
+                responses.append($0)
+                if responses.count == totalExpectedResponses { completion(responses) }
+            }
+        }
+    }
+    
     // MARK: - API client
     
     func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) {

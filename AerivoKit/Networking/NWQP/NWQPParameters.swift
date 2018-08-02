@@ -77,6 +77,11 @@ public struct NWQPParameters: Parameters {
         case waterTemperature = "Temperature, water"
         case turbiditySeverity = "Turbidity"
         case hydrocarbons = "C12 Hydrocarbons"
+        
+        /// TODO: When Xcode-beta comes out remove this as this is all included in the Iterable protocol or whatever.
+        static var allCases: [CharacteristicName] {
+            return [.beckBioticIndex, .brillouinTaxonomicDiversityIndex, .dissolvedOxygen, .waterTemperature, .turbiditySeverity, .hydrocarbons]
+        }
     }
     
     /// The providers that can be used to fetch data from.
