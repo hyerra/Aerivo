@@ -562,6 +562,7 @@ extension PlacesDetailViewController: ParameterDescriptionDelegate {
 
 extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+        view.layoutIfNeeded()
         return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
     }
     
