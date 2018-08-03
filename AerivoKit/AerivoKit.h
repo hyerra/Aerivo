@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double AerivoKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AerivoKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AerivoKit/PublicHeader.h>
-
-#import "MBPlacemarkScope.h"

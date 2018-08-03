@@ -8,6 +8,7 @@
 
 import UIKit
 import AerivoKit
+import MapboxGeocoder
 
 class PlacesTableViewCell: UITableViewCell {
     

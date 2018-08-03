@@ -8,8 +8,9 @@
 
 import UIKit
 import Mapbox
+import Pulley
 import AerivoKit
-import Contacts
+import MapboxGeocoder
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -92,10 +93,10 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.placemark = result
         
         let imageName = result.imageName ?? "marker"
-        cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
+        cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
         
         cell.placeName.text = result.formattedName
-        cell.secondaryDetail.text = result.formattedAddressLines.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+        cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
         cell.iconBackgroundView.backgroundColor = result.scope.displayColor
         
         return cell
@@ -113,7 +114,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         
         if let placemark = (tableView.cellForRow(at: indexPath) as? PlacesTableViewCell)?.placemark, let coordinate = placemark.location?.coordinate {
             annotationBackgroundColor = placemark.scope.displayColor
-            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(for: GeocodedPlacemark.self), compatibleWith: nil)
+            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
             
             let pointAnnotation = MGLPointAnnotation()
             pointAnnotation.coordinate = coordinate
