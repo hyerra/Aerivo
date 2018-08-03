@@ -51,6 +51,7 @@
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 		7D2C92B721150B3A0082D935 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */; };
+		7D2C92B9211514B20082D935 /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
 		7D336315210E3CF000491C3A /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
 		7D336316210E3CF000491C3A /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
 		7D336317210E3CF000491C3A /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
@@ -233,6 +234,7 @@
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 		7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFetchedResultsController.swift; sourceTree = "<group>"; };
 		7D3362E5210E3CEF00491C3A /* Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCoreConfig.swift; sourceTree = "<group>"; };
 		7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitAttribute.swift; sourceTree = "<group>"; };
@@ -844,6 +846,7 @@
 			children = (
 				7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */,
 				7D36D598210D3A33000BF77B /* CoreDataStack.swift */,
+				7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */,
 				7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */,
 			);
 			path = "Core Data";
@@ -1227,6 +1230,7 @@
 				7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */,
 				7D3FDDB1211428EA00C0F56B /* XMLUnkeyedDecodingContainer.swift in Sources */,
 				7D3FDDA0211428B600C0F56B /* MBPlacemarkScope+Color.swift in Sources */,
+				7D2C92B9211514B20082D935 /* FavoriteFetchedResultsController.swift in Sources */,
 				7D336315210E3CF000491C3A /* Tokens.swift in Sources */,
 				7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */,
 				7D3FDDB0211428EA00C0F56B /* DecodingErrorExtension.swift in Sources */,
