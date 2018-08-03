@@ -19,18 +19,6 @@
 		684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */; };
 		684BE22020E99C1F00E74FE5 /* AerivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */; };
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
-		68622DA5210045C00002103F /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D97210045C00002103F /* XMLStackParser.swift */; };
-		68622DA6210045C00002103F /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D99210045C00002103F /* XMLReferencingEncoder.swift */; };
-		68622DA7210045C00002103F /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D9A210045C00002103F /* EncodingErrorExtension.swift */; };
-		68622DA8210045C00002103F /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D9B210045C00002103F /* XMLEncoder.swift */; };
-		68622DA9210045C00002103F /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D9C210045C00002103F /* XMLEncodingStorage.swift */; };
-		68622DAA210045C00002103F /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D9E210045C00002103F /* DecodingErrorExtension.swift */; };
-		68622DAB210045C00002103F /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622D9F210045C00002103F /* XMLUnkeyedDecodingContainer.swift */; };
-		68622DAC210045C00002103F /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA0210045C00002103F /* XMLKeyedDecodingContainer.swift */; };
-		68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA1210045C00002103F /* XMLDecodingStorage.swift */; };
-		68622DAE210045C00002103F /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA2210045C00002103F /* XMLDecoder.swift */; };
-		68622DAF210045C00002103F /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA3210045C00002103F /* ISO8601DateFormatter.swift */; };
-		68622DB0210045C00002103F /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DA4210045C00002103F /* XMLKey.swift */; };
 		68622DB32100469C0002103F /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
@@ -99,6 +87,19 @@
 		7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
 		7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */; };
 		7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		7D3FDDA0211428B600C0F56B /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
+		7D3FDDB0211428EA00C0F56B /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
+		7D3FDDB1211428EA00C0F56B /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
+		7D3FDDB2211428EA00C0F56B /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
+		7D3FDDB3211428EA00C0F56B /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
+		7D3FDDB4211428EA00C0F56B /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
+		7D3FDDB5211428EA00C0F56B /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
+		7D3FDDB6211428EA00C0F56B /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
+		7D3FDDB7211428EA00C0F56B /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
+		7D3FDDB8211428EA00C0F56B /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
+		7D3FDDB9211428EA00C0F56B /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
+		7D3FDDBA211428EA00C0F56B /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
+		7D3FDDBB211428EA00C0F56B /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
 		7D51A334210FA13F00E4969B /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
 		7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
@@ -118,7 +119,6 @@
 		7DC7D90D21141D8200681860 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90C21141D8200681860 /* Mapbox.framework */; };
 		7DC7D90F21141DA900681860 /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */; };
 		7DC7D91121141DAD00681860 /* Pulley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D91021141DAD00681860 /* Pulley.framework */; };
-		7DC7D917211421BD00681860 /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7D916211421BD00681860 /* MBPlacemarkScope+Color.swift */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
 		7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */; };
 		7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */; };
@@ -195,18 +195,6 @@
 		684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoUITests.swift; sourceTree = "<group>"; };
 		684BE22C20E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68622D97210045C00002103F /* XMLStackParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLStackParser.swift; sourceTree = "<group>"; };
-		68622D99210045C00002103F /* XMLReferencingEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLReferencingEncoder.swift; sourceTree = "<group>"; };
-		68622D9A210045C00002103F /* EncodingErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingErrorExtension.swift; sourceTree = "<group>"; };
-		68622D9B210045C00002103F /* XMLEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLEncoder.swift; sourceTree = "<group>"; };
-		68622D9C210045C00002103F /* XMLEncodingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLEncodingStorage.swift; sourceTree = "<group>"; };
-		68622D9E210045C00002103F /* DecodingErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingErrorExtension.swift; sourceTree = "<group>"; };
-		68622D9F210045C00002103F /* XMLUnkeyedDecodingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLUnkeyedDecodingContainer.swift; sourceTree = "<group>"; };
-		68622DA0210045C00002103F /* XMLKeyedDecodingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKeyedDecodingContainer.swift; sourceTree = "<group>"; };
-		68622DA1210045C00002103F /* XMLDecodingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDecodingStorage.swift; sourceTree = "<group>"; };
-		68622DA2210045C00002103F /* XMLDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDecoder.swift; sourceTree = "<group>"; };
-		68622DA3210045C00002103F /* ISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601DateFormatter.swift; sourceTree = "<group>"; };
-		68622DA4210045C00002103F /* XMLKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKey.swift; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +266,19 @@
 		7D336314210E3CF000491C3A /* CKRecordID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKRecordID.swift; sourceTree = "<group>"; };
 		7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		7D36D598210D3A33000BF77B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBPlacemarkScope+Color.swift"; sourceTree = "<group>"; };
+		7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingErrorExtension.swift; sourceTree = "<group>"; };
+		7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLUnkeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDecodingStorage.swift; sourceTree = "<group>"; };
+		7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDecoder.swift; sourceTree = "<group>"; };
+		7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLReferencingEncoder.swift; sourceTree = "<group>"; };
+		7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingErrorExtension.swift; sourceTree = "<group>"; };
+		7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLEncoder.swift; sourceTree = "<group>"; };
+		7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLEncodingStorage.swift; sourceTree = "<group>"; };
+		7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		7D3FDDAE211428EA00C0F56B /* XMLKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKey.swift; sourceTree = "<group>"; };
+		7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLStackParser.swift; sourceTree = "<group>"; };
 		7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Placemark.swift"; sourceTree = "<group>"; };
 		7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudCore+AerivoConfig.swift"; sourceTree = "<group>"; };
 		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
@@ -297,7 +298,6 @@
 		7DC7D90C21141D8200681860 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 		7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxGeocoder.framework; path = Carthage/Build/iOS/MapboxGeocoder.framework; sourceTree = "<group>"; };
 		7DC7D91021141DAD00681860 /* Pulley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pulley.framework; path = Carthage/Build/iOS/Pulley.framework; sourceTree = "<group>"; };
-		7DC7D916211421BD00681860 /* MBPlacemarkScope+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MBPlacemarkScope+Color.swift"; path = "../../../../Downloads/MBPlacemarkScope+Color.swift"; sourceTree = "<group>"; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DCFD7DB210595AD00F86474 /* DarkeningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkeningButton.swift; sourceTree = "<group>"; };
 		7DCFD7DF210643C800F86474 /* PlacesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -420,41 +420,6 @@
 			path = AerivoUITests;
 			sourceTree = "<group>";
 		};
-		68622D96210045C00002103F /* XMLParsing */ = {
-			isa = PBXGroup;
-			children = (
-				68622D97210045C00002103F /* XMLStackParser.swift */,
-				68622D98210045C00002103F /* Encoder */,
-				68622D9D210045C00002103F /* Decoder */,
-				68622DA3210045C00002103F /* ISO8601DateFormatter.swift */,
-				68622DA4210045C00002103F /* XMLKey.swift */,
-			);
-			path = XMLParsing;
-			sourceTree = "<group>";
-		};
-		68622D98210045C00002103F /* Encoder */ = {
-			isa = PBXGroup;
-			children = (
-				68622D99210045C00002103F /* XMLReferencingEncoder.swift */,
-				68622D9A210045C00002103F /* EncodingErrorExtension.swift */,
-				68622D9B210045C00002103F /* XMLEncoder.swift */,
-				68622D9C210045C00002103F /* XMLEncodingStorage.swift */,
-			);
-			path = Encoder;
-			sourceTree = "<group>";
-		};
-		68622D9D210045C00002103F /* Decoder */ = {
-			isa = PBXGroup;
-			children = (
-				68622D9E210045C00002103F /* DecodingErrorExtension.swift */,
-				68622D9F210045C00002103F /* XMLUnkeyedDecodingContainer.swift */,
-				68622DA0210045C00002103F /* XMLKeyedDecodingContainer.swift */,
-				68622DA1210045C00002103F /* XMLDecodingStorage.swift */,
-				68622DA2210045C00002103F /* XMLDecoder.swift */,
-			);
-			path = Decoder;
-			sourceTree = "<group>";
-		};
 		68622DB1210046530002103F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,7 +518,7 @@
 			children = (
 				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
 				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
-				7DC7D9152114218600681860 /* Geocoder Extensions */,
+				7D3FDD9E211428A500C0F56B /* Geocoder Extensions */,
 				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
@@ -591,7 +556,7 @@
 			children = (
 				68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */,
 				68E397B520EFF0F3005C0722 /* Info.plist */,
-				68622D96210045C00002103F /* XMLParsing */,
+				7D3FDDA1211428C000C0F56B /* XMLParsing */,
 				7D3362E3210E3CB000491C3A /* Cloud Core */,
 			);
 			path = Resources;
@@ -766,6 +731,49 @@
 			path = "Open AQ";
 			sourceTree = "<group>";
 		};
+		7D3FDD9E211428A500C0F56B /* Geocoder Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */,
+			);
+			path = "Geocoder Extensions";
+			sourceTree = "<group>";
+		};
+		7D3FDDA1211428C000C0F56B /* XMLParsing */ = {
+			isa = PBXGroup;
+			children = (
+				7D3FDDA2211428E900C0F56B /* Decoder */,
+				7D3FDDA8211428E900C0F56B /* Encoder */,
+				7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */,
+				7D3FDDAE211428EA00C0F56B /* XMLKey.swift */,
+				7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */,
+			);
+			path = XMLParsing;
+			sourceTree = "<group>";
+		};
+		7D3FDDA2211428E900C0F56B /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */,
+				7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */,
+				7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */,
+				7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */,
+				7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		7D3FDDA8211428E900C0F56B /* Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */,
+				7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */,
+				7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */,
+				7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */,
+			);
+			path = Encoder;
+			sourceTree = "<group>";
+		};
 		7D51A335210FA95F00E4969B /* CloudCore Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,15 +820,6 @@
 				7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */,
 			);
 			path = "Core Data";
-			sourceTree = "<group>";
-		};
-		7DC7D9152114218600681860 /* Geocoder Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7DC7D916211421BD00681860 /* MBPlacemarkScope+Color.swift */,
-			);
-			name = "Geocoder Extensions";
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1119,17 +1118,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D336329210E3CF000491C3A /* ObjectToRecordConverter.swift in Sources */,
+				7D3FDDB2211428EA00C0F56B /* XMLKeyedDecodingContainer.swift in Sources */,
 				68B7648C20F848B1005A6EB1 /* Endpoint.swift in Sources */,
-				68622DAF210045C00002103F /* ISO8601DateFormatter.swift in Sources */,
 				7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */,
 				68DD5B8720F993960083B943 /* OpenAQClient.swift in Sources */,
 				7DAD9EE4210A4F91003B1671 /* RepresentativeInfoByAddress.swift in Sources */,
-				7DC7D917211421BD00681860 /* MBPlacemarkScope+Color.swift in Sources */,
 				7D336335210E3CF000491C3A /* NSEntityDescription.swift in Sources */,
+				7D3FDDB9211428EA00C0F56B /* ISO8601DateFormatter.swift in Sources */,
 				7D336320210E3CF000491C3A /* DeleteFromCoreDataOperation.swift in Sources */,
+				7D3FDDB6211428EA00C0F56B /* EncodingErrorExtension.swift in Sources */,
 				68DD5B8E20F9A4810083B943 /* AQFetch.swift in Sources */,
 				68DD5B8A20F996D10083B943 /* AQCity.swift in Sources */,
 				68622DB32100469C0002103F /* NWQPResult.swift in Sources */,
+				7D3FDDB7211428EA00C0F56B /* XMLEncoder.swift in Sources */,
 				68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */,
 				68DD5B9020F9AB1E0083B943 /* AQLatest.swift in Sources */,
 				7D33632D210E3CF000491C3A /* RecordIDWithDatabase.swift in Sources */,
@@ -1145,18 +1146,17 @@
 				7DAD9EDD210A332F003B1671 /* CivicInformationEndpoint.swift in Sources */,
 				7D336324210E3CF000491C3A /* SetupOperation.swift in Sources */,
 				680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */,
-				68622DAB210045C00002103F /* XMLUnkeyedDecodingContainer.swift in Sources */,
 				7D33632C210E3CF000491C3A /* CoreDataRelationship.swift in Sources */,
+				7D3FDDB5211428EA00C0F56B /* XMLReferencingEncoder.swift in Sources */,
 				7D336330210E3CF000491C3A /* CloudCoreError.swift in Sources */,
 				7D336331210E3CF000491C3A /* FetchResult.swift in Sources */,
 				68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */,
 				68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */,
+				7D3FDDBA211428EA00C0F56B /* XMLKey.swift in Sources */,
 				680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */,
 				7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */,
 				6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */,
-				68622DAC210045C00002103F /* XMLKeyedDecodingContainer.swift in Sources */,
 				7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */,
-				68622DA6210045C00002103F /* XMLReferencingEncoder.swift in Sources */,
 				7D336325210E3CF000491C3A /* SubscribeOperation.swift in Sources */,
 				7D33632A210E3CF000491C3A /* ObjectToRecordOperation.swift in Sources */,
 				68DD5B9420F9BA8F0083B943 /* AQLocation.swift in Sources */,
@@ -1164,42 +1164,41 @@
 				68DD5B9820FA53F40083B943 /* AQParameter.swift in Sources */,
 				7D33632F210E3CF000491C3A /* CoreDataListener.swift in Sources */,
 				7D336323210E3CF000491C3A /* RecordToCoreDataOperation.swift in Sources */,
-				68622DA8210045C00002103F /* XMLEncoder.swift in Sources */,
 				6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */,
+				7D3FDDB4211428EA00C0F56B /* XMLDecoder.swift in Sources */,
 				680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */,
+				7D3FDDB8211428EA00C0F56B /* XMLEncodingStorage.swift in Sources */,
 				6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */,
 				68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */,
 				7D336327210E3CF000491C3A /* UploadAllLocalDataOperation.swift in Sources */,
 				7D336316210E3CF000491C3A /* CloudCoreConfig.swift in Sources */,
-				68622DA7210045C00002103F /* EncodingErrorExtension.swift in Sources */,
+				7D3FDDBB211428EA00C0F56B /* XMLStackParser.swift in Sources */,
 				7D336317210E3CF000491C3A /* CloudKitAttribute.swift in Sources */,
 				68B7649120F84D25005A6EB1 /* OpenAQEndpoint.swift in Sources */,
-				68622DAE210045C00002103F /* XMLDecoder.swift in Sources */,
 				7D336319210E3CF000491C3A /* CKRecord.swift in Sources */,
 				7D33632B210E3CF000491C3A /* CoreDataAttribute.swift in Sources */,
 				7D33631A210E3CF000491C3A /* CloudCore.swift in Sources */,
 				7D336318210E3CF000491C3A /* ServiceAttributeName.swift in Sources */,
 				7DAD9EE6210A4FB9003B1671 /* NWQPResponse.swift in Sources */,
-				68622DB0210045C00002103F /* XMLKey.swift in Sources */,
-				68622DA5210045C00002103F /* XMLStackParser.swift in Sources */,
 				7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */,
 				7DBFDBEC210D1DA90074FFA5 /* Aerivo.xcdatamodeld in Sources */,
 				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
-				68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */,
 				7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */,
 				7D33631C210E3CF000491C3A /* AsynchronousOperation.swift in Sources */,
 				7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */,
 				68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */,
 				683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */,
 				7D336328210E3CF000491C3A /* CloudSaveOperationQueue.swift in Sources */,
-				68622DA9210045C00002103F /* XMLEncodingStorage.swift in Sources */,
 				7D336322210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift in Sources */,
 				7D33631D210E3CF000491C3A /* FetchAndSaveOperation.swift in Sources */,
+				7D3FDDB3211428EA00C0F56B /* XMLDecodingStorage.swift in Sources */,
 				7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */,
+				7D3FDDB1211428EA00C0F56B /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				7D3FDDA0211428B600C0F56B /* MBPlacemarkScope+Color.swift in Sources */,
 				7D336315210E3CF000491C3A /* Tokens.swift in Sources */,
 				7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */,
+				7D3FDDB0211428EA00C0F56B /* DecodingErrorExtension.swift in Sources */,
 				7D336333210E3CF000491C3A /* CloudCoreDelegate.swift in Sources */,
-				68622DAA210045C00002103F /* DecodingErrorExtension.swift in Sources */,
 				68DD5B9A20FA551F0083B943 /* OpenAQResponse.swift in Sources */,
 				7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */,
 			);
