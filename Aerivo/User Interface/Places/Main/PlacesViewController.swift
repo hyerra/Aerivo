@@ -126,7 +126,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             cell.iconBackgroundView.backgroundColor = result.scope.displayColor
         } else {
             let cell = cell as! FavoritesTableViewCell
-            cell.count.text = "\(favorites.count) favorites"
+            cell.count.text = String.localizedStringWithFormat(NSLocalizedString("%d favorite(s)", comment: "Shows the number of favorites a user has."), favorites.count)
         }
         
         return cell
