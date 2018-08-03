@@ -234,7 +234,7 @@ open class Placemark: NSObject, Codable {
      
      If you need to fit the same address on a single line, use the `qualifiedName` property, in which each line is separated by a comma instead of a line break.
      */
-    open var formattedAddressLines: [String]? {
+    fileprivate var formattedAddressLines: [String]? {
         return nil
     }
     
@@ -501,7 +501,7 @@ open class GeocodedPlacemark: Placemark {
         return Array(lines.suffix(from: 1))
     }
     
-    override open var formattedAddressLines: [String] {
+    override public var formattedAddressLines: [String] {
         return clippedAddressLines
     }
     

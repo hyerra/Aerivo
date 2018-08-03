@@ -12,12 +12,6 @@
 		680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
 		680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
 		680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
-		6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8320F059F90018D812 /* MBPlacemark.swift */; };
-		6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */; };
-		6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */; };
-		6837BB8C20F059FA0018D812 /* MBGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8620F059F90018D812 /* MBGeocoder.swift */; };
-		6837BB8D20F059FA0018D812 /* MBPlacemarkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 6837BB8720F059F90018D812 /* MBPlacemarkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6837BB8E20F059FA0018D812 /* MBRectangularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */; };
 		683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
@@ -126,6 +120,13 @@
 		7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
 		7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
 		7DAD9EEF210A6E45003B1671 /* CivicInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */; };
+		7DBA1AF32113EEE000E8E61B /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AED2113EEDF00E8E61B /* MBGeocodeOptions.swift */; };
+		7DBA1AF42113EEE000E8E61B /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AEE2113EEDF00E8E61B /* MBPlacemarkScope.swift */; };
+		7DBA1AF52113EEE000E8E61B /* MBGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AEF2113EEDF00E8E61B /* MBGeocoder.swift */; };
+		7DBA1AF62113EEE000E8E61B /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AF02113EEDF00E8E61B /* MBPlacemark.swift */; };
+		7DBA1AF72113EEE000E8E61B /* MBPlacemarkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA1AF12113EEE000E8E61B /* MBPlacemarkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DBA1AF82113EEE000E8E61B /* MBRectangularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AF22113EEE000E8E61B /* MBRectangularRegion.swift */; };
+		7DBA1AFA2113EEE400E8E61B /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1AF92113EEE400E8E61B /* CoreLocation.swift */; };
 		7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */; };
 		7DBFDBEC210D1DA90074FFA5 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
 		7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFD7D92105927900F86474 /* Extensions.swift */; };
@@ -192,12 +193,6 @@
 		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
-		6837BB8320F059F90018D812 /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
-		6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
-		6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
-		6837BB8620F059F90018D812 /* MBGeocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocoder.swift; sourceTree = "<group>"; };
-		6837BB8720F059F90018D812 /* MBPlacemarkScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlacemarkScope.h; sourceTree = "<group>"; };
-		6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRectangularRegion.swift; sourceTree = "<group>"; };
 		683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQParameters.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -314,6 +309,13 @@
 		7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationResponse.swift; sourceTree = "<group>"; };
 		7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationClient.swift; sourceTree = "<group>"; };
 		7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationTests.swift; sourceTree = "<group>"; };
+		7DBA1AED2113EEDF00E8E61B /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocodeOptions.swift; sourceTree = "<group>"; };
+		7DBA1AEE2113EEDF00E8E61B /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemarkScope.swift; sourceTree = "<group>"; };
+		7DBA1AEF2113EEDF00E8E61B /* MBGeocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGeocoder.swift; sourceTree = "<group>"; };
+		7DBA1AF02113EEDF00E8E61B /* MBPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPlacemark.swift; sourceTree = "<group>"; };
+		7DBA1AF12113EEE000E8E61B /* MBPlacemarkScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlacemarkScope.h; sourceTree = "<group>"; };
+		7DBA1AF22113EEE000E8E61B /* MBRectangularRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRectangularRegion.swift; sourceTree = "<group>"; };
+		7DBA1AF92113EEE400E8E61B /* CoreLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
 		7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7DBFDBEB210D1DA90074FFA5 /* Aerivo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aerivo.xcdatamodel; sourceTree = "<group>"; };
 		7DCFD7D92105927900F86474 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -375,12 +377,13 @@
 		6837BB8220F059E20018D812 /* Mapbox Geocoder */ = {
 			isa = PBXGroup;
 			children = (
-				6837BB8520F059F90018D812 /* MBGeocodeOptions.swift */,
-				6837BB8620F059F90018D812 /* MBGeocoder.swift */,
-				6837BB8320F059F90018D812 /* MBPlacemark.swift */,
-				6837BB8720F059F90018D812 /* MBPlacemarkScope.h */,
-				6837BB8420F059F90018D812 /* MBPlacemarkScope.swift */,
-				6837BB8820F059FA0018D812 /* MBRectangularRegion.swift */,
+				7DBA1AF92113EEE400E8E61B /* CoreLocation.swift */,
+				7DBA1AED2113EEDF00E8E61B /* MBGeocodeOptions.swift */,
+				7DBA1AEF2113EEDF00E8E61B /* MBGeocoder.swift */,
+				7DBA1AF02113EEDF00E8E61B /* MBPlacemark.swift */,
+				7DBA1AF12113EEE000E8E61B /* MBPlacemarkScope.h */,
+				7DBA1AEE2113EEDF00E8E61B /* MBPlacemarkScope.swift */,
+				7DBA1AF22113EEE000E8E61B /* MBRectangularRegion.swift */,
 			);
 			path = "Mapbox Geocoder";
 			sourceTree = "<group>";
@@ -870,7 +873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */,
-				6837BB8D20F059FA0018D812 /* MBPlacemarkScope.h in Headers */,
+				7DBA1AF72113EEE000E8E61B /* MBPlacemarkScope.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,6 +1152,7 @@
 				7D336335210E3CF000491C3A /* NSEntityDescription.swift in Sources */,
 				7D336320210E3CF000491C3A /* DeleteFromCoreDataOperation.swift in Sources */,
 				68DD5B8E20F9A4810083B943 /* AQFetch.swift in Sources */,
+				7DBA1AF52113EEE000E8E61B /* MBGeocoder.swift in Sources */,
 				68DD5B8A20F996D10083B943 /* AQCity.swift in Sources */,
 				68622DB32100469C0002103F /* NWQPResult.swift in Sources */,
 				68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */,
@@ -1156,6 +1160,7 @@
 				7D33632D210E3CF000491C3A /* RecordIDWithDatabase.swift in Sources */,
 				7D336332210E3CF000491C3A /* Module.swift in Sources */,
 				7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */,
+				7DBA1AF82113EEE000E8E61B /* MBRectangularRegion.swift in Sources */,
 				7D33631B210E3CF000491C3A /* ErrorBlockProxy.swift in Sources */,
 				7D33631F210E3CF000491C3A /* PublicDatabaseSubscriptions.swift in Sources */,
 				7D336326210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift in Sources */,
@@ -1175,22 +1180,22 @@
 				680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */,
 				7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */,
 				6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */,
+				7DBA1AF32113EEE000E8E61B /* MBGeocodeOptions.swift in Sources */,
 				68622DAC210045C00002103F /* XMLKeyedDecodingContainer.swift in Sources */,
 				7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */,
 				68622DA6210045C00002103F /* XMLReferencingEncoder.swift in Sources */,
 				7D336325210E3CF000491C3A /* SubscribeOperation.swift in Sources */,
 				7D33632A210E3CF000491C3A /* ObjectToRecordOperation.swift in Sources */,
 				68DD5B9420F9BA8F0083B943 /* AQLocation.swift in Sources */,
+				7DBA1AF62113EEE000E8E61B /* MBPlacemark.swift in Sources */,
 				7D336337210E3CF000491C3A /* NSManagedObject.swift in Sources */,
 				68DD5B9820FA53F40083B943 /* AQParameter.swift in Sources */,
 				7D33632F210E3CF000491C3A /* CoreDataListener.swift in Sources */,
 				7D336323210E3CF000491C3A /* RecordToCoreDataOperation.swift in Sources */,
 				68622DA8210045C00002103F /* XMLEncoder.swift in Sources */,
 				6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */,
-				6837BB8E20F059FA0018D812 /* MBRectangularRegion.swift in Sources */,
 				680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */,
 				6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */,
-				6837BB8A20F059FA0018D812 /* MBPlacemarkScope.swift in Sources */,
 				68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */,
 				7D336327210E3CF000491C3A /* UploadAllLocalDataOperation.swift in Sources */,
 				7D336316210E3CF000491C3A /* CloudCoreConfig.swift in Sources */,
@@ -1209,6 +1214,7 @@
 				7DBFDBEC210D1DA90074FFA5 /* Aerivo.xcdatamodeld in Sources */,
 				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
 				68622DAD210045C00002103F /* XMLDecodingStorage.swift in Sources */,
+				7DBA1AFA2113EEE400E8E61B /* CoreLocation.swift in Sources */,
 				7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */,
 				7D33631C210E3CF000491C3A /* AsynchronousOperation.swift in Sources */,
 				7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */,
@@ -1216,12 +1222,10 @@
 				683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */,
 				7D336328210E3CF000491C3A /* CloudSaveOperationQueue.swift in Sources */,
 				68622DA9210045C00002103F /* XMLEncodingStorage.swift in Sources */,
-				6837BB8920F059FA0018D812 /* MBPlacemark.swift in Sources */,
-				6837BB8C20F059FA0018D812 /* MBGeocoder.swift in Sources */,
 				7D336322210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift in Sources */,
+				7DBA1AF42113EEE000E8E61B /* MBPlacemarkScope.swift in Sources */,
 				7D33631D210E3CF000491C3A /* FetchAndSaveOperation.swift in Sources */,
 				7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */,
-				6837BB8B20F059FA0018D812 /* MBGeocodeOptions.swift in Sources */,
 				7D336315210E3CF000491C3A /* Tokens.swift in Sources */,
 				7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */,
 				7D336333210E3CF000491C3A /* CloudCoreDelegate.swift in Sources */,

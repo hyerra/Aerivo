@@ -15,7 +15,7 @@ extension Favorite {
     /// - Parameters:
     ///   - placemark: The placemark you wish to favorite.
     ///   - context: The managed object context you wish to save into.
-    public convenience init(placemark: Placemark, insertInto context: NSManagedObjectContext) {
+    public convenience init(placemark: GeocodedPlacemark, insertInto context: NSManagedObjectContext) {
         self.init(context: context)
         self.formattedAddressLines = placemark.formattedAddressLines
         self.genres = placemark.genres
