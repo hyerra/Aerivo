@@ -198,6 +198,76 @@
                                             <outletCollection property="iconSpacingConstraints" destination="dkl-cO-Ohb" collectionClass="NSMutableArray" id="biz-9S-Cl1"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritesCell" rowHeight="120" id="jic-zA-mpG" customClass="FavoritesTableViewCell" customModule="Aerivo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jic-zA-mpG" id="xyL-mO-k1I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
+                                                    <rect key="frame" x="15" y="13" width="99" height="94"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
+                                                            <rect key="frame" x="0.0" y="38" width="18" height="18"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
+                                                                    <rect key="frame" x="6" y="6" width="6" height="6"/>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="8m1-mR-BhR" secondAttribute="height" multiplier="1:1" id="Hy5-xM-TPd"/>
+                                                                        <constraint firstAttribute="width" constant="6" id="XnP-tS-Ys9"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="System Red Color"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="8m1-mR-BhR" secondAttribute="bottom" constant="6" id="0ET-3k-DIL"/>
+                                                                <constraint firstItem="8m1-mR-BhR" firstAttribute="leading" secondItem="SU4-6J-LPU" secondAttribute="leading" constant="6" id="4JP-bU-l5C"/>
+                                                                <constraint firstAttribute="trailing" secondItem="8m1-mR-BhR" secondAttribute="trailing" constant="6" id="IHG-BF-kzS"/>
+                                                                <constraint firstItem="8m1-mR-BhR" firstAttribute="top" secondItem="SU4-6J-LPU" secondAttribute="top" constant="6" id="g89-pc-wcQ"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
+                                                            <rect key="frame" x="26" y="27.5" width="73" height="39.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-qh-LHm">
+                                                                    <rect key="frame" x="0.0" y="21.5" width="73" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="I2T-49-BsF" firstAttribute="leading" secondItem="xyL-mO-k1I" secondAttribute="leadingMargin" id="Bwr-h5-qDS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="I2T-49-BsF" secondAttribute="bottom" constant="2" id="HLT-R1-Zpa"/>
+                                                <constraint firstItem="I2T-49-BsF" firstAttribute="top" secondItem="xyL-mO-k1I" secondAttribute="topMargin" constant="2" id="YdU-cK-p0M"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="I2T-49-BsF" secondAttribute="trailing" constant="10" id="lWR-le-WJs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="count" destination="sH0-qh-LHm" id="RYs-1o-k5N"/>
+                                            <outlet property="iconBackgroundView" destination="SU4-6J-LPU" id="YIO-Kv-ZKx"/>
+                                            <outlet property="iconWidthConstraint" destination="XnP-tS-Ys9" id="9KT-dh-awD"/>
+                                            <outlet property="stackView" destination="I2T-49-BsF" id="0NK-Q7-lG2"/>
+                                            <outletCollection property="iconSpacingConstraints" destination="4JP-bU-l5C" collectionClass="NSMutableArray" id="jie-cz-5Wt"/>
+                                            <outletCollection property="iconSpacingConstraints" destination="IHG-BF-kzS" collectionClass="NSMutableArray" id="4wA-WP-TSS"/>
+                                            <outletCollection property="iconSpacingConstraints" destination="g89-pc-wcQ" collectionClass="NSMutableArray" id="dv5-fN-bYr"/>
+                                            <outletCollection property="iconSpacingConstraints" destination="0ET-3k-DIL" collectionClass="NSMutableArray" id="Els-0j-X8l"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yb8-WH-SVH">
@@ -856,6 +926,9 @@
         <image name="globe" width="30" height="30"/>
         <namedColor name="System Green Color">
             <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="System Red Color">
+            <color red="1" green="0.23100000619888306" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
