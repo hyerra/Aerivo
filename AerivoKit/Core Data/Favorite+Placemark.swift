@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import MapboxGeocoder
 
 extension Favorite {
     
@@ -17,7 +18,7 @@ extension Favorite {
     ///   - context: The managed object context you wish to save into.
     public convenience init(placemark: GeocodedPlacemark, insertInto context: NSManagedObjectContext) {
         self.init(context: context)
-        self.formattedAddressLines = placemark.formattedAddressLines
+        self.formattedAddressLines = placemark.addressDictionary?["formattedAddressLines"] as? [String]
         self.genres = placemark.genres
         if let latitude = placemark.location?.coordinate.latitude { self.latitude = NSNumber(value: latitude) }
         if let longitude = placemark.location?.coordinate.longitude { self.longitude = NSNumber(value: longitude) }

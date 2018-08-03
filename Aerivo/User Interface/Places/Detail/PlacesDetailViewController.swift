@@ -8,6 +8,8 @@
 
 import UIKit
 import AerivoKit
+import Pulley
+import MapboxGeocoder
 import CoreData
 import MessageUI
 
@@ -100,7 +102,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Do any additional setup after loading the view.
         placeName.text = placemark.formattedName
         detail.text = placemark.genres?.first ?? placemark.address ?? placemark.qualifiedName
-        address.text = placemark.formattedAddressLines.joined(separator: "\n")
+        address.text = (placemark.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n")
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize }
         collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
@@ -315,7 +317,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         sender.isUserInteractionEnabled = false
         
         var representativeInfoParams = RepresentativeInfoByAddressParameters()
-        representativeInfoParams.address = placemark.formattedAddressLines.joined(separator: " ")
+        representativeInfoParams.address = (placemark.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: " ")
         representativeInfoParams.levels = [.administrativeArea1, .administrativeArea2, .locality, .regional, .special, .subLocality1, .subLocality2]
         representativeInfoParams.roles = [.deputyHeadOfGovernment, .executiveCouncil, .governmentOfficer, .headOfGovernment, .headOfState, .legislatorLowerBody, .legislatorUpperBody]
         civicInformationClient.fetchRepresentativeInfo(using: representativeInfoParams) { result in

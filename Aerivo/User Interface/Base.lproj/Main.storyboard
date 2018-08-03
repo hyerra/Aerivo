@@ -18,7 +18,7 @@
         <!--Pulley View Controller-->
         <scene sceneID="opc-WK-1pU">
             <objects>
-                <viewController storyboardIdentifier="pulleyVC" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Hb-WD-EXz" customClass="PulleyViewController" customModule="Aerivo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pulleyVC" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Hb-WD-EXz" customClass="PulleyViewController" customModule="Pulley" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ct7-sn-nT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -855,9 +855,6 @@
         <image name="globe" width="30" height="30"/>
         <namedColor name="System Green Color">
             <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="System Green Color">
-            <color red="0.38800001140000001" green="0.85500001910000001" blue="0.21999999880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
