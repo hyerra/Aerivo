@@ -104,6 +104,8 @@
 		7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
 		7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
+		7D8F0E252114F42300A799F2 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8F0E242114F42300A799F2 /* MapboxMobileEvents.framework */; };
+		7D8F0E272114F42600A799F2 /* MapboxSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8F0E262114F42600A799F2 /* MapboxSceneKit.framework */; };
 		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */; };
 		7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */; };
@@ -283,6 +285,8 @@
 		7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudCore+AerivoConfig.swift"; sourceTree = "<group>"; };
 		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
 		7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationMessage.swift; sourceTree = "<group>"; };
+		7D8F0E242114F42300A799F2 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
+		7D8F0E262114F42600A799F2 /* MapboxSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxSceneKit.framework; path = Carthage/Build/iOS/MapboxSceneKit.framework; sourceTree = "<group>"; };
 		7DAD9ED521083681003B1671 /* CustomUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnits.swift; sourceTree = "<group>"; };
 		7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionPopoverViewController.swift; sourceTree = "<group>"; };
 		7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDescriptionDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				7DC7D90D21141D8200681860 /* Mapbox.framework in Frameworks */,
 				7DC7D90F21141DA900681860 /* MapboxGeocoder.framework in Frameworks */,
 				7DC7D91121141DAD00681860 /* Pulley.framework in Frameworks */,
+				7D8F0E272114F42600A799F2 /* MapboxSceneKit.framework in Frameworks */,
+				7D8F0E252114F42300A799F2 /* MapboxMobileEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +548,8 @@
 		68E397D320EFF547005C0722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D8F0E262114F42600A799F2 /* MapboxSceneKit.framework */,
+				7D8F0E242114F42300A799F2 /* MapboxMobileEvents.framework */,
 				7DC7D91021141DAD00681860 /* Pulley.framework */,
 				7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */,
 				7DC7D90C21141D8200681860 /* Mapbox.framework */,
@@ -1049,12 +1057,16 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MapboxGeocoder.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Pulley.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MapboxSceneKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MapboxMobileEvents.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Mapbox.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxGeocoder.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pulley.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxSceneKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxMobileEvents.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
