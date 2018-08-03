@@ -10,6 +10,7 @@ import UIKit
 import Mapbox
 import Pulley
 import AerivoKit
+import CoreData
 import MapboxGeocoder
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -39,6 +40,12 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var annotationBackgroundColor: UIColor?
     var annotationImage: UIImage?
     
+    var favorites: [Favorite] = [] {
+        didSet {
+            placesTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,6 +54,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
         searchBar.delegate = self
         generateDefaultResults()
+        fetchFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +79,18 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         view.insertSubview(blurEffectView, at: 0)
     }
     
+    private func fetchFavorites() {
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        do {
+            let favorites = try DataController.shared.managedObjectContext.fetch(fetchRequest)
+            self.favorites = favorites
+        } catch let error {
+            #if DEBUG
+            print(error)
+            #endif
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,21 +103,31 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return !shouldShowDefaultResults ? mapSearchResults.count : defaultResults.count
+        let resultCount = !shouldShowDefaultResults ? mapSearchResults.count : defaultResults.count
+        let favoriteCount = 1
+        return resultCount + favoriteCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
-        let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
+        let shouldShowResultCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: shouldShowResultCell ? PlacesTableViewCell.reuseIdentifier : FavoritesTableViewCell.reuseIdentifier, for: indexPath)
         
-        cell.placemark = result
-        
-        let imageName = result.imageName ?? "marker"
-        cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
-        
-        cell.placeName.text = result.formattedName
-        cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
-        cell.iconBackgroundView.backgroundColor = result.scope.displayColor
+        if shouldShowResultCell {
+            let cell = cell as! PlacesTableViewCell
+            let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
+            
+            cell.placemark = result
+            
+            let imageName = result.imageName ?? "marker"
+            cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+            
+            cell.placeName.text = result.formattedName
+            cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+            cell.iconBackgroundView.backgroundColor = result.scope.displayColor
+        } else {
+            let cell = cell as! FavoritesTableViewCell
+            cell.count.text = "\(favorites.count) favorites"
+        }
         
         return cell
     }
