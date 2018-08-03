@@ -55,12 +55,17 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
         generateDefaultResults()
         fetchFavorites()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
         pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,7 +84,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         view.insertSubview(blurEffectView, at: 0)
     }
     
-    private func fetchFavorites() {
+    @objc private func fetchFavorites() {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         do {
             let favorites = try DataController.shared.managedObjectContext.fetch(fetchRequest)
