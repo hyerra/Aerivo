@@ -143,6 +143,16 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         activityIndicator.layer.masksToBounds = true
     }
     
+    private func createViewBlurEffect() {
+        if let blurEffectView = view.subviews.first as? UIVisualEffectView { blurEffectView.frame = view.bounds; return }
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
+        blurEffectView.contentView.addSubview(vibrancyEffectView)
+        blurEffectView.frame = view.bounds
+        vibrancyEffectView.frame = blurEffectView.bounds
+        view.insertSubview(blurEffectView, at: 0)
+    }
+    
     private func checkIfFavoritedLocation() {
         guard let qualifiedName = placemark.qualifiedName else { return } // Make sure the qualified name is there or we have nothing to check if this placemark exists.
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
@@ -212,16 +222,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.isNWQPDataLoaded = true
             }
         }
-    }
-    
-    private func createViewBlurEffect() {
-        if let blurEffectView = view.subviews.first as? UIVisualEffectView { blurEffectView.frame = view.bounds; return }
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
-        blurEffectView.contentView.addSubview(vibrancyEffectView)
-        blurEffectView.frame = view.bounds
-        vibrancyEffectView.frame = blurEffectView.bounds
-        view.insertSubview(blurEffectView, at: 0)
     }
     
     // MARK: - Collection view data source
@@ -485,6 +485,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             guard let url = urlComps.url else { return }
             UIApplication.shared.open(url)
         }
+    }
+    
+    @IBAction func showAR(_ sender: UIButton) {
+        
     }
     
     @IBAction func close(_ sender: UIButton) {
