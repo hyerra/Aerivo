@@ -73,6 +73,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
+        isShowingFavorites = false
         pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
     }
     
