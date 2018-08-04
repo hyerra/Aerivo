@@ -45,7 +45,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: PulleyPrimaryContentControllerDelegate {
     func makeUIAdjustmentsForFullscreen(progress: CGFloat, bottomSafeArea: CGFloat) {
-        guard let drawer = pulleyViewController, drawer.currentDisplayMode == .bottomDrawer else {
+        guard pulleyViewController?.currentDisplayMode == .bottomDrawer else {
             mapView.logoView.alpha = 1.0
             mapView.attributionButton.alpha = 1.0
             return
