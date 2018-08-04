@@ -472,7 +472,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             do {
                 try dataController.saveContext()
                 self.favorite = favorite
-                if ofFavoritesOrigin { dismissVC() }
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Favorite Location", comment: "Title of alert that tells the user that there was an error saving the location to their favorites."), message: NSLocalizedString("There was an issue saving this location to your favorites.", comment: "Message of alert that tells the user that there was an error saving the location to their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
@@ -483,7 +482,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             do {
                 try dataController.saveContext()
                 self.favorite = nil
-                
+                if ofFavoritesOrigin { dismissVC() }
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Remove Favorite Location", comment: "Title of alert that tells the user that there was an error removing the location from their favorites."), message: NSLocalizedString("There was an issue removing this location from your favorites.", comment: "Message of alert that tells the user that there was an error removing the location from their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
