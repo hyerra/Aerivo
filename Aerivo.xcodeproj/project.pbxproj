@@ -1088,6 +1088,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MapboxGeocoder.framework",
