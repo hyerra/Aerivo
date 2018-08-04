@@ -40,9 +40,20 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var annotationBackgroundColor: UIColor?
     var annotationImage: UIImage?
     
+    var isShowingFavorites = false {
+        didSet {
+            DispatchQueue.main.async {
+                self.placesTableView.reloadData()
+                self.fetchedResultsController.shouldUpdateTableView = self.isShowingFavorites
+            }
+        }
+    }
+    lazy var fetchedResultsController = FavoriteFetchedResultsController(managedObjectContext: DataController.shared.managedObjectContext, tableView: placesTableView)
     var favorites: [Favorite] = [] {
         didSet {
-            placesTableView.reloadData()
+            DispatchQueue.main.async {
+                self.placesTableView.reloadData()
+            }
         }
     }
     
@@ -108,68 +119,96 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let resultCount = !shouldShowDefaultResults ? mapSearchResults.count : defaultResults.count
-        let favoriteCount = 1
-        return resultCount + favoriteCount
+        if !isShowingFavorites {
+            let resultCount = !shouldShowDefaultResults ? mapSearchResults.count : defaultResults.count
+            let favoriteCount = 1
+            return resultCount + favoriteCount
+        } else {
+            guard let section = fetchedResultsController.sections?[section] else { return 0 }
+            return section.numberOfObjects
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let shouldShowResultCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
-        let cell = tableView.dequeueReusableCell(withIdentifier: shouldShowResultCell ? PlacesTableViewCell.reuseIdentifier : FavoritesTableViewCell.reuseIdentifier, for: indexPath)
-        
-        if shouldShowResultCell {
-            let cell = cell as! PlacesTableViewCell
-            let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
+        if !isShowingFavorites {
+            let shouldShowResultCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
+            let cell = tableView.dequeueReusableCell(withIdentifier: shouldShowResultCell ? PlacesTableViewCell.reuseIdentifier : FavoritesTableViewCell.reuseIdentifier, for: indexPath)
             
-            cell.placemark = result
+            if shouldShowResultCell {
+                let cell = cell as! PlacesTableViewCell
+                let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
+                
+                cell.placemark = result
+                
+                cell.icon.image = UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+                
+                cell.placeName.text = result.formattedName
+                cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+                cell.iconBackgroundView.backgroundColor = result.scope.displayColor
+            } else {
+                let cell = cell as! FavoritesTableViewCell
+                cell.count.text = String.localizedStringWithFormat(NSLocalizedString("%d favorite(s)", comment: "Shows the number of favorites a user has."), favorites.count)
+            }
             
-            let imageName = result.imageName ?? "marker"
-            cell.icon.image = UIImage(named: "\(imageName)-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
-            
-            cell.placeName.text = result.formattedName
-            cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
-            cell.iconBackgroundView.backgroundColor = result.scope.displayColor
+            return cell
         } else {
-            let cell = cell as! FavoritesTableViewCell
-            cell.count.text = String.localizedStringWithFormat(NSLocalizedString("%d favorite(s)", comment: "Shows the number of favorites a user has."), favorites.count)
+            let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
+            let favorite = fetchedResultsController.object(at: indexPath)
+            
+            //cell.placemark = result
+            
+            cell.icon.image = UIImage(named: "\(favorite.maki ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+            
+            cell.placeName.text = favorite.name
+            cell.secondaryDetail.text = favorite.formattedAddressLines?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+            let scope = MBPlacemarkScope(rawValue: UInt(favorite.scope))
+            cell.iconBackgroundView.backgroundColor = scope.displayColor
+            
+            return cell
         }
-        
-        return cell
     }
     
     // MARK: - Table view delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if pulleyViewController?.drawerPosition == .open { pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true) }
-        
-        guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
-        
-        mapView.removeAnnotations(mapView.annotations ?? [])
-        
-        if let placemark = (tableView.cellForRow(at: indexPath) as? PlacesTableViewCell)?.placemark, let coordinate = placemark.location?.coordinate {
-            annotationBackgroundColor = placemark.scope.displayColor
-            annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+        if !isShowingFavorites {
+            if pulleyViewController?.drawerPosition == .open { pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true) }
             
-            let pointAnnotation = MGLPointAnnotation()
-            pointAnnotation.coordinate = coordinate
-            pointAnnotation.title = placemark.formattedName
-            pointAnnotation.subtitle = placemark.genres?.first
-            mapView.addAnnotation(pointAnnotation)
+            guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
             
-            let camera = MGLMapCamera()
-            camera.centerCoordinate = coordinate
-            camera.altitude = 8000
-            mapView.fly(to: camera) {
-                mapView.setCenter(coordinate, animated: true)
+            mapView.removeAnnotations(mapView.annotations ?? [])
+            
+            if let placemark = (tableView.cellForRow(at: indexPath) as? PlacesTableViewCell)?.placemark, let coordinate = placemark.location?.coordinate {
+                annotationBackgroundColor = placemark.scope.displayColor
+                annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+                
+                let pointAnnotation = MGLPointAnnotation()
+                pointAnnotation.coordinate = coordinate
+                pointAnnotation.title = placemark.formattedName
+                pointAnnotation.subtitle = placemark.genres?.first
+                mapView.addAnnotation(pointAnnotation)
+                
+                let camera = MGLMapCamera()
+                camera.centerCoordinate = coordinate
+                camera.altitude = 8000
+                mapView.fly(to: camera) {
+                    mapView.setCenter(coordinate, animated: true)
+                }
             }
-        }
-        
-        if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-            vc.placemark = mapSearchResults[indexPath.row]
-            present(vc, animated: true) {
-                self.view.alpha = 0
+            
+            let isResultsCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
+            
+            if isResultsCell, let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
+                vc.placemark = mapSearchResults[indexPath.row]
+                present(vc, animated: true) {
+                    self.view.alpha = 0
+                }
+            } else {
+                isShowingFavorites = true
             }
+        } else {
+            isShowingFavorites = true
         }
     }
 }
@@ -237,6 +276,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
 
 extension PlacesViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isShowingFavorites = false
         pulleyViewController?.setDrawerPosition(position: .open, animated: true)
     }
     

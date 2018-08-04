@@ -25,6 +25,7 @@ extension Favorite {
         self.maki = placemark.imageName
         self.name = placemark.name
         self.qualifiedName = placemark.qualifiedName
+        self.scope = Int16(placemark.scope.rawValue)
         self.wikidataItemIdentifier = placemark.wikidataItemIdentifier
     }
 }

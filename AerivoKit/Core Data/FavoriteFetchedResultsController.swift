@@ -10,9 +10,12 @@ import UIKit
 import CoreData
 
 /// An `NSFetchedResultsController` for `Favorite`.
-class FavoriteFetchedResultsController: NSFetchedResultsController<Favorite>, NSFetchedResultsControllerDelegate {
+public class FavoriteFetchedResultsController: NSFetchedResultsController<Favorite>, NSFetchedResultsControllerDelegate {
     /// The table view you are managing.
     private let tableView: UITableView
+    
+    /// Whether or not the fetched results controller should update the table view.
+    public var shouldUpdateTableView: Bool = false
     
     /// Creates a new fetched results controller.
     ///
@@ -37,10 +40,12 @@ class FavoriteFetchedResultsController: NSFetchedResultsController<Favorite>, NS
     // MARK: - NSFetchedResultsControllerDelegate
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard shouldUpdateTableView else { return }
         tableView.beginUpdates()
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        guard shouldUpdateTableView else { return }
         switch type {
         case .insert:
             guard let newIndexPath = newIndexPath else { return }
@@ -59,6 +64,7 @@ class FavoriteFetchedResultsController: NSFetchedResultsController<Favorite>, NS
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        guard shouldUpdateTableView else { return }
         switch type {
         case .insert:
             let indexSet = IndexSet(integer: sectionIndex)
@@ -72,6 +78,7 @@ class FavoriteFetchedResultsController: NSFetchedResultsController<Favorite>, NS
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard shouldUpdateTableView else { return }
         tableView.endUpdates()
     }
 }
