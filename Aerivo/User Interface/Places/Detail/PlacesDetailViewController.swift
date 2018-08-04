@@ -347,7 +347,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 
                                 for phone in phones {
                                     let action = UIAlertAction(title: NSLocalizedString(phone, comment: "Tells the user they can call their governement official."), style: .default) { action in
-                                        guard let url = URL(string: "telprompt://\(phone)") else { return }
+                                        var components = URLComponents()
+                                        components.scheme = "tel"
+                                        components.path = phone
+                                        guard let url = components.url else { return }
                                         UIApplication.shared.open(url)
                                     }
                                     alertController.addAction(action)
