@@ -40,20 +40,13 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var annotationBackgroundColor: UIColor?
     var annotationImage: UIImage?
     
-    lazy var fetchedResultsController = FavoriteFetchedResultsController(managedObjectContext: DataController.shared.managedObjectContext, tableView: placesTableView)
-    var favorites: [Favorite] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.placesTableView.reloadData()
-            }
-        }
-    }
+    lazy var fetchedResultsController = try? FavoriteFetchedResultsController(managedObjectContext: DataController.shared.managedObjectContext, tableView: placesTableView)
     
     var isShowingFavorites = false {
         didSet {
             DispatchQueue.main.async {
                 self.placesTableView.reloadData()
-                self.fetchedResultsController.shouldUpdateTableView = self.isShowingFavorites
+                self.fetchedResultsController?.shouldUpdateTableView = self.isShowingFavorites
             }
         }
     }
@@ -66,8 +59,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
         searchBar.delegate = self
         generateDefaultResults()
-        fetchFavorites()
-        NotificationCenter.default.addObserver(self, selector: #selector(fetchFavorites), name: .NSManagedObjectContextDidSave, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,15 +73,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc private func fetchFavorites() {
-        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
-        do {
-            let favorites = try DataController.shared.managedObjectContext.fetch(fetchRequest)
-            self.favorites = favorites
-        } catch let error {
-            #if DEBUG
-            print(error)
-            #endif
+    @objc private func refreshFavorites() {
+        DispatchQueue.main.async {
+            self.placesTableView.reloadData()
         }
     }
     
@@ -110,7 +96,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             let favoriteCount = 1
             return resultCount + favoriteCount
         } else {
-            guard let section = fetchedResultsController.sections?[section] else { return 0 }
+            guard let section = fetchedResultsController?.sections?[section] else { return 0 }
             return section.numberOfObjects
         }
     }
@@ -131,13 +117,13 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 cell.iconBackgroundView.backgroundColor = result.scope.displayColor
             } else {
                 let cell = cell as! FavoritesTableViewCell
-                cell.count.text = String.localizedStringWithFormat(NSLocalizedString("%d favorite(s)", comment: "Shows the number of favorites a user has."), favorites.count)
+                cell.count.text = String.localizedStringWithFormat(NSLocalizedString("%d favorite(s)", comment: "Shows the number of favorites a user has."), fetchedResultsController?.fetchedObjects?.count ?? 0)
             }
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
-            let favorite = fetchedResultsController.object(at: indexPath)
+            guard let favorite = fetchedResultsController?.object(at: indexPath) else { return cell }
             
             cell.icon.image = UIImage(named: "\(favorite.maki ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
             
@@ -194,7 +180,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 isShowingFavorites = true
             }
         } else {
-            let placemark = favorites[indexPath.row]
+            let placemark = fetchedResultsController!.fetchedObjects![indexPath.row]
             if let latitude = placemark.latitude, let longitude = placemark.longitude {
                 let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
                 let scope = MBPlacemarkScope(rawValue: UInt(placemark.scope))
@@ -216,7 +202,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             }
             
             if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-                vc.tempFavorite = favorites[indexPath.row]
+                vc.tempFavorite = fetchedResultsController!.fetchedObjects![indexPath.row]
                 vc.ofFavoritesOrigin = true
                 present(vc, animated: true) {
                     self.view.alpha = 0

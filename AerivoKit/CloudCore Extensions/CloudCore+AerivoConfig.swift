@@ -12,7 +12,7 @@ extension CloudCoreConfig {
     /// The custom cloud core configuration for Aerivo.
     public static var aerivoConfig: CloudCoreConfig {
         var aerivoConfig = CloudCoreConfig()
-        aerivoConfig.zoneID = CKRecordZoneID(zoneName: "Aerivo", ownerName: CKCurrentUserDefaultName)
+        aerivoConfig.zoneID = CKRecordZone.ID(zoneName: "Aerivo", ownerName: CKCurrentUserDefaultName)
         aerivoConfig.subscriptionIDForPrivateDB = "AerivoPrivate"
         aerivoConfig.subscriptionIDForSharedDB = "AerivoShared"
         aerivoConfig.publicSubscriptionIDPrefix = "Aerivo-"

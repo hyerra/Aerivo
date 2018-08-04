@@ -7,121 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
-		680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209821010F9200EDDBB5 /* NWQPTests.swift */; };
-		680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
-		680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
-		680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
-		683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
 		684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */; };
 		684BE22020E99C1F00E74FE5 /* AerivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */; };
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
-		68622DB32100469C0002103F /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
-		6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
-		6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
+		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
+		68AE5E0021163D5A0038EABC /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
+		68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
+		68AE5E0221163D5A0038EABC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
+		68AE5E0321163D5A0038EABC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
+		68AE5E0421163D5A0038EABC /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
+		68AE5E0521163D5A0038EABC /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
+		68AE5E0621163D5A0038EABC /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
+		68AE5E0721163D5A0038EABC /* OpenAQEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */; };
+		68AE5E0821163D5A0038EABC /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
+		68AE5E0921163D5A0038EABC /* OpenAQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8620F993960083B943 /* OpenAQClient.swift */; };
+		68AE5E0A21163D5A0038EABC /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
+		68AE5E0B21163D5A0038EABC /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
+		68AE5E0C21163D5A0038EABC /* AQCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8920F996D10083B943 /* AQCity.swift */; };
+		68AE5E0D21163D5A0038EABC /* AQCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8B20F9A2C00083B943 /* AQCountry.swift */; };
+		68AE5E0E21163D5A0038EABC /* AQFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8D20F9A4810083B943 /* AQFetch.swift */; };
+		68AE5E0F21163D5A0038EABC /* AQLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8F20F9AB1E0083B943 /* AQLatest.swift */; };
+		68AE5E1021163D5A0038EABC /* AQLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9320F9BA8F0083B943 /* AQLocation.swift */; };
+		68AE5E1121163D5A0038EABC /* AQMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9520F9C2650083B943 /* AQMeasurement.swift */; };
+		68AE5E1221163D5A0038EABC /* AQParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9720FA53F40083B943 /* AQParameter.swift */; };
+		68AE5E1321163D5A0038EABC /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
+		68AE5E1421163D5A0038EABC /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
+		68AE5E1521163D5A0038EABC /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
+		68AE5E1621163D5A0038EABC /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
+		68AE5E1721163D5A0038EABC /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
+		68AE5E1821163D5A0038EABC /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
+		68AE5E1921163D5A0038EABC /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
+		68AE5E1A21163D5A0038EABC /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
+		68AE5E1B21163D5A0038EABC /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
+		68AE5E1C21163D5A0038EABC /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
+		68AE5E1D21163D5A0038EABC /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
+		68AE5E1E21163D5A0038EABC /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
+		68AE5E1F21163D5A0038EABC /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
+		68AE5E2021163D5A0038EABC /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
+		68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
+		68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
+		68AE5E2421163D5A0038EABC /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
+		68AE5E2521163D780038EABC /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
+		68AE5E2621163D780038EABC /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
+		68AE5E2721163D780038EABC /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
+		68AE5E2821163D780038EABC /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
+		68AE5E2921163D780038EABC /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
+		68AE5E2A21163D780038EABC /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
+		68AE5E2B21163D780038EABC /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
+		68AE5E2C21163D780038EABC /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
+		68AE5E2D21163D780038EABC /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
+		68AE5E2E21163D780038EABC /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
+		68AE5E2F21163D780038EABC /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
+		68AE5E3021163D780038EABC /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
+		68AE5E3121163D780038EABC /* CloudCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EB210E3CF000491C3A /* CloudCore.swift */; };
+		68AE5E3221163D780038EABC /* ErrorBlockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EC210E3CF000491C3A /* ErrorBlockProxy.swift */; };
+		68AE5E3321163D780038EABC /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362ED210E3CF000491C3A /* AsynchronousOperation.swift */; };
+		68AE5E3421163D780038EABC /* FetchAndSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EF210E3CF000491C3A /* FetchAndSaveOperation.swift */; };
+		68AE5E3521163D780038EABC /* FetchPublicSubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F1210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift */; };
+		68AE5E3621163D780038EABC /* PublicDatabaseSubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F2210E3CF000491C3A /* PublicDatabaseSubscriptions.swift */; };
+		68AE5E3721163D780038EABC /* DeleteFromCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F4210E3CF000491C3A /* DeleteFromCoreDataOperation.swift */; };
+		68AE5E3821163D780038EABC /* FetchRecordZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F5210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift */; };
+		68AE5E3921163D780038EABC /* PurgeLocalDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F6210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift */; };
+		68AE5E3A21163D780038EABC /* RecordToCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F7210E3CF000491C3A /* RecordToCoreDataOperation.swift */; };
+		68AE5E3B21163D780038EABC /* SetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F9210E3CF000491C3A /* SetupOperation.swift */; };
+		68AE5E3C21163D780038EABC /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FA210E3CF000491C3A /* SubscribeOperation.swift */; };
+		68AE5E3D21163D780038EABC /* CreateCloudCoreZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FB210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift */; };
+		68AE5E3E21163D780038EABC /* UploadAllLocalDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FC210E3CF000491C3A /* UploadAllLocalDataOperation.swift */; };
+		68AE5E3F21163D780038EABC /* CloudSaveOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FE210E3CF000491C3A /* CloudSaveOperationQueue.swift */; };
+		68AE5E4021163D780038EABC /* ObjectToRecordConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336300210E3CF000491C3A /* ObjectToRecordConverter.swift */; };
+		68AE5E4121163D780038EABC /* ObjectToRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336301210E3CF000491C3A /* ObjectToRecordOperation.swift */; };
+		68AE5E4221163D780038EABC /* CoreDataAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336302210E3CF000491C3A /* CoreDataAttribute.swift */; };
+		68AE5E4321163D780038EABC /* CoreDataRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336303210E3CF000491C3A /* CoreDataRelationship.swift */; };
+		68AE5E4421163D780038EABC /* RecordIDWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336305210E3CF000491C3A /* RecordIDWithDatabase.swift */; };
+		68AE5E4521163D780038EABC /* RecordWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336306210E3CF000491C3A /* RecordWithDatabase.swift */; };
+		68AE5E4621163D780038EABC /* CoreDataListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336307210E3CF000491C3A /* CoreDataListener.swift */; };
+		68AE5E4721163D780038EABC /* CloudCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336309210E3CF000491C3A /* CloudCoreError.swift */; };
+		68AE5E4821163D780038EABC /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
+		68AE5E4921163D780038EABC /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
+		68AE5E4A21163D780038EABC /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
+		68AE5E4B21163D780038EABC /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
+		68AE5E4C21163D780038EABC /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
+		68AE5E4D21163D780038EABC /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
+		68AE5E4E21163D780038EABC /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
+		68AE5E4F21163D780038EABC /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
+		68AE5E5021163D780038EABC /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
+		68AE5E5121163D780038EABC /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
+		68AE5E5221163D780038EABC /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
+		68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
+		68AE5E5721163E080038EABC /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
-		68B7648C20F848B1005A6EB1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
-		68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
-		68B7649120F84D25005A6EB1 /* OpenAQEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */; };
-		68DD5B8720F993960083B943 /* OpenAQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8620F993960083B943 /* OpenAQClient.swift */; };
-		68DD5B8A20F996D10083B943 /* AQCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8920F996D10083B943 /* AQCity.swift */; };
-		68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8B20F9A2C00083B943 /* AQCountry.swift */; };
-		68DD5B8E20F9A4810083B943 /* AQFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8D20F9A4810083B943 /* AQFetch.swift */; };
-		68DD5B9020F9AB1E0083B943 /* AQLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8F20F9AB1E0083B943 /* AQLatest.swift */; };
-		68DD5B9420F9BA8F0083B943 /* AQLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9320F9BA8F0083B943 /* AQLocation.swift */; };
-		68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9520F9C2650083B943 /* AQMeasurement.swift */; };
-		68DD5B9820FA53F40083B943 /* AQParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9720FA53F40083B943 /* AQParameter.swift */; };
-		68DD5B9A20FA551F0083B943 /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
-		68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
-		68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
-		68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA020FA6B020083B943 /* OpenAQTests.swift */; };
-		68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
-		68E397BB20EFF0F3005C0722 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; };
-		68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */; };
-		68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E397B420EFF0F3005C0722 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; };
-		68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		68EADBBB20F2F72800DB3425 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
+		68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
+		68CB23D62116303800B98B32 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB23D52116303800B98B32 /* AerivoKitTests.swift */; };
+		68CB23D82116303800B98B32 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68CB23DB2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
+		68CB23DC2116303800B98B32 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 		7D2C92B721150B3A0082D935 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */; };
-		7D2C92B9211514B20082D935 /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
 		7D2C92BC2115172A0082D935 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C92BE2115172A0082D935 /* Localizable.stringsdict */; };
-		7D336315210E3CF000491C3A /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
-		7D336316210E3CF000491C3A /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
-		7D336317210E3CF000491C3A /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
-		7D336318210E3CF000491C3A /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
-		7D336319210E3CF000491C3A /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
-		7D33631A210E3CF000491C3A /* CloudCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EB210E3CF000491C3A /* CloudCore.swift */; };
-		7D33631B210E3CF000491C3A /* ErrorBlockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EC210E3CF000491C3A /* ErrorBlockProxy.swift */; };
-		7D33631C210E3CF000491C3A /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362ED210E3CF000491C3A /* AsynchronousOperation.swift */; };
-		7D33631D210E3CF000491C3A /* FetchAndSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EF210E3CF000491C3A /* FetchAndSaveOperation.swift */; };
-		7D33631E210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F1210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift */; };
-		7D33631F210E3CF000491C3A /* PublicDatabaseSubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F2210E3CF000491C3A /* PublicDatabaseSubscriptions.swift */; };
-		7D336320210E3CF000491C3A /* DeleteFromCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F4210E3CF000491C3A /* DeleteFromCoreDataOperation.swift */; };
-		7D336321210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F5210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift */; };
-		7D336322210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F6210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift */; };
-		7D336323210E3CF000491C3A /* RecordToCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F7210E3CF000491C3A /* RecordToCoreDataOperation.swift */; };
-		7D336324210E3CF000491C3A /* SetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F9210E3CF000491C3A /* SetupOperation.swift */; };
-		7D336325210E3CF000491C3A /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FA210E3CF000491C3A /* SubscribeOperation.swift */; };
-		7D336326210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FB210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift */; };
-		7D336327210E3CF000491C3A /* UploadAllLocalDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FC210E3CF000491C3A /* UploadAllLocalDataOperation.swift */; };
-		7D336328210E3CF000491C3A /* CloudSaveOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FE210E3CF000491C3A /* CloudSaveOperationQueue.swift */; };
-		7D336329210E3CF000491C3A /* ObjectToRecordConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336300210E3CF000491C3A /* ObjectToRecordConverter.swift */; };
-		7D33632A210E3CF000491C3A /* ObjectToRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336301210E3CF000491C3A /* ObjectToRecordOperation.swift */; };
-		7D33632B210E3CF000491C3A /* CoreDataAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336302210E3CF000491C3A /* CoreDataAttribute.swift */; };
-		7D33632C210E3CF000491C3A /* CoreDataRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336303210E3CF000491C3A /* CoreDataRelationship.swift */; };
-		7D33632D210E3CF000491C3A /* RecordIDWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336305210E3CF000491C3A /* RecordIDWithDatabase.swift */; };
-		7D33632E210E3CF000491C3A /* RecordWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336306210E3CF000491C3A /* RecordWithDatabase.swift */; };
-		7D33632F210E3CF000491C3A /* CoreDataListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336307210E3CF000491C3A /* CoreDataListener.swift */; };
-		7D336330210E3CF000491C3A /* CloudCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336309210E3CF000491C3A /* CloudCoreError.swift */; };
-		7D336331210E3CF000491C3A /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
-		7D336332210E3CF000491C3A /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
-		7D336333210E3CF000491C3A /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
-		7D336335210E3CF000491C3A /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
-		7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
-		7D336337210E3CF000491C3A /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
-		7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
 		7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336381210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift */; };
-		7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
-		7D3FDDA0211428B600C0F56B /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
-		7D3FDDB0211428EA00C0F56B /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
-		7D3FDDB1211428EA00C0F56B /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
-		7D3FDDB2211428EA00C0F56B /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
-		7D3FDDB3211428EA00C0F56B /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
-		7D3FDDB4211428EA00C0F56B /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
-		7D3FDDB5211428EA00C0F56B /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
-		7D3FDDB6211428EA00C0F56B /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
-		7D3FDDB7211428EA00C0F56B /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
-		7D3FDDB8211428EA00C0F56B /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
-		7D3FDDB9211428EA00C0F56B /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
-		7D3FDDBA211428EA00C0F56B /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
-		7D3FDDBB211428EA00C0F56B /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
-		7D51A334210FA13F00E4969B /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
-		7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
-		7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
-		7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
 		7D8F0E252114F42300A799F2 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8F0E242114F42300A799F2 /* MapboxMobileEvents.framework */; };
 		7D8F0E272114F42600A799F2 /* MapboxSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8F0E262114F42600A799F2 /* MapboxSceneKit.framework */; };
-		7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */; };
 		7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED92109232A003B1671 /* ParameterDescriptionDelegate.swift */; };
-		7DAD9EDD210A332F003B1671 /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
-		7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
-		7DAD9EE4210A4F91003B1671 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
-		7DAD9EE6210A4FB9003B1671 /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
-		7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
-		7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
-		7DAD9EEF210A6E45003B1671 /* CivicInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */; };
 		7DBE7A4021156CD900F3B011 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE7A3F21156CD900F3B011 /* ARViewController.swift */; };
 		7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */; };
-		7DBFDBEC210D1DA90074FFA5 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
 		7DC7D90D21141D8200681860 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90C21141D8200681860 /* Mapbox.framework */; };
 		7DC7D90F21141DA900681860 /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */; };
 		7DC7D91121141DAD00681860 /* Pulley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D91021141DAD00681860 /* Pulley.framework */; };
@@ -145,25 +143,25 @@
 			remoteGlobalIDString = 684BE20620E99C1D00E74FE5;
 			remoteInfo = Aerivo;
 		};
-		68E397BC20EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+		68CB23D02116303800B98B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 68E397B120EFF0F3005C0722;
+			remoteGlobalIDString = 68CB23C52116303800B98B32;
 			remoteInfo = AerivoKit;
 		};
-		68E397BE20EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+		68CB23D22116303800B98B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 684BE20620E99C1D00E74FE5;
 			remoteInfo = Aerivo;
 		};
-		68E397C520EFF0F3005C0722 /* PBXContainerItemProxy */ = {
+		68CB23D92116303800B98B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 68E397B120EFF0F3005C0722;
+			remoteGlobalIDString = 68CB23C52116303800B98B32;
 			remoteInfo = AerivoKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -175,7 +173,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				68E397C820EFF0F3005C0722 /* AerivoKit.framework in Embed Frameworks */,
+				68CB23DC2116303800B98B32 /* AerivoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +209,12 @@
 		68B7648B20F848B1005A6EB1 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		68B7648D20F848CE005A6EB1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQEndpoint.swift; sourceTree = "<group>"; };
+		68CB23C62116303800B98B32 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68CB23C82116303800B98B32 /* AerivoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AerivoKit.h; sourceTree = "<group>"; };
+		68CB23C92116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68CB23D52116303800B98B32 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
+		68CB23D72116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DD5B8620F993960083B943 /* OpenAQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQClient.swift; sourceTree = "<group>"; };
 		68DD5B8920F996D10083B943 /* AQCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCity.swift; sourceTree = "<group>"; };
 		68DD5B8B20F9A2C00083B943 /* AQCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCountry.swift; sourceTree = "<group>"; };
@@ -224,12 +228,6 @@
 		68DD5B9D20FA57750083B943 /* OpenAQError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQError.swift; sourceTree = "<group>"; };
 		68DD5BA020FA6B020083B943 /* OpenAQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQTests.swift; sourceTree = "<group>"; };
 		68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+CustomDates.swift"; sourceTree = "<group>"; };
-		68E397B220EFF0F3005C0722 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68E397B420EFF0F3005C0722 /* AerivoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AerivoKit.h; sourceTree = "<group>"; };
-		68E397B520EFF0F3005C0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
-		68E397C320EFF0F3005C0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68E397D420EFF547005C0722 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "../../Downloads/mapbox-ios-sdk-4/dynamic/Mapbox.framework"; sourceTree = "<group>"; };
 		68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AerivoKit.xcassets; sourceTree = "<group>"; };
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,8 +318,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E397C720EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
 				7DBFDBE8210D0BE80074FFA5 /* CloudKit.framework in Frameworks */,
+				68CB23DB2116303800B98B32 /* AerivoKit.framework in Frameworks */,
 				7DC7D90D21141D8200681860 /* Mapbox.framework in Frameworks */,
 				7DC7D90F21141DA900681860 /* MapboxGeocoder.framework in Frameworks */,
 				7DC7D91121141DAD00681860 /* Pulley.framework in Frameworks */,
@@ -344,18 +342,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397AE20EFF0F3005C0722 /* Frameworks */ = {
+		68CB23C32116303800B98B32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68AE5E5721163E080038EABC /* MapboxGeocoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397B720EFF0F3005C0722 /* Frameworks */ = {
+		68CB23CB2116303800B98B32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E397BB20EFF0F3005C0722 /* AerivoKit.framework in Frameworks */,
+				68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,8 +385,8 @@
 				684BE20920E99C1D00E74FE5 /* Aerivo */,
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
-				68E397B320EFF0F3005C0722 /* AerivoKit */,
-				68E397C020EFF0F3005C0722 /* AerivoKitTests */,
+				68CB23C72116303800B98B32 /* AerivoKit */,
+				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
 				68E397D320EFF547005C0722 /* Frameworks */,
 			);
@@ -399,8 +398,8 @@
 				684BE20720E99C1D00E74FE5 /* Aerivo.app */,
 				684BE21B20E99C1F00E74FE5 /* AerivoTests.xctest */,
 				684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */,
-				68E397B220EFF0F3005C0722 /* AerivoKit.framework */,
-				68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */,
+				68CB23C62116303800B98B32 /* AerivoKit.framework */,
+				68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -513,6 +512,32 @@
 			path = "Open AQ";
 			sourceTree = "<group>";
 		};
+		68CB23C72116303800B98B32 /* AerivoKit */ = {
+			isa = PBXGroup;
+			children = (
+				68CB23C82116303800B98B32 /* AerivoKit.h */,
+				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
+				7D3FDD9E211428A500C0F56B /* Geocoder Extensions */,
+				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
+				68B7648A20F8480F005A6EB1 /* Networking */,
+				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
+				68EADBB920F2F6EB00DB3425 /* Resources */,
+			);
+			path = AerivoKit;
+			sourceTree = "<group>";
+		};
+		68CB23D42116303800B98B32 /* AerivoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				68CB23D52116303800B98B32 /* AerivoKitTests.swift */,
+				7D36D59A210D4577000BF77B /* Open AQ */,
+				680A209721010F6500EDDBB5 /* NWQP */,
+				7DAD9EEB210A6E1B003B1671 /* Civic Information */,
+				68CB23D72116303800B98B32 /* Info.plist */,
+			);
+			path = AerivoKitTests;
+			sourceTree = "<group>";
+		};
 		68DD5B8820F996BD0083B943 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,32 +552,6 @@
 				68DD5B9B20FA566E0083B943 /* AQSource.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		68E397B320EFF0F3005C0722 /* AerivoKit */ = {
-			isa = PBXGroup;
-			children = (
-				68E397B420EFF0F3005C0722 /* AerivoKit.h */,
-				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
-				7D3FDD9E211428A500C0F56B /* Geocoder Extensions */,
-				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
-				68B7648A20F8480F005A6EB1 /* Networking */,
-				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
-				68EADBB920F2F6EB00DB3425 /* Resources */,
-			);
-			path = AerivoKit;
-			sourceTree = "<group>";
-		};
-		68E397C020EFF0F3005C0722 /* AerivoKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				68E397C120EFF0F3005C0722 /* AerivoKitTests.swift */,
-				7D36D59A210D4577000BF77B /* Open AQ */,
-				680A209721010F6500EDDBB5 /* NWQP */,
-				7DAD9EEB210A6E1B003B1671 /* Civic Information */,
-				68E397C320EFF0F3005C0722 /* Info.plist */,
-			);
-			path = AerivoKitTests;
 			sourceTree = "<group>";
 		};
 		68E397D320EFF547005C0722 /* Frameworks */ = {
@@ -573,7 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */,
-				68E397B520EFF0F3005C0722 /* Info.plist */,
+				68CB23C92116303800B98B32 /* Info.plist */,
 				7D3FDDA1211428C000C0F56B /* XMLParsing */,
 				7D3362E3210E3CB000491C3A /* Cloud Core */,
 			);
@@ -869,11 +868,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		68E397AF20EFF0F3005C0722 /* Headers */ = {
+		68CB23C12116303800B98B32 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E397C420EFF0F3005C0722 /* AerivoKit.h in Headers */,
+				68CB23D82116303800B98B32 /* AerivoKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,7 +893,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				68E397C620EFF0F3005C0722 /* PBXTargetDependency */,
+				68CB23DA2116303800B98B32 /* PBXTargetDependency */,
 			);
 			name = Aerivo;
 			productName = Aerivo;
@@ -937,14 +936,14 @@
 			productReference = 684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		68E397B120EFF0F3005C0722 /* AerivoKit */ = {
+		68CB23C52116303800B98B32 /* AerivoKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68E397C920EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKit" */;
+			buildConfigurationList = 68CB23DD2116303800B98B32 /* Build configuration list for PBXNativeTarget "AerivoKit" */;
 			buildPhases = (
-				68E397AD20EFF0F3005C0722 /* Sources */,
-				68E397AE20EFF0F3005C0722 /* Frameworks */,
-				68E397AF20EFF0F3005C0722 /* Headers */,
-				68E397B020EFF0F3005C0722 /* Resources */,
+				68CB23C12116303800B98B32 /* Headers */,
+				68CB23C22116303800B98B32 /* Sources */,
+				68CB23C32116303800B98B32 /* Frameworks */,
+				68CB23C42116303800B98B32 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -952,26 +951,26 @@
 			);
 			name = AerivoKit;
 			productName = AerivoKit;
-			productReference = 68E397B220EFF0F3005C0722 /* AerivoKit.framework */;
+			productReference = 68CB23C62116303800B98B32 /* AerivoKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		68E397B920EFF0F3005C0722 /* AerivoKitTests */ = {
+		68CB23CD2116303800B98B32 /* AerivoKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68E397CD20EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */;
+			buildConfigurationList = 68CB23E02116303800B98B32 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */;
 			buildPhases = (
-				68E397B620EFF0F3005C0722 /* Sources */,
-				68E397B720EFF0F3005C0722 /* Frameworks */,
-				68E397B820EFF0F3005C0722 /* Resources */,
+				68CB23CA2116303800B98B32 /* Sources */,
+				68CB23CB2116303800B98B32 /* Frameworks */,
+				68CB23CC2116303800B98B32 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				68E397BD20EFF0F3005C0722 /* PBXTargetDependency */,
-				68E397BF20EFF0F3005C0722 /* PBXTargetDependency */,
+				68CB23D12116303800B98B32 /* PBXTargetDependency */,
+				68CB23D32116303800B98B32 /* PBXTargetDependency */,
 			);
 			name = AerivoKitTests;
 			productName = AerivoKitTests;
-			productReference = 68E397BA20EFF0F3005C0722 /* AerivoKitTests.xctest */;
+			productReference = 68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -980,7 +979,7 @@
 		684BE1FF20E99C1D00E74FE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Harish Yerra";
 				TargetAttributes = {
@@ -1009,12 +1008,11 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 684BE20620E99C1D00E74FE5;
 					};
-					68E397B120EFF0F3005C0722 = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+					68CB23C52116303800B98B32 = {
+						CreatedOnToolsVersion = 10.0;
 					};
-					68E397B920EFF0F3005C0722 = {
-						CreatedOnToolsVersion = 9.4.1;
+					68CB23CD2116303800B98B32 = {
+						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 684BE20620E99C1D00E74FE5;
 					};
 				};
@@ -1035,8 +1033,8 @@
 				684BE20620E99C1D00E74FE5 /* Aerivo */,
 				684BE21A20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
-				68E397B120EFF0F3005C0722 /* AerivoKit */,
-				68E397B920EFF0F3005C0722 /* AerivoKitTests */,
+				68CB23C52116303800B98B32 /* AerivoKit */,
+				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1067,15 +1065,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397B020EFF0F3005C0722 /* Resources */ = {
+		68CB23C42116303800B98B32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68EADBBB20F2F72800DB3425 /* AerivoKit.xcassets in Resources */,
+				68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397B820EFF0F3005C0722 /* Resources */ = {
+		68CB23CC2116303800B98B32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1107,7 +1105,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		7DC7D91321141EC800681860 /* Carthage Warn Outdated */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1164,106 +1162,103 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397AD20EFF0F3005C0722 /* Sources */ = {
+		68CB23C22116303800B98B32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D336329210E3CF000491C3A /* ObjectToRecordConverter.swift in Sources */,
-				7D3FDDB2211428EA00C0F56B /* XMLKeyedDecodingContainer.swift in Sources */,
-				68B7648C20F848B1005A6EB1 /* Endpoint.swift in Sources */,
-				7DAD9EE8210A500B003B1671 /* CivicInformationResponse.swift in Sources */,
-				68DD5B8720F993960083B943 /* OpenAQClient.swift in Sources */,
-				7DAD9EE4210A4F91003B1671 /* RepresentativeInfoByAddress.swift in Sources */,
-				7D336335210E3CF000491C3A /* NSEntityDescription.swift in Sources */,
-				7D3FDDB9211428EA00C0F56B /* ISO8601DateFormatter.swift in Sources */,
-				7D336320210E3CF000491C3A /* DeleteFromCoreDataOperation.swift in Sources */,
-				7D3FDDB6211428EA00C0F56B /* EncodingErrorExtension.swift in Sources */,
-				68DD5B8E20F9A4810083B943 /* AQFetch.swift in Sources */,
-				68DD5B8A20F996D10083B943 /* AQCity.swift in Sources */,
-				68622DB32100469C0002103F /* NWQPResult.swift in Sources */,
-				7D3FDDB7211428EA00C0F56B /* XMLEncoder.swift in Sources */,
-				68DD5B9C20FA566E0083B943 /* AQSource.swift in Sources */,
-				68DD5B9020F9AB1E0083B943 /* AQLatest.swift in Sources */,
-				7D33632D210E3CF000491C3A /* RecordIDWithDatabase.swift in Sources */,
-				7D336332210E3CF000491C3A /* Module.swift in Sources */,
-				7DAD9EEA210A69A5003B1671 /* CivicInformationClient.swift in Sources */,
-				7D33631B210E3CF000491C3A /* ErrorBlockProxy.swift in Sources */,
-				7D33631F210E3CF000491C3A /* PublicDatabaseSubscriptions.swift in Sources */,
-				7D336326210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift in Sources */,
-				7D33632E210E3CF000491C3A /* RecordWithDatabase.swift in Sources */,
-				7D336321210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift in Sources */,
-				7D33631E210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift in Sources */,
-				7D51A334210FA13F00E4969B /* Favorite+Placemark.swift in Sources */,
-				7DAD9EDD210A332F003B1671 /* CivicInformationEndpoint.swift in Sources */,
-				7D336324210E3CF000491C3A /* SetupOperation.swift in Sources */,
-				680A209B2101123E00EDDBB5 /* NWQPClient.swift in Sources */,
-				7D33632C210E3CF000491C3A /* CoreDataRelationship.swift in Sources */,
-				7D3FDDB5211428EA00C0F56B /* XMLReferencingEncoder.swift in Sources */,
-				7D336330210E3CF000491C3A /* CloudCoreError.swift in Sources */,
-				7D336331210E3CF000491C3A /* FetchResult.swift in Sources */,
-				68DD5B8C20F9A2C00083B943 /* AQCountry.swift in Sources */,
-				68DD5B9E20FA57750083B943 /* OpenAQError.swift in Sources */,
-				7D3FDDBA211428EA00C0F56B /* XMLKey.swift in Sources */,
-				680A20AE21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift in Sources */,
-				7D336338210E3CF000491C3A /* CKRecordID.swift in Sources */,
-				6894019E20FEC99400C7D8FA /* NWQPParameters.swift in Sources */,
-				7D36D599210D3A33000BF77B /* CoreDataStack.swift in Sources */,
-				7D336325210E3CF000491C3A /* SubscribeOperation.swift in Sources */,
-				7D33632A210E3CF000491C3A /* ObjectToRecordOperation.swift in Sources */,
-				68DD5B9420F9BA8F0083B943 /* AQLocation.swift in Sources */,
-				7D336337210E3CF000491C3A /* NSManagedObject.swift in Sources */,
-				68DD5B9820FA53F40083B943 /* AQParameter.swift in Sources */,
-				7D33632F210E3CF000491C3A /* CoreDataListener.swift in Sources */,
-				7D336323210E3CF000491C3A /* RecordToCoreDataOperation.swift in Sources */,
-				6801C17320FA965B00E75F01 /* CodableCoordinate.swift in Sources */,
-				7D3FDDB4211428EA00C0F56B /* XMLDecoder.swift in Sources */,
-				680A209D2101162F00EDDBB5 /* NWQPStation.swift in Sources */,
-				7D3FDDB8211428EA00C0F56B /* XMLEncodingStorage.swift in Sources */,
-				6894019C20FEC69500C7D8FA /* NWQPEndpoint.swift in Sources */,
-				68DD5BA320FA8AE70083B943 /* JSONEncoder+CustomDates.swift in Sources */,
-				7D336327210E3CF000491C3A /* UploadAllLocalDataOperation.swift in Sources */,
-				7D336316210E3CF000491C3A /* CloudCoreConfig.swift in Sources */,
-				7D3FDDBB211428EA00C0F56B /* XMLStackParser.swift in Sources */,
-				7D336317210E3CF000491C3A /* CloudKitAttribute.swift in Sources */,
-				68B7649120F84D25005A6EB1 /* OpenAQEndpoint.swift in Sources */,
-				7D336319210E3CF000491C3A /* CKRecord.swift in Sources */,
-				7D33632B210E3CF000491C3A /* CoreDataAttribute.swift in Sources */,
-				7D33631A210E3CF000491C3A /* CloudCore.swift in Sources */,
-				7D336318210E3CF000491C3A /* ServiceAttributeName.swift in Sources */,
-				7DAD9EE6210A4FB9003B1671 /* NWQPResponse.swift in Sources */,
-				7DAD9ED621083681003B1671 /* CustomUnits.swift in Sources */,
-				7DBFDBEC210D1DA90074FFA5 /* Aerivo.xcdatamodeld in Sources */,
-				68DD5B9620F9C2650083B943 /* AQMeasurement.swift in Sources */,
-				7DAD9EDF210A3842003B1671 /* CivicInformationParameters.swift in Sources */,
-				7D33631C210E3CF000491C3A /* AsynchronousOperation.swift in Sources */,
-				7D5D434B210BB3A600E6886A /* CivicInformationError.swift in Sources */,
-				68B7648E20F848CE005A6EB1 /* APIClient.swift in Sources */,
-				683B3D2620F946BF00BF3BE7 /* OpenAQParameters.swift in Sources */,
-				7D336328210E3CF000491C3A /* CloudSaveOperationQueue.swift in Sources */,
-				7D336322210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift in Sources */,
-				7D33631D210E3CF000491C3A /* FetchAndSaveOperation.swift in Sources */,
-				7D3FDDB3211428EA00C0F56B /* XMLDecodingStorage.swift in Sources */,
-				7D51A337210FA97800E4969B /* CloudCore+AerivoConfig.swift in Sources */,
-				7D3FDDB1211428EA00C0F56B /* XMLUnkeyedDecodingContainer.swift in Sources */,
-				7D3FDDA0211428B600C0F56B /* MBPlacemarkScope+Color.swift in Sources */,
-				7D2C92B9211514B20082D935 /* FavoriteFetchedResultsController.swift in Sources */,
-				7D336315210E3CF000491C3A /* Tokens.swift in Sources */,
-				7D336336210E3CF000491C3A /* NSManagedObjectModel.swift in Sources */,
-				7D3FDDB0211428EA00C0F56B /* DecodingErrorExtension.swift in Sources */,
-				7D336333210E3CF000491C3A /* CloudCoreDelegate.swift in Sources */,
-				68DD5B9A20FA551F0083B943 /* OpenAQResponse.swift in Sources */,
-				7D5D434D210BD16C00E6886A /* CivicInformationMessage.swift in Sources */,
+				68AE5E2521163D780038EABC /* DecodingErrorExtension.swift in Sources */,
+				68AE5E2621163D780038EABC /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				68AE5E2721163D780038EABC /* XMLKeyedDecodingContainer.swift in Sources */,
+				68AE5E2821163D780038EABC /* XMLDecodingStorage.swift in Sources */,
+				68AE5E2921163D780038EABC /* XMLDecoder.swift in Sources */,
+				68AE5E2A21163D780038EABC /* XMLReferencingEncoder.swift in Sources */,
+				68AE5E2B21163D780038EABC /* EncodingErrorExtension.swift in Sources */,
+				68AE5E2C21163D780038EABC /* XMLEncoder.swift in Sources */,
+				68AE5E2D21163D780038EABC /* XMLEncodingStorage.swift in Sources */,
+				68AE5E2E21163D780038EABC /* ISO8601DateFormatter.swift in Sources */,
+				68AE5E2F21163D780038EABC /* XMLKey.swift in Sources */,
+				68AE5E3021163D780038EABC /* XMLStackParser.swift in Sources */,
+				68AE5E3121163D780038EABC /* CloudCore.swift in Sources */,
+				68AE5E3221163D780038EABC /* ErrorBlockProxy.swift in Sources */,
+				68AE5E3321163D780038EABC /* AsynchronousOperation.swift in Sources */,
+				68AE5E3421163D780038EABC /* FetchAndSaveOperation.swift in Sources */,
+				68AE5E3521163D780038EABC /* FetchPublicSubscriptionsOperation.swift in Sources */,
+				68AE5E3621163D780038EABC /* PublicDatabaseSubscriptions.swift in Sources */,
+				68AE5E3721163D780038EABC /* DeleteFromCoreDataOperation.swift in Sources */,
+				68AE5E3821163D780038EABC /* FetchRecordZoneChangesOperation.swift in Sources */,
+				68AE5E3921163D780038EABC /* PurgeLocalDatabaseOperation.swift in Sources */,
+				68AE5E3A21163D780038EABC /* RecordToCoreDataOperation.swift in Sources */,
+				68AE5E3B21163D780038EABC /* SetupOperation.swift in Sources */,
+				68AE5E3C21163D780038EABC /* SubscribeOperation.swift in Sources */,
+				68AE5E3D21163D780038EABC /* CreateCloudCoreZoneOperation.swift in Sources */,
+				68AE5E3E21163D780038EABC /* UploadAllLocalDataOperation.swift in Sources */,
+				68AE5E3F21163D780038EABC /* CloudSaveOperationQueue.swift in Sources */,
+				68AE5E4021163D780038EABC /* ObjectToRecordConverter.swift in Sources */,
+				68AE5E4121163D780038EABC /* ObjectToRecordOperation.swift in Sources */,
+				68AE5E4221163D780038EABC /* CoreDataAttribute.swift in Sources */,
+				68AE5E4321163D780038EABC /* CoreDataRelationship.swift in Sources */,
+				68AE5E4421163D780038EABC /* RecordIDWithDatabase.swift in Sources */,
+				68AE5E4521163D780038EABC /* RecordWithDatabase.swift in Sources */,
+				68AE5E4621163D780038EABC /* CoreDataListener.swift in Sources */,
+				68AE5E4721163D780038EABC /* CloudCoreError.swift in Sources */,
+				68AE5E4821163D780038EABC /* FetchResult.swift in Sources */,
+				68AE5E4921163D780038EABC /* Module.swift in Sources */,
+				68AE5E4A21163D780038EABC /* NSEntityDescription.swift in Sources */,
+				68AE5E4B21163D780038EABC /* NSManagedObjectModel.swift in Sources */,
+				68AE5E4C21163D780038EABC /* NSManagedObject.swift in Sources */,
+				68AE5E4D21163D780038EABC /* CKRecordID.swift in Sources */,
+				68AE5E4E21163D780038EABC /* Tokens.swift in Sources */,
+				68AE5E4F21163D780038EABC /* CloudCoreConfig.swift in Sources */,
+				68AE5E5021163D780038EABC /* CloudKitAttribute.swift in Sources */,
+				68AE5E5121163D780038EABC /* ServiceAttributeName.swift in Sources */,
+				68AE5E5221163D780038EABC /* CKRecord.swift in Sources */,
+				68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */,
+				68AE5E0021163D5A0038EABC /* MBPlacemarkScope+Color.swift in Sources */,
+				68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */,
+				68AE5E0221163D5A0038EABC /* Endpoint.swift in Sources */,
+				68AE5E0321163D5A0038EABC /* APIClient.swift in Sources */,
+				68AE5E0421163D5A0038EABC /* CodableCoordinate.swift in Sources */,
+				68AE5E0521163D5A0038EABC /* JSONEncoder+CustomDates.swift in Sources */,
+				68AE5E0621163D5A0038EABC /* XMLEncoder+CustomDates.swift in Sources */,
+				68AE5E0721163D5A0038EABC /* OpenAQEndpoint.swift in Sources */,
+				68AE5E0821163D5A0038EABC /* OpenAQParameters.swift in Sources */,
+				68AE5E0921163D5A0038EABC /* OpenAQClient.swift in Sources */,
+				68AE5E0A21163D5A0038EABC /* OpenAQError.swift in Sources */,
+				68AE5E0B21163D5A0038EABC /* OpenAQResponse.swift in Sources */,
+				68AE5E0C21163D5A0038EABC /* AQCity.swift in Sources */,
+				68AE5E0D21163D5A0038EABC /* AQCountry.swift in Sources */,
+				68AE5E0E21163D5A0038EABC /* AQFetch.swift in Sources */,
+				68AE5E0F21163D5A0038EABC /* AQLatest.swift in Sources */,
+				68AE5E1021163D5A0038EABC /* AQLocation.swift in Sources */,
+				68AE5E1121163D5A0038EABC /* AQMeasurement.swift in Sources */,
+				68AE5E1221163D5A0038EABC /* AQParameter.swift in Sources */,
+				68AE5E1321163D5A0038EABC /* AQSource.swift in Sources */,
+				68AE5E1421163D5A0038EABC /* NWQPEndpoint.swift in Sources */,
+				68AE5E1521163D5A0038EABC /* NWQPParameters.swift in Sources */,
+				68AE5E1621163D5A0038EABC /* NWQPClient.swift in Sources */,
+				68AE5E1721163D5A0038EABC /* NWQPResponse.swift in Sources */,
+				68AE5E1821163D5A0038EABC /* NWQPStation.swift in Sources */,
+				68AE5E1921163D5A0038EABC /* NWQPResult.swift in Sources */,
+				68AE5E1A21163D5A0038EABC /* CivicInformationEndpoint.swift in Sources */,
+				68AE5E1B21163D5A0038EABC /* CivicInformationParameters.swift in Sources */,
+				68AE5E1C21163D5A0038EABC /* CivicInformationClient.swift in Sources */,
+				68AE5E1D21163D5A0038EABC /* CivicInformationError.swift in Sources */,
+				68AE5E1E21163D5A0038EABC /* CivicInformationResponse.swift in Sources */,
+				68AE5E1F21163D5A0038EABC /* RepresentativeInfoByAddress.swift in Sources */,
+				68AE5E2021163D5A0038EABC /* CivicInformationMessage.swift in Sources */,
+				68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */,
+				68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */,
+				68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */,
+				68AE5E2421163D5A0038EABC /* Favorite+Placemark.swift in Sources */,
+				68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68E397B620EFF0F3005C0722 /* Sources */ = {
+		68CB23CA2116303800B98B32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E397C220EFF0F3005C0722 /* AerivoKitTests.swift in Sources */,
-				7DAD9EEF210A6E45003B1671 /* CivicInformationTests.swift in Sources */,
-				680A209921010F9200EDDBB5 /* NWQPTests.swift in Sources */,
-				68DD5BA120FA6B020083B943 /* OpenAQTests.swift in Sources */,
+				68CB23D62116303800B98B32 /* AerivoKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,20 +1275,20 @@
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
 			targetProxy = 684BE22720E99C1F00E74FE5 /* PBXContainerItemProxy */;
 		};
-		68E397BD20EFF0F3005C0722 /* PBXTargetDependency */ = {
+		68CB23D12116303800B98B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68E397B120EFF0F3005C0722 /* AerivoKit */;
-			targetProxy = 68E397BC20EFF0F3005C0722 /* PBXContainerItemProxy */;
+			target = 68CB23C52116303800B98B32 /* AerivoKit */;
+			targetProxy = 68CB23D02116303800B98B32 /* PBXContainerItemProxy */;
 		};
-		68E397BF20EFF0F3005C0722 /* PBXTargetDependency */ = {
+		68CB23D32116303800B98B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
-			targetProxy = 68E397BE20EFF0F3005C0722 /* PBXContainerItemProxy */;
+			targetProxy = 68CB23D22116303800B98B32 /* PBXContainerItemProxy */;
 		};
-		68E397C620EFF0F3005C0722 /* PBXTargetDependency */ = {
+		68CB23DA2116303800B98B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68E397B120EFF0F3005C0722 /* AerivoKit */;
-			targetProxy = 68E397C520EFF0F3005C0722 /* PBXContainerItemProxy */;
+			target = 68CB23C52116303800B98B32 /* AerivoKit */;
+			targetProxy = 68CB23D92116303800B98B32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1384,6 +1379,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1439,6 +1435,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1463,7 +1460,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1488,7 +1484,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1508,7 +1503,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
 			};
@@ -1529,7 +1523,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
 			};
@@ -1549,7 +1542,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Aerivo;
 			};
@@ -1569,16 +1561,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Aerivo;
 			};
 			name = Release;
 		};
-		68E397CA20EFF0F3005C0722 /* Debug */ = {
+		68CB23DE2116303800B98B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1599,21 +1589,20 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		68E397CB20EFF0F3005C0722 /* Release */ = {
+		68CB23DF2116303800B98B32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1634,53 +1623,52 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		68E397CE20EFF0F3005C0722 /* Debug */ = {
+		68CB23E12116303800B98B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
 			};
 			name = Debug;
 		};
-		68E397CF20EFF0F3005C0722 /* Release */ = {
+		68CB23E22116303800B98B32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo.app/Aerivo";
 			};
@@ -1725,20 +1713,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68E397C920EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKit" */ = {
+		68CB23DD2116303800B98B32 /* Build configuration list for PBXNativeTarget "AerivoKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				68E397CA20EFF0F3005C0722 /* Debug */,
-				68E397CB20EFF0F3005C0722 /* Release */,
+				68CB23DE2116303800B98B32 /* Debug */,
+				68CB23DF2116303800B98B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68E397CD20EFF0F3005C0722 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */ = {
+		68CB23E02116303800B98B32 /* Build configuration list for PBXNativeTarget "AerivoKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				68E397CE20EFF0F3005C0722 /* Debug */,
-				68E397CF20EFF0F3005C0722 /* Release */,
+				68CB23E12116303800B98B32 /* Debug */,
+				68CB23E22116303800B98B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

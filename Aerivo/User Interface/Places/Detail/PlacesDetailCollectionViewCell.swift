@@ -20,7 +20,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        detail.contentEdgeInsets = UIEdgeInsetsMake(.leastNormalMagnitude, .leastNormalMagnitude, .leastNormalMagnitude, .leastNormalMagnitude) /* Get rid of extra button padding. */
+        detail.contentEdgeInsets = UIEdgeInsets(top: .leastNormalMagnitude, left: .leastNormalMagnitude, bottom: .leastNormalMagnitude, right: .leastNormalMagnitude) /* Get rid of extra button padding. */
         detail.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
