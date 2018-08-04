@@ -14,8 +14,6 @@ class PlacesTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "placesCell"
     
-    var placemark: GeocodedPlacemark!
-    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var iconBackgroundView: UIView!
     @IBOutlet weak var icon: UIImageView!
