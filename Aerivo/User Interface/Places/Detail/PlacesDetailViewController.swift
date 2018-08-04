@@ -143,22 +143,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Do any additional setup after the view laid out the subviews.
         close.layer.cornerRadius = close.layer.bounds.width / 2
         close.layer.masksToBounds = true
-        
-        createViewBlurEffect()
-        
+                
         activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
         activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
         activityIndicator.layer.masksToBounds = true
-    }
-    
-    private func createViewBlurEffect() {
-        if let blurEffectView = view.subviews.first as? UIVisualEffectView { blurEffectView.frame = view.bounds; return }
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
-        blurEffectView.contentView.addSubview(vibrancyEffectView)
-        blurEffectView.frame = view.bounds
-        vibrancyEffectView.frame = blurEffectView.bounds
-        view.insertSubview(blurEffectView, at: 0)
     }
     
     private func checkIfFavoritedLocation() {

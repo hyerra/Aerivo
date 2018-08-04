@@ -80,22 +80,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // Do any additional setup after the view laid out the subviews.
-        createViewBlurEffect()
-    }
-    
-    private func createViewBlurEffect() {
-        if let blurEffectView = view.subviews.first as? UIVisualEffectView { blurEffectView.frame = view.bounds; return }
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
-        blurEffectView.contentView.addSubview(vibrancyEffectView)
-        blurEffectView.frame = view.bounds
-        vibrancyEffectView.frame = blurEffectView.bounds
-        view.insertSubview(blurEffectView, at: 0)
-    }
-    
     @objc private func fetchFavorites() {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         do {
