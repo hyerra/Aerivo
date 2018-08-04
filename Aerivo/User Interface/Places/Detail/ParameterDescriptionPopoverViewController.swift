@@ -32,16 +32,6 @@ class ParameterDescriptionPopoverViewController: UIViewController {
         let spacingValue = UIFontMetrics(forTextStyle: .callout).scaledValue(for: 15)
         preferredContentSize = CGSize(width: parameterDescription.intrinsicContentSize.width + spacingValue, height: parameterDescription.intrinsicContentSize.height + spacingValue)
         parameterDescriptionHeightConstraint.constant = max(parameterDescription.intrinsicContentSize.height, scrollView.bounds.height)
-        createViewBlurEffect()
-    }
-    
-    private func createViewBlurEffect() {
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
-        blurEffectView.contentView.addSubview(vibrancyEffectView)
-        blurEffectView.frame = view.bounds
-        vibrancyEffectView.frame = blurEffectView.bounds
-        view.insertSubview(blurEffectView, at: 0)
     }
     
     override func didReceiveMemoryWarning() {

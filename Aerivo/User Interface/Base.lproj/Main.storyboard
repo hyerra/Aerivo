@@ -71,6 +71,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-Ag-Mgq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wJ4-SV-gdh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsB-FS-leQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                 <subviews>
@@ -309,6 +317,9 @@
                         <constraints>
                             <constraint firstItem="w4V-Bn-4Zl" firstAttribute="trailing" secondItem="zSO-BQ-p5X" secondAttribute="trailing" id="0Xy-NQ-FPA"/>
                             <constraint firstItem="zSO-BQ-p5X" firstAttribute="top" secondItem="AsB-FS-leQ" secondAttribute="bottom" id="7kO-ne-mly"/>
+                            <constraint firstItem="R5D-Ag-Mgq" firstAttribute="top" secondItem="2dd-PA-YVs" secondAttribute="top" id="Ajv-8l-ehK"/>
+                            <constraint firstAttribute="bottom" secondItem="R5D-Ag-Mgq" secondAttribute="bottom" id="MGV-fG-jtF"/>
+                            <constraint firstItem="R5D-Ag-Mgq" firstAttribute="leading" secondItem="2dd-PA-YVs" secondAttribute="leading" id="SET-3Q-1Uf"/>
                             <constraint firstItem="yb8-WH-SVH" firstAttribute="leading" secondItem="w4V-Bn-4Zl" secondAttribute="leading" id="cG8-TQ-y1n"/>
                             <constraint firstItem="AsB-FS-leQ" firstAttribute="leading" secondItem="w4V-Bn-4Zl" secondAttribute="leading" id="czP-pf-pPQ"/>
                             <constraint firstItem="w4V-Bn-4Zl" firstAttribute="bottom" secondItem="yb8-WH-SVH" secondAttribute="bottom" id="dg3-6R-Kv7"/>
@@ -317,6 +328,7 @@
                             <constraint firstItem="yb8-WH-SVH" firstAttribute="top" secondItem="zSO-BQ-p5X" secondAttribute="bottom" id="hr8-Xx-ZSk"/>
                             <constraint firstItem="AsB-FS-leQ" firstAttribute="top" secondItem="w4V-Bn-4Zl" secondAttribute="top" id="k61-TZ-s6C"/>
                             <constraint firstItem="AsB-FS-leQ" firstAttribute="trailing" secondItem="w4V-Bn-4Zl" secondAttribute="trailing" id="o9W-1r-95w"/>
+                            <constraint firstAttribute="trailing" secondItem="R5D-Ag-Mgq" secondAttribute="trailing" id="v3x-pS-AIX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w4V-Bn-4Zl"/>
                     </view>
@@ -344,6 +356,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7U-9A-liX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fhc-am-mhn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-K7-cz4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="79.5"/>
                                 <subviews>
@@ -784,8 +804,12 @@
                             <constraint firstItem="R2o-c1-DLL" firstAttribute="trailing" secondItem="hm5-Gr-raW" secondAttribute="trailing" id="NtN-h0-eh8"/>
                             <constraint firstItem="hm5-Gr-raW" firstAttribute="bottom" secondItem="R2o-c1-DLL" secondAttribute="bottom" id="RBs-ol-mgU"/>
                             <constraint firstItem="eSd-9W-LN2" firstAttribute="leading" secondItem="R2o-c1-DLL" secondAttribute="leading" id="RKb-64-jdI"/>
+                            <constraint firstAttribute="bottom" secondItem="p7U-9A-liX" secondAttribute="bottom" id="SDu-Aa-3kn"/>
+                            <constraint firstItem="p7U-9A-liX" firstAttribute="leading" secondItem="UYe-xW-JGb" secondAttribute="leading" id="UeZ-m6-GVf"/>
                             <constraint firstItem="dbo-K7-cz4" firstAttribute="leading" secondItem="R2o-c1-DLL" secondAttribute="leading" id="V8J-8x-UUY"/>
                             <constraint firstItem="R2o-c1-DLL" firstAttribute="top" secondItem="dbo-K7-cz4" secondAttribute="top" id="dUK-Kl-FSZ"/>
+                            <constraint firstAttribute="trailing" secondItem="p7U-9A-liX" secondAttribute="trailing" id="dx2-hI-HDm"/>
+                            <constraint firstItem="p7U-9A-liX" firstAttribute="top" secondItem="UYe-xW-JGb" secondAttribute="top" id="et9-V4-fcy"/>
                             <constraint firstItem="R2o-c1-DLL" firstAttribute="trailing" secondItem="dbo-K7-cz4" secondAttribute="trailing" id="sBh-qL-6EY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R2o-c1-DLL"/>
@@ -824,6 +848,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1g1-Oj-qat">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="383-Bs-MRU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8b-mc-wCq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
@@ -858,11 +890,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1g1-Oj-qat" firstAttribute="top" secondItem="uQt-XI-66q" secondAttribute="top" id="8LI-e6-iTZ"/>
                             <constraint firstItem="a8g-ho-xNU" firstAttribute="trailing" secondItem="k8b-mc-wCq" secondAttribute="trailing" id="DN9-SA-AQE"/>
                             <constraint firstItem="RDu-JU-Kce" firstAttribute="width" secondItem="a8g-ho-xNU" secondAttribute="width" id="FDS-fc-Apg"/>
                             <constraint firstItem="a8g-ho-xNU" firstAttribute="bottom" secondItem="k8b-mc-wCq" secondAttribute="bottom" id="Jbh-h7-RSO"/>
                             <constraint firstItem="k8b-mc-wCq" firstAttribute="leading" secondItem="a8g-ho-xNU" secondAttribute="leading" id="ORz-gE-ssH"/>
                             <constraint firstItem="k8b-mc-wCq" firstAttribute="top" secondItem="a8g-ho-xNU" secondAttribute="top" id="T9a-zj-yqW"/>
+                            <constraint firstAttribute="trailing" secondItem="1g1-Oj-qat" secondAttribute="trailing" id="TY4-kx-9zN"/>
+                            <constraint firstAttribute="bottom" secondItem="1g1-Oj-qat" secondAttribute="bottom" id="azH-cB-BWs"/>
+                            <constraint firstItem="1g1-Oj-qat" firstAttribute="leading" secondItem="uQt-XI-66q" secondAttribute="leading" id="nBY-Th-BjH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a8g-ho-xNU"/>
                     </view>
