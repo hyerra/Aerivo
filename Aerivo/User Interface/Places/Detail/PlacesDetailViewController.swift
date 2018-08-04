@@ -110,7 +110,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         detail.text = genre ?? addressLine
         address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize }
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
         collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         fetchAirQualityData()

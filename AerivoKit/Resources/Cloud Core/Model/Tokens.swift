@@ -29,7 +29,7 @@ import CloudKit
 */
 open class Tokens: NSObject, NSCoding {
 	
-	var tokensByRecordZoneID = [CKRecordZoneID: CKServerChangeToken]()
+    var tokensByRecordZoneID = [CKRecordZone.ID: CKServerChangeToken]()
 	
 	private struct ArchiverKey {
 		static let tokensByRecordZoneID = "tokensByRecordZoneID"
@@ -64,7 +64,7 @@ open class Tokens: NSObject, NSCoding {
 	
 	///	Returns an object initialized from data in a given unarchiver.
 	public required init?(coder aDecoder: NSCoder) {
-		if let decodedTokens = aDecoder.decodeObject(forKey: ArchiverKey.tokensByRecordZoneID) as? [CKRecordZoneID: CKServerChangeToken] {
+        if let decodedTokens = aDecoder.decodeObject(forKey: ArchiverKey.tokensByRecordZoneID) as? [CKRecordZone.ID: CKServerChangeToken] {
 			self.tokensByRecordZoneID = decodedTokens
 		} else {
 			return nil
