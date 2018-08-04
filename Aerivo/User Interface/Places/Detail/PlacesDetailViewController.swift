@@ -17,7 +17,22 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     static let identifier = "placesDetailVC"
     
-    var placemark: GeocodedPlacemark!
+    var placemark: GeocodedPlacemark?
+    var favorite: Favorite? {
+        didSet {
+            if favorite != nil {
+                favoriteIcon.tintColor = UIColor(named: "System Red Color")
+                favoriteLabel.textColor = UIColor(named: "System Red Color")
+            } else {
+                favoriteIcon.tintColor = UIColor(named: "System Green Color")
+                favoriteLabel.textColor = UIColor(named: "System Green Color")
+            }
+        }
+    }
+    
+    var ofFavoritesOrigin = false
+    var tempFavorite: Favorite?
+    
     let blurEffect = UIBlurEffect(style: .extraLight)
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -45,18 +60,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerSpacingConstraint: NSLayoutConstraint!
-    
-    var favorite: Favorite? = nil {
-        didSet {
-            if favorite != nil {
-                favoriteIcon.tintColor = UIColor(named: "System Red Color")
-                favoriteLabel.textColor = UIColor(named: "System Red Color")
-            } else {
-                favoriteIcon.tintColor = UIColor(named: "System Green Color")
-                favoriteLabel.textColor = UIColor(named: "System Green Color")
-            }
-        }
-    }
     
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
@@ -100,9 +103,12 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        placeName.text = placemark.formattedName
-        detail.text = placemark.genres?.first ?? placemark.address ?? placemark.qualifiedName
-        address.text = (placemark.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n")
+        self.favorite = tempFavorite
+        placeName.text = placemark?.formattedName ?? favorite?.name
+        let genre = placemark?.genres?.first ?? favorite?.genres?.first
+        let addressLine = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.first ?? favorite?.formattedAddressLines?.first
+        detail.text = genre ?? addressLine
+        address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize }
         collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
@@ -156,7 +162,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     private func checkIfFavoritedLocation() {
-        guard let qualifiedName = placemark.qualifiedName else { return } // Make sure the qualified name is there or we have nothing to check if this placemark exists.
+        guard let qualifiedName = placemark?.qualifiedName else { return } // Make sure the qualified name is there or we have nothing to check if this placemark exists.
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         let predicate = NSPredicate(format: "qualifiedName = %@", qualifiedName)
         fetchRequest.predicate = predicate
@@ -172,7 +178,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
         
     private func fetchAirQualityData() {
-        guard let coordinate = placemark.location?.coordinate else { return }
+        let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
+        let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
+        guard let lat = latitude, let long = longitude else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         var latestAQParams = LatestAQParameters()
         latestAQParams.coordinates = coordinate
         latestAQParams.radius = 800000
@@ -200,11 +209,13 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             isParametersInfoLoaded = true
             if allDataIsLoaded { self.isAQDataLoaded = true }
         }
-        
     }
     
     private func fetchWaterQualityData() {
-        guard let coordinate = placemark.location?.coordinate else { return }
+        let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
+        let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
+        guard let lat = latitude, let long = longitude else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         let startDateComponents = Calendar(identifier: .gregorian).dateComponents([.month, .year], from: Date())
         let startDate = Calendar(identifier: .gregorian).date(from: startDateComponents)
         
@@ -317,7 +328,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         sender.isUserInteractionEnabled = false
         
         var representativeInfoParams = RepresentativeInfoByAddressParameters()
-        representativeInfoParams.address = (placemark.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: " ")
+        representativeInfoParams.address = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: " ") ?? favorite?.formattedAddressLines?.joined(separator: " ")
         representativeInfoParams.levels = [.administrativeArea1, .administrativeArea2, .locality, .regional, .special, .subLocality1, .subLocality2]
         representativeInfoParams.roles = [.deputyHeadOfGovernment, .executiveCouncil, .governmentOfficer, .headOfGovernment, .headOfState, .legislatorLowerBody, .legislatorUpperBody]
         civicInformationClient.fetchRepresentativeInfo(using: representativeInfoParams) { result in
@@ -377,8 +388,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                         let composeVC = MFMailComposeViewController()
                                         composeVC.mailComposeDelegate = self
                                         composeVC.setToRecipients([email])
-                                        composeVC.setSubject(CivicInformationMessage.subject(placeName: self.placemark.formattedName).messageValue)
-                                        composeVC.setMessageBody(CivicInformationMessage.messageBody(officialsName: official.name, placeName: self.placemark.formattedName).messageValue, isHTML: false)
+                                        if let name = self.placemark?.formattedName ?? self.favorite?.name {
+                                            composeVC.setSubject(CivicInformationMessage.subject(placeName: name).messageValue)
+                                            composeVC.setMessageBody(CivicInformationMessage.messageBody(officialsName: official.name, placeName: name).messageValue, isHTML: false)
+                                        }
                                         self.present(composeVC, animated: true)
                                     }
                                     alertController.addAction(action)
@@ -453,11 +466,13 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBAction func favoritePlacemark(_ sender: UIButton) {
         let dataController = DataController.shared
         if favorite == nil {
+            guard let placemark = placemark else { return }
             let favorite = Favorite(placemark: placemark, insertInto: dataController.managedObjectContext)
             
             do {
                 try dataController.saveContext()
                 self.favorite = favorite
+                if ofFavoritesOrigin { dismissVC() }
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Favorite Location", comment: "Title of alert that tells the user that there was an error saving the location to their favorites."), message: NSLocalizedString("There was an issue saving this location to your favorites.", comment: "Message of alert that tells the user that there was an error saving the location to their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
@@ -468,6 +483,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             do {
                 try dataController.saveContext()
                 self.favorite = nil
+                
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Remove Favorite Location", comment: "Title of alert that tells the user that there was an error removing the location from their favorites."), message: NSLocalizedString("There was an issue removing this location from your favorites.", comment: "Message of alert that tells the user that there was an error removing the location from their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
@@ -477,12 +493,14 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func showInfo(_ sender: UIButton) {
-        if let wikiID = placemark.wikidataItemIdentifier {
+        if let wikiID = placemark?.wikidataItemIdentifier ?? favorite?.wikidataItemIdentifier {
             guard let url = URL(string: "https://www.wikidata.org/wiki/\(wikiID)") else { return }
             UIApplication.shared.open(url)
         } else {
             guard var urlComps = URLComponents(string: "https://www.google.com/search") else { return }
-            let searchQuery = URLQueryItem(name: "q", value: placemark.qualifiedName ?? placemark.formattedName)
+            let qualifiedName = placemark?.qualifiedName ?? favorite?.qualifiedName
+            let name = placemark?.formattedName ?? favorite?.name
+            let searchQuery = URLQueryItem(name: "q", value: qualifiedName ?? name)
             urlComps.queryItems = [searchQuery]
             guard let url = urlComps.url else { return }
             UIApplication.shared.open(url)
@@ -494,6 +512,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func close(_ sender: UIButton) {
+        dismissVC()
+    }
+    
+    private func dismissVC() {
         presentingViewController?.view.alpha = 1
         presentingViewController?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
         let tempPresentingViewController = presentingViewController // Retain a reference to the presenting view controller before dismissing.
