@@ -11,9 +11,7 @@ import UIKit
 class ParameterDescriptionPopoverViewController: UIViewController {
     
     static let identifier = "parameterDescriptionPopoverVC"
-    
-    let blurEffect = UIBlurEffect(style: .extraLight)
-    
+        
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var parameterDescription: UILabel!
     @IBOutlet weak var parameterDescriptionHeightConstraint: NSLayoutConstraint!

@@ -26,7 +26,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
-    }
+   }
     
     @IBAction func showParameterDescription(_ sender: UIButton) {
         guard let parameterDescription = parameterDescription else { return }

@@ -28,9 +28,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var bottomSeparatorView: UIView!
-    
-    let blurEffect = UIBlurEffect(style: .extraLight)
-    
+        
     var previousMapSearchTask: URLSessionDataTask?
     
     var shouldShowDefaultResults = true { didSet { placesTableView.reloadData() } }
@@ -56,7 +54,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         placesTableView.dataSource = self
         placesTableView.delegate = self
-        placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
+        placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
         searchBar.delegate = self
         generateDefaultResults()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)

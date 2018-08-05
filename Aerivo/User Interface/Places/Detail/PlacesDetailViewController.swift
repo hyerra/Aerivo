@@ -32,9 +32,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var ofFavoritesOrigin = false
     var tempFavorite: Favorite?
-    
-    let blurEffect = UIBlurEffect(style: .extraLight)
-    
+        
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
