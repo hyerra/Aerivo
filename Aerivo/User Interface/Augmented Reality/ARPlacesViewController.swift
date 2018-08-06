@@ -43,12 +43,14 @@ class ARPlacesViewController: UIViewController {
     private var messageHideTimer: Timer?
     private var timers: [MessageType: Timer] = [:]
     
+    @IBOutlet weak var addTerrainBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sceneView.delegate = self
         sceneView.session.delegate = self
-                
+        
         doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
         // Set up scene content.
@@ -62,6 +64,23 @@ class ARPlacesViewController: UIViewController {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
         resetTracking()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Do any additional setup after the view laid out the subviews.
+        if let pulleyVC = presentingViewController?.presentingViewController?.pulleyViewController {
+            switch pulleyVC.currentDisplayMode {
+            case .bottomDrawer:
+                addTerrainBottomConstraint.constant = pulleyVC.bounceOverflowMargin + 15
+            case .leftSide:
+                addTerrainBottomConstraint.constant = 15
+            case .automatic:
+                addTerrainBottomConstraint.constant = 15
+            }
+        } else {
+            addTerrainBottomConstraint.constant = 15
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

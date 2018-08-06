@@ -71,7 +71,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-Ag-Mgq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wJ4-SV-gdh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="extraLight"/>
@@ -949,6 +949,7 @@
                         <viewLayoutGuide key="safeArea" id="3Yy-YC-jTX"/>
                     </view>
                     <connections>
+                        <outlet property="addTerrainBottomConstraint" destination="Vtn-Tt-h9h" id="IPw-3t-v57"/>
                         <outlet property="addTerrainButton" destination="P4a-HB-K3S" id="0Em-W3-Ggu"/>
                         <outlet property="doneButton" destination="iGS-BM-rN6" id="wuF-hP-y1t"/>
                         <outlet property="messageLabel" destination="ztU-7a-SrR" id="v5q-GH-d0d"/>
