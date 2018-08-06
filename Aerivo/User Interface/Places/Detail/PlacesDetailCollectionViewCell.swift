@@ -15,7 +15,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
     @IBOutlet weak var detail: UIButton!
     
     var parameterDescription: String?
-    var parameterDescriptionDelegate: ParameterDescriptionDelegate?
+    weak var parameterDescriptionDelegate: ParameterDescriptionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
