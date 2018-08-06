@@ -106,9 +106,7 @@ class ARPlacesViewController: UIViewController {
     func setupCamera() {
         guard let camera = sceneView.pointOfView?.camera else { return }
         camera.wantsHDR = true
-        camera.exposureOffset = -1
-        camera.minimumExposure = -1
-        camera.maximumExposure = 3
+        camera.wantsExposureAdaptation = true
     }
     
     // MARK: - Terrain loading
