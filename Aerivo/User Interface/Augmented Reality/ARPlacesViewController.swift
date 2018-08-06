@@ -71,6 +71,7 @@ class ARPlacesViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Do any additional teardown right before the view will disappear.
+        sceneView.session.pause()
         UIApplication.shared.isIdleTimerDisabled = false
     }
     
@@ -113,7 +114,7 @@ class ARPlacesViewController: UIViewController {
         virtualObjectInteraction.selectedObject = nil
         
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal]
+        configuration.planeDetection = .horizontal
         
         if #available(iOS 12.0, *) {
             configuration.environmentTexturing = .automatic

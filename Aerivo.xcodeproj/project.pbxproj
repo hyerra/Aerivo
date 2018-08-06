@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
-		681C2D562116AB0E0008F020 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D542116AB0E0008F020 /* FocusSquare.swift */; };
 		681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5A2116B0410008F020 /* VirtualObject.swift */; };
 		681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */; };
 		681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */; };
@@ -21,6 +20,7 @@
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
+		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
 		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68AE5E0021163D5A0038EABC /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
 		68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
@@ -194,7 +194,6 @@
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
 		681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
-		681C2D542116AB0E0008F020 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		681C2D5A2116B0410008F020 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
@@ -218,6 +217,7 @@
 		6891C3BE20EA933D0051563F /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
+		6895F72B21183931003A9FD9 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		68B082F721177F10006AFC82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B082F9211784E4006AFC82 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOAnnotationView.swift; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 		681C2D522116AB0E0008F020 /* Focus Square */ = {
 			isa = PBXGroup;
 			children = (
-				681C2D542116AB0E0008F020 /* FocusSquare.swift */,
+				6895F72B21183931003A9FD9 /* FocusSquare.swift */,
 				681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */,
 			);
 			path = "Focus Square";
@@ -1169,6 +1169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				681C2D612116B2420008F020 /* VirtualObjectARView.swift in Sources */,
+				6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */,
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
 				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
@@ -1180,7 +1181,6 @@
 				681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */,
 				7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
-				681C2D562116AB0E0008F020 /* FocusSquare.swift in Sources */,
 				7DBE7A4021156CD900F3B011 /* ARPlacesViewController.swift in Sources */,
 				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,
 				681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */,
