@@ -170,17 +170,6 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
                                                 objectPosition: object.simdWorldPosition,
                                                 allowedAlignments: object.allowedAlignments) else { return }
         
-        let planeAlignment: ARPlaneAnchor.Alignment
-        if let planeAnchor = result.anchor as? ARPlaneAnchor {
-            planeAlignment = planeAnchor.alignment
-        } else if result.type == .estimatedHorizontalPlane {
-            planeAlignment = .horizontal
-        } else if result.type == .estimatedVerticalPlane {
-            planeAlignment = .vertical
-        } else {
-            return
-        }
-        
         /*
          Plane hit test results are generally smooth. If we did *not* hit a plane,
          smooth the movement to prevent large jumps.
@@ -190,7 +179,6 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         object.setTransform(transform,
                             relativeTo: cameraTransform,
                             smoothMovement: !isOnPlane,
-                            alignment: planeAlignment,
                             allowAnimation: allowAnimation)
     }
 }

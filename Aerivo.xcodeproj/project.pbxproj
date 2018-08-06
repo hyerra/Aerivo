@@ -107,6 +107,7 @@
 		68AE5E5221163D780038EABC /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
 		68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
 		68AE5E5721163E080038EABC /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */; };
+		68B082FA211784E4006AFC82 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B082F9211784E4006AFC82 /* Models.scnassets */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
 		68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		68CB23D62116303800B98B32 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB23D52116303800B98B32 /* AerivoKitTests.swift */; };
@@ -204,26 +205,27 @@
 		684BE20F20E99C1D00E74FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		684BE21120E99C1F00E74FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		684BE21420E99C1F00E74FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		684BE21620E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		684BE21B20E99C1F00E74FE5 /* AerivoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoTests.swift; sourceTree = "<group>"; };
 		684BE22120E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoUITests.swift; sourceTree = "<group>"; };
 		684BE22C20E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		684E995221177D580075FCAC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		6891C3BE20EA933D0051563F /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
+		68B082F721177F10006AFC82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68B082F9211784E4006AFC82 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOAnnotationView.swift; sourceTree = "<group>"; };
 		68B7648B20F848B1005A6EB1 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		68B7648D20F848CE005A6EB1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQEndpoint.swift; sourceTree = "<group>"; };
 		68CB23C62116303800B98B32 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CB23C82116303800B98B32 /* AerivoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AerivoKit.h; sourceTree = "<group>"; };
-		68CB23C92116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CB23D52116303800B98B32 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
 		68CB23D72116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -384,8 +386,8 @@
 		681C2D522116AB0E0008F020 /* Focus Square */ = {
 			isa = PBXGroup;
 			children = (
-				681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */,
 				681C2D542116AB0E0008F020 /* FocusSquare.swift */,
+				681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */,
 			);
 			path = "Focus Square";
 			sourceTree = "<group>";
@@ -401,9 +403,10 @@
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				68B082F721177F10006AFC82 /* Info.plist */,
 				684BE21120E99C1F00E74FE5 /* Assets.xcassets */,
+				68B082F9211784E4006AFC82 /* Models.scnassets */,
 				7D2C92BE2115172A0082D935 /* Localizable.stringsdict */,
-				684BE21620E99C1F00E74FE5 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -601,7 +604,7 @@
 			isa = PBXGroup;
 			children = (
 				68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */,
-				68CB23C92116303800B98B32 /* Info.plist */,
+				684E995221177D580075FCAC /* Info.plist */,
 				7D3FDDA1211428C000C0F56B /* XMLParsing */,
 				7D3362E3210E3CB000491C3A /* Cloud Core */,
 			);
@@ -1078,6 +1081,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B082FA211784E4006AFC82 /* Models.scnassets in Resources */,
 				684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */,
 				7D2C92BC2115172A0082D935 /* Localizable.stringsdict in Resources */,
 				684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */,
@@ -1496,7 +1500,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1521,7 +1525,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

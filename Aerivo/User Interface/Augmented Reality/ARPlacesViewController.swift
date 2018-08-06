@@ -9,6 +9,7 @@
 import UIKit
 import ARKit
 import CoreLocation
+import Mapbox
 import MapboxSceneKit
 
 class ARPlacesViewController: UIViewController {
@@ -43,6 +44,10 @@ class ARPlacesViewController: UIViewController {
     private var messageHideTimer: Timer?
     private var timers: [MessageType: Timer] = [:]
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,7 +60,7 @@ class ARPlacesViewController: UIViewController {
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
         
-        sceneView.setupDirectionalLighting(queue: updateQueue)
+        loadTerrain()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +91,23 @@ class ARPlacesViewController: UIViewController {
         camera.maximumExposure = 3
     }
     
+    // MARK: - Terrain loading
+    
+    private func loadTerrain() {
+        //Set up initial terrain and materials
+        let terrainNode = VirtualObject(minLat: location.latitude - 0.1, maxLat: location.latitude + 0.1, minLon: location.longitude - 0.1, maxLon: location.longitude + 0.1)
+        
+        terrainNode.geometry?.materials = defaultMaterials()
+        
+        terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }) { }
+        
+        terrainNode.fetchTerrainTexture(MGLStyle.outdoorsStyleURL.absoluteString, zoom: 14, progress: { _, _ in }, completion: { image in
+            terrainNode.geometry?.materials[4].diffuse.contents = image
+        })
+        
+        self.terrain = terrainNode
+    }
+    
     // MARK: - Session management
     
     /// Creates a new AR configuration to run on the `session`.
@@ -93,7 +115,7 @@ class ARPlacesViewController: UIViewController {
         virtualObjectInteraction.selectedObject = nil
         
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = [.horizontal]
         
         if #available(iOS 12.0, *) {
             configuration.environmentTexturing = .automatic
@@ -131,57 +153,27 @@ class ARPlacesViewController: UIViewController {
         }
     }
     
-    func displayErrorMessage(title: String, message: String) {
-        // Present an alert informing about the error that has occurred.
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
-            alertController.dismiss(animated: true, completion: nil)
-            self.resetTracking()
-        }
-        alertController.addAction(restartAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
     // MARK: - Actions
     
     @IBAction func placeTerrain(_ sender: UIButton) {
-        let tapPoint = screenCenter
-        var result = sceneView.smartHitTest(tapPoint)
-        if result == nil {
-            result = sceneView.smartHitTest(tapPoint, infinitePlane: true)
-        }
-        
-        guard result != nil, let anchor = result?.anchor, let plane = planes[anchor.identifier] else { return }
-        
-        insert(on: plane, from: result!)
-        addTerrainButton.isHidden = true
+        placeVirtualObject()
     }
     
-    private func insert(on plane: SCNNode, from hitResult: ARHitTestResult) {
-        //Set up initial terrain and materials
-        let terrainNode = VirtualObject(minLat: location.latitude - 0.1, maxLat: location.latitude + 0.1, minLon: location.longitude - 0.1, maxLon: location.longitude + 0.1)
+    func placeVirtualObject() {
+        guard focusSquare.state != .initializing else {
+            showMessage(NSLocalizedString("CANNOT PLACE OBJECT\nTry moving left or right.", comment: "AR message telling the user that they cannot place the object now and they must move left or right first."))
+            return
+        }
         
-        //Note: Again, you don't have to do this loading in-scene. If you know the area of the node to be fetched, you can
-        //do this in the background while AR plane detection is still working so it is ready by the time
-        //your user selects where to add the node in the world.
+        guard let terrain = terrain else { return }
         
-        //We're going to scale the node dynamically based on the size of the node and how far away the detected plane is
-        let scale = Float(0.333 * hitResult.distance) / terrainNode.boundingSphere.radius
-        terrainNode.transform = SCNMatrix4MakeScale(scale, scale, scale)
-        terrainNode.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
-        terrainNode.geometry?.materials = defaultMaterials()
-        sceneView.scene.rootNode.addChildNode(terrainNode)
-        terrain = terrainNode
+        virtualObjectInteraction.translate(terrain, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
+        virtualObjectInteraction.selectedObject = terrain
         
-        terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }, completion: {
-            NSLog("Terrain load complete")
-        })
-        
-        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 14, progress: { _, _ in }, completion: { image in
-            NSLog("Texture load complete")
-            terrainNode.geometry?.materials[4].diffuse.contents = image
-        })
-        
+        updateQueue.async {
+            self.sceneView.scene.rootNode.addChildNode(terrain)
+            self.sceneView.addOrUpdateAnchor(for: terrain)
+        }
     }
     
     private func defaultMaterials() -> [SCNMaterial] {
@@ -202,6 +194,17 @@ class ARPlacesViewController: UIViewController {
         return [sideMaterial, sideMaterial, sideMaterial, sideMaterial, groundImage, bottomMaterial]
     }
     
+    func displayErrorMessage(title: String, message: String) {
+        // Present an alert informing about the error that has occurred.
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.resetTracking()
+        }
+        alertController.addAction(restartAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - AR delegates
@@ -219,12 +222,6 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
             self.updateFocusSquare(isObjectVisible: isTerrainInView)
         }
         
-        // If light estimation is enabled, update the intensity of the directional lights
-        if let lightEstimate = sceneView.session.currentFrame?.lightEstimate {
-            sceneView.updateDirectionalLighting(intensity: lightEstimate.ambientIntensity, queue: updateQueue)
-        } else {
-            sceneView.updateDirectionalLighting(intensity: 1000, queue: updateQueue)
-        }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
