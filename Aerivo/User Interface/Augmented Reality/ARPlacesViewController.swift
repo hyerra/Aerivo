@@ -54,6 +54,8 @@ class ARPlacesViewController: UIViewController {
         // Set up scene content.
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
+        
+        loadTerrain()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,7 +155,6 @@ class ARPlacesViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func placeTerrain(_ sender: UIButton) {
-        loadTerrain()
         guard let terrain = terrain else { return }
         self.sceneView.prepare([terrain], completionHandler: { _ in
             DispatchQueue.main.async {
@@ -171,17 +172,6 @@ class ARPlacesViewController: UIViewController {
             showMessage(NSLocalizedString("CANNOT PLACE OBJECT\nTry moving left or right.", comment: "AR message telling the user that they cannot place the object now and they must move left or right first."))
             return
         }
-        
-        var result = sceneView.smartHitTest(screenCenter)
-        if result == nil {
-            result = sceneView.smartHitTest(screenCenter, infinitePlane: true)
-        }
-        
-        guard let hitResult = result else { return }
-        
-        let scale = Float(0.333 * hitResult.distance) / virtualObject.boundingSphere.radius
-        virtualObject.transform = SCNMatrix4MakeScale(scale, scale, scale)
-        virtualObject.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
         
         virtualObjectInteraction.translate(virtualObject, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
         virtualObjectInteraction.selectedObject = virtualObject
