@@ -27,7 +27,6 @@ class ARPlacesViewController: UIViewController {
     var location: CLLocationCoordinate2D!
     
     private weak var terrain: VirtualObject?
-    private var planes: [UUID: SCNNode] = [UUID: SCNNode]()
     
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
     
@@ -59,8 +58,6 @@ class ARPlacesViewController: UIViewController {
         // Set up scene content.
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
-        
-        loadTerrain()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,17 +92,17 @@ class ARPlacesViewController: UIViewController {
     
     private func loadTerrain() {
         //Set up initial terrain and materials
-        let terrainNode = VirtualObject(minLat: location.latitude - 0.1, maxLat: location.latitude + 0.1, minLon: location.longitude - 0.1, maxLon: location.longitude + 0.1)
+        let terrainNode = VirtualObject(minLat: location.latitude - 0.01, maxLat: location.latitude + 0.01, minLon: location.longitude - 0.01, maxLon: location.longitude + 0.01)
         
         terrainNode.geometry?.materials = defaultMaterials()
         
+        self.terrain = terrainNode
+        
         terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }) { }
         
-        terrainNode.fetchTerrainTexture(MGLStyle.outdoorsStyleURL.absoluteString, zoom: 14, progress: { _, _ in }, completion: { image in
+        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 14, progress: { _, _ in }, completion: { image in
             terrainNode.geometry?.materials[4].diffuse.contents = image
         })
-        
-        self.terrain = terrainNode
     }
     
     // MARK: - Session management
@@ -122,7 +119,7 @@ class ARPlacesViewController: UIViewController {
         }
         
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        scheduleMessage("FIND A SURFACE TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .planeEstimation)
+        scheduleMessage(NSLocalizedString("FIND A SURFACE TO PLACE AN OBJECT", comment: "Tells the user to find a surface so they can place an object in AR."), inSeconds: 7.5, messageType: .planeEstimation)
     }
     
     // MARK: - Focus square
@@ -165,7 +162,20 @@ class ARPlacesViewController: UIViewController {
             return
         }
         
+        loadTerrain()
+        
         guard let terrain = terrain else { return }
+        
+        var result = sceneView.smartHitTest(screenCenter)
+        if result == nil {
+            result = sceneView.smartHitTest(screenCenter, infinitePlane: true)
+        }
+        
+        guard let hitResult = result else { return }
+        
+        let scale = Float(0.333 * hitResult.distance) / terrain.boundingSphere.radius
+        terrain.transform = SCNMatrix4MakeScale(scale, scale, scale)
+        terrain.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
         
         virtualObjectInteraction.translate(terrain, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
         virtualObjectInteraction.selectedObject = terrain
