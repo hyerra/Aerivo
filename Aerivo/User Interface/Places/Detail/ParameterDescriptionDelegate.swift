@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ParameterDescriptionDelegate {
+protocol ParameterDescriptionDelegate: class {
     func show(parameterDescription: ParameterDescriptionPopoverViewController)
 }
