@@ -316,7 +316,7 @@
 		7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationResponse.swift; sourceTree = "<group>"; };
 		7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationClient.swift; sourceTree = "<group>"; };
 		7DAD9EEE210A6E45003B1671 /* CivicInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationTests.swift; sourceTree = "<group>"; };
-		7DBE7A3F21156CD900F3B011 /* ARPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPlacesViewController.swift; sourceTree = "<group>"; };
+		7DBE7A3F21156CD900F3B011 /* ARPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPlacesViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7DBFDBEB210D1DA90074FFA5 /* Aerivo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aerivo.xcdatamodel; sourceTree = "<group>"; };
 		7DC7D90C21141D8200681860 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };

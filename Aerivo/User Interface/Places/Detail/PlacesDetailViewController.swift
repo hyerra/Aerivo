@@ -503,7 +503,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         guard let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue else { return }
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         arPlacesVC.location = location
-        present(arPlacesVC, animated: true, completion: nil)
+        self.presentingViewController?.pulleyViewController?.setDrawerPosition(position: .open, animated: true)
+        present(arPlacesVC, animated: true)
     }
     
     @IBAction func close(_ sender: UIButton) {
@@ -549,6 +550,11 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
             headerSpacingConstraint.constant = 0
         }
         
+        if drawer.drawerPosition != .open {
+            if let presentedVC = presentedViewController {
+                presentedVC.dismiss(animated: true)
+            }
+        }
     }
     
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {

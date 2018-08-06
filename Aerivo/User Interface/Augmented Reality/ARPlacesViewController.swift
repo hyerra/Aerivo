@@ -26,7 +26,7 @@ class ARPlacesViewController: UIViewController {
     
     var location: CLLocationCoordinate2D!
     
-    private weak var terrain: VirtualObject?
+    private var terrain: VirtualObject?
     
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
     
@@ -43,16 +43,12 @@ class ARPlacesViewController: UIViewController {
     private var messageHideTimer: Timer?
     private var timers: [MessageType: Timer] = [:]
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sceneView.delegate = self
         sceneView.session.delegate = self
-        
+                
         doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
         // Set up scene content.
@@ -60,11 +56,16 @@ class ARPlacesViewController: UIViewController {
         sceneView.scene.rootNode.addChildNode(focusSquare)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Do any additional setup right before the view will appear.
+        resetTracking()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Do any additional setup right after the view appeared.
         UIApplication.shared.isIdleTimerDisabled = true
-        resetTracking()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,7 +101,7 @@ class ARPlacesViewController: UIViewController {
         
         terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }) { }
         
-        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 14, progress: { _, _ in }, completion: { image in
+        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 20, progress: { _, _ in }, completion: { image in
             terrainNode.geometry?.materials[4].diffuse.contents = image
         })
     }
@@ -139,32 +140,36 @@ class ARPlacesViewController: UIViewController {
                 self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                 self.focusSquare.state = .detecting(hitTestResult: result, camera: camera)
             }
-            addTerrainButton.isHidden = false
             cancelScheduledMessage(for: .focusSquare)
         } else {
             updateQueue.async {
                 self.focusSquare.state = .initializing
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
             }
-            addTerrainButton.isHidden = true
         }
     }
     
     // MARK: - Actions
     
     @IBAction func placeTerrain(_ sender: UIButton) {
-        placeVirtualObject()
+        loadTerrain()
+        guard let terrain = terrain else { return }
+        self.sceneView.prepare([terrain], completionHandler: { _ in
+            DispatchQueue.main.async {
+                self.place(virtualObject: terrain)
+            }
+        })
     }
     
-    func placeVirtualObject() {
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    func place(virtualObject: VirtualObject) {
         guard focusSquare.state != .initializing else {
             showMessage(NSLocalizedString("CANNOT PLACE OBJECT\nTry moving left or right.", comment: "AR message telling the user that they cannot place the object now and they must move left or right first."))
             return
         }
-        
-        loadTerrain()
-        
-        guard let terrain = terrain else { return }
         
         var result = sceneView.smartHitTest(screenCenter)
         if result == nil {
@@ -173,17 +178,19 @@ class ARPlacesViewController: UIViewController {
         
         guard let hitResult = result else { return }
         
-        let scale = Float(0.333 * hitResult.distance) / terrain.boundingSphere.radius
-        terrain.transform = SCNMatrix4MakeScale(scale, scale, scale)
-        terrain.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
+        let scale = Float(0.333 * hitResult.distance) / virtualObject.boundingSphere.radius
+        virtualObject.transform = SCNMatrix4MakeScale(scale, scale, scale)
+        virtualObject.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
         
-        virtualObjectInteraction.translate(terrain, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
-        virtualObjectInteraction.selectedObject = terrain
+        virtualObjectInteraction.translate(virtualObject, basedOn: screenCenter, infinitePlane: false, allowAnimation: false)
+        virtualObjectInteraction.selectedObject = virtualObject
         
         updateQueue.async {
-            self.sceneView.scene.rootNode.addChildNode(terrain)
-            self.sceneView.addOrUpdateAnchor(for: terrain)
+            self.sceneView.scene.rootNode.addChildNode(virtualObject)
+            self.sceneView.addOrUpdateAnchor(for: virtualObject)
         }
+        
+        addTerrainButton.isHidden = true
     }
     
     private func defaultMaterials() -> [SCNMaterial] {
@@ -244,6 +251,7 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
                 self.addTerrainButton?.isHidden = false
             }
         }
+        
         updateQueue.async {
             self.terrain?.adjustOntoPlaneAnchor(planeAnchor, using: node)
         }
@@ -290,7 +298,7 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
         let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
         
         DispatchQueue.main.async {
-            self.displayErrorMessage(title: "The AR session failed.", message: errorMessage)
+            self.displayErrorMessage(title: NSLocalizedString("AR Failed", comment: "The title for the error saying that there was an issue with AR."), message: errorMessage)
         }
     }
     
@@ -300,12 +308,6 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
     }
     
     func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
-        /*
-         Allow the session to attempt to resume after an interruption.
-         This process may not succeed, so the app must be prepared
-         to reset the session if the relocalizing status continues
-         for a long time -- see `escalateFeedback` in `StatusViewController`.
-         */
         return true
     }
 }
