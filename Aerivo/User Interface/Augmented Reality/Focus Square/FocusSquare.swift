@@ -81,20 +81,11 @@ class FocusSquare: SCNNode {
     /// Indicates if the square is currently being animated.
     private var isAnimating = false
     
-    /// Indicates if the square is currently changing its alignment.
-    private var isChangingAlignment = false
-    
-    /// The focus square's current alignment.
-    private var currentAlignment: ARPlaneAnchor.Alignment?
-    
     /// The current plane anchor if the focus square is on a plane.
     private(set) var currentPlaneAnchor: ARPlaneAnchor?
     
     /// The focus square's most recent positions.
     private var recentFocusSquarePositions: [float3] = []
-    
-    /// The focus square's most recent alignments.
-    private(set) var recentFocusSquareAlignments: [ARPlaneAnchor.Alignment] = []
     
     /// Previously visited plane anchors.
     private var anchorsOfVisitedPlanes: Set<ARAnchor> = []
@@ -241,45 +232,8 @@ class FocusSquare: SCNNode {
         }
         
         if state != .initializing {
-            updateAlignment(for: hitTestResult, yRotationAngle: angle)
-        }
-    }
-    
-    private func updateAlignment(for hitTestResult: ARHitTestResult, yRotationAngle angle: Float) {
-        // Abort if an animation is currently in progress.
-        if isChangingAlignment {
-            return
-        }
-        
-        var shouldAnimateAlignmentChange = false
-        
-        let tempNode = SCNNode()
-        tempNode.simdRotation = float4(0, 1, 0, angle)
-        
-        // Determine current alignment
-        let alignment: ARPlaneAnchor.Alignment = .horizontal
-        
-        // add to list of recent alignments
-        recentFocusSquareAlignments.append(alignment)
-        
-        // Average using several most recent alignments.
-        recentFocusSquareAlignments = Array(recentFocusSquareAlignments.suffix(20))
-        
-        let horizontalHistory = recentFocusSquareAlignments.filter({ $0 == .horizontal }).count
-        
-        // Alignment is same as most of the history - change it
-        if alignment == .horizontal && horizontalHistory > 15 || hitTestResult.anchor is ARPlaneAnchor {
-            if alignment != currentAlignment {
-                shouldAnimateAlignmentChange = true
-                currentAlignment = alignment
-                recentFocusSquareAlignments.removeAll()
-            }
-        }
-        
-        // Change the focus square's alignment
-        if shouldAnimateAlignmentChange {
-            performAlignmentAnimation(to: tempNode.simdOrientation)
-        } else {
+            let tempNode = SCNNode()
+            tempNode.simdRotation = float4(0, 1, 0, angle)
             simdOrientation = tempNode.simdOrientation
         }
     }
@@ -386,18 +340,6 @@ class FocusSquare: SCNNode {
                 segment.runAction(.sequence([waitAction, flashSquareAction]))
             }
          }
-    }
-    
-    private func performAlignmentAnimation(to newOrientation: simd_quatf) {
-        isChangingAlignment = true
-        SCNTransaction.begin()
-        SCNTransaction.completionBlock = {
-            self.isChangingAlignment = false
-        }
-        SCNTransaction.animationDuration = 0.5
-        SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        simdOrientation = newOrientation
-        SCNTransaction.commit()
     }
     
     // MARK: Convenience Methods
