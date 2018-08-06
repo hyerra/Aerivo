@@ -223,7 +223,7 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
-        let isTerrainInView = terrain != nil ? sceneView.isNode(terrain!, insideFrustumOf: sceneView.pointOfView!) : false
+        let isTerrainInView = terrain != nil ? sceneView.isNode(terrain!, insideFrustumOf: sceneView.pointOfView!) && sceneView.scene.rootNode.childNodes.contains(terrain!) : false
         
         DispatchQueue.main.async {
             self.virtualObjectInteraction.updateObjectToCurrentTrackingPosition()
