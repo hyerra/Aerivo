@@ -23,12 +23,6 @@ class VirtualObject: TerrainNode {
         return [.horizontal]
     }
     
-    /// Current alignment of the virtual object
-    var currentAlignment: ARPlaneAnchor.Alignment = .horizontal
-    
-    /// Whether the object is currently changing alignment
-    private var isChangingAlignment: Bool = false
-    
     /// For correct rotation on horizontal and vertical surfaces, roate around
     /// local y rather than world y. Therefore rotate first child note instead of self.
     var objectRotation: Float {
@@ -42,9 +36,7 @@ class VirtualObject: TerrainNode {
                 normalized -= 2 * .pi
             }
             childNodes.first!.eulerAngles.y = normalized
-            if currentAlignment == .horizontal {
-                rotationWhenAlignedHorizontally = normalized
-            }
+            rotationWhenAlignedHorizontally = normalized
         }
     }
     
@@ -78,7 +70,6 @@ class VirtualObject: TerrainNode {
     func setTransform(_ newTransform: float4x4,
                       relativeTo cameraTransform: float4x4,
                       smoothMovement: Bool,
-                      alignment: ARPlaneAnchor.Alignment,
                       allowAnimation: Bool) {
         let cameraWorldPosition = cameraTransform.translation
         var positionOffsetFromCamera = newTransform.translation - cameraWorldPosition
@@ -108,56 +99,6 @@ class VirtualObject: TerrainNode {
         } else {
             simdPosition = cameraWorldPosition + positionOffsetFromCamera
         }
-        
-        updateAlignment(to: alignment, transform: newTransform, allowAnimation: allowAnimation)
-    }
-    
-    // MARK: - Setting the object's alignment
-    
-    func updateAlignment(to newAlignment: ARPlaneAnchor.Alignment, transform: float4x4, allowAnimation: Bool) {
-        if isChangingAlignment {
-            return
-        }
-        
-        // Only animate if the alignment has changed.
-        let animationDuration = (newAlignment != currentAlignment && allowAnimation) ? 0.5 : 0
-        
-        var newObjectRotation: Float?
-        switch (newAlignment, currentAlignment) {
-        case (.horizontal, .horizontal):
-            // When placement remains horizontal, alignment doesn't need to be changed
-            // (unlike for vertical, where the surface's world-y-rotation might be different).
-            return
-        case (.horizontal, .vertical):
-            // When changing to horizontal placement, restore the previous horizontal rotation.
-            newObjectRotation = rotationWhenAlignedHorizontally
-        case (.vertical, .horizontal):
-            // When changing to vertical placement, reset the object's rotation (y-up).
-            newObjectRotation = 0.0001
-        default:
-            break
-        }
-        
-        currentAlignment = newAlignment
-        
-        SCNTransaction.begin()
-        SCNTransaction.animationDuration = animationDuration
-        SCNTransaction.completionBlock = {
-            self.isChangingAlignment = false
-        }
-        
-        isChangingAlignment = true
-        
-        // Use the filtered position rather than the exact one from the transform.
-        var mutableTransform = transform
-        mutableTransform.translation = simdWorldPosition
-        simdTransform = mutableTransform
-        
-        if newObjectRotation != nil {
-            objectRotation = newObjectRotation!
-        }
-        
-        SCNTransaction.commit()
     }
     
     /// - Tag: AdjustOntoPlaneAnchor
@@ -194,7 +135,6 @@ class VirtualObject: TerrainNode {
             SCNTransaction.animationDuration = CFTimeInterval(distanceToPlane * 500) // Move 2 mm per second.
             SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             position.y = anchor.transform.columns.3.y
-            updateAlignment(to: anchor.alignment, transform: simdWorldTransform, allowAnimation: false)
             SCNTransaction.commit()
         }
     }

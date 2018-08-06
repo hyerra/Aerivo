@@ -257,44 +257,23 @@ class FocusSquare: SCNNode {
         tempNode.simdRotation = float4(0, 1, 0, angle)
         
         // Determine current alignment
-        var alignment: ARPlaneAnchor.Alignment?
-        if let planeAnchor = hitTestResult.anchor as? ARPlaneAnchor {
-            alignment = planeAnchor.alignment
-        } else if hitTestResult.type == .estimatedHorizontalPlane {
-            alignment = .horizontal
-        } else if hitTestResult.type == .estimatedVerticalPlane {
-            alignment = .vertical
-        }
+        let alignment: ARPlaneAnchor.Alignment = .horizontal
         
         // add to list of recent alignments
-        if alignment != nil {
-            recentFocusSquareAlignments.append(alignment!)
-        }
+        recentFocusSquareAlignments.append(alignment)
         
         // Average using several most recent alignments.
         recentFocusSquareAlignments = Array(recentFocusSquareAlignments.suffix(20))
         
         let horizontalHistory = recentFocusSquareAlignments.filter({ $0 == .horizontal }).count
-        let verticalHistory = recentFocusSquareAlignments.filter({ $0 == .vertical }).count
         
         // Alignment is same as most of the history - change it
-        if alignment == .horizontal && horizontalHistory > 15 ||
-            alignment == .vertical && verticalHistory > 10 ||
-            hitTestResult.anchor is ARPlaneAnchor {
+        if alignment == .horizontal && horizontalHistory > 15 || hitTestResult.anchor is ARPlaneAnchor {
             if alignment != currentAlignment {
                 shouldAnimateAlignmentChange = true
                 currentAlignment = alignment
                 recentFocusSquareAlignments.removeAll()
             }
-        } else {
-            // Alignment is different than most of the history - ignore it
-            alignment = currentAlignment
-            return
-        }
-        
-        if alignment == .vertical {
-            tempNode.simdOrientation = hitTestResult.worldTransform.orientation
-            shouldAnimateAlignmentChange = true
         }
         
         // Change the focus square's alignment
