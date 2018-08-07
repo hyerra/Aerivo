@@ -21,7 +21,7 @@ class ARPlacesViewController: UIViewController {
     @IBOutlet weak var messagePanel: UIVisualEffectView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    @IBOutlet weak var addTerrainButton: UIButton!
+    @IBOutlet weak var plusPanel: UIVisualEffectView!
     
     var location: CLLocationCoordinate2D!
     
@@ -149,7 +149,7 @@ class ARPlacesViewController: UIViewController {
         
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         scheduleMessage(NSLocalizedString("FIND A SURFACE TO PLACE AN OBJECT", comment: "Tells the user to find a surface so they can place an object in AR."), inSeconds: 7.5, messageType: .planeEstimation)
-        addTerrainButton.isHidden = false
+        plusPanel.isHidden = false
     }
     
     func restartExperience() {
@@ -230,9 +230,10 @@ class ARPlacesViewController: UIViewController {
         updateQueue.async {
             self.sceneView.scene.rootNode.addChildNode(virtualObject)
             self.sceneView.addOrUpdateAnchor(for: virtualObject)
+            self.cancelScheduledMessage(for: .contentPlacement)
         }
         
-        addTerrainButton.isHidden = true
+        plusPanel.isHidden = true
     }
     
     private func defaultMaterials() -> [SCNMaterial] {
@@ -286,7 +287,7 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
             if !self.isTerrainVisible {
                 self.showMessage(NSLocalizedString("SURFACE DETECTED", comment: "Message for AR that says a surface has been detected."))
                 self.scheduleMessage(NSLocalizedString("TAP + TO PLACE AN OBJECT", comment: "Message for AR that tells a user to place an object."), inSeconds: 7.5, messageType: .contentPlacement)
-                self.addTerrainButton.isHidden = false
+                self.plusPanel.isHidden = false
             }
         }
         
