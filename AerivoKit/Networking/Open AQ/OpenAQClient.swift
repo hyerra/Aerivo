@@ -17,6 +17,9 @@ public final class OpenAQClient: APIClient {
     /// Returns a new instance of the Open AQ Client.
     public init() { }
     
+    /// An array of all the ongoing network requests.
+    var ongoingRequests: [URLSessionDataTask] = []
+    
     /// Fetches a listing of cities supported in Open AQ.
     ///
     /// - Parameters:
@@ -99,6 +102,11 @@ public final class OpenAQClient: APIClient {
     
     // MARK: - API client
     
+    /// Cancels all the ongoing network requests.
+    public func cancelAllPendingRequests() {
+        ongoingRequests.forEach { $0.cancel() }
+    }
+    
     func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) {
         do {
             let request = try request.asURLRequest()
@@ -111,6 +119,7 @@ public final class OpenAQClient: APIClient {
                 completion((data, response, error))
             }
             
+            ongoingRequests.append(dataTask)
             dataTask.resume()
         } catch let error {
             completion((nil, nil, error))
