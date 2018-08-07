@@ -58,6 +58,7 @@ class ARPlacesViewController: UIViewController {
         sceneView.delegate = self
         sceneView.session.delegate = self
         
+        doneButton.titleLabel?.numberOfLines = 0
         doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
         // Set up scene content.
