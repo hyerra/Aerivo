@@ -257,11 +257,17 @@ class ARPlacesViewController: UIViewController {
     func displayErrorMessage(title: String, message: String) {
         // Present an alert informing about the error that has occurred.
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
-            alertController.dismiss(animated: true, completion: nil)
+        let restartAction = UIAlertAction(title: NSLocalizedString("Restart Session", comment: "An option that allows the user to restart the AR Session."), style: .default) { action in
             self.resetTracking()
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            let pulleyVC = self.presentingViewController?.presentingViewController?.pulleyViewController
+            self.dismiss(animated: true) {
+                pulleyVC?.setNeedsSupportedDrawerPositionsUpdate()
+            }
+        }
         alertController.addAction(restartAction)
+        alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
     

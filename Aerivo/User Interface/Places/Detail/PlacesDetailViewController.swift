@@ -502,7 +502,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func showAR(_ sender: UIButton) {
-        guard ARConfiguration.isSupported else { return }
+        guard ARWorldTrackingConfiguration.isSupported else { return }
         let arPlacesVC = storyboard?.instantiateViewController(withIdentifier: ARPlacesViewController.identifier) as! ARPlacesViewController
         guard let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue else { return }
         guard let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue else { return }
