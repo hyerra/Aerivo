@@ -149,6 +149,7 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         switch gesture.state {
         case .began:
             startScale = object.scale.x
+            fallthrough
         case .changed:
             guard let startScale = startScale else { return }
             let newScale: Float = startScale * Float(gesture.scale)
