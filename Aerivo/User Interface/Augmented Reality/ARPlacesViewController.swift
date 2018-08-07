@@ -33,6 +33,8 @@ class ARPlacesViewController: UIViewController {
         return false
     }
     
+    var isRestartAvailable = true
+    
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
     
     var focusSquare = FocusSquare()
@@ -147,6 +149,23 @@ class ARPlacesViewController: UIViewController {
         
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         scheduleMessage(NSLocalizedString("FIND A SURFACE TO PLACE AN OBJECT", comment: "Tells the user to find a surface so they can place an object in AR."), inSeconds: 7.5, messageType: .planeEstimation)
+        addTerrainButton.isHidden = false
+    }
+    
+    func restartExperience() {
+        guard isRestartAvailable else { return }
+        isRestartAvailable = false
+        
+        cancelAllScheduledMessages()
+        
+        terrain?.removeFromParentNode()
+        
+        resetTracking()
+        
+        // Disable restart for a while in order to give the session time to restart.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.isRestartAvailable = true
+        }
     }
     
     // MARK: - Focus square
@@ -179,8 +198,10 @@ class ARPlacesViewController: UIViewController {
     
     @IBAction func placeTerrain(_ sender: UIButton) {
         guard let terrain = terrain else { return }
+        self.isRestartAvailable = false
         self.sceneView.prepare([terrain], completionHandler: { _ in
             DispatchQueue.main.async {
+                self.isRestartAvailable = true
                 self.place(virtualObject: terrain)
             }
         })
@@ -191,6 +212,10 @@ class ARPlacesViewController: UIViewController {
         dismiss(animated: true) {
             pulleyVC?.setNeedsSupportedDrawerPositionsUpdate()
         }
+    }
+    
+    @IBAction func refresh(_ sender: UIButton) {
+        restartExperience()
     }
     
     func place(virtualObject: VirtualObject) {
