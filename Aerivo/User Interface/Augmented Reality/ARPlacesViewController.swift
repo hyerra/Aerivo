@@ -63,6 +63,7 @@ class ARPlacesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
+        presentingViewController?.presentingViewController?.pulleyViewController?.setNeedsSupportedDrawerPositionsUpdate()
         resetTracking()
     }
     
@@ -181,7 +182,10 @@ class ARPlacesViewController: UIViewController {
     }
     
     @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true)
+        let pulleyVC = presentingViewController?.presentingViewController?.pulleyViewController
+        dismiss(animated: true) {
+            pulleyVC?.setNeedsSupportedDrawerPositionsUpdate()
+        }
     }
     
     func place(virtualObject: VirtualObject) {
@@ -240,7 +244,7 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
-        let isTerrainInView = terrain != nil ? sceneView.isNode(terrain!, insideFrustumOf: sceneView.pointOfView!) && sceneView.scene.rootNode.childNodes.contains(terrain!) : false
+        let isTerrainInView = terrain != nil ? sceneView.scene.rootNode.childNodes.contains(terrain!) : false
         
         DispatchQueue.main.async {
             self.virtualObjectInteraction.updateObjectToCurrentTrackingPosition()

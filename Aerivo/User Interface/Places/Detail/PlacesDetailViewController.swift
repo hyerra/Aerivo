@@ -535,6 +535,11 @@ extension PlacesDetailViewController: ParameterDescriptionDelegate {
 // MARK: - Pulley drawer delegate
 
 extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
+    func supportedDrawerPositions() -> [PulleyPosition] {
+        if presentedViewController != nil { return [.open] }
+        return PulleyPosition.all
+    }
+    
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         view.layoutIfNeeded()
         return headerView.bounds.height - headerSpacingConstraint.constant + bottomSafeArea
