@@ -910,13 +910,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-HB-K3S" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
-                                <rect key="frame" x="162.5" y="602" width="50" height="50"/>
-                                <state key="normal" image="plus"/>
-                                <connections>
-                                    <action selector="placeTerrain:" destination="8ry-Lj-FdS" eventType="touchUpInside" id="kJu-hS-lzf"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
                                 <rect key="frame" x="285" y="30" width="74" height="49"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
@@ -1030,35 +1023,84 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="9HE-4J-DPv" userLabel="Plus Panel">
+                                <rect key="frame" x="161" y="599" width="53" height="53"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tMe-qX-K1G">
+                                    <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9Y-Sc-24R">
+                                            <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jKX-25-VxK">
+                                                <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-HB-K3S" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="33" height="33"/>
+                                                        <state key="normal" image="plus"/>
+                                                        <connections>
+                                                            <action selector="placeTerrain:" destination="8ry-Lj-FdS" eventType="touchUpInside" id="kJu-hS-lzf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="P4a-HB-K3S" secondAttribute="trailing" constant="10" id="56T-iZ-VoG"/>
+                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="top" secondItem="jKX-25-VxK" secondAttribute="top" constant="10" id="8qU-fa-1vA"/>
+                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="leading" secondItem="jKX-25-VxK" secondAttribute="leading" constant="10" id="Xp3-2A-qSK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" constant="10" id="b8L-9Q-And"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S9Y-Sc-24R" firstAttribute="top" secondItem="tMe-qX-K1G" secondAttribute="top" id="AJ3-GK-c1G"/>
+                                        <constraint firstAttribute="trailing" secondItem="S9Y-Sc-24R" secondAttribute="trailing" id="JJ2-wR-nbo"/>
+                                        <constraint firstItem="S9Y-Sc-24R" firstAttribute="leading" secondItem="tMe-qX-K1G" secondAttribute="leading" id="LTR-8W-9kE"/>
+                                        <constraint firstItem="S9Y-Sc-24R" firstAttribute="top" secondItem="tMe-qX-K1G" secondAttribute="top" id="RqQ-TX-Zad"/>
+                                        <constraint firstAttribute="bottom" secondItem="S9Y-Sc-24R" secondAttribute="bottom" id="klu-si-Cz7"/>
+                                        <constraint firstItem="S9Y-Sc-24R" firstAttribute="leading" secondItem="tMe-qX-K1G" secondAttribute="leading" id="rk0-Wm-XAI"/>
+                                        <constraint firstAttribute="trailing" secondItem="S9Y-Sc-24R" secondAttribute="trailing" id="sKJ-c6-m28"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="APb-zr-0zZ" firstAttribute="bottom" secondItem="vW4-IH-j37" secondAttribute="bottom" id="1fD-V9-L9B"/>
                             <constraint firstItem="APb-zr-0zZ" firstAttribute="leading" secondItem="vW4-IH-j37" secondAttribute="leading" id="3sg-FJ-77d"/>
-                            <constraint firstItem="P4a-HB-K3S" firstAttribute="centerX" secondItem="3Yy-YC-jTX" secondAttribute="centerX" id="6wk-Q9-vIX"/>
+                            <constraint firstItem="9HE-4J-DPv" firstAttribute="centerX" secondItem="3Yy-YC-jTX" secondAttribute="centerX" id="AfP-TW-EFN"/>
                             <constraint firstItem="l7B-Yv-Zyu" firstAttribute="leading" secondItem="vW4-IH-j37" secondAttribute="leadingMargin" id="Dcg-sB-N43"/>
                             <constraint firstItem="APb-zr-0zZ" firstAttribute="trailing" secondItem="vW4-IH-j37" secondAttribute="trailing" id="IRT-uJ-8jv"/>
                             <constraint firstAttribute="trailing" secondItem="fNs-LQ-fdn" secondAttribute="trailing" id="J2O-2v-RWm"/>
                             <constraint firstItem="DsJ-Qb-azY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l7B-Yv-Zyu" secondAttribute="trailing" constant="10" id="KpC-Kt-BRY"/>
-                            <constraint firstItem="TrH-Nq-rZp" firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" id="PBh-Kn-5NE"/>
                             <constraint firstItem="APb-zr-0zZ" firstAttribute="top" secondItem="vW4-IH-j37" secondAttribute="top" id="PMj-xv-lHR"/>
                             <constraint firstItem="TrH-Nq-rZp" firstAttribute="leading" secondItem="l7B-Yv-Zyu" secondAttribute="leading" id="RQu-f9-RUi"/>
                             <constraint firstItem="l7B-Yv-Zyu" firstAttribute="top" secondItem="3Yy-YC-jTX" secondAttribute="top" constant="10" id="SaI-Mz-DDT"/>
-                            <constraint firstItem="3Yy-YC-jTX" firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" constant="15" id="Vtn-Tt-h9h"/>
                             <constraint firstAttribute="bottom" secondItem="fNs-LQ-fdn" secondAttribute="bottom" id="Yim-4A-amk"/>
                             <constraint firstAttribute="top" secondItem="fNs-LQ-fdn" secondAttribute="top" id="auS-uk-X5R"/>
                             <constraint firstItem="DsJ-Qb-azY" firstAttribute="top" secondItem="3Yy-YC-jTX" secondAttribute="top" constant="10" id="dlq-jP-HY2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DsJ-Qb-azY" secondAttribute="trailing" id="iMw-80-R6I"/>
                             <constraint firstItem="fNs-LQ-fdn" firstAttribute="leading" secondItem="vW4-IH-j37" secondAttribute="leading" id="ikD-XJ-TPr"/>
+                            <constraint firstItem="TrH-Nq-rZp" firstAttribute="bottom" secondItem="9HE-4J-DPv" secondAttribute="bottom" id="q9v-i5-6wp"/>
+                            <constraint firstItem="3Yy-YC-jTX" firstAttribute="bottom" secondItem="9HE-4J-DPv" secondAttribute="bottom" constant="15" id="vup-0c-GE5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Yy-YC-jTX"/>
                     </view>
                     <connections>
-                        <outlet property="addTerrainBottomConstraint" destination="Vtn-Tt-h9h" id="IPw-3t-v57"/>
-                        <outlet property="addTerrainButton" destination="P4a-HB-K3S" id="0Em-W3-Ggu"/>
+                        <outlet property="addTerrainBottomConstraint" destination="vup-0c-GE5" id="C6l-6E-BJL"/>
                         <outlet property="doneButton" destination="iGS-BM-rN6" id="wuF-hP-y1t"/>
                         <outlet property="messageLabel" destination="ztU-7a-SrR" id="v5q-GH-d0d"/>
                         <outlet property="messagePanel" destination="l7B-Yv-Zyu" id="0RM-SR-IOa"/>
+                        <outlet property="plusPanel" destination="9HE-4J-DPv" id="65m-c7-eJ1"/>
                         <outlet property="sceneView" destination="fNs-LQ-fdn" id="Z1r-x1-O2H"/>
                     </connections>
                 </viewController>
@@ -1186,7 +1228,7 @@
         <image name="close" width="12" height="12"/>
         <image name="favorite" width="29" height="27"/>
         <image name="globe" width="27" height="27"/>
-        <image name="plus" width="50" height="50"/>
+        <image name="plus" width="33" height="33"/>
         <image name="restart" width="24" height="24"/>
         <namedColor name="System Green Color">
             <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
