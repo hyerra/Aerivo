@@ -9,7 +9,6 @@
 import UIKit
 import ARKit
 import CoreLocation
-import Mapbox
 import MapboxSceneKit
 
 class ARPlacesViewController: UIViewController {
@@ -114,7 +113,7 @@ class ARPlacesViewController: UIViewController {
     
     private func loadTerrain() {
         //Set up initial terrain and materials
-        let terrainNode = TerrainNode(minLat: location.latitude - 0.005, maxLat: location.latitude + 0.005, minLon: location.longitude - 0.005, maxLon: location.longitude + 0.005)
+        let terrainNode = TerrainNode(minLat: location.latitude - 0.0075, maxLat: location.latitude + 0.0075, minLon: location.longitude - 0.0075, maxLon: location.longitude + 0.0075)
         
         terrainNode.transform = SCNMatrix4MakeScale(0.0002, 0.0002, 0.0002)
         terrainNode.geometry?.materials = defaultMaterials()
