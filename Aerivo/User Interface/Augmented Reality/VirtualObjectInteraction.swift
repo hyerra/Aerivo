@@ -156,10 +156,9 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
             let newScale: Float = startScale * Float(gesture.scale)
             object.scale = SCNVector3(newScale, newScale, newScale)
         case .ended:
-            startScale = nil
+            fallthrough
         default:
             startScale = nil
-            trackedObject = nil
         }
     }
     
