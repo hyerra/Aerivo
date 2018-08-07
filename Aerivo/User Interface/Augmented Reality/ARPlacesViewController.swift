@@ -26,6 +26,12 @@ class ARPlacesViewController: UIViewController {
     var location: CLLocationCoordinate2D!
     
     private var terrain: VirtualObject?
+    var isTerrainVisible: Bool {
+        if let terrain = terrain {
+            return sceneView.scene.rootNode.childNodes.contains(terrain)
+        }
+        return false
+    }
     
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
     
@@ -242,32 +248,20 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
     // MARK: - AR scene view delegate
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
-        let isTerrainInView = terrain != nil ? sceneView.scene.rootNode.childNodes.contains(terrain!) : false
-        
         DispatchQueue.main.async {
             self.virtualObjectInteraction.updateObjectToCurrentTrackingPosition()
-            self.updateFocusSquare(isObjectVisible: isTerrainInView)
+            self.updateFocusSquare(isObjectVisible: self.isTerrainVisible)
         }
-        
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         DispatchQueue.main.async {
             self.cancelScheduledMessage(for: .planeEstimation)
-            self.showMessage(NSLocalizedString("SURFACE DETECTED", comment: "Message for AR that says a surface has been detected."))
-            if self.terrain == nil {
-                self.scheduleMessage(NSLocalizedString("LOADING TERRAIN", comment: "Message for AR that the terrain is loading."), inSeconds: 7.5, messageType: .loadingTerrain)
-            } else {
-                self.cancelScheduledMessage(for: .loadingTerrain)
-            }
-            
-            if let terrain = self.terrain {
-                if !self.sceneView.scene.rootNode.childNodes.contains(terrain) {
-                    self.scheduleMessage(NSLocalizedString("TAP + TO PLACE AN OBJECT", comment: "Message for AR that tells a user to place an object."), inSeconds: 7.5, messageType: .contentPlacement)
-                    self.addTerrainButton.isHidden = false
-                }
+            if !self.isTerrainVisible {
+                self.showMessage(NSLocalizedString("SURFACE DETECTED", comment: "Message for AR that says a surface has been detected."))
+                self.scheduleMessage(NSLocalizedString("TAP + TO PLACE AN OBJECT", comment: "Message for AR that tells a user to place an object."), inSeconds: 7.5, messageType: .contentPlacement)
+                self.addTerrainButton.isHidden = false
             }
         }
         
@@ -343,7 +337,6 @@ extension ARPlacesViewController {
         case planeEstimation
         case contentPlacement
         case focusSquare
-        case loadingTerrain
     }
     
     // MARK: - Message handling
