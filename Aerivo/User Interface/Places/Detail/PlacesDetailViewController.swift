@@ -132,6 +132,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         view.layoutIfNeeded()
     }
     
+    deinit {
+        openAQClient.cancelAllPendingRequests()
+        nwqpClient.cancelAllPendingRequests()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -182,19 +187,19 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             return isLatestAQLoaded && isParametersInfoLoaded
         }
         
-        openAQClient.fetchLatestAQ(using: latestAQParams) { result in
+        openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
             guard case let .success(latestAQ) = result else { return }
-            self.latestAQ = latestAQ
+            self?.latestAQ = latestAQ
             isLatestAQLoaded = true
-            if allDataIsLoaded { self.isAQDataLoaded = true }
+            if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
         
         let parametersParams = ParameterParameters()
-        openAQClient.fetchParameters(using: parametersParams) { result in
+        openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
             guard case let .success(parameters) = result else { return }
-            self.parametersInfo = parameters
+            self?.parametersInfo = parameters
             isParametersInfoLoaded = true
-            if allDataIsLoaded { self.isAQDataLoaded = true }
+            if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
     }
     
@@ -215,11 +220,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         nwqpParameters.page = 1
         nwqpParameters.startDate = startDate
         
-        nwqpClient.fetchAllResults(using: nwqpParameters) { results in
+        nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
             for result in results {
                 guard case let .success(parameter) = result else { return }
-                self.nwqpResults.append(parameter)
-                self.isNWQPDataLoaded = true
+                self?.nwqpResults.append(parameter)
+                self?.isNWQPDataLoaded = true
             }
         }
     }

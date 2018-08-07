@@ -14,6 +14,9 @@ public final class NWQPClient: APIClient {
     /// Returns a `shared` singleton National Water Quality Portal Client object.
     public static let shared = NWQPClient()
     
+    /// An array of all the ongoing network requests.
+    var ongoingRequests: [URLSessionDataTask] = []
+    
     /// Returns a new instance of the National Water Quality Portal Client.
     public init() { }
     
@@ -58,6 +61,11 @@ public final class NWQPClient: APIClient {
     
     // MARK: - API client
     
+    /// Cancels all the ongoing network requests.
+    public func cancelAllPendingRequests() {
+        ongoingRequests.forEach { $0.cancel() }
+    }
+    
     func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) {
         do {
             let request = try request.asURLRequest()
@@ -70,6 +78,7 @@ public final class NWQPClient: APIClient {
                 completion((data, response, error))
             }
             
+            ongoingRequests.append(dataTask)
             dataTask.resume()
         } catch let error {
             completion((nil, nil, error))
