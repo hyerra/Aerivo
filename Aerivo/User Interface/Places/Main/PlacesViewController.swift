@@ -213,6 +213,15 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
 // MARK: - Pulley drawer delegate
 
 extension PlacesViewController: PulleyDrawerViewControllerDelegate {
+    func supportedDrawerPositions() -> [PulleyPosition] {
+        if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
+            if let supportedPositions = presentedVC.supportedDrawerPositions?() {
+                return supportedPositions
+            }
+        }
+        return PulleyPosition.all
+    }
+    
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
             if let height = presentedVC.collapsedDrawerHeight?(bottomSafeArea: bottomSafeArea) {
