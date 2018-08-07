@@ -9,7 +9,6 @@
  */
 
 import Foundation
-import MapboxSceneKit
 import SceneKit
 import ARKit
 

@@ -26,7 +26,7 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
      */
     var selectedObject: VirtualObject?
     
-    /// The object that is tracked for use by the pan and rotation gestures.
+    /// The object that is tracked for use by the pan, rotation, and pinch gestures.
     private var trackedObject: VirtualObject? {
         didSet {
             guard trackedObject != nil else { return }
@@ -151,6 +151,7 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
             startScale = object.scale.x
             fallthrough
         case .changed:
+            guard let object = trackedObject else { return }
             guard let startScale = startScale else { return }
             let newScale: Float = startScale * Float(gesture.scale)
             object.scale = SCNVector3(newScale, newScale, newScale)
