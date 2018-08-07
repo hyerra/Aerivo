@@ -13,7 +13,7 @@ import MapboxSceneKit
 import SceneKit
 import ARKit
 
-class VirtualObject: TerrainNode {
+class VirtualObject: SCNNode {
     
     /// Use average of recent virtual object distances to avoid rapid changes in object scale.
     private var recentVirtualObjectDistances = [Float]()
@@ -21,6 +21,15 @@ class VirtualObject: TerrainNode {
     /// Allowed alignments for the virtual object
     var allowedAlignments: [ARPlaneAnchor.Alignment] {
         return [.horizontal]
+    }
+    
+    init(node: SCNNode) {
+        super.init()
+        addChildNode(node)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     /// For correct rotation on horizontal and vertical surfaces, roate around

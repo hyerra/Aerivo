@@ -114,15 +114,15 @@ class ARPlacesViewController: UIViewController {
     
     private func loadTerrain() {
         //Set up initial terrain and materials
-        let terrainNode = VirtualObject(minLat: location.latitude - 0.01, maxLat: location.latitude + 0.01, minLon: location.longitude - 0.01, maxLon: location.longitude + 0.01)
+        let terrainNode = TerrainNode(minLat: location.latitude - 0.005, maxLat: location.latitude + 0.005, minLon: location.longitude - 0.005, maxLon: location.longitude + 0.005)
         
+        terrainNode.transform = SCNMatrix4MakeScale(0.0002, 0.0002, 0.0002)
         terrainNode.geometry?.materials = defaultMaterials()
         
-        self.terrain = terrainNode
+        self.terrain = VirtualObject(node: terrainNode)
         
         terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }) { }
-        
-        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 20, progress: { _, _ in }, completion: { image in
+        terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 14, progress: { _, _ in }, completion: { image in
             terrainNode.geometry?.materials[4].diffuse.contents = image
         })
     }
