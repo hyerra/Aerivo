@@ -861,7 +861,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </arscnView>
                             <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-Yv-Zyu" userLabel="Message Panel">
-                                <rect key="frame" x="16" y="38.5" width="125" height="32"/>
+                                <rect key="frame" x="16" y="30" width="125" height="32"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wEu-XB-sPm">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="32"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -872,7 +872,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztU-7a-SrR" userLabel="Messages label">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztU-7a-SrR" userLabel="Messages label">
                                                         <rect key="frame" x="16" y="8" width="93" height="16"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1043,13 +1043,13 @@
                             <constraint firstItem="TrH-Nq-rZp" firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" id="PBh-Kn-5NE"/>
                             <constraint firstItem="APb-zr-0zZ" firstAttribute="top" secondItem="vW4-IH-j37" secondAttribute="top" id="PMj-xv-lHR"/>
                             <constraint firstItem="TrH-Nq-rZp" firstAttribute="leading" secondItem="l7B-Yv-Zyu" secondAttribute="leading" id="RQu-f9-RUi"/>
+                            <constraint firstItem="l7B-Yv-Zyu" firstAttribute="top" secondItem="3Yy-YC-jTX" secondAttribute="top" constant="10" id="SaI-Mz-DDT"/>
                             <constraint firstItem="3Yy-YC-jTX" firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" constant="15" id="Vtn-Tt-h9h"/>
                             <constraint firstAttribute="bottom" secondItem="fNs-LQ-fdn" secondAttribute="bottom" id="Yim-4A-amk"/>
                             <constraint firstAttribute="top" secondItem="fNs-LQ-fdn" secondAttribute="top" id="auS-uk-X5R"/>
                             <constraint firstItem="DsJ-Qb-azY" firstAttribute="top" secondItem="3Yy-YC-jTX" secondAttribute="top" constant="10" id="dlq-jP-HY2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DsJ-Qb-azY" secondAttribute="trailing" id="iMw-80-R6I"/>
                             <constraint firstItem="fNs-LQ-fdn" firstAttribute="leading" secondItem="vW4-IH-j37" secondAttribute="leading" id="ikD-XJ-TPr"/>
-                            <constraint firstItem="l7B-Yv-Zyu" firstAttribute="centerY" secondItem="DsJ-Qb-azY" secondAttribute="centerY" id="wHS-lW-4Nh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Yy-YC-jTX"/>
                     </view>

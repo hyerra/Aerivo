@@ -417,7 +417,7 @@ extension ARPlacesViewController {
             
             var message = trackingState.presentationString
             if let recommendation = trackingState.recommendation {
-                message.append(": \(recommendation)")
+                message = String.localizedStringWithFormat("%@: %@", message, recommendation)
             }
             
             self?.showMessage(message, autoHide: false)
