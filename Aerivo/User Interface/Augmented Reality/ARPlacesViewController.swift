@@ -255,8 +255,16 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
             self.cancelScheduledMessage(for: .planeEstimation)
             self.showMessage(NSLocalizedString("SURFACE DETECTED", comment: "Message for AR that says a surface has been detected."))
             if self.terrain == nil {
-                self.scheduleMessage(NSLocalizedString("TAP + TO PLACE AN OBJECT", comment: "Message for AR that tells a user to place an object."), inSeconds: 7.5, messageType: .contentPlacement)
-                self.addTerrainButton?.isHidden = false
+                self.scheduleMessage(NSLocalizedString("LOADING TERRAIN", comment: "Message for AR that the terrain is loading."), inSeconds: 7.5, messageType: .loadingTerrain)
+            } else {
+                self.cancelScheduledMessage(for: .loadingTerrain)
+            }
+            
+            if let terrain = self.terrain {
+                if !self.sceneView.scene.rootNode.childNodes.contains(terrain) {
+                    self.scheduleMessage(NSLocalizedString("TAP + TO PLACE AN OBJECT", comment: "Message for AR that tells a user to place an object."), inSeconds: 7.5, messageType: .contentPlacement)
+                    self.addTerrainButton.isHidden = false
+                }
             }
         }
         
@@ -332,6 +340,7 @@ extension ARPlacesViewController {
         case planeEstimation
         case contentPlacement
         case focusSquare
+        case loadingTerrain
     }
     
     // MARK: - Message handling
