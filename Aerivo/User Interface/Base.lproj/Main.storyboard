@@ -92,9 +92,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a place or body of water" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-nq-wK8">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a place or address" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-nq-wK8" propertyAccessControl="localizable">
                                         <rect key="frame" x="0.0" y="11" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
+                                        <attributedString key="userComments">
+                                            <fragment content="Search bar for user to search for places within a map."/>
+                                        </attributedString>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXk-9D-NvD">
                                         <rect key="frame" x="0.0" y="67" width="375" height="1"/>
@@ -462,17 +465,23 @@
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjB-be-D9U">
                                                         <rect key="frame" x="85.5" y="10" width="148.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact an Official" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-gZ-mVc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact an Official" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-gZ-mVc" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <attributedString key="userComments">
+                                                                    <fragment content="Text for the user to contact a government official."/>
+                                                                </attributedString>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="13" y="20.5" width="122" height="14.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <attributedString key="userComments">
+                                                                    <fragment content="Reason for why the user might contact a government official."/>
+                                                                </attributedString>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
@@ -525,11 +534,14 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="27"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="45" height="14.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <attributedString key="userComments">
+                                                                            <fragment content="Allows the user to favorite a location."/>
+                                                                        </attributedString>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -571,11 +583,14 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="27"/>
                                                                         <color key="tintColor" name="System Green Color"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="65" height="14.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <attributedString key="userComments">
+                                                                            <fragment content="Allows the user to obtain more information about a location."/>
+                                                                        </attributedString>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -617,11 +632,14 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="73" height="28"/>
                                                                         <color key="tintColor" name="System Green Color"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augemented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augemented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="35" width="73" height="30.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <attributedString key="userComments">
+                                                                            <fragment content="Allows the user to view a location in Augmented Reality."/>
+                                                                        </attributedString>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -948,7 +966,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6" propertyAccessControl="localizable">
                                                         <rect key="frame" x="16" y="8" width="42" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iGS-BM-rN6" secondAttribute="height" multiplier="14:11" id="Usc-rV-gbF"/>
@@ -957,6 +975,9 @@
                                                         <state key="normal" title="Done">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <attributedString key="userComments">
+                                                            <fragment content="Button that closes the Augmented Reality screen."/>
+                                                        </attributedString>
                                                         <connections>
                                                             <action selector="dismiss:" destination="8ry-Lj-FdS" eventType="touchUpInside" id="opz-sc-TSe"/>
                                                         </connections>
