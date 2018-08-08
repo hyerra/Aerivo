@@ -129,9 +129,9 @@ class ARPlacesViewController: UIViewController {
     
     private func loadTerrain() {
         //Set up initial terrain and materials
-        let terrainNode = TerrainNode(minLat: location.latitude - 0.0075, maxLat: location.latitude + 0.0075, minLon: location.longitude - 0.0075, maxLon: location.longitude + 0.0075)
+        let terrainNode = TerrainNode(minLat: location.latitude - 0.04, maxLat: location.latitude + 0.04, minLon: location.longitude - 0.04, maxLon: location.longitude + 0.04)
         
-        terrainNode.transform = SCNMatrix4MakeScale(0.0002, 0.0002, 0.0002)
+        terrainNode.transform = SCNMatrix4MakeScale(0.00005, 0.00005, 0.00005)
         terrainNode.geometry?.materials = defaultMaterials()
         
         self.terrain = VirtualObject(node: terrainNode)

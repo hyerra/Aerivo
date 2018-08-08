@@ -888,10 +888,10 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="ztU-7a-SrR" firstAttribute="top" secondItem="fN3-pd-uFE" secondAttribute="top" constant="20" id="0ak-n0-2rv"/>
-                                                                    <constraint firstItem="ztU-7a-SrR" firstAttribute="leading" secondItem="fN3-pd-uFE" secondAttribute="leading" constant="20" id="5K3-gW-BkC"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="ztU-7a-SrR" secondAttribute="trailing" constant="20" id="BhI-8U-R04"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="ztU-7a-SrR" secondAttribute="bottom" constant="20" id="DOv-do-lmF"/>
+                                                                    <constraint firstItem="ztU-7a-SrR" firstAttribute="top" secondItem="fN3-pd-uFE" secondAttribute="top" constant="20" symbolic="YES" id="0ak-n0-2rv"/>
+                                                                    <constraint firstItem="ztU-7a-SrR" firstAttribute="leading" secondItem="fN3-pd-uFE" secondAttribute="leading" constant="20" symbolic="YES" id="5K3-gW-BkC"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="ztU-7a-SrR" secondAttribute="trailing" constant="20" symbolic="YES" id="BhI-8U-R04"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ztU-7a-SrR" secondAttribute="bottom" constant="20" symbolic="YES" id="DOv-do-lmF"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
