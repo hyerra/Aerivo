@@ -361,7 +361,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 }
                                 
                                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
-                                
+                                alertController.popoverPresentationController?.sourceView = sender
+                                alertController.popoverPresentationController?.sourceRect = sender.bounds
                                 self.present(alertController, animated: true)
                             }
                             alertController.addAction(action)
@@ -393,6 +394,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 }
                                 
                                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                alertController.popoverPresentationController?.sourceView = sender
+                                alertController.popoverPresentationController?.sourceRect = sender.bounds
                                 self.present(alertController, animated: true)
                             }
                             alertController.addAction(action)
@@ -434,6 +437,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 }
                                 
                                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                                alertController.popoverPresentationController?.sourceView = sender
+                                alertController.popoverPresentationController?.sourceRect = sender.bounds
                                 self.present(alertController, animated: true)
                             }
                             
@@ -441,13 +446,16 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                         }
                         
                         alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
-                        
+                        alertController.popoverPresentationController?.sourceView = sender
+                        alertController.popoverPresentationController?.sourceRect = sender.bounds
                         self.present(alertController, animated: true)
                     }
                     alertController.addAction(action)
                 }
                 
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+                alertController.popoverPresentationController?.sourceView = sender
+                alertController.popoverPresentationController?.sourceRect = sender.bounds
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] ?? "Aerivo"
