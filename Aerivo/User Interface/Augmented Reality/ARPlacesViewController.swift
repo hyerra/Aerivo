@@ -17,6 +17,8 @@ class ARPlacesViewController: UIViewController {
     
     @IBOutlet weak var sceneView: VirtualObjectARView!
     
+    @IBOutlet weak var messageScrollView: UIScrollView!
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var messagePanel: UIVisualEffectView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -50,8 +52,9 @@ class ARPlacesViewController: UIViewController {
     private var messageHideTimer: Timer?
     private var timers: [MessageType: Timer] = [:]
     
+    @IBOutlet weak var messagePanelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var addTerrainBottomConstraint: NSLayoutConstraint!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -78,18 +81,7 @@ class ARPlacesViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Do any additional setup after the view laid out the subviews.
-        if let pulleyVC = presentingViewController?.presentingViewController?.pulleyViewController {
-            switch pulleyVC.currentDisplayMode {
-            case .bottomDrawer:
-                addTerrainBottomConstraint.constant = pulleyVC.bounceOverflowMargin + 15
-            case .leftSide:
-                addTerrainBottomConstraint.constant = 15
-            case .automatic:
-                addTerrainBottomConstraint.constant = 15
-            }
-        } else {
-            addTerrainBottomConstraint.constant = 15
-        }
+        positionAddTerrainButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,6 +100,21 @@ class ARPlacesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func positionAddTerrainButton() {
+        if let pulleyVC = presentingViewController?.presentingViewController?.pulleyViewController {
+            switch pulleyVC.currentDisplayMode {
+            case .bottomDrawer:
+                addTerrainBottomConstraint.constant = pulleyVC.bounceOverflowMargin + 15
+            case .leftSide:
+                addTerrainBottomConstraint.constant = 15
+            case .automatic:
+                addTerrainBottomConstraint.constant = 15
+            }
+        } else {
+            addTerrainBottomConstraint.constant = 15
+        }
     }
     
     // MARK: - Camera
@@ -378,6 +385,9 @@ extension ARPlacesViewController {
         messageHideTimer?.invalidate()
         
         messageLabel.text = text
+        messageScrollView.layoutIfNeeded()
+        messagePanelHeightConstraint.constant = messageScrollView.contentSize.height
+        view.layoutIfNeeded()
         
         // Make sure status is showing.
         setMessageHidden(false, animated: true)
