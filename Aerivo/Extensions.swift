@@ -79,21 +79,6 @@ extension NSMutableAttributedString {
     }
 }
 
-extension UISearchBar {
-    /// Returns the text field that is contained within the search bar.
-    var textField: UITextField? {
-        var _textField: UITextField? = nil
-        subviews.forEach {
-            $0.subviews.forEach {
-                if let textField = $0 as? UITextField {
-                    _textField = textField
-                }
-            }
-        }
-        return _textField
-    }
-}
-
 // MARK: - float4x4 extensions
 
 extension float4x4 {
@@ -140,5 +125,17 @@ extension CGPoint {
     /// Returns the length of a point when considered as a vector. (Used with gesture recognizers.)
     var length: CGFloat {
         return sqrt(x * x + y * y)
+    }
+}
+
+
+extension UIView {
+    @IBInspectable var ignoresInvertColors: Bool {
+        get {
+            return accessibilityIgnoresInvertColors
+        }
+        set {
+            accessibilityIgnoresInvertColors = newValue
+        }
     }
 }
