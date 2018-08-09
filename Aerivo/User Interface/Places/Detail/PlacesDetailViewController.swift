@@ -38,6 +38,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var headerStackView: UIStackView!
     @IBOutlet weak var close: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -108,6 +109,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         let addressLine = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.first ?? favorite?.formattedAddressLines?.first
         detail.text = genre ?? addressLine
         address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
+        headerStackView.shouldGroupAccessibilityChildren = true
+        optionsStackView.subviews.forEach { $0.shouldGroupAccessibilityChildren = true }
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
         collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
