@@ -280,7 +280,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.name, localizedMeasurement)
-            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = parameterInfo.information
@@ -292,7 +292,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
-            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = nwqpResult.description.information
