@@ -752,6 +752,9 @@
                                                                     <state key="normal" title="Air/Water Quality Attribute">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                     <connections>
                                                                         <action selector="showParameterDescription:" destination="YHq-r5-1a4" eventType="touchUpInside" id="5QC-Rq-PC7"/>
                                                                     </connections>
