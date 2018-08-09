@@ -227,8 +227,11 @@ class ARPlacesViewController: UIViewController {
     }
     
     func place(virtualObject: VirtualObject) {
+        let feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator.prepare()
         guard focusSquare.state != .initializing else {
             showMessage(NSLocalizedString("CANNOT PLACE OBJECT\nTry moving left or right.", comment: "AR message telling the user that they cannot place the object now and they must move left or right first."))
+            feedbackGenerator.notificationOccurred(.error)
             return
         }
         
@@ -239,6 +242,7 @@ class ARPlacesViewController: UIViewController {
             self.sceneView.scene.rootNode.addChildNode(virtualObject)
             self.sceneView.addOrUpdateAnchor(for: virtualObject)
             self.cancelScheduledMessage(for: .contentPlacement)
+            feedbackGenerator.notificationOccurred(.success)
         }
         
         plusPanel.isHidden = true
