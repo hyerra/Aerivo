@@ -142,10 +142,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikH-5y-Zxs">
-                                                    <rect key="frame" x="8" y="10" width="120.5" height="23.5"/>
+                                                    <rect key="frame" x="15" y="13" width="120.5" height="18"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-kd-vsr">
-                                                            <rect key="frame" x="0.0" y="3" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQk-zl-B0p">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -154,6 +154,9 @@
                                                                         <constraint firstAttribute="width" secondItem="eQk-zl-B0p" secondAttribute="height" multiplier="1:1" id="BoV-jB-1dc"/>
                                                                         <constraint firstAttribute="width" constant="6" id="Ydw-YD-WAv"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,18 +166,21 @@
                                                                 <constraint firstItem="eQk-zl-B0p" firstAttribute="top" secondItem="QdD-kd-vsr" secondAttribute="top" constant="6" id="ctJ-cU-5xc"/>
                                                                 <constraint firstAttribute="bottom" secondItem="eQk-zl-B0p" secondAttribute="bottom" constant="6" id="dkl-cO-Ohb"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-Ue-srE">
-                                                            <rect key="frame" x="26" y="0.0" width="94.5" height="23.5"/>
+                                                            <rect key="frame" x="26" y="0.0" width="94.5" height="18"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-6v-XyD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="17"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-zA-Ui4">
-                                                                    <rect key="frame" x="0.0" y="21.5" width="94.5" height="2"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="94.5" height="0.0"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -214,10 +220,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
-                                                    <rect key="frame" x="8" y="10" width="99" height="99.5"/>
+                                                    <rect key="frame" x="15" y="13" width="99" height="94"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
-                                                            <rect key="frame" x="0.0" y="41" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="38" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -226,6 +232,9 @@
                                                                         <constraint firstAttribute="width" secondItem="8m1-mR-BhR" secondAttribute="height" multiplier="1:1" id="Hy5-xM-TPd"/>
                                                                         <constraint firstAttribute="width" constant="6" id="XnP-tS-Ys9"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" name="System Red Color"/>
@@ -235,9 +244,12 @@
                                                                 <constraint firstAttribute="trailing" secondItem="8m1-mR-BhR" secondAttribute="trailing" constant="6" id="IHG-BF-kzS"/>
                                                                 <constraint firstItem="8m1-mR-BhR" firstAttribute="top" secondItem="SU4-6J-LPU" secondAttribute="top" constant="6" id="g89-pc-wcQ"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
-                                                            <rect key="frame" x="26" y="30" width="73" height="39.5"/>
+                                                            <rect key="frame" x="26" y="27.5" width="73" height="39.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
                                                                     <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
@@ -458,6 +470,9 @@
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="contactOfficial:" destination="Big-CG-Gn8" eventType="touchUpInside" id="0mU-4w-A1C"/>
                                                         </connections>
@@ -473,6 +488,9 @@
                                                                 <attributedString key="userComments">
                                                                     <fragment content="Text for the user to contact a government official."/>
                                                                 </attributedString>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="13" y="20.5" width="122" height="14.5"/>
@@ -482,6 +500,9 @@
                                                                 <attributedString key="userComments">
                                                                     <fragment content="Reason for why the user might contact a government official."/>
                                                                 </attributedString>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
@@ -533,6 +554,9 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="27"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="45" height="14.5"/>
@@ -542,6 +566,9 @@
                                                                         <attributedString key="userComments">
                                                                             <fragment content="Allows the user to favorite a location."/>
                                                                         </attributedString>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -582,6 +609,9 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="27"/>
                                                                         <color key="tintColor" name="System Green Color"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="65" height="14.5"/>
@@ -591,6 +621,9 @@
                                                                         <attributedString key="userComments">
                                                                             <fragment content="Allows the user to obtain more information about a location."/>
                                                                         </attributedString>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -631,6 +664,9 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ett-Wh-B7d">
                                                                         <rect key="frame" x="0.0" y="0.0" width="73" height="28"/>
                                                                         <color key="tintColor" name="System Green Color"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augemented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="35" width="73" height="30.5"/>
@@ -640,6 +676,9 @@
                                                                         <attributedString key="userComments">
                                                                             <fragment content="Allows the user to view a location in Augmented Reality."/>
                                                                         </attributedString>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -880,6 +919,9 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" autoenablesDefaultLighting="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNs-LQ-fdn" customClass="VirtualObjectARView" customModule="Aerivo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </arscnView>
                             <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-Yv-Zyu" userLabel="Message Panel">
                                 <rect key="frame" x="16" y="30" width="133" height="56"/>
@@ -1258,7 +1300,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="extraLight"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.89411764705882346" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
