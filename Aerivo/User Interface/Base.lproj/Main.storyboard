@@ -146,10 +146,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikH-5y-Zxs">
-                                                    <rect key="frame" x="15" y="13" width="120.5" height="18"/>
+                                                    <rect key="frame" x="8" y="10" width="120.5" height="23.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-kd-vsr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="3" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQk-zl-B0p">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -172,17 +172,17 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-Ue-srE">
-                                                            <rect key="frame" x="26" y="0.0" width="94.5" height="18"/>
+                                                            <rect key="frame" x="26" y="0.0" width="94.5" height="23.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-6v-XyD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="20.5"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="placeName"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-zA-Ui4">
-                                                                    <rect key="frame" x="0.0" y="18" width="94.5" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="21.5" width="94.5" height="2"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="placeSecondaryDetail"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -224,10 +224,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
-                                                    <rect key="frame" x="15" y="13" width="99" height="18"/>
+                                                    <rect key="frame" x="8" y="10" width="99" height="23.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="3" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -250,17 +250,17 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
-                                                            <rect key="frame" x="26" y="0.0" width="73" height="18"/>
+                                                            <rect key="frame" x="26" y="0.0" width="73" height="23.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesLabel"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-qh-LHm">
-                                                                    <rect key="frame" x="0.0" y="18" width="73" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="21.5" width="73" height="2"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesCount"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -307,6 +307,9 @@
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gg-4E-DX1">
                                         <rect key="frame" x="169.5" y="15" width="36" height="5"/>
                                         <color key="backgroundColor" red="0.72941176470000002" green="0.72549019609999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Adjust the size of the card overlay in the map." identifier="cardControl" label="Card controller">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="jNH-Dh-bgE"/>
                                             <constraint firstAttribute="width" constant="36" id="tSC-2L-Z0M"/>
@@ -386,6 +389,9 @@
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-en-Qdq">
                                         <rect key="frame" x="169.5" y="6" width="36" height="5"/>
                                         <color key="backgroundColor" red="0.72941176470000002" green="0.72549019609999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Adjust the size of the card overlay in the map." identifier="cardControl" label="Card controller">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="WXK-c0-vsA"/>
                                             <constraint firstAttribute="height" constant="5" id="iAF-ix-lXD"/>
@@ -408,12 +414,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZk-9q-vWd">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="placeName"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH1-Ja-Wid">
                                                 <rect key="frame" x="0.0" y="26.5" width="104" height="16"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="locationDetail"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -423,6 +431,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-za-xSz" customClass="ResizableImageButton" customModule="Aerivo" customModuleProvider="target">
                                         <rect key="frame" x="342.5" y="20" width="22" height="22"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="close"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4T8-za-xSz" secondAttribute="height" multiplier="1:1" id="q39-kf-r7v"/>
                                         </constraints>
@@ -468,9 +477,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-uk-qtQ">
                                                 <rect key="frame" x="28" y="16" width="319" height="55"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reR-fh-CtN" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reR-fh-CtN" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
                                                         <rect key="frame" x="0.0" y="0.0" width="319" height="55"/>
                                                         <color key="backgroundColor" name="System Green Color"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Contacts a government official if you are concerned about the environmental quality at this location." identifier="contactOfficial" label="Contact an Official"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -486,6 +496,9 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact an Official" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-gZ-mVc" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="20.5"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <bool key="isElement" value="NO"/>
+                                                                </accessibility>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -498,6 +511,9 @@
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="13" y="20.5" width="122" height="14.5"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <bool key="isElement" value="NO"/>
+                                                                </accessibility>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -546,14 +562,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gly-LE-XJm">
                                                         <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-x4-cwZ" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-x4-cwZ" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Saves this location to your favorites." identifier="favorite" label="Favorite"/>
                                                                 <connections>
                                                                     <action selector="favoritePlacemark:" destination="Big-CG-Gn8" eventType="touchUpInside" id="sH0-bG-pKf"/>
                                                                 </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YY5-hI-641">
+                                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YY5-hI-641">
                                                                 <rect key="frame" x="34" y="79.5" width="45" height="48.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
@@ -564,6 +581,9 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="45" height="14.5"/>
+                                                                        <accessibility key="accessibilityConfiguration">
+                                                                            <bool key="isElement" value="NO"/>
+                                                                        </accessibility>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -600,14 +620,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-2P-UlM">
                                                         <rect key="frame" x="121" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDo-9U-xq4" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDo-9U-xq4" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Opens a web browser to share more information about this location." identifier="information" label="Information"/>
                                                                 <connections>
                                                                     <action selector="showInfo:" destination="Big-CG-Gn8" eventType="touchUpInside" id="puO-hs-0tp"/>
                                                                 </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-PR-RPP">
+                                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-PR-RPP">
                                                                 <rect key="frame" x="24" y="79.5" width="65" height="48.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
@@ -619,6 +640,9 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="34" width="65" height="14.5"/>
+                                                                        <accessibility key="accessibilityConfiguration">
+                                                                            <bool key="isElement" value="NO"/>
+                                                                        </accessibility>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -655,14 +679,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXg-xy-y0R">
                                                         <rect key="frame" x="242" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htR-Xc-cnE" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htR-Xc-cnE" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows this location in Augmented Reality." identifier="augmentedReality" label="Augmented Reality"/>
                                                                 <connections>
                                                                     <action selector="showAR:" destination="Big-CG-Gn8" eventType="touchUpInside" id="9g7-AB-50Q"/>
                                                                 </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IjB-X3-C3c">
+                                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IjB-X3-C3c">
                                                                 <rect key="frame" x="22.5" y="71" width="68.5" height="65.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ett-Wh-B7d">
@@ -674,6 +699,9 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
                                                                         <rect key="frame" x="0.0" y="35" width="68.5" height="30.5"/>
+                                                                        <accessibility key="accessibilityConfiguration">
+                                                                            <bool key="isElement" value="NO"/>
+                                                                        </accessibility>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -839,6 +867,9 @@
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-oX-ZLZ">
                                         <rect key="frame" x="169.5" y="15" width="36" height="5"/>
                                         <color key="backgroundColor" red="0.72941176470000002" green="0.72549019609999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Adjust the size of the card overlay in the map." identifier="cardControl" label="Card controller">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="X8Y-Ta-ruQ"/>
                                             <constraint firstAttribute="width" constant="36" id="lKr-B6-Xip"/>
@@ -911,7 +942,7 @@
         <!--Places View Controller-->
         <scene sceneID="6Br-5x-cRZ">
             <objects>
-                <viewController storyboardIdentifier="arPlacesVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ry-Lj-FdS" customClass="ARPlacesViewController" customModule="Aerivo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="arPlacesVC" definesPresentationContext="YES" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ry-Lj-FdS" customClass="ARPlacesViewController" customModule="Aerivo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vW4-IH-j37">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1011,23 +1042,25 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
-                                <rect key="frame" x="285" y="30" width="74" height="49"/>
+                                <rect key="frame" x="292" y="30" width="67" height="53"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-SR-h5q">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xm-FK-ukx">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6" propertyAccessControl="localizable">
-                                                        <rect key="frame" x="16" y="8" width="42" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="done"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iGS-BM-rN6" secondAttribute="height" multiplier="14:11" id="Usc-rV-gbF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="16" maxX="8" maxY="16"/>
                                                         <state key="normal" title="Done">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1040,11 +1073,10 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="iGS-BM-rN6" secondAttribute="bottom" constant="8" id="3iZ-cU-3Uy"/>
-                                                    <constraint firstItem="iGS-BM-rN6" firstAttribute="top" secondItem="3xm-FK-ukx" secondAttribute="top" constant="8" id="FUs-3T-NaW"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iGS-BM-rN6" secondAttribute="trailing" constant="16" id="LFk-ta-SwY"/>
-                                                    <constraint firstItem="iGS-BM-rN6" firstAttribute="leading" secondItem="3xm-FK-ukx" secondAttribute="leading" constant="16" id="T3G-d7-jwZ"/>
-                                                    <constraint firstItem="iGS-BM-rN6" firstAttribute="centerY" secondItem="3xm-FK-ukx" secondAttribute="centerY" id="zV7-5O-0oY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iGS-BM-rN6" secondAttribute="bottom" id="3iZ-cU-3Uy"/>
+                                                    <constraint firstItem="iGS-BM-rN6" firstAttribute="top" secondItem="3xm-FK-ukx" secondAttribute="top" id="FUs-3T-NaW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iGS-BM-rN6" secondAttribute="trailing" id="LFk-ta-SwY"/>
+                                                    <constraint firstItem="iGS-BM-rN6" firstAttribute="leading" secondItem="3xm-FK-ukx" secondAttribute="leading" id="T3G-d7-jwZ"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>
@@ -1081,27 +1113,24 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-9b-bLI">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-9b-bLI" propertyAccessControl="localizable">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Restarts the Augmented Reality Experience." identifier="restart" label="Restart"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="restart"/>
+                                                        <attributedString key="userComments">
+                                                            <fragment content="Restarts the Augmented Reality Experience."/>
+                                                        </attributedString>
                                                         <connections>
                                                             <action selector="refresh:" destination="8ry-Lj-FdS" eventType="touchUpInside" id="iWd-ti-xfk"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restart" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftw-9B-sUh">
-                                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="ftw-9B-sUh" firstAttribute="leading" secondItem="CyP-rO-hk9" secondAttribute="leading" constant="10" id="2LM-rE-gk3"/>
-                                                    <constraint firstItem="ftw-9B-sUh" firstAttribute="centerY" secondItem="CyP-rO-hk9" secondAttribute="centerY" id="4oK-zT-evH"/>
                                                     <constraint firstAttribute="trailing" secondItem="oM1-9b-bLI" secondAttribute="trailing" id="7Za-oM-3mg"/>
-                                                    <constraint firstItem="ftw-9B-sUh" firstAttribute="centerX" secondItem="CyP-rO-hk9" secondAttribute="centerX" id="G5r-z8-q7p"/>
                                                     <constraint firstItem="oM1-9b-bLI" firstAttribute="leading" secondItem="CyP-rO-hk9" secondAttribute="leading" id="cdg-TW-KnQ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ftw-9B-sUh" secondAttribute="trailing" constant="10" id="kvN-jv-2XC"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ftw-9B-sUh" secondAttribute="bottom" constant="10" id="lGB-hq-S4T"/>
                                                     <constraint firstAttribute="bottom" secondItem="oM1-9b-bLI" secondAttribute="bottom" id="qPV-6v-7ZF"/>
                                                     <constraint firstItem="oM1-9b-bLI" firstAttribute="top" secondItem="CyP-rO-hk9" secondAttribute="top" id="sFb-0g-U6I"/>
-                                                    <constraint firstItem="ftw-9B-sUh" firstAttribute="top" secondItem="CyP-rO-hk9" secondAttribute="top" constant="10" id="so0-ar-qgR"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>
@@ -1142,18 +1171,23 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-HB-K3S" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="33" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Places the terrain in Augmented Reality." identifier="place" label="Place"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" image="plus"/>
+                                                        <attributedString key="userComments">
+                                                            <fragment content="Places the terrain in Augmented Reality"/>
+                                                        </attributedString>
                                                         <connections>
                                                             <action selector="placeTerrain:" destination="8ry-Lj-FdS" eventType="touchUpInside" id="kJu-hS-lzf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="P4a-HB-K3S" secondAttribute="trailing" constant="10" id="56T-iZ-VoG"/>
-                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="top" secondItem="jKX-25-VxK" secondAttribute="top" constant="10" id="8qU-fa-1vA"/>
-                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="leading" secondItem="jKX-25-VxK" secondAttribute="leading" constant="10" id="Xp3-2A-qSK"/>
-                                                    <constraint firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" constant="10" id="b8L-9Q-And"/>
+                                                    <constraint firstAttribute="trailing" secondItem="P4a-HB-K3S" secondAttribute="trailing" id="56T-iZ-VoG"/>
+                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="top" secondItem="jKX-25-VxK" secondAttribute="top" id="8qU-fa-1vA"/>
+                                                    <constraint firstItem="P4a-HB-K3S" firstAttribute="leading" secondItem="jKX-25-VxK" secondAttribute="leading" id="Xp3-2A-qSK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="P4a-HB-K3S" secondAttribute="bottom" id="b8L-9Q-And"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>

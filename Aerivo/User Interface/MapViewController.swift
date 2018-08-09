@@ -58,6 +58,10 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
         positionMapboxAttribution(in: drawer, with: distance)
     }
     
+    func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
+        mapView.accessibilityElementsHidden = drawer.drawerPosition != .open ? false : true
+    }
+    
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
         positionMapboxAttribution(in: drawer, with: drawer.drawerDistanceFromBottom.distance)
     }

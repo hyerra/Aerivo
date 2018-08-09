@@ -56,11 +56,8 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.delegate = self
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
         searchBar.delegate = self
+        setupAccessibility()
         generateDefaultResults()
-        
-        topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
-        bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
-        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
     
@@ -71,9 +68,16 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    // MARK: - Actions
     
     @objc private func refreshFavorites() {
         DispatchQueue.main.async {
@@ -81,9 +85,12 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Accessibility
+    
+    private func setupAccessibility() {
+        accessibilityViewIsModal = true
+        topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
+        bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
     }
     
     // MARK: - Table view data source
@@ -265,6 +272,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
         if drawer.drawerPosition != .open { searchBar.text = nil; searchBar.resignFirstResponder() }
+        
         topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
         bottomGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
         
