@@ -576,6 +576,9 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
                 presentedVC.dismiss(animated: true)
             }
         }
+        
+        topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
+        bottomGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
     }
     
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
