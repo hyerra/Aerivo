@@ -150,6 +150,9 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQk-zl-B0p">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <accessibility key="accessibilityConfiguration">
+                                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                                    </accessibility>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="eQk-zl-B0p" secondAttribute="height" multiplier="1:1" id="BoV-jB-1dc"/>
                                                                         <constraint firstAttribute="width" constant="6" id="Ydw-YD-WAv"/>
@@ -212,22 +215,25 @@
                                             <outletCollection property="iconSpacingConstraints" destination="dkl-cO-Ohb" collectionClass="NSMutableArray" id="biz-9S-Cl1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritesCell" rowHeight="120" id="jic-zA-mpG" customClass="FavoritesTableViewCell" customModule="Aerivo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritesCell" id="jic-zA-mpG" customClass="FavoritesTableViewCell" customModule="Aerivo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jic-zA-mpG" id="xyL-mO-k1I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
-                                                    <rect key="frame" x="15" y="13" width="99" height="94"/>
+                                                    <rect key="frame" x="15" y="13" width="99" height="18"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
-                                                            <rect key="frame" x="0.0" y="38" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <accessibility key="accessibilityConfiguration">
+                                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                                    </accessibility>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="8m1-mR-BhR" secondAttribute="height" multiplier="1:1" id="Hy5-xM-TPd"/>
                                                                         <constraint firstAttribute="width" constant="6" id="XnP-tS-Ys9"/>
@@ -249,16 +255,16 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
-                                                            <rect key="frame" x="26" y="27.5" width="73" height="39.5"/>
+                                                            <rect key="frame" x="26" y="0.0" width="73" height="18"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-qh-LHm">
-                                                                    <rect key="frame" x="0.0" y="21.5" width="73" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="73" height="0.0"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -659,17 +665,17 @@
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IjB-X3-C3c">
-                                                                <rect key="frame" x="20" y="71" width="73" height="65.5"/>
+                                                                <rect key="frame" x="22.5" y="71" width="68.5" height="65.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ett-Wh-B7d">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="28"/>
                                                                         <color key="tintColor" name="System Green Color"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ignoresInvertColors" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augemented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
-                                                                        <rect key="frame" x="0.0" y="35" width="73" height="30.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
+                                                                        <rect key="frame" x="0.0" y="35" width="68.5" height="30.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" name="System Green Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -891,6 +897,7 @@
                         <outlet property="favoriteIcon" destination="3HI-Tp-mlc" id="vrl-hk-0RG"/>
                         <outlet property="favoriteLabel" destination="p7J-AP-LJu" id="cib-IX-ltK"/>
                         <outlet property="headerSpacingConstraint" destination="YHL-5O-cAJ" id="4hx-Ix-ePk"/>
+                        <outlet property="headerStackView" destination="PXr-Fl-VFE" id="ipc-cv-Q9b"/>
                         <outlet property="headerView" destination="dbo-K7-cz4" id="qum-6P-mEV"/>
                         <outlet property="optionsStackView" destination="F4v-7P-4zH" id="W9P-XB-ly2"/>
                         <outlet property="placeName" destination="rZk-9q-vWd" id="XT9-OE-pFv"/>
@@ -1303,7 +1310,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="extraLight"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.89411764705882346" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

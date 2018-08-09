@@ -22,6 +22,7 @@ class FavoritesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        shouldGroupAccessibilityChildren = true
     }
     
     override func layoutSubviews() {

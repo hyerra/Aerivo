@@ -111,7 +111,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 cell.icon.image = UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
                 
                 cell.placeName.text = result.formattedName
-                cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+                cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.first
                 cell.iconBackgroundView.backgroundColor = result.scope.displayColor
             } else {
                 let cell = cell as! FavoritesTableViewCell
@@ -126,7 +126,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             cell.icon.image = UIImage(named: "\(favorite.maki ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
             
             cell.placeName.text = favorite.name
-            cell.secondaryDetail.text = favorite.formattedAddressLines?.joined(separator: NSLocalizedString(", ", comment: "The seperator between the components of an address."))
+            cell.secondaryDetail.text = favorite.formattedAddressLines?.first
             let scope = MBPlacemarkScope(rawValue: UInt(favorite.scope))
             cell.iconBackgroundView.backgroundColor = scope.displayColor
             
