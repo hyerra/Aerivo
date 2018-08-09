@@ -54,6 +54,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var address: UILabel!
     
+    @IBOutlet weak var contactOfficialView: UIView!
+    
     @IBOutlet weak var optionsStackView: UIStackView!
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
@@ -160,13 +162,22 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     // MARK: - Accessibility
     
-    private func setupAccessibility() {        
+    private func setupAccessibility() {
         let headerElement = UIAccessibilityElement(accessibilityContainer: headerView)
         headerElement.accessibilityTraits = .staticText
         headerElement.accessibilityLabel = (placeName.text?.appending(" ") ?? "") + (detail.text ?? "")
         headerElement.accessibilityFrameInContainerSpace = headerView.bounds
         headerView.accessibilityElements = [topGripperView, headerElement, close]
-        optionsStackView.subviews.forEach { $0.shouldGroupAccessibilityChildren = true }
+        
+        contactOfficialView.allSubviews.forEach { $0.accessibilityIgnoresInvertColors = true }
+        
+        optionsStackView.subviews.forEach {
+            $0.subviews.forEach { subview in
+                if let subview = subview as? UIStackView {
+                    subview.allSubviews.forEach { $0.accessibilityIgnoresInvertColors = true }
+                }
+            }
+        }
         
         topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
         bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]

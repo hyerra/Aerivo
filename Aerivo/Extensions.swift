@@ -128,14 +128,11 @@ extension CGPoint {
     }
 }
 
-
 extension UIView {
-    @IBInspectable var ignoresInvertColors: Bool {
-        get {
-            return accessibilityIgnoresInvertColors
-        }
-        set {
-            accessibilityIgnoresInvertColors = newValue
-        }
+    /// Returns all of the subviews within a view including the subviews of subviews.
+    var allSubviews: [UIView] {
+        var subviewsArray = [subviews].flatMap { $0 }
+        subviewsArray.forEach { subviewsArray.append(contentsOf: $0.allSubviews) }
+        return subviewsArray
     }
 }

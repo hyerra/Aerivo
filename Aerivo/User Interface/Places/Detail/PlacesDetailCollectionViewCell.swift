@@ -22,6 +22,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
         // Initialization code
         detail.contentEdgeInsets = UIEdgeInsets(top: .leastNormalMagnitude, left: .leastNormalMagnitude, bottom: .leastNormalMagnitude, right: .leastNormalMagnitude) /* Get rid of extra button padding. */
         detail.titleLabel?.adjustsFontForContentSizeCategory = true
+        detail.accessibilityIgnoresInvertColors = true
         detail.titleLabel?.numberOfLines = 0
     }
     
