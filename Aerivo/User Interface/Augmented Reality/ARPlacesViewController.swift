@@ -67,7 +67,7 @@ class ARPlacesViewController: UIViewController {
         // Set up scene content.
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
-        
+                
         loadTerrain()
     }
     
@@ -207,12 +207,12 @@ class ARPlacesViewController: UIViewController {
     @IBAction func placeTerrain(_ sender: UIButton) {
         guard let terrain = terrain else { return }
         self.isRestartAvailable = false
-        self.sceneView.prepare([terrain], completionHandler: { _ in
+        self.sceneView.prepare([terrain]) { _ in
             DispatchQueue.main.async {
-                self.isRestartAvailable = true
                 self.place(virtualObject: terrain)
+                self.isRestartAvailable = true
             }
-        })
+        }
     }
     
     @IBAction func dismiss(_ sender: UIButton) {

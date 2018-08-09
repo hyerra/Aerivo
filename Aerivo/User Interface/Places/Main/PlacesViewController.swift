@@ -57,6 +57,10 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
         searchBar.delegate = self
         generateDefaultResults()
+        
+        topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
+        bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
+        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
     
@@ -213,12 +217,21 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
 // MARK: - Pulley drawer delegate
 
 extension PlacesViewController: PulleyDrawerViewControllerDelegate {
+    @objc func expand() -> Bool {
+        return pulleyViewController?.expand() ?? false
+    }
+    
+    @objc func collapse() -> Bool {
+        return pulleyViewController?.collapse() ?? false
+    }
+    
     func supportedDrawerPositions() -> [PulleyPosition] {
         if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate {
             if let supportedPositions = presentedVC.supportedDrawerPositions?() {
                 return supportedPositions
             }
         }
+        
         return PulleyPosition.all
     }
     
@@ -252,6 +265,11 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
                 
         placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
         if drawer.drawerPosition != .open { searchBar.text = nil; searchBar.resignFirstResponder() }
+        topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
+        bottomGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
+        
+        topGripperView.accessibilityFrame = view.convert(topGripperView.frame.insetBy(dx: -20, dy: -30), to: UIApplication.shared.keyWindow)
+        bottomGripperView.accessibilityFrame = view.convert(bottomGripperView.frame.insetBy(dx: -20, dy: -30), to: UIApplication.shared.keyWindow)
     }
     
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
@@ -316,5 +334,50 @@ extension PlacesViewController: UISearchBarDelegate {
         }
         previousMapSearchTask = task
         task.resume()
+    }
+}
+
+extension PulleyViewController {
+    func expand() -> Bool {
+        switch drawerPosition {
+        case .collapsed:
+            setDrawerPosition(position: .partiallyRevealed, animated: true)
+            return true
+        case .partiallyRevealed:
+            setDrawerPosition(position: .open, animated: true)
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func collapse() -> Bool {
+        switch drawerPosition {
+        case .partiallyRevealed:
+            setDrawerPosition(position: .collapsed, animated: true)
+            return true
+        case .open:
+            setDrawerPosition(position: .partiallyRevealed, animated: true)
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+extension PulleyPosition {
+    var localizedDescription: String? {
+        switch self {
+        case .collapsed:
+            return NSLocalizedString("Collapsed", comment: "Represents the collapsed position of an interface element.")
+        case .partiallyRevealed:
+            return NSLocalizedString("Partially Revealed", comment: "Represents the partially revealed position of an interface element.")
+        case .open:
+            return NSLocalizedString("Open", comment: "Represents the open position of an interface element.")
+        case .closed:
+            return NSLocalizedString("Closed", comment: "Represents the closed position of an interface element.")
+        default:
+            return nil
+        }
     }
 }
