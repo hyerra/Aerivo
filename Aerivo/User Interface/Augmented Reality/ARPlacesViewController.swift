@@ -60,6 +60,8 @@ class ARPlacesViewController: UIViewController {
         // Do any additional setup after loading the view.
         accessibilityViewIsModal = true
         
+        sceneView.accessibilityIgnoresInvertColors = true
+        
         sceneView.delegate = self
         sceneView.session.delegate = self
         
