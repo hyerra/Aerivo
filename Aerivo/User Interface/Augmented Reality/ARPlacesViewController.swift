@@ -347,7 +347,6 @@ extension ARPlacesViewController: ARSCNViewDelegate, ARSessionDelegate {
             errorWithInfo.localizedRecoverySuggestion
         ]
         
-        // Use `flatMap(_:)` to remove optional error messages.
         let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
         
         DispatchQueue.main.async {
