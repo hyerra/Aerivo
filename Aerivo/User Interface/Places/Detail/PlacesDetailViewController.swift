@@ -109,12 +109,13 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         let addressLine = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.first ?? favorite?.formattedAddressLines?.first
         detail.text = genre ?? addressLine
         address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
-        headerView.accessibilityElements = [placeName, detail]
-        headerView.shouldGroupAccessibilityChildren = true
-        optionsStackView.subviews.forEach { $0.shouldGroupAccessibilityChildren = true }
+        
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
         collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
+        
+        setupAccessibility()
+        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         fetchAirQualityData()
         fetchWaterQualityData()
@@ -155,6 +156,20 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
         activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
         activityIndicator.layer.masksToBounds = true
+    }
+    
+    // MARK: - Accessibility
+    
+    private func setupAccessibility() {        
+        let headerElement = UIAccessibilityElement(accessibilityContainer: headerView)
+        headerElement.accessibilityTraits = .staticText
+        headerElement.accessibilityLabel = (placeName.text?.appending(" ") ?? "") + (detail.text ?? "")
+        headerElement.accessibilityFrameInContainerSpace = headerView.bounds
+        headerView.accessibilityElements = [topGripperView, headerElement, close]
+        optionsStackView.subviews.forEach { $0.shouldGroupAccessibilityChildren = true }
+        
+        topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
+        bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
     }
     
     private func checkIfFavoritedLocation() {
@@ -552,6 +567,14 @@ extension PlacesDetailViewController: ParameterDescriptionDelegate {
 // MARK: - Pulley drawer delegate
 
 extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
+    @objc func expand() -> Bool {
+        return presentingViewController?.pulleyViewController?.expand() ?? false
+    }
+    
+    @objc func collapse() -> Bool {
+        return presentingViewController?.pulleyViewController?.collapse() ?? false
+    }
+    
     func supportedDrawerPositions() -> [PulleyPosition] {
         if presentedViewController != nil { return [.open] }
         return PulleyPosition.all
@@ -580,6 +603,10 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
         
         topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
         bottomGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
+        
+        close.accessibilityFrame = view.convert(close.frame.insetBy(dx: -20, dy: -20), to: UIApplication.shared.keyWindow)
+        topGripperView.accessibilityFrame = view.convert(topGripperView.frame.insetBy(dx: -20, dy: -30), to: UIApplication.shared.keyWindow)
+        bottomGripperView.accessibilityFrame = view.convert(bottomGripperView.frame.insetBy(dx: -20, dy: -30), to: UIApplication.shared.keyWindow)
     }
     
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {

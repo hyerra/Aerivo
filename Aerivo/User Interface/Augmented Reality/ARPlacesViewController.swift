@@ -54,10 +54,12 @@ class ARPlacesViewController: UIViewController {
     
     @IBOutlet weak var messagePanelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var addTerrainBottomConstraint: NSLayoutConstraint!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        accessibilityViewIsModal = true
+        
         sceneView.delegate = self
         sceneView.session.delegate = self
         
@@ -391,6 +393,7 @@ extension ARPlacesViewController {
         messageScrollView.layoutIfNeeded()
         messagePanelHeightConstraint.constant = messageScrollView.contentSize.height
         view.layoutIfNeeded()
+        messageLabel.accessibilityFrame = view.convert(messagePanel.frame, to: UIApplication.shared.keyWindow)
         
         // Make sure status is showing.
         setMessageHidden(false, animated: true)
@@ -452,6 +455,7 @@ extension ARPlacesViewController {
     private func setMessageHidden(_ hide: Bool, animated: Bool) {
         // The panel starts out hidden, so show it before animating opacity.
         messagePanel.isHidden = false
+        self.messageLabel.isAccessibilityElement = !hide
         
         guard animated else {
             messagePanel.alpha = hide ? 0 : 1
