@@ -84,6 +84,10 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
 // MARK: - Map view delegate
 
 extension MapViewController: MGLMapViewDelegate {
+    func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
+        (pulleyViewController?.drawerContentViewController as? PlacesViewController)?.generateDefaultResults()
+    }
+    
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
