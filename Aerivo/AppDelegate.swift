@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // Override point for customization after application launch.
         application.registerForRemoteNotifications()
-        CloudCore.config = CloudCoreConfig.aerivoConfig
+        CloudCore.config = .aerivoConfig
         CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
         return true
     }
