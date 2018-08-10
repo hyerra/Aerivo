@@ -392,10 +392,10 @@ extension ARPlacesViewController {
         messageHideTimer?.invalidate()
         
         messageLabel.text = text
+        UIAccessibility.post(notification: .announcement, argument: NSAttributedString(string: text, attributes: [.accessibilitySpeechQueueAnnouncement: true]))
         messageScrollView.layoutIfNeeded()
         messagePanelHeightConstraint.constant = messageScrollView.contentSize.height
         view.layoutIfNeeded()
-        messageLabel.accessibilityFrame = view.convert(messagePanel.frame, to: UIApplication.shared.keyWindow)
         
         // Make sure status is showing.
         setMessageHidden(false, animated: true)
@@ -457,7 +457,6 @@ extension ARPlacesViewController {
     private func setMessageHidden(_ hide: Bool, animated: Bool) {
         // The panel starts out hidden, so show it before animating opacity.
         messagePanel.isHidden = false
-        self.messageLabel.isAccessibilityElement = !hide
         
         guard animated else {
             messagePanel.alpha = hide ? 0 : 1
