@@ -160,7 +160,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             let isResultsCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
             
             if isResultsCell {
-                let placemark = mapSearchResults[indexPath.row]
+                let placemark = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
                 if let coordinate = placemark.location?.coordinate {
                     annotationBackgroundColor = placemark.scope.displayColor
                     annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
@@ -180,7 +180,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 }
                 
                 if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-                    vc.placemark = mapSearchResults[indexPath.row]
+                    vc.placemark = placemark
                     present(vc, animated: true) {
                         self.view.alpha = 0
                     }
