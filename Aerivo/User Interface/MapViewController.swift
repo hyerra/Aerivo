@@ -19,7 +19,7 @@ class MapViewController: UIViewController {
     
     private let mapboxAttributionNonBottomDrawerSeperation: CGFloat = 4
     private let mapboxAttributionBottomDrawerSeperation: CGFloat = 10
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -86,6 +86,18 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
 extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
         (pulleyViewController?.drawerContentViewController as? PlacesViewController)?.generateDefaultResults()
+    }
+    
+    func mapView(_ mapView: MGLMapView, didFailToLocateUserWithError error: Error) {
+        (pulleyViewController?.drawerContentViewController as? PlacesViewController)?.generateDefaultResults()
+        
+        let camera = MGLMapCamera()
+        let coordinate = CLLocationCoordinate2D(latitude: 37.3318, longitude: -122.0054)
+        camera.centerCoordinate = coordinate
+        camera.altitude = 8000
+        mapView.fly(to: camera) {
+            mapView.setCenter(coordinate, animated: true)
+        }
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
