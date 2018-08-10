@@ -57,7 +57,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         placesTableView.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
         searchBar.delegate = self
         setupAccessibility()
-        generateDefaultResults()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
     
@@ -317,7 +316,7 @@ extension PlacesViewController: UISearchBarDelegate {
         perform(#selector(searchMap(for:)), with: searchText, afterDelay: 0.5)
     }
     
-    @objc private func generateDefaultResults() {
+    func generateDefaultResults() {
         let location = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView.userLocation?.location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
         let options = ReverseGeocodeOptions(location: location)
         options.maximumResultCount = 5
