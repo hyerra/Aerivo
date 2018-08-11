@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Aerivo needs access to the camera in order to provide you an immersive Augmented Reality experience.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -24,8 +22,14 @@
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiaHllcnJhIiwiYSI6ImNqajNubjRuYTB5OGczd3BjdXNiOGNxcTQifQ.t__Z6CTcq7DlHhSneZFlEA</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Aerivo needs access to the camera in order to provide you an immersive Augmented Reality experience.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location will be used to show your location on the map so you can view natural settings near you.</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>AirQualityIntent</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

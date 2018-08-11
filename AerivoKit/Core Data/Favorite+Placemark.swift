@@ -7,7 +7,10 @@
 //
 
 import CoreData
+import Contacts
 import MapboxGeocoder
+
+public typealias PostalAddress = CNPostalAddress
 
 extension Favorite {
     
@@ -24,6 +27,7 @@ extension Favorite {
         if let longitude = placemark.location?.coordinate.longitude { self.longitude = NSNumber(value: longitude) }
         self.maki = placemark.imageName
         self.name = placemark.name
+        self.postalAddress = placemark.postalAddress
         self.qualifiedName = placemark.qualifiedName
         self.scope = Int16(placemark.scope.rawValue)
         self.wikidataItemIdentifier = placemark.wikidataItemIdentifier

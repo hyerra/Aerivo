@@ -12,6 +12,8 @@
 		681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */; };
 		681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */; };
 		681C2D612116B2420008F020 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D602116B2420008F020 /* VirtualObjectARView.swift */; };
+		681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		681C49AA211F542D00D82950 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -198,6 +200,7 @@
 		681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		681C2D602116B2420008F020 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		681C49AB211F542D00D82950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Aerivo.intentdefinition; sourceTree = "<group>"; };
 		683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQParameters.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +403,14 @@
 			path = "Virtual Objects";
 			sourceTree = "<group>";
 		};
+		681C49A5211F4CCD00D82950 /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				681C49AC211F542D00D82950 /* Aerivo.intentdefinition */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +564,7 @@
 				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
+				681C49A5211F4CCD00D82950 /* Siri */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
 			);
 			path = AerivoKit;
@@ -1170,6 +1182,7 @@
 			files = (
 				681C2D612116B2420008F020 /* VirtualObjectARView.swift in Sources */,
 				6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */,
+				681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */,
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
 				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
@@ -1234,6 +1247,7 @@
 				68AE5E3821163D780038EABC /* FetchRecordZoneChangesOperation.swift in Sources */,
 				68AE5E3921163D780038EABC /* PurgeLocalDatabaseOperation.swift in Sources */,
 				68AE5E3A21163D780038EABC /* RecordToCoreDataOperation.swift in Sources */,
+				681C49AA211F542D00D82950 /* Aerivo.intentdefinition in Sources */,
 				68AE5E3B21163D780038EABC /* SetupOperation.swift in Sources */,
 				68AE5E3C21163D780038EABC /* SubscribeOperation.swift in Sources */,
 				68AE5E3D21163D780038EABC /* CreateCloudCoreZoneOperation.swift in Sources */,
@@ -1339,6 +1353,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		681C49AC211F542D00D82950 /* Aerivo.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				681C49AB211F542D00D82950 /* Base */,
+			);
+			name = Aerivo.intentdefinition;
+			sourceTree = "<group>";
+		};
 		684BE20E20E99C1D00E74FE5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
