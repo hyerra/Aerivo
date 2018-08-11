@@ -82,7 +82,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
-                    self.view.layoutIfNeeded()
                     if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
@@ -95,7 +94,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
-                    self.view.layoutIfNeeded()
                     if self.isAQDataLoaded && self.isNWQPDataLoaded { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
                 }
             }
@@ -114,7 +112,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
-        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
         
         setupAccessibility()
         
@@ -133,7 +130,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         super.traitCollectionDidChange(previousTraitCollection)
         // Do any layout related work when the interface environment changes.
         optionsStackView.axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? .vertical : .horizontal
-        collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
         collectionView.layoutIfNeeded()
         collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
         view.layoutIfNeeded()
