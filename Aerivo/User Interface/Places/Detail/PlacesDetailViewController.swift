@@ -132,7 +132,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         optionsStackView.axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? .vertical : .horizontal
         collectionView.collectionViewLayout.invalidateLayout()
         collectionView.layoutIfNeeded()
-        collectionViewHeightConstraint.constant = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
         view.layoutIfNeeded()
     }
     
