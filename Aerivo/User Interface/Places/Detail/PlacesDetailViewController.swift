@@ -12,6 +12,7 @@ import Pulley
 import ARKit
 import MapboxGeocoder
 import CoreData
+import Intents
 import MessageUI
 
 class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -115,9 +116,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         
         setupAccessibility()
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         fetchAirQualityData()
         fetchWaterQualityData()
+        
+        if #available(iOS 12.0, *) { donateAirQualityIntent() }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -180,6 +182,25 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
     }
     
+    // MARK: - Intents
+    
+    @available(iOS 12.0, *)
+    private func donateAirQualityIntent() {
+        let intent = AirQualityIntent()
+        
+        if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
+            let location = CLLocation(latitude: latitude, longitude: longitude)
+            let name = placemark?.formattedName ?? favorite?.name
+            let address = placemark?.postalAddress ?? favorite?.postalAddress
+            intent.targetLocation = CLPlacemark(location: location, name: name, postalAddress: address)
+        }
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate()
+    }
+    
+    // MARK: - Core Data
+    
     private func checkIfFavoritedLocation() {
         guard let qualifiedName = placemark?.qualifiedName else { return } // Make sure the qualified name is there or we have nothing to check if this placemark exists.
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
@@ -197,6 +218,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
         
     private func fetchAirQualityData() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
         let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
         guard let lat = latitude, let long = longitude else { return }
@@ -231,6 +254,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     private func fetchWaterQualityData() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
         let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
         guard let lat = latitude, let long = longitude else { return }
