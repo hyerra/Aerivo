@@ -38,7 +38,7 @@ class PlacesDetailCollectionViewCell: UICollectionViewCell, UIPopoverPresentatio
         parameterDescriptionController.popoverPresentationController?.permittedArrowDirections = [.up, .down]
         parameterDescriptionController.popoverPresentationController?.delegate = self
         parameterDescriptionController.popoverPresentationController?.sourceView = sender
-        parameterDescriptionController.popoverPresentationController?.sourceRect = sender.frame
+        parameterDescriptionController.popoverPresentationController?.sourceRect = sender.bounds
         parameterDescriptionController.parameterInfo = parameterDescription
         parameterDescriptionDelegate?.show(parameterDescription: parameterDescriptionController)
     }
