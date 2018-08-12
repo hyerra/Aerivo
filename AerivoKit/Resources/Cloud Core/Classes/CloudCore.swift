@@ -90,7 +90,9 @@ open class CloudCore {
 		// Subscribe (subscription may be outdated/removed)
 		#if !os(watchOS)
 		let subscribeOperation = SubscribeOperation()
-		subscribeOperation.errorBlock = { handle(subscriptionError: $0, container: container) }
+		subscribeOperation.errorBlock = {
+            handle(subscriptionError: $0, container: container)
+        }
 		queue.addOperation(subscribeOperation)
 		#endif
 		
