@@ -62,8 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let handler = AirQualityIntentHandler()
             handler.handle(intent: intent) { response in }
             return true
+        } else {
+            let userActivityManager = UserActivityManager(window: window)
+            return userActivityManager.handle(userActivity: userActivity)
         }
-        return false
     }
     
     // MARK: - Quick Actions

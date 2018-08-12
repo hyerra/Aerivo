@@ -58,6 +58,12 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
         setupAccessibility()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
+        userActivity = NSUserActivity.searchActivity
+    }
+    
+    override func updateUserActivityState(_ activity: NSUserActivity) {
+        let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.searchText: searchBar.text ?? ""]
+        activity.addUserInfoEntries(from: userInfo)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -309,6 +315,7 @@ extension PlacesViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        userActivity?.needsSave = true
         guard !searchText.isEmpty else { shouldShowDefaultResults = true; return }
         shouldShowDefaultResults = false
         previousMapSearchTask?.cancel()
