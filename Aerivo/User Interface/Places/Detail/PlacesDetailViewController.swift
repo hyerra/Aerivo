@@ -138,6 +138,12 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         view.layoutIfNeeded()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Do any additional teardown right before the view will disappear.
+        presentingViewController?.view.alpha = 1
+    }
+    
     deinit {
         openAQClient.cancelAllPendingRequests()
         nwqpClient.cancelAllPendingRequests()
@@ -576,7 +582,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     private func dismissVC() {
-        presentingViewController?.view.alpha = 1
         presentingViewController?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
         let tempPresentingViewController = presentingViewController // Retain a reference to the presenting view controller before dismissing.
         dismiss(animated: true) {
