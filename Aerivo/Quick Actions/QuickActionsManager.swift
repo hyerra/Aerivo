@@ -63,6 +63,7 @@ final class QuickActionsManager: NSObject {
     ///
     /// - Parameter shortcutItem: The shortcut item to handle.
     /// - Returns: Whether or not it was handled successfully.
+    @discardableResult
     func handle(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var handled = false
         
@@ -79,6 +80,7 @@ final class QuickActionsManager: NSObject {
             handled = true
             placesVC.searchBar.becomeFirstResponder()
         case ShortcutIdentifier.favorite.type:
+            handled = true
             guard let userInfo = shortcutItem.userInfo else { return false }
             guard let favoriteString = userInfo["favorite"] as? String else { return false }
             guard let favoriteURL = URL(string: favoriteString) else { return false }

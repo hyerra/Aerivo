@@ -386,8 +386,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             
             if case let .success(representativeInfo) = result {
                 func showNoDataAlert() {
-                    let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as! String
-                    let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: "\(appName) \(NSLocalizedString("doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "Message of alert controller for not enough data error."))", preferredStyle: .alert)
+                    let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
+                    let localizedMessage = String.localizedStringWithFormat("%@ %@", appName, NSLocalizedString("doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "Message of alert controller for not enough data error."))
+                    let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: localizedMessage, preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                     self.present(alertController, animated: true)
                 }
@@ -515,8 +516,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 alertController.popoverPresentationController?.sourceRect = sender.bounds
                 self.present(alertController, animated: true)
             } else {
-                let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] ?? "Aerivo"
-                let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: "\(appName) \(NSLocalizedString("is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", comment: "Message of alert controller for network error."))", preferredStyle: .alert)
+                let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
+                let localizedMessage = String.localizedStringWithFormat("%@ %@", appName, NSLocalizedString("is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", comment: "Message of alert controller for network error."))
+                let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
             }

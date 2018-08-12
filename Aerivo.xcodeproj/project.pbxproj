@@ -25,6 +25,8 @@
 		684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */; };
 		684BE22020E99C1F00E74FE5 /* AerivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */; };
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
+		687DBA622120A09600C166FD /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
+		687DBA652120AA2500C166FD /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA642120AA2500C166FD /* UserActivityManager.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		688D77CD211FBC8000E27EA1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
@@ -244,6 +246,8 @@
 		684E995221177D580075FCAC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
+		687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+Activities.swift"; sourceTree = "<group>"; };
+		687DBA642120AA2500C166FD /* UserActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityManager.swift; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		688D77CE211FCA4200E27EA1 /* AerivoIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerivoIntents.entitlements; sourceTree = "<group>"; };
 		688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsManager.swift; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 				684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */,
 				7DCFD7D92105927900F86474 /* Extensions.swift */,
 				68F3A29120E9CA420096D60A /* User Interface */,
+				687DBA632120AA0E00C166FD /* User Activity */,
 				688D77D0211FE58E00E27EA1 /* Quick Actions */,
 				683AE95A20EC8B7800C05B8C /* Resources */,
 			);
@@ -536,6 +541,22 @@
 				68622DB22100469C0002103F /* NWQPResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		687DBA602120A07E00C166FD /* User Activity */ = {
+			isa = PBXGroup;
+			children = (
+				687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */,
+			);
+			path = "User Activity";
+			sourceTree = "<group>";
+		};
+		687DBA632120AA0E00C166FD /* User Activity */ = {
+			isa = PBXGroup;
+			children = (
+				687DBA642120AA2500C166FD /* UserActivityManager.swift */,
+			);
+			path = "User Activity";
 			sourceTree = "<group>";
 		};
 		688C863A2102692B000C47FF /* Main */ = {
@@ -623,6 +644,7 @@
 				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
+				687DBA602120A07E00C166FD /* User Activity */,
 				681C49A5211F4CCD00D82950 /* Intents */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
 			);
@@ -1300,6 +1322,7 @@
 				7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */,
 				681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */,
 				7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */,
+				687DBA652120AA2500C166FD /* UserActivityManager.swift in Sources */,
 				6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */,
 				7DBE7A4021156CD900F3B011 /* ARPlacesViewController.swift in Sources */,
 				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,
@@ -1390,6 +1413,7 @@
 				68AE5E0621163D5A0038EABC /* XMLEncoder+CustomDates.swift in Sources */,
 				68AE5E0721163D5A0038EABC /* OpenAQEndpoint.swift in Sources */,
 				68AE5E0821163D5A0038EABC /* OpenAQParameters.swift in Sources */,
+				687DBA622120A09600C166FD /* NSUserActivity+Activities.swift in Sources */,
 				68AE5E0921163D5A0038EABC /* OpenAQClient.swift in Sources */,
 				68AE5E0A21163D5A0038EABC /* OpenAQError.swift in Sources */,
 				68AE5E0B21163D5A0038EABC /* OpenAQResponse.swift in Sources */,
