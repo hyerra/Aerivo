@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Hb-WD-EXz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="localizable" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Hb-WD-EXz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,7 +96,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a place or address" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-nq-wK8" propertyAccessControl="localizable">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a place or address" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-nq-wK8">
                                         <rect key="frame" x="0.0" y="11" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
                                         <attributedString key="userComments">
@@ -224,10 +224,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
-                                                    <rect key="frame" x="8" y="10" width="99" height="23.5"/>
+                                                    <rect key="frame" x="15" y="13" width="99" height="18"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
-                                                            <rect key="frame" x="0.0" y="3" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -241,7 +241,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" name="System Red Color"/>
+                                                            <color key="backgroundColor" name="Gold Color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="8m1-mR-BhR" secondAttribute="bottom" constant="6" id="0ET-3k-DIL"/>
                                                                 <constraint firstItem="8m1-mR-BhR" firstAttribute="leading" secondItem="SU4-6J-LPU" secondAttribute="leading" constant="6" id="4JP-bU-l5C"/>
@@ -250,17 +250,17 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
-                                                            <rect key="frame" x="26" y="0.0" width="73" height="23.5"/>
+                                                            <rect key="frame" x="26" y="0.0" width="73" height="18"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesLabel"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-qh-LHm">
-                                                                    <rect key="frame" x="0.0" y="21.5" width="73" height="2"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="73" height="0.0"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesCount"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -428,7 +428,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-za-xSz" customClass="ResizableImageButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-za-xSz" customClass="ResizableImageButton" customModule="Aerivo" customModuleProvider="target">
                                         <rect key="frame" x="342.5" y="20" width="22" height="22"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="close" label="Close"/>
@@ -477,9 +477,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-uk-qtQ">
                                                 <rect key="frame" x="28" y="16" width="319" height="55"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reR-fh-CtN" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reR-fh-CtN" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="319" height="55"/>
-                                                        <color key="backgroundColor" name="System Green Color"/>
+                                                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Contacts a government official if you are concerned about the environmental quality at this location." identifier="contactOfficial" label="Contact an Official"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,7 +491,7 @@
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjB-be-D9U">
                                                         <rect key="frame" x="85.5" y="10" width="148.5" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact an Official" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-gZ-mVc" propertyAccessControl="localizable">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact an Official" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-gZ-mVc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="20.5"/>
                                                                 <accessibility key="accessibilityConfiguration">
                                                                     <bool key="isElement" value="NO"/>
@@ -503,7 +503,7 @@
                                                                     <fragment content="Text for the user to contact a government official."/>
                                                                 </attributedString>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS" propertyAccessControl="localizable">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad air/water quality?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-qZ-miS">
                                                                 <rect key="frame" x="13" y="20.5" width="122" height="14.5"/>
                                                                 <accessibility key="accessibilityConfiguration">
                                                                     <bool key="isElement" value="NO"/>
@@ -553,7 +553,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gly-LE-XJm">
                                                         <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-x4-cwZ" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-x4-cwZ" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Saves this location to your favorites." identifier="favorite" label="Favorite"/>
@@ -562,13 +562,13 @@
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YY5-hI-641">
-                                                                <rect key="frame" x="34" y="79.5" width="45" height="48.5"/>
+                                                                <rect key="frame" x="34" y="80.5" width="45" height="46.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Tp-mlc">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu" propertyAccessControl="localizable">
-                                                                        <rect key="frame" x="0.0" y="34" width="45" height="14.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-AP-LJu">
+                                                                        <rect key="frame" x="0.0" y="32" width="45" height="14.5"/>
                                                                         <accessibility key="accessibilityConfiguration">
                                                                             <bool key="isElement" value="NO"/>
                                                                         </accessibility>
@@ -605,7 +605,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-2P-UlM">
                                                         <rect key="frame" x="121" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDo-9U-xq4" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDo-9U-xq4" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Opens a web browser to share more information about this location." identifier="information" label="Information"/>
@@ -618,15 +618,19 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="27"/>
-                                                                        <color key="tintColor" name="System Green Color"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                                <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV" propertyAccessControl="localizable">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV">
                                                                         <rect key="frame" x="0.0" y="34" width="65" height="14.5"/>
                                                                         <accessibility key="accessibilityConfiguration">
                                                                             <bool key="isElement" value="NO"/>
                                                                         </accessibility>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="System Green Color"/>
+                                                                        <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <attributedString key="userComments">
                                                                             <fragment content="Allows the user to obtain more information about a location."/>
@@ -658,7 +662,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXg-xy-y0R">
                                                         <rect key="frame" x="242" y="0.0" width="113" height="207.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htR-Xc-cnE" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target" propertyAccessControl="localizable">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htR-Xc-cnE" customClass="DarkeningButton" customModule="Aerivo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="207.5"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Shows this location in Augmented Reality." identifier="augmentedReality" label="Augmented Reality"/>
@@ -671,15 +675,19 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ett-Wh-B7d">
                                                                         <rect key="frame" x="0.0" y="0.0" width="68.5" height="27"/>
-                                                                        <color key="tintColor" name="System Green Color"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                                <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP" propertyAccessControl="localizable">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP">
                                                                         <rect key="frame" x="0.0" y="34" width="68.5" height="30.5"/>
                                                                         <accessibility key="accessibilityConfiguration">
                                                                             <bool key="isElement" value="NO"/>
                                                                         </accessibility>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="System Green Color"/>
+                                                                        <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <attributedString key="userComments">
                                                                             <fragment content="Allows the user to view a location in Augmented Reality."/>
@@ -713,7 +721,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-eX-fGI">
                                                 <rect key="frame" x="10" y="412" width="135" height="39.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-AK-Gwu" propertyAccessControl="localizable">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-AK-Gwu">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
@@ -1011,18 +1019,18 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
-                                <rect key="frame" x="290.5" y="30" width="68.5" height="53"/>
+                                <rect key="frame" x="292" y="30" width="67" height="53"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-SR-h5q">
-                                            <rect key="frame" x="0.0" y="0.0" width="68" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xm-FK-ukx">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6" propertyAccessControl="localizable">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6">
                                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="done"/>
                                                         <constraints>
@@ -1082,7 +1090,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-9b-bLI" propertyAccessControl="localizable">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-9b-bLI">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Restarts the Augmented Reality Experience." identifier="restart" label="Restart"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -1342,15 +1350,12 @@
     <resources>
         <image name="ar" width="24" height="27"/>
         <image name="close" width="12" height="12"/>
-        <image name="favorite" width="29" height="27"/>
+        <image name="favorite" width="27" height="25"/>
         <image name="globe" width="27" height="27"/>
         <image name="plus" width="33" height="33"/>
         <image name="restart" width="24" height="24"/>
-        <namedColor name="System Green Color">
-            <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="System Red Color">
-            <color red="1" green="0.23100000619888306" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Gold Color">
+            <color red="1" green="0.6589999794960022" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
