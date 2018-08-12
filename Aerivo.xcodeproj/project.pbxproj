@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
 		681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5A2116B0410008F020 /* VirtualObject.swift */; };
 		681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */; };
 		681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */; };
 		681C2D612116B2420008F020 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D602116B2420008F020 /* VirtualObjectARView.swift */; };
-		681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		681C49AA211F542D00D82950 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		681C49D5211F5F8300D82950 /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
+		681C49D9211F93F900D82950 /* AirQualityIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */; };
+		681C4A1A211FA57C00D82950 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C4A19211FA57C00D82950 /* IntentHandler.swift */; };
+		681C4A1E211FA57C00D82950 /* AerivoIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 681C4A17211FA57C00D82950 /* AerivoIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -24,7 +29,6 @@
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
 		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
 		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
-		68AE5E0021163D5A0038EABC /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
 		68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		68AE5E0221163D5A0038EABC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
 		68AE5E0321163D5A0038EABC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
@@ -108,7 +112,6 @@
 		68AE5E5121163D780038EABC /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
 		68AE5E5221163D780038EABC /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
 		68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
-		68AE5E5721163E080038EABC /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC7D90E21141DA900681860 /* MapboxGeocoder.framework */; };
 		68B082FA211784E4006AFC82 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B082F9211784E4006AFC82 /* Models.scnassets */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
 		68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
@@ -138,6 +141,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		681C4A1C211FA57C00D82950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 681C4A16211FA57C00D82950;
+			remoteInfo = AerivoIntents;
+		};
 		684BE21C20E99C1F00E74FE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
@@ -176,6 +186,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		681C49D0211F5E1700D82950 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				681C4A1E211FA57C00D82950 /* AerivoIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68E397CC20EFF0F3005C0722 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +222,11 @@
 		681C2D5E2116B1EB0008F020 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		681C2D602116B2420008F020 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
 		681C49AB211F542D00D82950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Aerivo.intentdefinition; sourceTree = "<group>"; };
+		681C49BB211F5E1700D82950 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityIntentHandler.swift; sourceTree = "<group>"; };
+		681C4A17211FA57C00D82950 /* AerivoIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AerivoIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		681C4A19211FA57C00D82950 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		681C4A1B211FA57C00D82950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQParameters.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +357,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		681C4A14211FA57C00D82950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20420E99C1D00E74FE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,7 +396,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68AE5E5721163E080038EABC /* MapboxGeocoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +435,22 @@
 			path = "Virtual Objects";
 			sourceTree = "<group>";
 		};
-		681C49A5211F4CCD00D82950 /* Siri */ = {
+		681C49A5211F4CCD00D82950 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
 				681C49AC211F542D00D82950 /* Aerivo.intentdefinition */,
+				681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */,
 			);
-			path = Siri;
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		681C4A18211FA57C00D82950 /* AerivoIntents */ = {
+			isa = PBXGroup;
+			children = (
+				681C4A19211FA57C00D82950 /* IntentHandler.swift */,
+				681C4A1B211FA57C00D82950 /* Info.plist */,
+			);
+			path = AerivoIntents;
 			sourceTree = "<group>";
 		};
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
@@ -428,6 +470,7 @@
 				684BE20920E99C1D00E74FE5 /* Aerivo */,
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
+				681C4A18211FA57C00D82950 /* AerivoIntents */,
 				68CB23C72116303800B98B32 /* AerivoKit */,
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
@@ -443,6 +486,7 @@
 				684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */,
 				68CB23C62116303800B98B32 /* AerivoKit.framework */,
 				68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */,
+				681C4A17211FA57C00D82950 /* AerivoIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -564,7 +608,7 @@
 				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
-				681C49A5211F4CCD00D82950 /* Siri */,
+				681C49A5211F4CCD00D82950 /* Intents */,
 				68EADBB920F2F6EB00DB3425 /* Resources */,
 			);
 			path = AerivoKit;
@@ -608,6 +652,7 @@
 				7DC7D90C21141D8200681860 /* Mapbox.framework */,
 				7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */,
 				68E397D420EFF547005C0722 /* Mapbox.framework */,
+				681C49BB211F5E1700D82950 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -928,6 +973,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		681C4A16211FA57C00D82950 /* AerivoIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 681C4A1F211FA57C00D82950 /* Build configuration list for PBXNativeTarget "AerivoIntents" */;
+			buildPhases = (
+				681C4A13211FA57C00D82950 /* Sources */,
+				681C4A14211FA57C00D82950 /* Frameworks */,
+				681C4A15211FA57C00D82950 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AerivoIntents;
+			productName = AerivoIntents;
+			productReference = 681C4A17211FA57C00D82950 /* AerivoIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		684BE20620E99C1D00E74FE5 /* Aerivo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 684BE22F20E99C1F00E74FE5 /* Build configuration list for PBXNativeTarget "Aerivo" */;
@@ -938,11 +1000,13 @@
 				68E397CC20EFF0F3005C0722 /* Embed Frameworks */,
 				7DC7D91221141DC800681860 /* Carthage Copy Frameworks */,
 				7DC7D91321141EC800681860 /* Carthage Warn Outdated */,
+				681C49D0211F5E1700D82950 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				68CB23DA2116303800B98B32 /* PBXTargetDependency */,
+				681C4A1D211FA57C00D82950 /* PBXTargetDependency */,
 			);
 			name = Aerivo;
 			productName = Aerivo;
@@ -1032,6 +1096,9 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Harish Yerra";
 				TargetAttributes = {
+					681C4A16211FA57C00D82950 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					684BE20620E99C1D00E74FE5 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
@@ -1042,6 +1109,9 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
@@ -1082,6 +1152,7 @@
 				684BE20620E99C1D00E74FE5 /* Aerivo */,
 				684BE21A20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
+				681C4A16211FA57C00D82950 /* AerivoIntents */,
 				68CB23C52116303800B98B32 /* AerivoKit */,
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 			);
@@ -1089,6 +1160,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		681C4A15211FA57C00D82950 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20520E99C1D00E74FE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1176,6 +1254,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		681C4A13211FA57C00D82950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */,
+				681C4A1A211FA57C00D82950 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20320E99C1D00E74FE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1198,6 +1285,7 @@
 				68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */,
 				681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */,
 				7DCFD7DA2105927900F86474 /* Extensions.swift in Sources */,
+				681C49D5211F5F8300D82950 /* MBPlacemarkScope+Color.swift in Sources */,
 				681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */,
 				68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */,
 				68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */,
@@ -1273,7 +1361,6 @@
 				68AE5E5121163D780038EABC /* ServiceAttributeName.swift in Sources */,
 				68AE5E5221163D780038EABC /* CKRecord.swift in Sources */,
 				68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */,
-				68AE5E0021163D5A0038EABC /* MBPlacemarkScope+Color.swift in Sources */,
 				68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */,
 				68AE5E0221163D5A0038EABC /* Endpoint.swift in Sources */,
 				68AE5E0321163D5A0038EABC /* APIClient.swift in Sources */,
@@ -1287,6 +1374,7 @@
 				68AE5E0B21163D5A0038EABC /* OpenAQResponse.swift in Sources */,
 				68AE5E0C21163D5A0038EABC /* AQCity.swift in Sources */,
 				68AE5E0D21163D5A0038EABC /* AQCountry.swift in Sources */,
+				681C49D9211F93F900D82950 /* AirQualityIntentHandler.swift in Sources */,
 				68AE5E0E21163D5A0038EABC /* AQFetch.swift in Sources */,
 				68AE5E0F21163D5A0038EABC /* AQLatest.swift in Sources */,
 				68AE5E1021163D5A0038EABC /* AQLocation.swift in Sources */,
@@ -1325,6 +1413,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		681C4A1D211FA57C00D82950 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 681C4A16211FA57C00D82950 /* AerivoIntents */;
+			targetProxy = 681C4A1C211FA57C00D82950 /* PBXContainerItemProxy */;
+		};
 		684BE21D20E99C1F00E74FE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
@@ -1388,6 +1481,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		681C4A20211FA57C00D82950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AerivoIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		681C4A21211FA57C00D82950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AerivoIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		684BE22D20E99C1F00E74FE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1639,6 +1775,7 @@
 		68CB23DE2116303800B98B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1673,6 +1810,7 @@
 		68CB23DF2116303800B98B32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1747,6 +1885,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		681C4A1F211FA57C00D82950 /* Build configuration list for PBXNativeTarget "AerivoIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681C4A20211FA57C00D82950 /* Debug */,
+				681C4A21211FA57C00D82950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		684BE20220E99C1D00E74FE5 /* Build configuration list for PBXProject "Aerivo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -32,13 +32,13 @@
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
+					<string>View the air quality at ${targetLocation}.</string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>lgOm8k</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>View the air quality at ${targetLocation}.</string>
+					<string>Air Quality - ${targetLocation}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>8rUeRK</string>
 				</dict>
@@ -64,7 +64,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string></string>
+						<string>Air quality information couldn't be retrieved at this time.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>bvFMe9</string>
 						<key>INIntentResponseCodeName</key>
@@ -74,7 +74,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string></string>
+						<string>The air quality at ${targetLocation} is ${airQualityResults}.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>nv2LxJ</string>
 						<key>INIntentResponseCodeName</key>
@@ -82,11 +82,46 @@
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Air quality information hasn't been collected at this location yet.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>2p8xFI</string>
+						<key>INIntentResponseCodeName</key>
+						<string>noData</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>0</integer>
+				<integer>9</integer>
 				<key>INIntentResponseParameters</key>
-				<array/>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>airQualityResults</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<true/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>9</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>targetLocation</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>7</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Placemark</string>
+					</dict>
+				</array>
 			</dict>
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
