@@ -132,6 +132,13 @@
 		68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
+		68F9152B212100E500160B5B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F91529212100E500160B5B /* Interface.storyboard */; };
+		68F9152D212100E600160B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F9152C212100E600160B5B /* Assets.xcassets */; };
+		68F91534212100E600160B5B /* Aerivo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		68F91539212100E600160B5B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F91538212100E600160B5B /* InterfaceController.swift */; };
+		68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9153A212100E600160B5B /* ExtensionDelegate.swift */; };
+		68F9153D212100E600160B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F9153C212100E600160B5B /* Assets.xcassets */; };
+		68F91541212100E600160B5B /* Aerivo WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 68F91527212100E500160B5B /* Aerivo WatchKit.app */; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 		7D2C92B721150B3A0082D935 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */; };
 		7D2C92BC2115172A0082D935 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C92BE2115172A0082D935 /* Localizable.stringsdict */; };
@@ -200,6 +207,20 @@
 			remoteGlobalIDString = 68CB23C52116303800B98B32;
 			remoteInfo = AerivoKit;
 		};
+		68F91535212100E600160B5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68F91532212100E600160B5B;
+			remoteInfo = "Aerivo WatchKit Extension";
+		};
+		68F9153F212100E600160B5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68F91526212100E500160B5B;
+			remoteInfo = "Aerivo WatchKit";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -224,6 +245,28 @@
 				68CB23DC2116303800B98B32 /* AerivoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F91547212100E600160B5B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				68F91534212100E600160B5B /* Aerivo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F91549212100E600160B5B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				68F91541212100E600160B5B /* Aerivo WatchKit.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -303,6 +346,15 @@
 		68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AerivoKit.xcassets; sourceTree = "<group>"; };
 		68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		68F3A28F20E9CA250096D60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		68F91527212100E500160B5B /* Aerivo WatchKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerivo WatchKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F9152A212100E500160B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		68F9152C212100E600160B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68F9152E212100E600160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Aerivo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F91538212100E600160B5B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		68F9153A212100E600160B5B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		68F9153C212100E600160B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68F9153E212100E600160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 		7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFetchedResultsController.swift; sourceTree = "<group>"; };
@@ -445,6 +497,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68F91530212100E600160B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -513,6 +572,8 @@
 				687DBA6D2120DABE00C166FD /* AirQualityWidget */,
 				68CB23C72116303800B98B32 /* AerivoKit */,
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
+				68F91528212100E500160B5B /* Aerivo WatchKit */,
+				68F91537212100E600160B5B /* Aerivo WatchKit Extension */,
 				684BE20820E99C1D00E74FE5 /* Products */,
 				68E397D320EFF547005C0722 /* Frameworks */,
 			);
@@ -528,6 +589,8 @@
 				68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */,
 				681C4A17211FA57C00D82950 /* AerivoIntents.appex */,
 				687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */,
+				68F91527212100E500160B5B /* Aerivo WatchKit.app */,
+				68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -770,6 +833,27 @@
 				684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		68F91528212100E500160B5B /* Aerivo WatchKit */ = {
+			isa = PBXGroup;
+			children = (
+				68F91529212100E500160B5B /* Interface.storyboard */,
+				68F9152C212100E600160B5B /* Assets.xcassets */,
+				68F9152E212100E600160B5B /* Info.plist */,
+			);
+			path = "Aerivo WatchKit";
+			sourceTree = "<group>";
+		};
+		68F91537212100E600160B5B /* Aerivo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				68F91538212100E600160B5B /* InterfaceController.swift */,
+				68F9153A212100E600160B5B /* ExtensionDelegate.swift */,
+				68F9153C212100E600160B5B /* Assets.xcassets */,
+				68F9153E212100E600160B5B /* Info.plist */,
+			);
+			path = "Aerivo WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		7D2C92B421150B140082D935 /* Places */ = {
@@ -1081,6 +1165,7 @@
 				7DC7D91221141DC800681860 /* Carthage Copy Frameworks */,
 				7DC7D91321141EC800681860 /* Carthage Warn Outdated */,
 				681C49D0211F5E1700D82950 /* Embed App Extensions */,
+				68F91549212100E600160B5B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -1088,6 +1173,7 @@
 				68CB23DA2116303800B98B32 /* PBXTargetDependency */,
 				681C4A1D211FA57C00D82950 /* PBXTargetDependency */,
 				687DBA752120DABE00C166FD /* PBXTargetDependency */,
+				68F91540212100E600160B5B /* PBXTargetDependency */,
 			);
 			name = Aerivo;
 			productName = Aerivo;
@@ -1184,6 +1270,40 @@
 			productReference = 68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		68F91526212100E500160B5B /* Aerivo WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F91548212100E600160B5B /* Build configuration list for PBXNativeTarget "Aerivo WatchKit" */;
+			buildPhases = (
+				68F91525212100E500160B5B /* Resources */,
+				68F91547212100E600160B5B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68F91536212100E600160B5B /* PBXTargetDependency */,
+			);
+			name = "Aerivo WatchKit";
+			productName = "Aerivo WatchKit";
+			productReference = 68F91527212100E500160B5B /* Aerivo WatchKit.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		68F91532212100E600160B5B /* Aerivo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F91546212100E600160B5B /* Build configuration list for PBXNativeTarget "Aerivo WatchKit Extension" */;
+			buildPhases = (
+				68F9152F212100E600160B5B /* Sources */,
+				68F91530212100E600160B5B /* Frameworks */,
+				68F91531212100E600160B5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aerivo WatchKit Extension";
+			productName = "Aerivo WatchKit Extension";
+			productReference = 68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1240,6 +1360,12 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 684BE20620E99C1D00E74FE5;
 					};
+					68F91526212100E500160B5B = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					68F91532212100E600160B5B = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
 			buildConfigurationList = 684BE20220E99C1D00E74FE5 /* Build configuration list for PBXProject "Aerivo" */;
@@ -1260,6 +1386,8 @@
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
 				681C4A16211FA57C00D82950 /* AerivoIntents */,
 				687DBA692120DABE00C166FD /* AirQualityWidget */,
+				68F91526212100E500160B5B /* Aerivo WatchKit */,
+				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
 				68CB23C52116303800B98B32 /* AerivoKit */,
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 			);
@@ -1320,6 +1448,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F91525212100E500160B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F9152D212100E600160B5B /* Assets.xcassets in Resources */,
+				68F9152B212100E500160B5B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F91531212100E600160B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F9153D212100E600160B5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1537,6 +1682,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68F9152F212100E600160B5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */,
+				68F91539212100E600160B5B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1575,6 +1729,16 @@
 			target = 68CB23C52116303800B98B32 /* AerivoKit */;
 			targetProxy = 68CB23D92116303800B98B32 /* PBXContainerItemProxy */;
 		};
+		68F91536212100E600160B5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68F91532212100E600160B5B /* Aerivo WatchKit Extension */;
+			targetProxy = 68F91535212100E600160B5B /* PBXContainerItemProxy */;
+		};
+		68F91540212100E600160B5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68F91526212100E500160B5B /* Aerivo WatchKit */;
+			targetProxy = 68F9153F212100E600160B5B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1608,6 +1772,14 @@
 				687DBA712120DABE00C166FD /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		68F91529212100E500160B5B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68F9152A212100E500160B5B /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		7D2C92BE2115172A0082D935 /* Localizable.stringsdict */ = {
@@ -2067,6 +2239,94 @@
 			};
 			name = Release;
 		};
+		68F91542212100E600160B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				IBSC_MODULE = Aerivo_WatchKit_Extension;
+				INFOPLIST_FILE = "Aerivo WatchKit/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		68F91543212100E600160B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				IBSC_MODULE = Aerivo_WatchKit_Extension;
+				INFOPLIST_FILE = "Aerivo WatchKit/Info.plist";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		68F91544212100E600160B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		68F91545212100E600160B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2138,6 +2398,24 @@
 			buildConfigurations = (
 				68CB23E12116303800B98B32 /* Debug */,
 				68CB23E22116303800B98B32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68F91546212100E600160B5B /* Build configuration list for PBXNativeTarget "Aerivo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F91544212100E600160B5B /* Debug */,
+				68F91545212100E600160B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68F91548212100E600160B5B /* Build configuration list for PBXNativeTarget "Aerivo WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F91542212100E600160B5B /* Debug */,
+				68F91543212100E600160B5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
