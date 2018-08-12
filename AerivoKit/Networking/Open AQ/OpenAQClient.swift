@@ -116,7 +116,9 @@ public final class OpenAQClient: APIClient {
                 #if DEBUG
                 print(response as Any)
                 #endif
-                completion((data, response, error))
+                DispatchQueue.main.async {
+                    completion((data, response, error))
+                }
             }
             
             ongoingRequests.append(dataTask)
