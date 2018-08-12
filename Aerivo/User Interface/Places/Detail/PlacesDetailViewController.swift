@@ -191,8 +191,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
             let location = CLLocation(latitude: latitude, longitude: longitude)
             let name = placemark?.formattedName ?? favorite?.name
-            let address = placemark?.postalAddress ?? favorite?.postalAddress
-            intent.targetLocation = CLPlacemark(location: location, name: name, postalAddress: address)
+            intent.targetLocation = CLPlacemark(location: location, name: name, postalAddress: nil)
         }
         
         let interaction = INInteraction(intent: intent, response: nil)
