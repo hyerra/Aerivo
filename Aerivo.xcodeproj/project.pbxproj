@@ -27,6 +27,7 @@
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		688D77CD211FBC8000E27EA1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
+		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
 		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
 		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
@@ -245,6 +246,7 @@
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		688D77CE211FCA4200E27EA1 /* AerivoIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerivoIntents.entitlements; sourceTree = "<group>"; };
+		688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsManager.swift; sourceTree = "<group>"; };
 		6891C3BE20EA933D0051563F /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */,
 				7DCFD7D92105927900F86474 /* Extensions.swift */,
 				68F3A29120E9CA420096D60A /* User Interface */,
+				688D77D0211FE58E00E27EA1 /* Quick Actions */,
 				683AE95A20EC8B7800C05B8C /* Resources */,
 			);
 			path = Aerivo;
@@ -555,6 +558,14 @@
 				7DAD9ED721092073003B1671 /* ParameterDescriptionPopoverViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		688D77D0211FE58E00E27EA1 /* Quick Actions */ = {
+			isa = PBXGroup;
+			children = (
+				688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */,
+			);
+			path = "Quick Actions";
 			sourceTree = "<group>";
 		};
 		6894019A20FE72F000C7D8FA /* NWQP */ = {
@@ -1297,6 +1308,7 @@
 				681C49D5211F5F8300D82950 /* MBPlacemarkScope+Color.swift in Sources */,
 				681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */,
 				68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */,
+				688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */,
 				68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */,
 				7D2C92B721150B3A0082D935 /* FavoritesTableViewCell.swift in Sources */,
 			);

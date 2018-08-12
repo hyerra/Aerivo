@@ -62,4 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return false
     }
+    
+    // MARK: - Quick Actions
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        let quickActionsManager = QuickActionsManager(window: window)
+        let handledShortcutItem = quickActionsManager.handle(shortcutItem: shortcutItem)
+        completionHandler(handledShortcutItem)
+    }
 }
