@@ -12,6 +12,7 @@ extension NSUserActivity {
     
     public struct ActivityKeys {
         public static let searchText = "search_text"
+        public static let location = "location"
     }
         
     /// A user activity that represents searching for a place in Aerivo.
@@ -25,18 +26,20 @@ extension NSUserActivity {
         userActivity.isEligibleForSearch = true
         if #available(iOS 12.0, *) {
             userActivity.isEligibleForPrediction = true
-            userActivity.suggestedInvocationPhrase = NSLocalizedString("Find environmental quality information.", comment: "Voice shortcut suggested phrase for finding air and water quality info.")
+            userActivity.suggestedInvocationPhrase = NSLocalizedString("Find environmental quality info.", comment: "Voice shortcut suggested phrase for finding air and water quality info.")
         }
         
         return userActivity
     }
     
+    /// A user activity that represents viewing a place in Aerivo.
     public static var viewPlaceActivity: NSUserActivity {
         let userActivity = NSUserActivity(activityType: "com.harishyerra.Aerivo.viewPlace")
         
         // User activites should be as rich as possible, with icons and localized strings for appropiate content attributes.
         userActivity.isEligibleForSearch = true
         userActivity.isEligibleForHandoff = true
+        userActivity.requiredUserInfoKeys = [NSUserActivity.ActivityKeys.location]
         if #available(iOS 12.0, *) {
             userActivity.isEligibleForPrediction = true
         }

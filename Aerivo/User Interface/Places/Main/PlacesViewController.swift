@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Mapbox
 import Pulley
 import AerivoKit
 import CoreData
@@ -35,9 +34,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var defaultResults: [GeocodedPlacemark] = []
     var mapSearchResults: [GeocodedPlacemark] = [] { didSet { placesTableView.reloadData() } }
     
-    var annotationBackgroundColor: UIColor?
-    var annotationImage: UIImage?
-    
     lazy var fetchedResultsController = try? FavoriteFetchedResultsController(managedObjectContext: DataController.shared.managedObjectContext, tableView: placesTableView)
     
     var isShowingFavorites = false {
@@ -59,11 +55,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         setupAccessibility()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFavorites), name: .NSManagedObjectContextDidSave, object: nil)
         userActivity = NSUserActivity.searchActivity
-    }
-    
-    override func updateUserActivityState(_ activity: NSUserActivity) {
-        let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.searchText: searchBar.text ?? ""]
-        activity.addUserInfoEntries(from: userInfo)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +79,13 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         DispatchQueue.main.async {
             self.placesTableView.reloadData()
         }
+    }
+    
+    // MARK: - User Activity
+    
+    override func updateUserActivityState(_ activity: NSUserActivity) {
+        let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.searchText: searchBar.text ?? ""]
+        activity.addUserInfoEntries(from: userInfo)
     }
     
     // MARK: - Accessibility
@@ -157,32 +155,11 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         
         if pulleyViewController?.drawerPosition == .open { pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true) }
         
-        guard let mapView = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
-        
-        mapView.removeAnnotations(mapView.annotations ?? [])
-        
         if !isShowingFavorites {
             let isResultsCell = !shouldShowDefaultResults ? mapSearchResults.indices.contains(indexPath.row) : defaultResults.indices.contains(indexPath.row)
             
             if isResultsCell {
                 let placemark = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
-                if let coordinate = placemark.location?.coordinate {
-                    annotationBackgroundColor = placemark.scope.displayColor
-                    annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
-                    
-                    let pointAnnotation = MGLPointAnnotation()
-                    pointAnnotation.coordinate = coordinate
-                    pointAnnotation.title = placemark.formattedName
-                    pointAnnotation.subtitle = placemark.genres?.first
-                    mapView.addAnnotation(pointAnnotation)
-                    
-                    let camera = MGLMapCamera()
-                    camera.centerCoordinate = coordinate
-                    camera.altitude = 8000
-                    mapView.fly(to: camera) {
-                        mapView.setCenter(coordinate, animated: true)
-                    }
-                }
                 
                 if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
                     vc.placemark = placemark
@@ -194,29 +171,10 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 isShowingFavorites = true
             }
         } else {
-            let placemark = fetchedResultsController!.fetchedObjects![indexPath.row]
-            if let latitude = placemark.latitude, let longitude = placemark.longitude {
-                let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-                let scope = MBPlacemarkScope(rawValue: UInt(placemark.scope))
-                annotationBackgroundColor = scope.displayColor
-                annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
-                
-                let pointAnnotation = MGLPointAnnotation()
-                pointAnnotation.coordinate = coordinate
-                pointAnnotation.title = placemark.name
-                pointAnnotation.subtitle = placemark.genres?.first
-                mapView.addAnnotation(pointAnnotation)
-                
-                let camera = MGLMapCamera()
-                camera.centerCoordinate = coordinate
-                camera.altitude = 8000
-                mapView.fly(to: camera) {
-                    mapView.setCenter(coordinate, animated: true)
-                }
-            }
+            guard let placemark = fetchedResultsController?.fetchedObjects?[indexPath.row] else { return }
             
             if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-                vc.tempFavorite = fetchedResultsController!.fetchedObjects![indexPath.row]
+                vc.tempFavorite = placemark
                 vc.ofFavoritesOrigin = true
                 present(vc, animated: true) {
                     self.view.alpha = 0

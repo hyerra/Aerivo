@@ -10,6 +10,7 @@ import UIKit
 import AerivoKit
 import Pulley
 import ARKit
+import Mapbox
 import MapboxGeocoder
 import CoreData
 import Intents
@@ -111,9 +112,12 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         detail.text = genre ?? addressLine
         address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
         
+        updateMap()
+        
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
         
+        userActivity = createUserActivity()
         setupAccessibility()
         
         fetchAirQualityData()
@@ -138,6 +142,17 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         view.layoutIfNeeded()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Do any additional setup after the view laid out the subviews.
+        close.layer.cornerRadius = close.layer.bounds.width / 2
+        close.layer.masksToBounds = true
+        
+        activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
+        activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
+        activityIndicator.layer.masksToBounds = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Do any additional teardown right before the view will disappear.
@@ -149,20 +164,63 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         nwqpClient.cancelAllPendingRequests()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Update map
+    
+    private func updateMap() {
+        guard let mapViewController = (presentingViewController?.pulleyViewController?.primaryContentViewController as? MapViewController) else { return }
+        guard let mapView = mapViewController.mapView else { return }
+        mapView.removeAnnotations(mapView.annotations ?? [])
+        
+        if let placemark = placemark, let coordinate = placemark.location?.coordinate {
+            mapViewController.annotationBackgroundColor = placemark.scope.displayColor
+            mapViewController.annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+            
+            let pointAnnotation = MGLPointAnnotation()
+            pointAnnotation.coordinate = coordinate
+            pointAnnotation.title = placemark.formattedName
+            pointAnnotation.subtitle = placemark.genres?.first
+            mapView.addAnnotation(pointAnnotation)
+            
+            let camera = MGLMapCamera()
+            camera.centerCoordinate = coordinate
+            camera.altitude = 8000
+            mapView.fly(to: camera) {
+                mapView.setCenter(coordinate, animated: true)
+            }
+        } else if let placemark = favorite {
+            if let latitude = placemark.latitude, let longitude = placemark.longitude {
+                let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+                let scope = MBPlacemarkScope(rawValue: UInt(placemark.scope))
+                mapViewController.annotationBackgroundColor = scope.displayColor
+                mapViewController.annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+                
+                let pointAnnotation = MGLPointAnnotation()
+                pointAnnotation.coordinate = coordinate
+                pointAnnotation.title = placemark.name
+                pointAnnotation.subtitle = placemark.genres?.first
+                mapView.addAnnotation(pointAnnotation)
+                
+                let camera = MGLMapCamera()
+                camera.centerCoordinate = coordinate
+                camera.altitude = 8000
+                mapView.fly(to: camera) {
+                    mapView.setCenter(coordinate, animated: true)
+                }
+            }
+        }
+        
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // Do any additional setup after the view laid out the subviews.
-        close.layer.cornerRadius = close.layer.bounds.width / 2
-        close.layer.masksToBounds = true
-                
-        activityHeightConstraint.constant = activityIndicator.intrinsicContentSize.height + 15
-        activityIndicator.layer.cornerRadius = activityIndicator.bounds.height / 8
-        activityIndicator.layer.masksToBounds = true
+    // MARK: - User Activity
+    
+    private func createUserActivity() -> NSUserActivity {
+        let activity = NSUserActivity.viewPlaceActivity
+        activity.title = String.localizedStringWithFormat("View environmental info for %@", placemark?.formattedName ?? favorite?.name ?? "")
+        if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
+            let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
+            activity.addUserInfoEntries(from: userInfo)
+        }
+        return activity
     }
     
     // MARK: - Accessibility
@@ -387,7 +445,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             if case let .success(representativeInfo) = result {
                 func showNoDataAlert() {
                     let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                    let localizedMessage = String.localizedStringWithFormat("%@ %@", appName, NSLocalizedString("doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "Message of alert controller for not enough data error."))
+                    let localizedMessage = String.localizedStringWithFormat("%@ doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", appName)
                     let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: localizedMessage, preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                     self.present(alertController, animated: true)
@@ -517,7 +575,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let localizedMessage = String.localizedStringWithFormat("%@ %@", appName, NSLocalizedString("is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", comment: "Message of alert controller for network error."))
+                let localizedMessage = String.localizedStringWithFormat("%@ is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", appName)
                 let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
