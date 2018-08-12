@@ -215,7 +215,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     private func createUserActivity() -> NSUserActivity {
         let activity = NSUserActivity.viewPlaceActivity
-        activity.title = String.localizedStringWithFormat("View environmental info for %@", placemark?.formattedName ?? favorite?.name ?? "")
+        activity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark?.formattedName ?? favorite?.name ?? "")
         if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
             let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
             activity.addUserInfoEntries(from: userInfo)
