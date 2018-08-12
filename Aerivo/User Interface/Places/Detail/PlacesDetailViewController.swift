@@ -23,11 +23,11 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     var favorite: Favorite? {
         didSet {
             if favorite != nil {
-                favoriteIcon.tintColor = UIColor(named: "System Red Color")
-                favoriteLabel.textColor = UIColor(named: "System Red Color")
+                favoriteIcon.tintColor = UIColor(named: "Gold Color")
+                favoriteLabel.textColor = UIColor(named: "Gold Color")
             } else {
-                favoriteIcon.tintColor = UIColor(named: "System Green Color")
-                favoriteLabel.textColor = UIColor(named: "System Green Color")
+                favoriteIcon.tintColor = .green
+                favoriteLabel.textColor = .green
             }
         }
     }
@@ -338,7 +338,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.name, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
-            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
+            attributedString.highlightKeywords(between: "#", with: .green)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = parameterInfo.information
         } else /* Return water quality data in this section. */ {
@@ -350,7 +350,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let localizedMeasurement = measurementFormatter.string(from: measurement)
             let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.font : UIFont.preferredFont(forTextStyle: .footnote), .foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
-            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
+            attributedString.highlightKeywords(between: "#", with: .green)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
             cell.parameterDescription = nwqpResult.description.information
         }

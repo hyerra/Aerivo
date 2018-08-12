@@ -52,7 +52,7 @@ final class QuickActionsManager: NSObject {
         guard let favorites = try? DataController.shared.managedObjectContext.fetch(fetchRequest) else { return nil }
         var shortcutItems: [UIApplicationShortcutItem] = []
         for favorite in favorites {
-            let icon = UIApplicationShortcutIcon(type: .love)
+            let icon = UIApplicationShortcutIcon(type: .favorite)
             let shortcutItem = UIApplicationShortcutItem(type: Bundle.main.bundleIdentifier! + ".favorite", localizedTitle: favorite.name ?? NSLocalizedString("Placemark", comment: "A location on a map."), localizedSubtitle: favorite.genres?.first, icon: icon, userInfo: ["favorite": favorite.objectID.uriRepresentation().absoluteString as NSSecureCoding])
             shortcutItems.append(shortcutItem)
         }
