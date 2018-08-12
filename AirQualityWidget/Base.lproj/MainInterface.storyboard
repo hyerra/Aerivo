@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="AirQualityWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Dh-rZ-ghf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="airQualityCell" id="suq-2p-NAt" customClass="AirQualityTableViewCell" customModule="AirQualityWidget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="suq-2p-NAt" id="02x-fW-twh">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xbt-pj-cQT">
+                                                    <rect key="frame" x="15" y="16" width="290" height="12"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parameter Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-mw-Kyt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="12"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN7-9x-1r2">
+                                                            <rect key="frame" x="153" y="0.0" width="137" height="12"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE6-LH-a6S">
+                                                                    <rect key="frame" x="10" y="10" width="117" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="IE6-LH-a6S" secondAttribute="bottom" constant="10" id="Lph-Xf-1zc"/>
+                                                                <constraint firstItem="IE6-LH-a6S" firstAttribute="leading" secondItem="vN7-9x-1r2" secondAttribute="leading" constant="10" id="nPT-BD-M4a"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IE6-LH-a6S" secondAttribute="trailing" constant="10" id="vVP-nc-ifw"/>
+                                                                <constraint firstItem="IE6-LH-a6S" firstAttribute="top" secondItem="vN7-9x-1r2" secondAttribute="top" constant="10" id="yXO-mk-Ydp"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xbt-pj-cQT" firstAttribute="top" secondItem="02x-fW-twh" secondAttribute="topMargin" constant="5" id="8cc-jD-RNf"/>
+                                                <constraint firstItem="Xbt-pj-cQT" firstAttribute="leading" secondItem="02x-fW-twh" secondAttribute="leadingMargin" id="CZg-DR-HiG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xbt-pj-cQT" secondAttribute="bottom" constant="5" id="Jd2-fX-4Cd"/>
+                                                <constraint firstItem="Xbt-pj-cQT" firstAttribute="trailing" secondItem="02x-fW-twh" secondAttribute="trailingMargin" id="SV2-dR-I4d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="parameter" destination="Bhn-mw-Kyt" id="0Pv-Ew-f3w"/>
+                                            <outlet property="stackView" destination="Xbt-pj-cQT" id="xU8-V4-5M9"/>
+                                            <outlet property="value" destination="IE6-LH-a6S" id="2ew-aa-R61"/>
+                                            <outlet property="valueView" destination="vN7-9x-1r2" id="GT8-DR-3ec"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="VER-ML-6af"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="MtQ-ls-lbA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8Dh-rZ-ghf" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="62c-2U-Zxf"/>
+                            <constraint firstItem="8Dh-rZ-ghf" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="CkS-4V-TvX"/>
+                            <constraint firstItem="8Dh-rZ-ghf" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Um2-IQ-YDF"/>
+                            <constraint firstItem="8Dh-rZ-ghf" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="etG-zE-OfQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="tableView" destination="8Dh-rZ-ghf" id="1Pv-jz-eG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.399999999999999" y="26.986506746626688"/>
+        </scene>
+    </scenes>
+</document>

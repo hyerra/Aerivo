@@ -38,7 +38,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Aerivo needs access to the camera in order to provide you an immersive Augmented Reality experience.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location will be used to show your location on the map so you can view natural settings near you.</string>
+	<string>Aerivo needs your location to position you on the map and provide air and water quality information at your location.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>AirQualityIntent</string>

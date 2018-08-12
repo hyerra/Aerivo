@@ -27,6 +27,12 @@
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
 		687DBA622120A09600C166FD /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
 		687DBA652120AA2500C166FD /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA642120AA2500C166FD /* UserActivityManager.swift */; };
+		687DBA6C2120DABE00C166FD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687DBA6B2120DABE00C166FD /* NotificationCenter.framework */; };
+		687DBA6F2120DABE00C166FD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA6E2120DABE00C166FD /* TodayViewController.swift */; };
+		687DBA722120DABE00C166FD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687DBA702120DABE00C166FD /* MainInterface.storyboard */; };
+		687DBA762120DABE00C166FD /* AirQualityWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		687DBA7A2120DB3300C166FD /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
+		687DBA7C2120E38700C166FD /* AirQualityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		688D77CD211FBC8000E27EA1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
@@ -166,6 +172,13 @@
 			remoteGlobalIDString = 684BE20620E99C1D00E74FE5;
 			remoteInfo = Aerivo;
 		};
+		687DBA742120DABE00C166FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 687DBA692120DABE00C166FD;
+			remoteInfo = AirQualityWidget;
+		};
 		68CB23D02116303800B98B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
@@ -197,6 +210,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				681C4A1E211FA57C00D82950 /* AerivoIntents.appex in Embed App Extensions */,
+				687DBA762120DABE00C166FD /* AirQualityWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +262,12 @@
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
 		687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+Activities.swift"; sourceTree = "<group>"; };
 		687DBA642120AA2500C166FD /* UserActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityManager.swift; sourceTree = "<group>"; };
+		687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AirQualityWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		687DBA6B2120DABE00C166FD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		687DBA6E2120DABE00C166FD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		687DBA712120DABE00C166FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		687DBA732120DABE00C166FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityTableViewCell.swift; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		688D77CE211FCA4200E27EA1 /* AerivoIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerivoIntents.entitlements; sourceTree = "<group>"; };
 		688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsManager.swift; sourceTree = "<group>"; };
@@ -401,6 +421,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		687DBA672120DABE00C166FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				687DBA7A2120DB3300C166FD /* AerivoKit.framework in Frameworks */,
+				687DBA6C2120DABE00C166FD /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68CB23C32116303800B98B32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +510,7 @@
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
 				681C4A18211FA57C00D82950 /* AerivoIntents */,
+				687DBA6D2120DABE00C166FD /* AirQualityWidget */,
 				68CB23C72116303800B98B32 /* AerivoKit */,
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
@@ -497,6 +527,7 @@
 				68CB23C62116303800B98B32 /* AerivoKit.framework */,
 				68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */,
 				681C4A17211FA57C00D82950 /* AerivoIntents.appex */,
+				687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -557,6 +588,17 @@
 				687DBA642120AA2500C166FD /* UserActivityManager.swift */,
 			);
 			path = "User Activity";
+			sourceTree = "<group>";
+		};
+		687DBA6D2120DABE00C166FD /* AirQualityWidget */ = {
+			isa = PBXGroup;
+			children = (
+				687DBA6E2120DABE00C166FD /* TodayViewController.swift */,
+				687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */,
+				687DBA702120DABE00C166FD /* MainInterface.storyboard */,
+				687DBA732120DABE00C166FD /* Info.plist */,
+			);
+			path = AirQualityWidget;
 			sourceTree = "<group>";
 		};
 		688C863A2102692B000C47FF /* Main */ = {
@@ -690,6 +732,7 @@
 				7DBFDBE7210D0BE80074FFA5 /* CloudKit.framework */,
 				68E397D420EFF547005C0722 /* Mapbox.framework */,
 				681C49BB211F5E1700D82950 /* IntentsUI.framework */,
+				687DBA6B2120DABE00C166FD /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1044,6 +1087,7 @@
 			dependencies = (
 				68CB23DA2116303800B98B32 /* PBXTargetDependency */,
 				681C4A1D211FA57C00D82950 /* PBXTargetDependency */,
+				687DBA752120DABE00C166FD /* PBXTargetDependency */,
 			);
 			name = Aerivo;
 			productName = Aerivo;
@@ -1085,6 +1129,23 @@
 			productName = AerivoUITests;
 			productReference = 684BE22620E99C1F00E74FE5 /* AerivoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		687DBA692120DABE00C166FD /* AirQualityWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 687DBA792120DABF00C166FD /* Build configuration list for PBXNativeTarget "AirQualityWidget" */;
+			buildPhases = (
+				687DBA662120DABE00C166FD /* Sources */,
+				687DBA672120DABE00C166FD /* Frameworks */,
+				687DBA682120DABE00C166FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirQualityWidget;
+			productName = AirQualityWidget;
+			productReference = 687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		68CB23C52116303800B98B32 /* AerivoKit */ = {
 			isa = PBXNativeTarget;
@@ -1169,6 +1230,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 684BE20620E99C1D00E74FE5;
 					};
+					687DBA692120DABE00C166FD = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					68CB23C52116303800B98B32 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -1195,6 +1259,7 @@
 				684BE21A20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
 				681C4A16211FA57C00D82950 /* AerivoIntents */,
+				687DBA692120DABE00C166FD /* AirQualityWidget */,
 				68CB23C52116303800B98B32 /* AerivoKit */,
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 			);
@@ -1232,6 +1297,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		687DBA682120DABE00C166FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				687DBA722120DABE00C166FD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1350,6 +1423,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		687DBA662120DABE00C166FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				687DBA7C2120E38700C166FD /* AirQualityTableViewCell.swift in Sources */,
+				687DBA6F2120DABE00C166FD /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1473,6 +1555,11 @@
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
 			targetProxy = 684BE22720E99C1F00E74FE5 /* PBXContainerItemProxy */;
 		};
+		687DBA752120DABE00C166FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 687DBA692120DABE00C166FD /* AirQualityWidget */;
+			targetProxy = 687DBA742120DABE00C166FD /* PBXContainerItemProxy */;
+		};
 		68CB23D12116303800B98B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 68CB23C52116303800B98B32 /* AerivoKit */;
@@ -1513,6 +1600,14 @@
 				684BE21420E99C1F00E74FE5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		687DBA702120DABE00C166FD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				687DBA712120DABE00C166FD /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		7D2C92BE2115172A0082D935 /* Localizable.stringsdict */ = {
@@ -1819,6 +1914,49 @@
 			};
 			name = Release;
 		};
+		687DBA772120DABF00C166FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AirQualityWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AirQualityWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		687DBA782120DABF00C166FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AirQualityWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AirQualityWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		68CB23DE2116303800B98B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1973,6 +2111,15 @@
 			buildConfigurations = (
 				684BE23620E99C1F00E74FE5 /* Debug */,
 				684BE23720E99C1F00E74FE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		687DBA792120DABF00C166FD /* Build configuration list for PBXNativeTarget "AirQualityWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				687DBA772120DABF00C166FD /* Debug */,
+				687DBA782120DABF00C166FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
