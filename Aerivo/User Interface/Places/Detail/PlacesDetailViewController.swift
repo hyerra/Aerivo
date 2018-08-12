@@ -27,8 +27,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 favoriteIcon.tintColor = UIColor(named: "Gold Color")
                 favoriteLabel.textColor = UIColor(named: "Gold Color")
             } else {
-                favoriteIcon.tintColor = .green
-                favoriteLabel.textColor = .green
+                favoriteIcon.tintColor = UIColor(named: "System Green Color")
+                favoriteLabel.textColor = UIColor(named: "System Green Color")
             }
         }
     }

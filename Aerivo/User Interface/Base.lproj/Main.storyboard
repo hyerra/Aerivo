@@ -224,10 +224,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-49-BsF">
-                                                    <rect key="frame" x="15" y="13" width="99" height="18"/>
+                                                    <rect key="frame" x="8" y="10" width="99" height="23.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-6J-LPU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                            <rect key="frame" x="0.0" y="3" width="18" height="18"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8m1-mR-BhR">
                                                                     <rect key="frame" x="6" y="6" width="6" height="6"/>
@@ -250,17 +250,17 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tza-rZ-dio">
-                                                            <rect key="frame" x="26" y="0.0" width="73" height="18"/>
+                                                            <rect key="frame" x="26" y="0.0" width="73" height="23.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-Vq-a2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesLabel"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-qh-LHm">
-                                                                    <rect key="frame" x="0.0" y="18" width="73" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="21.5" width="73" height="2"/>
                                                                     <accessibility key="accessibilityConfiguration" identifier="favoritesCount"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -618,11 +618,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-1S-vwm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="27"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                                                <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
+                                                                        <color key="tintColor" name="System Green Color"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-Qy-aNV">
                                                                         <rect key="frame" x="0.0" y="34" width="65" height="14.5"/>
@@ -675,11 +671,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ett-Wh-B7d">
                                                                         <rect key="frame" x="0.0" y="0.0" width="68.5" height="27"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                                                <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
+                                                                        <color key="tintColor" name="System Green Color"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-qq-rRP">
                                                                         <rect key="frame" x="0.0" y="34" width="68.5" height="30.5"/>
@@ -1019,15 +1011,15 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
-                                <rect key="frame" x="292" y="30" width="67" height="53"/>
+                                <rect key="frame" x="291.5" y="30" width="67.5" height="53"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-SR-h5q">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xm-FK-ukx">
-                                                <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6">
@@ -1356,6 +1348,9 @@
         <image name="restart" width="24" height="24"/>
         <namedColor name="Gold Color">
             <color red="1" green="0.6589999794960022" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="System Green Color">
+            <color red="0.3880000114440918" green="0.85500001907348633" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
