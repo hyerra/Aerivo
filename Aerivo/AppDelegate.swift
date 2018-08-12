@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         CloudCore.config = .aerivoConfig
         CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
+        
+        let quickActionsManager = QuickActionsManager(window: nil)
+        application.shortcutItems = quickActionsManager.dynamicShortcutItems()
         return true
     }
     

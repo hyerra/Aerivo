@@ -6,7 +6,9 @@
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
+import AerivoKit
 import UIKit
+import CoreData
 import Pulley
 
 /// Handles quick actions defined within the app.
@@ -26,6 +28,7 @@ final class QuickActionsManager: NSObject {
     
     enum ShortcutIdentifier: String {
         case search
+        case favorite
         
         // MARK: - Initializers
         
@@ -41,19 +44,54 @@ final class QuickActionsManager: NSObject {
         }
     }
     
+    /// Generates dynamic shortcut items out of the favorited items in core data.
+    ///
+    /// - Returns: The generated shortcut items.
+    func dynamicShortcutItems() -> [UIApplicationShortcutItem]? {
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        guard let favorites = try? DataController.shared.managedObjectContext.fetch(fetchRequest) else { return nil }
+        var shortcutItems: [UIApplicationShortcutItem] = []
+        for favorite in favorites {
+            let icon = UIApplicationShortcutIcon(type: .love)
+            let shortcutItem = UIApplicationShortcutItem(type: Bundle.main.bundleIdentifier! + ".favorite", localizedTitle: favorite.name ?? NSLocalizedString("Placemark", comment: "A location on a map."), localizedSubtitle: favorite.genres?.first, icon: icon, userInfo: ["favorite": favorite.objectID.uriRepresentation().absoluteString as NSSecureCoding])
+            shortcutItems.append(shortcutItem)
+        }
+        return shortcutItems
+    }
+    
+    /// Handles the incoming shortcut item.
+    ///
+    /// - Parameter shortcutItem: The shortcut item to handle.
+    /// - Returns: Whether or not it was handled successfully.
     func handle(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var handled = false
         
         guard ShortcutIdentifier(fullType: shortcutItem.type) != nil else { return false }
         
-        guard let shortCutType = shortcutItem.type as String? else { return false }
+        guard let shortcutType = shortcutItem.type as String? else { return false }
         
-        switch shortCutType {
+        guard let pulleyVC = window?.rootViewController as? PulleyViewController else { return false }
+        guard let placesVC = pulleyVC.drawerContentViewController as? PlacesViewController else { return false }
+        placesVC.dismiss(animated: true)
+        
+        switch shortcutType {
         case ShortcutIdentifier.search.type:
             handled = true
-            guard let pulleyVC = window?.rootViewController as? PulleyViewController else { return false }
-            guard let placesVC = pulleyVC.drawerContentViewController as? PlacesViewController else { return false }
             placesVC.searchBar.becomeFirstResponder()
+        case ShortcutIdentifier.favorite.type:
+            guard let userInfo = shortcutItem.userInfo else { return false }
+            guard let favoriteString = userInfo["favorite"] as? String else { return false }
+            guard let favoriteURL = URL(string: favoriteString) else { return false }
+            guard let favoriteObjectID = DataController.shared.persistentContainer.persistentStoreCoordinator.managedObjectID(forURIRepresentation: favoriteURL) else { return false }
+            guard let favorite = DataController.shared.managedObjectContext.object(with: favoriteObjectID) as? Favorite else { return false }
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
+                vc.tempFavorite = favorite
+                vc.ofFavoritesOrigin = true
+                placesVC.present(vc, animated: true) {
+                    placesVC.view.alpha = 0
+                    pulleyVC.setDrawerPosition(position: .open, animated: true)
+                }
+            }
         default:
             break
         }
