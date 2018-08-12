@@ -112,8 +112,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         detail.text = genre ?? addressLine
         address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
         
-        updateMap()
-        
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
         
@@ -129,6 +127,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
+        updateMap()
         checkIfFavoritedLocation()
     }
     
@@ -153,10 +152,24 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         activityIndicator.layer.masksToBounds = true
     }
     
+    weak var tempPresentingVC: UIViewController?
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Do any additional teardown right before the view will disappear.
-        presentingViewController?.view.alpha = 1
+        tempPresentingVC = presentingViewController
+        tempPresentingVC?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
+        tempPresentingVC?.view.alpha = 1
+        if let mapView = (tempPresentingVC?.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView {
+            mapView.removeAnnotations(mapView.annotations ?? [])
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // Do any additional teardown after the view disappeared.
+        if let tempPresentingVC = tempPresentingVC {
+            tempPresentingVC.pulleyViewController?.setDrawerContentViewController(controller: tempPresentingVC, animated: false)
+        }
     }
     
     deinit {
@@ -602,7 +615,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             do {
                 try dataController.saveContext()
                 self.favorite = nil
-                if ofFavoritesOrigin { dismissVC() }
+                if ofFavoritesOrigin { dismiss(animated: true) }
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Remove Favorite Location", comment: "Title of alert that tells the user that there was an error removing the location from their favorites."), message: NSLocalizedString("There was an issue removing this location from your favorites.", comment: "Message of alert that tells the user that there was an error removing the location from their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
@@ -638,19 +651,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func close(_ sender: UIButton) {
-        dismissVC()
+        dismiss(animated: true)
     }
     
-    private func dismissVC() {
-        presentingViewController?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
-        let tempPresentingViewController = presentingViewController // Retain a reference to the presenting view controller before dismissing.
-        dismiss(animated: true) {
-            guard let tempPresentingViewController = tempPresentingViewController else { return }
-            tempPresentingViewController.pulleyViewController?.setDrawerContentViewController(controller: tempPresentingViewController, animated: false)
-            guard let mapView = (tempPresentingViewController.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView else { return }
-            mapView.removeAnnotations(mapView.annotations ?? [])
-        }
-    }
 }
 
 // MARK: - Parameter description delegate
