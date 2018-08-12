@@ -37,13 +37,8 @@ extension NSUserActivity {
         let userActivity = NSUserActivity(activityType: "com.harishyerra.Aerivo.viewPlace")
         
         // User activites should be as rich as possible, with icons and localized strings for appropiate content attributes.
-        userActivity.isEligibleForSearch = true
         userActivity.isEligibleForHandoff = true
         userActivity.requiredUserInfoKeys = [NSUserActivity.ActivityKeys.location]
-        if #available(iOS 12.0, *) {
-            userActivity.isEligibleForPrediction = true
-        }
-        
         return userActivity
     }
 }
