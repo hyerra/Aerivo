@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import MapboxGeocoder
+import CoreLocation
 import Pulley
 
 /// Handles user activities defined within the app.
@@ -42,6 +44,27 @@ class UserActivityManager: NSObject {
                 placesVC.searchBar.text = searchText as? String
                 placesVC.searchBar.becomeFirstResponder()
             }
+        case NSUserActivity.viewPlaceActivity.activityType:
+            guard let location = userActivity.userInfo?[NSUserActivity.ActivityKeys.location] as? [String: Any] else { break }
+            guard let latitude = location["latitude"] as? Double else { break }
+            guard let longitude = location["longitude"] as? Double else { break }
+            handled = true
+            let coordinate = CLLocation(latitude: latitude, longitude: longitude)
+            let options = ReverseGeocodeOptions(location: coordinate)
+            options.maximumResultCount = 1
+            options.locale = Locale.autoupdatingCurrent
+            
+            let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+                guard let placemark = placemarks?.first else { return }
+                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
+                    vc.placemark = placemark
+                    placesVC.present(vc, animated: true) {
+                        placesVC.view.alpha = 0
+                        pulleyVC.setDrawerPosition(position: .open, animated: true)
+                    }
+                }
+            }
+            task.resume()
         default:
             break
         }
