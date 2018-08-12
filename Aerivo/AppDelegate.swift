@@ -51,4 +51,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // MARK: - User Activity
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if #available(iOS 12.0, *), let intent = userActivity.interaction?.intent as? AirQualityIntent {
+            let handler = AirQualityIntentHandler()
+            handler.handle(intent: intent) { response in }
+            return true
+        }
+        return false
+    }
 }
