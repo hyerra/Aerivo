@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -93,7 +93,6 @@
 		6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
 		6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
 		6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
-		6811FCC1212118BE00509A37 /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
 		6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
@@ -125,6 +124,7 @@
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		688D77CD211FBC8000E27EA1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
+		688F13902121439E00AD73A6 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
 		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
 		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
@@ -608,6 +608,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688F13902121439E00AD73A6 /* AerivoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1521,7 +1522,7 @@
 				};
 			};
 			buildConfigurationList = 684BE20220E99C1D00E74FE5 /* Build configuration list for PBXProject "Aerivo" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1763,7 +1764,6 @@
 				6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */,
 				6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */,
 				6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */,
-				6811FCC1212118BE00509A37 /* FavoriteFetchedResultsController.swift in Sources */,
 				6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2066,11 +2066,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
@@ -2103,11 +2099,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
 				PRODUCT_NAME = AerivoKit;
@@ -2128,11 +2120,7 @@
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoIntents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AerivoIntents;
@@ -2151,11 +2139,7 @@
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoIntents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AerivoIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2300,10 +2284,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2325,10 +2306,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Aerivo/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2343,11 +2321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2363,11 +2337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2382,11 +2352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2401,11 +2367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2420,11 +2382,7 @@
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AirQualityWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AirQualityWidget;
@@ -2442,11 +2400,7 @@
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AirQualityWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.AirQualityWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2475,11 +2429,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
@@ -2510,11 +2460,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2532,11 +2478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
@@ -2553,11 +2495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AerivoKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2614,11 +2552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = "Aerivo WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension;
@@ -2638,11 +2572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = "Aerivo WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
