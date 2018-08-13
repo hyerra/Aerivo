@@ -8,6 +8,94 @@
 
 /* Begin PBXBuildFile section */
 		680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		6811FC6B212118BE00509A37 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6811FC6D212118BE00509A37 /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
+		6811FC6E212118BE00509A37 /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
+		6811FC6F212118BE00509A37 /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
+		6811FC70212118BE00509A37 /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
+		6811FC71212118BE00509A37 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
+		6811FC72212118BE00509A37 /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
+		6811FC73212118BE00509A37 /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
+		6811FC74212118BE00509A37 /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
+		6811FC75212118BE00509A37 /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
+		6811FC76212118BE00509A37 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
+		6811FC77212118BE00509A37 /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
+		6811FC78212118BE00509A37 /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
+		6811FC79212118BE00509A37 /* CloudCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EB210E3CF000491C3A /* CloudCore.swift */; };
+		6811FC7A212118BE00509A37 /* ErrorBlockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EC210E3CF000491C3A /* ErrorBlockProxy.swift */; };
+		6811FC7B212118BE00509A37 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362ED210E3CF000491C3A /* AsynchronousOperation.swift */; };
+		6811FC7C212118BE00509A37 /* FetchAndSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EF210E3CF000491C3A /* FetchAndSaveOperation.swift */; };
+		6811FC7D212118BE00509A37 /* FetchPublicSubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F1210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift */; };
+		6811FC7E212118BE00509A37 /* PublicDatabaseSubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F2210E3CF000491C3A /* PublicDatabaseSubscriptions.swift */; };
+		6811FC7F212118BE00509A37 /* DeleteFromCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F4210E3CF000491C3A /* DeleteFromCoreDataOperation.swift */; };
+		6811FC80212118BE00509A37 /* FetchRecordZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F5210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift */; };
+		6811FC81212118BE00509A37 /* PurgeLocalDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F6210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift */; };
+		6811FC82212118BE00509A37 /* RecordToCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F7210E3CF000491C3A /* RecordToCoreDataOperation.swift */; };
+		6811FC83212118BE00509A37 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		6811FC84212118BE00509A37 /* SetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F9210E3CF000491C3A /* SetupOperation.swift */; };
+		6811FC85212118BE00509A37 /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FA210E3CF000491C3A /* SubscribeOperation.swift */; };
+		6811FC86212118BE00509A37 /* CreateCloudCoreZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FB210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift */; };
+		6811FC87212118BE00509A37 /* UploadAllLocalDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FC210E3CF000491C3A /* UploadAllLocalDataOperation.swift */; };
+		6811FC88212118BE00509A37 /* CloudSaveOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FE210E3CF000491C3A /* CloudSaveOperationQueue.swift */; };
+		6811FC89212118BE00509A37 /* ObjectToRecordConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336300210E3CF000491C3A /* ObjectToRecordConverter.swift */; };
+		6811FC8A212118BE00509A37 /* ObjectToRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336301210E3CF000491C3A /* ObjectToRecordOperation.swift */; };
+		6811FC8B212118BE00509A37 /* CoreDataAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336302210E3CF000491C3A /* CoreDataAttribute.swift */; };
+		6811FC8C212118BE00509A37 /* CoreDataRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336303210E3CF000491C3A /* CoreDataRelationship.swift */; };
+		6811FC8D212118BE00509A37 /* RecordIDWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336305210E3CF000491C3A /* RecordIDWithDatabase.swift */; };
+		6811FC8E212118BE00509A37 /* RecordWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336306210E3CF000491C3A /* RecordWithDatabase.swift */; };
+		6811FC8F212118BE00509A37 /* CoreDataListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336307210E3CF000491C3A /* CoreDataListener.swift */; };
+		6811FC90212118BE00509A37 /* CloudCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336309210E3CF000491C3A /* CloudCoreError.swift */; };
+		6811FC91212118BE00509A37 /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
+		6811FC92212118BE00509A37 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
+		6811FC93212118BE00509A37 /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
+		6811FC94212118BE00509A37 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
+		6811FC95212118BE00509A37 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
+		6811FC96212118BE00509A37 /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
+		6811FC97212118BE00509A37 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
+		6811FC98212118BE00509A37 /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
+		6811FC99212118BE00509A37 /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
+		6811FC9A212118BE00509A37 /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
+		6811FC9B212118BE00509A37 /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
+		6811FC9C212118BE00509A37 /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
+		6811FC9D212118BE00509A37 /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
+		6811FC9E212118BE00509A37 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
+		6811FC9F212118BE00509A37 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
+		6811FCA0212118BE00509A37 /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
+		6811FCA1212118BE00509A37 /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
+		6811FCA2212118BE00509A37 /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
+		6811FCA3212118BE00509A37 /* OpenAQEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */; };
+		6811FCA4212118BE00509A37 /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
+		6811FCA5212118BE00509A37 /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
+		6811FCA6212118BE00509A37 /* OpenAQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8620F993960083B943 /* OpenAQClient.swift */; };
+		6811FCA7212118BE00509A37 /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
+		6811FCA8212118BE00509A37 /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
+		6811FCA9212118BE00509A37 /* AQCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8920F996D10083B943 /* AQCity.swift */; };
+		6811FCAA212118BE00509A37 /* AQCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8B20F9A2C00083B943 /* AQCountry.swift */; };
+		6811FCAB212118BE00509A37 /* AirQualityIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */; };
+		6811FCAC212118BE00509A37 /* AQFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8D20F9A4810083B943 /* AQFetch.swift */; };
+		6811FCAD212118BE00509A37 /* AQLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8F20F9AB1E0083B943 /* AQLatest.swift */; };
+		6811FCAE212118BE00509A37 /* AQLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9320F9BA8F0083B943 /* AQLocation.swift */; };
+		6811FCAF212118BE00509A37 /* AQMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9520F9C2650083B943 /* AQMeasurement.swift */; };
+		6811FCB0212118BE00509A37 /* AQParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9720FA53F40083B943 /* AQParameter.swift */; };
+		6811FCB1212118BE00509A37 /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
+		6811FCB2212118BE00509A37 /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
+		6811FCB3212118BE00509A37 /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
+		6811FCB4212118BE00509A37 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
+		6811FCB5212118BE00509A37 /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
+		6811FCB6212118BE00509A37 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
+		6811FCB7212118BE00509A37 /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
+		6811FCB8212118BE00509A37 /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
+		6811FCB9212118BE00509A37 /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
+		6811FCBA212118BE00509A37 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
+		6811FCBB212118BE00509A37 /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
+		6811FCBC212118BE00509A37 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
+		6811FCBD212118BE00509A37 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
+		6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
+		6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
+		6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		6811FCC1212118BE00509A37 /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
+		6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
+		6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
 		681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5A2116B0410008F020 /* VirtualObject.swift */; };
 		681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */; };
@@ -19,6 +107,7 @@
 		681C49D9211F93F900D82950 /* AirQualityIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */; };
 		681C4A1A211FA57C00D82950 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C4A19211FA57C00D82950 /* IntentHandler.swift */; };
 		681C4A1E211FA57C00D82950 /* AerivoIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 681C4A17211FA57C00D82950 /* AerivoIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -74,7 +163,6 @@
 		68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
 		68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
-		68AE5E2421163D5A0038EABC /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
 		68AE5E2521163D780038EABC /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
 		68AE5E2621163D780038EABC /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
 		68AE5E2721163D780038EABC /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
@@ -139,98 +227,6 @@
 		68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9153A212100E600160B5B /* ExtensionDelegate.swift */; };
 		68F9153D212100E600160B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F9153C212100E600160B5B /* Assets.xcassets */; };
 		68F91541212100E600160B5B /* Aerivo WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 68F91527212100E500160B5B /* Aerivo WatchKit.app */; };
-		68F9154C2121021E00160B5B /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68F9154E2121021E00160B5B /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
-		68F9154F2121021E00160B5B /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
-		68F915502121021E00160B5B /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
-		68F915512121021E00160B5B /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
-		68F915522121021E00160B5B /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
-		68F915532121021E00160B5B /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
-		68F915542121021E00160B5B /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
-		68F915552121021E00160B5B /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
-		68F915562121021E00160B5B /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
-		68F915572121021E00160B5B /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
-		68F915582121021E00160B5B /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
-		68F915592121021E00160B5B /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
-		68F9155A2121021E00160B5B /* CloudCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EB210E3CF000491C3A /* CloudCore.swift */; };
-		68F9155B2121021E00160B5B /* ErrorBlockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EC210E3CF000491C3A /* ErrorBlockProxy.swift */; };
-		68F9155C2121021E00160B5B /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362ED210E3CF000491C3A /* AsynchronousOperation.swift */; };
-		68F9155D2121021E00160B5B /* FetchAndSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EF210E3CF000491C3A /* FetchAndSaveOperation.swift */; };
-		68F9155E2121021E00160B5B /* FetchPublicSubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F1210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift */; };
-		68F9155F2121021E00160B5B /* PublicDatabaseSubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F2210E3CF000491C3A /* PublicDatabaseSubscriptions.swift */; };
-		68F915602121021E00160B5B /* DeleteFromCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F4210E3CF000491C3A /* DeleteFromCoreDataOperation.swift */; };
-		68F915612121021E00160B5B /* FetchRecordZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F5210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift */; };
-		68F915622121021E00160B5B /* PurgeLocalDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F6210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift */; };
-		68F915632121021E00160B5B /* RecordToCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F7210E3CF000491C3A /* RecordToCoreDataOperation.swift */; };
-		68F915642121021E00160B5B /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
-		68F915652121021E00160B5B /* SetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F9210E3CF000491C3A /* SetupOperation.swift */; };
-		68F915662121021E00160B5B /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FA210E3CF000491C3A /* SubscribeOperation.swift */; };
-		68F915672121021E00160B5B /* CreateCloudCoreZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FB210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift */; };
-		68F915682121021E00160B5B /* UploadAllLocalDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FC210E3CF000491C3A /* UploadAllLocalDataOperation.swift */; };
-		68F915692121021E00160B5B /* CloudSaveOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FE210E3CF000491C3A /* CloudSaveOperationQueue.swift */; };
-		68F9156A2121021E00160B5B /* ObjectToRecordConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336300210E3CF000491C3A /* ObjectToRecordConverter.swift */; };
-		68F9156B2121021E00160B5B /* ObjectToRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336301210E3CF000491C3A /* ObjectToRecordOperation.swift */; };
-		68F9156C2121021E00160B5B /* CoreDataAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336302210E3CF000491C3A /* CoreDataAttribute.swift */; };
-		68F9156D2121021E00160B5B /* CoreDataRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336303210E3CF000491C3A /* CoreDataRelationship.swift */; };
-		68F9156E2121021E00160B5B /* RecordIDWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336305210E3CF000491C3A /* RecordIDWithDatabase.swift */; };
-		68F9156F2121021E00160B5B /* RecordWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336306210E3CF000491C3A /* RecordWithDatabase.swift */; };
-		68F915702121021E00160B5B /* CoreDataListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336307210E3CF000491C3A /* CoreDataListener.swift */; };
-		68F915712121021E00160B5B /* CloudCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336309210E3CF000491C3A /* CloudCoreError.swift */; };
-		68F915722121021E00160B5B /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
-		68F915732121021E00160B5B /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
-		68F915742121021E00160B5B /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
-		68F915752121021E00160B5B /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
-		68F915762121021E00160B5B /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
-		68F915772121021E00160B5B /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
-		68F915782121021E00160B5B /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
-		68F915792121021E00160B5B /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
-		68F9157A2121021E00160B5B /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
-		68F9157B2121021E00160B5B /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
-		68F9157C2121021E00160B5B /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
-		68F9157D2121021E00160B5B /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
-		68F9157E2121021E00160B5B /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
-		68F9157F2121021E00160B5B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
-		68F915802121021E00160B5B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
-		68F915812121021E00160B5B /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
-		68F915822121021E00160B5B /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
-		68F915832121021E00160B5B /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
-		68F915842121021E00160B5B /* OpenAQEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */; };
-		68F915852121021E00160B5B /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
-		68F915862121021E00160B5B /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
-		68F915872121021E00160B5B /* OpenAQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8620F993960083B943 /* OpenAQClient.swift */; };
-		68F915882121021E00160B5B /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
-		68F915892121021E00160B5B /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
-		68F9158A2121021E00160B5B /* AQCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8920F996D10083B943 /* AQCity.swift */; };
-		68F9158B2121021E00160B5B /* AQCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8B20F9A2C00083B943 /* AQCountry.swift */; };
-		68F9158C2121021E00160B5B /* AirQualityIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */; };
-		68F9158D2121021E00160B5B /* AQFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8D20F9A4810083B943 /* AQFetch.swift */; };
-		68F9158E2121021E00160B5B /* AQLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8F20F9AB1E0083B943 /* AQLatest.swift */; };
-		68F9158F2121021E00160B5B /* AQLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9320F9BA8F0083B943 /* AQLocation.swift */; };
-		68F915902121021E00160B5B /* AQMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9520F9C2650083B943 /* AQMeasurement.swift */; };
-		68F915912121021E00160B5B /* AQParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9720FA53F40083B943 /* AQParameter.swift */; };
-		68F915922121021E00160B5B /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
-		68F915932121021E00160B5B /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
-		68F915942121021E00160B5B /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
-		68F915952121021E00160B5B /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
-		68F915962121021E00160B5B /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
-		68F915972121021E00160B5B /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
-		68F915982121021E00160B5B /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
-		68F915992121021E00160B5B /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
-		68F9159A2121021E00160B5B /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
-		68F9159B2121021E00160B5B /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
-		68F9159C2121021E00160B5B /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
-		68F9159D2121021E00160B5B /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
-		68F9159E2121021E00160B5B /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
-		68F9159F2121021E00160B5B /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
-		68F915A02121021E00160B5B /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
-		68F915A12121021E00160B5B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
-		68F915A22121021E00160B5B /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
-		68F915A32121021E00160B5B /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
-		68F915A42121021E00160B5B /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
-		68F915A72121021E00160B5B /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
-		68F915AF2121035900160B5B /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
-		68F915B0212103AB00160B5B /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F915AB2121021E00160B5B /* AerivoKit.framework */; };
-		68F915B1212103AB00160B5B /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68F915AB2121021E00160B5B /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68FD32FC2102EB2B002E0EB1 /* ResizableImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */; };
 		7D2C92B721150B3A0082D935 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */; };
 		7D2C92BC2115172A0082D935 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C92BE2115172A0082D935 /* Localizable.stringsdict */; };
@@ -313,13 +309,6 @@
 			remoteGlobalIDString = 68F91526212100E500160B5B;
 			remoteInfo = "Aerivo WatchKit";
 		};
-		68F915B2212103AB00160B5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 68F9154A2121021E00160B5B;
-			remoteInfo = "AerivoKit (watchOS)";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -374,7 +363,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				68F915B1212103AB00160B5B /* AerivoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +375,7 @@
 		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
+		6811FCC9212118BE00509A37 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		681C2D5A2116B0410008F020 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
@@ -465,7 +454,6 @@
 		68F9153A212100E600160B5B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		68F9153C212100E600160B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68F9153E212100E600160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68F915AB2121021E00160B5B /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F915AC2121021E00160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/Harish/Desktop/Aerivo/Info.plist; sourceTree = "<absolute>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 		7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -549,6 +537,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6811FCC3212118BE00509A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		681C4A14211FA57C00D82950 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,14 +605,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		68F91530212100E600160B5B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F915B0212103AB00160B5B /* AerivoKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F915A52121021E00160B5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -711,7 +698,7 @@
 				687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */,
 				68F91527212100E500160B5B /* Aerivo WatchKit.app */,
 				68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */,
-				68F915AB2121021E00160B5B /* AerivoKit.framework */,
+				6811FCC9212118BE00509A37 /* AerivoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1264,6 +1251,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6811FC6A212118BE00509A37 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6811FC6B212118BE00509A37 /* AerivoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68CB23C12116303800B98B32 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1272,17 +1267,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68F9154B2121021E00160B5B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F9154C2121021E00160B5B /* AerivoKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6811FC69212118BE00509A37 /* AerivoKit (watchOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */;
+			buildPhases = (
+				6811FC6A212118BE00509A37 /* Headers */,
+				6811FC6C212118BE00509A37 /* Sources */,
+				6811FCC3212118BE00509A37 /* Frameworks */,
+				6811FCC4212118BE00509A37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AerivoKit (watchOS)";
+			productName = AerivoKit;
+			productReference = 6811FCC9212118BE00509A37 /* AerivoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		681C4A16211FA57C00D82950 /* AerivoIntents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 681C4A1F211FA57C00D82950 /* Build configuration list for PBXNativeTarget "AerivoIntents" */;
@@ -1445,30 +1450,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				68F915B3212103AB00160B5B /* PBXTargetDependency */,
 			);
 			name = "Aerivo WatchKit Extension";
 			productName = "Aerivo WatchKit Extension";
 			productReference = 68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		68F9154A2121021E00160B5B /* AerivoKit (watchOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68F915A82121021E00160B5B /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */;
-			buildPhases = (
-				68F9154B2121021E00160B5B /* Headers */,
-				68F9154D2121021E00160B5B /* Sources */,
-				68F915A52121021E00160B5B /* Frameworks */,
-				68F915A62121021E00160B5B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "AerivoKit (watchOS)";
-			productName = AerivoKit;
-			productReference = 68F915AB2121021E00160B5B /* AerivoKit.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -1556,12 +1542,20 @@
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 				68F91526212100E500160B5B /* Aerivo WatchKit */,
 				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
-				68F9154A2121021E00160B5B /* AerivoKit (watchOS) */,
+				6811FC69212118BE00509A37 /* AerivoKit (watchOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6811FCC4212118BE00509A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		681C4A15211FA57C00D82950 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1635,14 +1629,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68F915A62121021E00160B5B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F915A72121021E00160B5B /* AerivoKit.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1689,6 +1675,99 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6811FC6C212118BE00509A37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6811FC6D212118BE00509A37 /* DecodingErrorExtension.swift in Sources */,
+				6811FC6E212118BE00509A37 /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				6811FC6F212118BE00509A37 /* XMLKeyedDecodingContainer.swift in Sources */,
+				6811FC70212118BE00509A37 /* XMLDecodingStorage.swift in Sources */,
+				6811FC71212118BE00509A37 /* XMLDecoder.swift in Sources */,
+				6811FC72212118BE00509A37 /* XMLReferencingEncoder.swift in Sources */,
+				6811FC73212118BE00509A37 /* EncodingErrorExtension.swift in Sources */,
+				6811FC74212118BE00509A37 /* XMLEncoder.swift in Sources */,
+				6811FC75212118BE00509A37 /* XMLEncodingStorage.swift in Sources */,
+				6811FC76212118BE00509A37 /* ISO8601DateFormatter.swift in Sources */,
+				6811FC77212118BE00509A37 /* XMLKey.swift in Sources */,
+				6811FC78212118BE00509A37 /* XMLStackParser.swift in Sources */,
+				6811FC79212118BE00509A37 /* CloudCore.swift in Sources */,
+				6811FC7A212118BE00509A37 /* ErrorBlockProxy.swift in Sources */,
+				6811FC7B212118BE00509A37 /* AsynchronousOperation.swift in Sources */,
+				6811FC7C212118BE00509A37 /* FetchAndSaveOperation.swift in Sources */,
+				6811FC7D212118BE00509A37 /* FetchPublicSubscriptionsOperation.swift in Sources */,
+				6811FC7E212118BE00509A37 /* PublicDatabaseSubscriptions.swift in Sources */,
+				6811FC7F212118BE00509A37 /* DeleteFromCoreDataOperation.swift in Sources */,
+				6811FC80212118BE00509A37 /* FetchRecordZoneChangesOperation.swift in Sources */,
+				6811FC81212118BE00509A37 /* PurgeLocalDatabaseOperation.swift in Sources */,
+				6811FC82212118BE00509A37 /* RecordToCoreDataOperation.swift in Sources */,
+				6811FC83212118BE00509A37 /* Aerivo.intentdefinition in Sources */,
+				6811FC84212118BE00509A37 /* SetupOperation.swift in Sources */,
+				6811FC85212118BE00509A37 /* SubscribeOperation.swift in Sources */,
+				6811FC86212118BE00509A37 /* CreateCloudCoreZoneOperation.swift in Sources */,
+				6811FC87212118BE00509A37 /* UploadAllLocalDataOperation.swift in Sources */,
+				6811FC88212118BE00509A37 /* CloudSaveOperationQueue.swift in Sources */,
+				6811FC89212118BE00509A37 /* ObjectToRecordConverter.swift in Sources */,
+				6811FC8A212118BE00509A37 /* ObjectToRecordOperation.swift in Sources */,
+				6811FC8B212118BE00509A37 /* CoreDataAttribute.swift in Sources */,
+				6811FC8C212118BE00509A37 /* CoreDataRelationship.swift in Sources */,
+				6811FC8D212118BE00509A37 /* RecordIDWithDatabase.swift in Sources */,
+				6811FC8E212118BE00509A37 /* RecordWithDatabase.swift in Sources */,
+				6811FC8F212118BE00509A37 /* CoreDataListener.swift in Sources */,
+				6811FC90212118BE00509A37 /* CloudCoreError.swift in Sources */,
+				6811FC91212118BE00509A37 /* FetchResult.swift in Sources */,
+				6811FC92212118BE00509A37 /* Module.swift in Sources */,
+				6811FC93212118BE00509A37 /* NSEntityDescription.swift in Sources */,
+				6811FC94212118BE00509A37 /* NSManagedObjectModel.swift in Sources */,
+				6811FC95212118BE00509A37 /* NSManagedObject.swift in Sources */,
+				6811FC96212118BE00509A37 /* CKRecordID.swift in Sources */,
+				6811FC97212118BE00509A37 /* Tokens.swift in Sources */,
+				6811FC98212118BE00509A37 /* CloudCoreConfig.swift in Sources */,
+				6811FC99212118BE00509A37 /* CloudKitAttribute.swift in Sources */,
+				6811FC9A212118BE00509A37 /* ServiceAttributeName.swift in Sources */,
+				6811FC9B212118BE00509A37 /* CKRecord.swift in Sources */,
+				6811FC9C212118BE00509A37 /* CloudCoreDelegate.swift in Sources */,
+				6811FC9D212118BE00509A37 /* CloudCore+AerivoConfig.swift in Sources */,
+				6811FC9E212118BE00509A37 /* Endpoint.swift in Sources */,
+				6811FC9F212118BE00509A37 /* APIClient.swift in Sources */,
+				6811FCA0212118BE00509A37 /* CodableCoordinate.swift in Sources */,
+				6811FCA1212118BE00509A37 /* JSONEncoder+CustomDates.swift in Sources */,
+				6811FCA2212118BE00509A37 /* XMLEncoder+CustomDates.swift in Sources */,
+				6811FCA3212118BE00509A37 /* OpenAQEndpoint.swift in Sources */,
+				6811FCA4212118BE00509A37 /* OpenAQParameters.swift in Sources */,
+				6811FCA5212118BE00509A37 /* NSUserActivity+Activities.swift in Sources */,
+				6811FCA6212118BE00509A37 /* OpenAQClient.swift in Sources */,
+				6811FCA7212118BE00509A37 /* OpenAQError.swift in Sources */,
+				6811FCA8212118BE00509A37 /* OpenAQResponse.swift in Sources */,
+				6811FCA9212118BE00509A37 /* AQCity.swift in Sources */,
+				6811FCAA212118BE00509A37 /* AQCountry.swift in Sources */,
+				6811FCAB212118BE00509A37 /* AirQualityIntentHandler.swift in Sources */,
+				6811FCAC212118BE00509A37 /* AQFetch.swift in Sources */,
+				6811FCAD212118BE00509A37 /* AQLatest.swift in Sources */,
+				6811FCAE212118BE00509A37 /* AQLocation.swift in Sources */,
+				6811FCAF212118BE00509A37 /* AQMeasurement.swift in Sources */,
+				6811FCB0212118BE00509A37 /* AQParameter.swift in Sources */,
+				6811FCB1212118BE00509A37 /* AQSource.swift in Sources */,
+				6811FCB2212118BE00509A37 /* NWQPEndpoint.swift in Sources */,
+				6811FCB3212118BE00509A37 /* NWQPParameters.swift in Sources */,
+				6811FCB4212118BE00509A37 /* NWQPClient.swift in Sources */,
+				6811FCB5212118BE00509A37 /* NWQPResponse.swift in Sources */,
+				6811FCB6212118BE00509A37 /* NWQPStation.swift in Sources */,
+				6811FCB7212118BE00509A37 /* NWQPResult.swift in Sources */,
+				6811FCB8212118BE00509A37 /* CivicInformationEndpoint.swift in Sources */,
+				6811FCB9212118BE00509A37 /* CivicInformationParameters.swift in Sources */,
+				6811FCBA212118BE00509A37 /* CivicInformationClient.swift in Sources */,
+				6811FCBB212118BE00509A37 /* CivicInformationError.swift in Sources */,
+				6811FCBC212118BE00509A37 /* CivicInformationResponse.swift in Sources */,
+				6811FCBD212118BE00509A37 /* RepresentativeInfoByAddress.swift in Sources */,
+				6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */,
+				6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */,
+				6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */,
+				6811FCC1212118BE00509A37 /* FavoriteFetchedResultsController.swift in Sources */,
+				6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		681C4A13211FA57C00D82950 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1706,6 +1785,7 @@
 				6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */,
 				681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */,
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
+				682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */,
 				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
 				681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */,
@@ -1844,7 +1924,6 @@
 				68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */,
 				68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */,
 				68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */,
-				68AE5E2421163D5A0038EABC /* Favorite+Placemark.swift in Sources */,
 				68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1861,103 +1940,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F915AF2121035900160B5B /* MBPlacemarkScope+Color.swift in Sources */,
 				68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */,
 				68F91539212100E600160B5B /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F9154D2121021E00160B5B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F9154E2121021E00160B5B /* DecodingErrorExtension.swift in Sources */,
-				68F9154F2121021E00160B5B /* XMLUnkeyedDecodingContainer.swift in Sources */,
-				68F915502121021E00160B5B /* XMLKeyedDecodingContainer.swift in Sources */,
-				68F915512121021E00160B5B /* XMLDecodingStorage.swift in Sources */,
-				68F915522121021E00160B5B /* XMLDecoder.swift in Sources */,
-				68F915532121021E00160B5B /* XMLReferencingEncoder.swift in Sources */,
-				68F915542121021E00160B5B /* EncodingErrorExtension.swift in Sources */,
-				68F915552121021E00160B5B /* XMLEncoder.swift in Sources */,
-				68F915562121021E00160B5B /* XMLEncodingStorage.swift in Sources */,
-				68F915572121021E00160B5B /* ISO8601DateFormatter.swift in Sources */,
-				68F915582121021E00160B5B /* XMLKey.swift in Sources */,
-				68F915592121021E00160B5B /* XMLStackParser.swift in Sources */,
-				68F9155A2121021E00160B5B /* CloudCore.swift in Sources */,
-				68F9155B2121021E00160B5B /* ErrorBlockProxy.swift in Sources */,
-				68F9155C2121021E00160B5B /* AsynchronousOperation.swift in Sources */,
-				68F9155D2121021E00160B5B /* FetchAndSaveOperation.swift in Sources */,
-				68F9155E2121021E00160B5B /* FetchPublicSubscriptionsOperation.swift in Sources */,
-				68F9155F2121021E00160B5B /* PublicDatabaseSubscriptions.swift in Sources */,
-				68F915602121021E00160B5B /* DeleteFromCoreDataOperation.swift in Sources */,
-				68F915612121021E00160B5B /* FetchRecordZoneChangesOperation.swift in Sources */,
-				68F915622121021E00160B5B /* PurgeLocalDatabaseOperation.swift in Sources */,
-				68F915632121021E00160B5B /* RecordToCoreDataOperation.swift in Sources */,
-				68F915642121021E00160B5B /* Aerivo.intentdefinition in Sources */,
-				68F915652121021E00160B5B /* SetupOperation.swift in Sources */,
-				68F915662121021E00160B5B /* SubscribeOperation.swift in Sources */,
-				68F915672121021E00160B5B /* CreateCloudCoreZoneOperation.swift in Sources */,
-				68F915682121021E00160B5B /* UploadAllLocalDataOperation.swift in Sources */,
-				68F915692121021E00160B5B /* CloudSaveOperationQueue.swift in Sources */,
-				68F9156A2121021E00160B5B /* ObjectToRecordConverter.swift in Sources */,
-				68F9156B2121021E00160B5B /* ObjectToRecordOperation.swift in Sources */,
-				68F9156C2121021E00160B5B /* CoreDataAttribute.swift in Sources */,
-				68F9156D2121021E00160B5B /* CoreDataRelationship.swift in Sources */,
-				68F9156E2121021E00160B5B /* RecordIDWithDatabase.swift in Sources */,
-				68F9156F2121021E00160B5B /* RecordWithDatabase.swift in Sources */,
-				68F915702121021E00160B5B /* CoreDataListener.swift in Sources */,
-				68F915712121021E00160B5B /* CloudCoreError.swift in Sources */,
-				68F915722121021E00160B5B /* FetchResult.swift in Sources */,
-				68F915732121021E00160B5B /* Module.swift in Sources */,
-				68F915742121021E00160B5B /* NSEntityDescription.swift in Sources */,
-				68F915752121021E00160B5B /* NSManagedObjectModel.swift in Sources */,
-				68F915762121021E00160B5B /* NSManagedObject.swift in Sources */,
-				68F915772121021E00160B5B /* CKRecordID.swift in Sources */,
-				68F915782121021E00160B5B /* Tokens.swift in Sources */,
-				68F915792121021E00160B5B /* CloudCoreConfig.swift in Sources */,
-				68F9157A2121021E00160B5B /* CloudKitAttribute.swift in Sources */,
-				68F9157B2121021E00160B5B /* ServiceAttributeName.swift in Sources */,
-				68F9157C2121021E00160B5B /* CKRecord.swift in Sources */,
-				68F9157D2121021E00160B5B /* CloudCoreDelegate.swift in Sources */,
-				68F9157E2121021E00160B5B /* CloudCore+AerivoConfig.swift in Sources */,
-				68F9157F2121021E00160B5B /* Endpoint.swift in Sources */,
-				68F915802121021E00160B5B /* APIClient.swift in Sources */,
-				68F915812121021E00160B5B /* CodableCoordinate.swift in Sources */,
-				68F915822121021E00160B5B /* JSONEncoder+CustomDates.swift in Sources */,
-				68F915832121021E00160B5B /* XMLEncoder+CustomDates.swift in Sources */,
-				68F915842121021E00160B5B /* OpenAQEndpoint.swift in Sources */,
-				68F915852121021E00160B5B /* OpenAQParameters.swift in Sources */,
-				68F915862121021E00160B5B /* NSUserActivity+Activities.swift in Sources */,
-				68F915872121021E00160B5B /* OpenAQClient.swift in Sources */,
-				68F915882121021E00160B5B /* OpenAQError.swift in Sources */,
-				68F915892121021E00160B5B /* OpenAQResponse.swift in Sources */,
-				68F9158A2121021E00160B5B /* AQCity.swift in Sources */,
-				68F9158B2121021E00160B5B /* AQCountry.swift in Sources */,
-				68F9158C2121021E00160B5B /* AirQualityIntentHandler.swift in Sources */,
-				68F9158D2121021E00160B5B /* AQFetch.swift in Sources */,
-				68F9158E2121021E00160B5B /* AQLatest.swift in Sources */,
-				68F9158F2121021E00160B5B /* AQLocation.swift in Sources */,
-				68F915902121021E00160B5B /* AQMeasurement.swift in Sources */,
-				68F915912121021E00160B5B /* AQParameter.swift in Sources */,
-				68F915922121021E00160B5B /* AQSource.swift in Sources */,
-				68F915932121021E00160B5B /* NWQPEndpoint.swift in Sources */,
-				68F915942121021E00160B5B /* NWQPParameters.swift in Sources */,
-				68F915952121021E00160B5B /* NWQPClient.swift in Sources */,
-				68F915962121021E00160B5B /* NWQPResponse.swift in Sources */,
-				68F915972121021E00160B5B /* NWQPStation.swift in Sources */,
-				68F915982121021E00160B5B /* NWQPResult.swift in Sources */,
-				68F915992121021E00160B5B /* CivicInformationEndpoint.swift in Sources */,
-				68F9159A2121021E00160B5B /* CivicInformationParameters.swift in Sources */,
-				68F9159B2121021E00160B5B /* CivicInformationClient.swift in Sources */,
-				68F9159C2121021E00160B5B /* CivicInformationError.swift in Sources */,
-				68F9159D2121021E00160B5B /* CivicInformationResponse.swift in Sources */,
-				68F9159E2121021E00160B5B /* RepresentativeInfoByAddress.swift in Sources */,
-				68F9159F2121021E00160B5B /* CivicInformationMessage.swift in Sources */,
-				68F915A02121021E00160B5B /* Aerivo.xcdatamodeld in Sources */,
-				68F915A12121021E00160B5B /* CoreDataStack.swift in Sources */,
-				68F915A22121021E00160B5B /* FavoriteFetchedResultsController.swift in Sources */,
-				68F915A32121021E00160B5B /* Favorite+Placemark.swift in Sources */,
-				68F915A42121021E00160B5B /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,11 +1992,6 @@
 			isa = PBXTargetDependency;
 			target = 68F91526212100E500160B5B /* Aerivo WatchKit */;
 			targetProxy = 68F9153F212100E600160B5B /* PBXContainerItemProxy */;
-		};
-		68F915B3212103AB00160B5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 68F9154A2121021E00160B5B /* AerivoKit (watchOS) */;
-			targetProxy = 68F915B2212103AB00160B5B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2068,6 +2047,79 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6811FCC7212118BE00509A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = AerivoKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		6811FCC8212118BE00509A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = AerivoKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 		681C4A20211FA57C00D82950 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2531,7 +2583,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Debug;
 		};
@@ -2551,7 +2603,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};
@@ -2575,7 +2627,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Debug;
 		};
@@ -2598,86 +2650,22 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
-			};
-			name = Release;
-		};
-		68F915A92121021E00160B5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H5SH6WNLYC;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
-				PRODUCT_NAME = AerivoKit;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
-			};
-			name = Debug;
-		};
-		68F915AA2121021E00160B5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H5SH6WNLYC;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
-				PRODUCT_NAME = AerivoKit;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6811FCC7212118BE00509A37 /* Debug */,
+				6811FCC8212118BE00509A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		681C4A1F211FA57C00D82950 /* Build configuration list for PBXNativeTarget "AerivoIntents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2764,15 +2752,6 @@
 			buildConfigurations = (
 				68F91542212100E600160B5B /* Debug */,
 				68F91543212100E600160B5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		68F915A82121021E00160B5B /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				68F915A92121021E00160B5B /* Debug */,
-				68F915AA2121021E00160B5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -19,8 +19,9 @@ public class AEPersistentContainer: NSPersistentContainer {
     public override class func defaultDirectoryURL() -> URL {
         #if os(iOS)
         return applicationSharedGroupContainer.appendingPathComponent("AerivoModel")
-        #endif
+        #else
         return super.defaultDirectoryURL().appendingPathComponent("AerivoModel")
+        #endif
     }
 }
 
