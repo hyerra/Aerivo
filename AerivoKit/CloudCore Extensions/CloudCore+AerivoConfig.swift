@@ -10,14 +10,15 @@ import CloudKit
 
 extension CloudCoreConfig {
     /// The custom cloud core configuration for Aerivo.
-    public static var aerivoConfig: CloudCoreConfig {
-        var aerivoConfig = CloudCoreConfig()
-        aerivoConfig.zoneID = CKRecordZone.ID(zoneName: "Aerivo", ownerName: CKCurrentUserDefaultName)
-        aerivoConfig.subscriptionIDForPrivateDB = "AerivoPrivate"
-        aerivoConfig.subscriptionIDForSharedDB = "AerivoShared"
-        aerivoConfig.publicSubscriptionIDPrefix = "Aerivo-"
-        aerivoConfig.contextName = "AerivoFetchAndSave"
-        aerivoConfig.userDefaultsKeyTokens = "AerivoCloudKitTokens"
-        return aerivoConfig
+    public static var aerivoSharedConfig: CloudCoreConfig {
+        var aerivoSharedConfig = CloudCoreConfig()
+        aerivoSharedConfig.container = CKContainer(identifier: "iCloud.com.harishyerra.Aerivo.shared")
+        aerivoSharedConfig.zoneID = CKRecordZone.ID(zoneName: "Aerivo", ownerName: CKCurrentUserDefaultName)
+        aerivoSharedConfig.subscriptionIDForPrivateDB = "AerivoPrivate"
+        aerivoSharedConfig.subscriptionIDForSharedDB = "AerivoShared"
+        aerivoSharedConfig.publicSubscriptionIDPrefix = "Aerivo-"
+        aerivoSharedConfig.contextName = "AerivoFetchAndSave"
+        aerivoSharedConfig.userDefaultsKeyTokens = "AerivoCloudKitTokens"
+        return aerivoSharedConfig
     }
 }

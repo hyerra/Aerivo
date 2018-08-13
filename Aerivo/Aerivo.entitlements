@@ -6,7 +6,8 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.$(CFBundleIdentifier)</string>
+		<string>iCloud.$(CFBundleIdentifier).shared</string>
+		<string>iCloud.com.harishyerra.Aerivo</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

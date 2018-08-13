@@ -12,7 +12,7 @@ import CoreData
 public class AEPersistentContainer: NSPersistentContainer {
     
     #if os(iOS)
-    /// The url for the shared container in the app group for iOS.
+    /// The url for the shared container in the app group.
     private static let applicationSharedGroupContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.harishyerra.Aerivo")!
     #endif
     
