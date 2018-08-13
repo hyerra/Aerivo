@@ -26,6 +26,19 @@ public struct Parameter: OpenAQResponse {
         /// The parameter's prefered unit.
         public var preferredUnit: AirQualityUnitCode
         
+        public var localizedName: String? {
+            switch id {
+            case "bc": return NSLocalizedString("BC", comment: "The abbreviation for Black Carbon.")
+            case "co": return NSLocalizedString("CO", comment: "The abbreviation for Carbon Monoxide.")
+            case "no2": return NSLocalizedString("NO2", comment: "The abbreviation for Nitrogen Dioxide.")
+            case "o3": return NSLocalizedString("O3", comment: "The abbreviation for Ozone.")
+            case "pm10": return NSLocalizedString("PM10", comment: "The abbreviation for Particulate matter less than 10 micrometers in diameter.")
+            case "pm25": return NSLocalizedString("PM2.5", comment: "The abbreviation for Particulate matter less than 2.5 micrometers in diameter.")
+            case "so2": return NSLocalizedString("SO2", comment: "The abbreviation for Sulfur Dioxide")
+            default: return nil
+            }
+        }
+        
         public var information: String? {
             switch id {
             case "bc": return NSLocalizedString("Black Carbon: Sooty black material emitted from gas and diesel engines, coal-fired power plants, and other sources that burn fossil fuel.", comment: "Description of the harmful effects of black carbon.")

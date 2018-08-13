@@ -376,6 +376,7 @@
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
 		6811FCC9212118BE00509A37 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6811FCD02121384700509A37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		681C2D5A2116B0410008F020 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
@@ -454,7 +455,6 @@
 		68F9153A212100E600160B5B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		68F9153C212100E600160B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68F9153E212100E600160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68F915AC2121021E00160B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/Harish/Desktop/Aerivo/Info.plist; sourceTree = "<absolute>"; };
 		68FD32FB2102EB2A002E0EB1 /* ResizableImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageButton.swift; sourceTree = "<group>"; };
 		7D2C92B621150B3A0082D935 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFetchedResultsController.swift; sourceTree = "<group>"; };
@@ -620,6 +620,14 @@
 				680A209821010F9200EDDBB5 /* NWQPTests.swift */,
 			);
 			path = NWQP;
+			sourceTree = "<group>";
+		};
+		6811FCCF2121381000509A37 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				6811FCD02121384700509A37 /* Info.plist */,
+			);
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 		681C2D522116AB0E0008F020 /* Focus Square */ = {
@@ -913,7 +921,7 @@
 			children = (
 				68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */,
 				68F915AD2121029900160B5B /* iOS */,
-				68F915AE212102A800160B5B /* watchOS */,
+				6811FCCF2121381000509A37 /* watchOS */,
 				7D3FDDA1211428C000C0F56B /* XMLParsing */,
 				7D3362E3210E3CB000491C3A /* Cloud Core */,
 			);
@@ -971,14 +979,6 @@
 				684E995221177D580075FCAC /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		68F915AE212102A800160B5B /* watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				68F915AC2121021E00160B5B /* Info.plist */,
-			);
-			path = watchOS;
 			sourceTree = "<group>";
 		};
 		7D2C92B421150B140082D935 /* Places */ = {
@@ -2063,7 +2063,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2100,7 +2100,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

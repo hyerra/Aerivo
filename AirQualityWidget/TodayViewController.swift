@@ -88,7 +88,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         let measurementFormatter = MeasurementFormatter()
         if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
         let localizedMeasurement = measurementFormatter.string(from: measurement)
-        cell.parameter.text = parameterInfo.name
+        cell.parameter.text = parameterInfo.localizedName ?? parameterInfo.name
         cell.value.text = localizedMeasurement
         return cell
     }
