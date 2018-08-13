@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-@available(iOS 12.0, *)
+@available(iOS 12.0, watchOS 5.0, *)
 public class AirQualityIntentHandler: NSObject, AirQualityIntentHandling {    
     public func handle(intent: AirQualityIntent, completion: @escaping (AirQualityIntentResponse) -> Void) {
         guard let location = intent.targetLocation else { completion(AirQualityIntentResponse(code: .failure, userActivity: nil)); return }
