@@ -13,7 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-        CloudCore.config = .aerivoConfig
+        CloudCore.config = .aerivoSharedConfig
         CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
     }
 
@@ -24,13 +24,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationWillResignActive() {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, etc.
-    }
-    
-    func didReceiveRemoteNotification(_ userInfo: [AnyHashable : Any]) {
-        if CloudCore.isCloudCoreNotification(withUserInfo: userInfo) {
-            CloudCore.fetchAndSave(using: userInfo, to: DataController.shared.persistentContainer, error: nil) { fetchResult in
-            }
-        }
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -50,13 +43,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
                 // Be sure to complete the URL session task once you’re done.
                 urlSessionTask.setTaskCompletedWithSnapshot(false)
-            case let relevantShortcutTask as WKRelevantShortcutRefreshBackgroundTask:
-                // Be sure to complete the relevant-shortcut task once you're done.
-                relevantShortcutTask.setTaskCompletedWithSnapshot(false)
-            case let intentDidRunTask as WKIntentDidRunRefreshBackgroundTask:
-                // Be sure to complete the intent-did-run task once you're done.
-                intentDidRunTask.setTaskCompletedWithSnapshot(false)
             default:
+                if #available(watchOS 5.0, *) {
+                    if let relevantShortcutTask = task as? WKRelevantShortcutRefreshBackgroundTask {
+                        // Be sure to complete the relevant-shortcut task once you're done.
+                        relevantShortcutTask.setTaskCompletedWithSnapshot(false)
+                    } else if let intentDidRunTask = task as? WKIntentDidRunRefreshBackgroundTask {
+                        // Be sure to complete the intent-did-run task once you're done.
+                        intentDidRunTask.setTaskCompletedWithSnapshot(false)
+                    }
+                }
                 // make sure to complete unhandled task types
                 task.setTaskCompletedWithSnapshot(false)
             }
