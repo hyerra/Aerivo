@@ -17,12 +17,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     var parametersInfo: Parameter?
     lazy var openAQClient = OpenAQClient()
     
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        visualEffectView.effect = UIVibrancyEffect.widgetPrimary()
         tableView.separatorEffect = UIBlurEffect(style: .extraLight)
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
