@@ -1386,10 +1386,10 @@
 				684BE22520E99C1F00E74FE5 /* AerivoUITests */,
 				681C4A16211FA57C00D82950 /* AerivoIntents */,
 				687DBA692120DABE00C166FD /* AirQualityWidget */,
-				68F91526212100E500160B5B /* Aerivo WatchKit */,
-				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
 				68CB23C52116303800B98B32 /* AerivoKit */,
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
+				68F91526212100E500160B5B /* Aerivo WatchKit */,
+				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
