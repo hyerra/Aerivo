@@ -17,14 +17,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     var parametersInfo: Parameter?
     lazy var openAQClient = OpenAQClient()
     
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        visualEffectView.effect = UIVibrancyEffect.widgetPrimary()
         tableView.separatorEffect = UIBlurEffect(style: .extraLight)
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
@@ -101,7 +99,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         let expanded = activeDisplayMode == .expanded
-        preferredContentSize = expanded ? CGSize(width: maxSize.width, height: tableView.contentSize.height) : maxSize
+        preferredContentSize = expanded ? tableView.contentSize : maxSize
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

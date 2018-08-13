@@ -414,6 +414,7 @@
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		688D77CE211FCA4200E27EA1 /* AerivoIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerivoIntents.entitlements; sourceTree = "<group>"; };
 		688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsManager.swift; sourceTree = "<group>"; };
+		688F13912121C21700AD73A6 /* AirQualityWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AirQualityWidget.entitlements; sourceTree = "<group>"; };
 		6891C3BE20EA933D0051563F /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
@@ -773,6 +774,7 @@
 		687DBA6D2120DABE00C166FD /* AirQualityWidget */ = {
 			isa = PBXGroup;
 			children = (
+				688F13912121C21700AD73A6 /* AirQualityWidget.entitlements */,
 				687DBA6E2120DABE00C166FD /* TodayViewController.swift */,
 				687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */,
 				687DBA702120DABE00C166FD /* MainInterface.storyboard */,
@@ -1505,6 +1507,11 @@
 					};
 					687DBA692120DABE00C166FD = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					68CB23C52116303800B98B32 = {
 						CreatedOnToolsVersion = 10.0;
@@ -2378,6 +2385,7 @@
 		687DBA772120DABF00C166FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AirQualityWidget/AirQualityWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AirQualityWidget/Info.plist;
@@ -2396,6 +2404,7 @@
 		687DBA782120DABF00C166FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AirQualityWidget/AirQualityWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
 				INFOPLIST_FILE = AirQualityWidget/Info.plist;
