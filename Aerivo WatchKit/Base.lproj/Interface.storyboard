@@ -1,64 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.3.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.13.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TpH-bG-gV9">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.4.1"/>
     </dependencies>
     <scenes>
-        <!--Favorites Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <!--recommendationIC-->
+        <scene sceneID="bcd-je-S5K">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="FavoritesInterfaceController" customModule="Aerivo_WatchKit_Extension">
+                <controller identifier="recommendationIC" id="TpH-bG-gV9" customClass="RecommendationInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="rSP-vc-3z5">
+                        <group width="1" alignment="center" id="XMB-5k-U1t">
                             <items>
-                                <tableRow identifier="favoritesRow" id="nFJ-mz-xki" customClass="FavoritesRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="IMc-lB-iqN">
+                                <button width="1" alignment="left" title="Search" id="fOe-Ji-ndL">
+                                    <connections>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="cX4-XN-vaP"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Location" id="7hG-fH-DPs"/>
+                        <label alignment="left" text="NEARBY" id="AhY-pe-OXU">
+                            <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows nearby locations."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="dIX-dn-uKm">
+                            <items>
+                                <tableRow identifier="nearbyRow" id="wMt-vT-lDm" customClass="NearbyTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
                                         <items>
-                                            <label alignment="left" text="Label" id="TSj-9A-iEx">
-                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            <imageView alignment="left" id="B7F-cc-IJM"/>
+                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="xZb-CE-b1P">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
-                                            <label alignment="left" verticalAlignment="bottom" text="Label" id="SNC-AN-XH5">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="Lka-0k-8fd">
+                                                <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
+                                        <edgeInsets key="margins" left="8" right="8" top="4" bottom="4"/>
                                     </group>
                                     <connections>
-                                        <outlet property="address" destination="SNC-AN-XH5" id="bzv-sI-uDC"/>
-                                        <outlet property="placeName" destination="TSj-9A-iEx" id="N3R-eG-kcC"/>
+                                        <outlet property="address" destination="Lka-0k-8fd" id="P2q-pe-Bir"/>
+                                        <outlet property="icon" destination="B7F-cc-IJM" id="2PW-ql-H1u"/>
+                                        <outlet property="placeName" destination="xZb-CE-b1P" id="kem-nT-bQN"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
-                        <group alignment="center" verticalAlignment="center" layout="vertical" id="xow-tP-Svx">
-                            <items>
-                                <imageView alignment="center" verticalAlignment="center" image="favorite" id="5Gf-zv-cIq">
-                                    <color key="tintColor" name="Gold Color"/>
-                                </imageView>
-                                <label alignment="center" verticalAlignment="center" text="You don't have any favorites! Try adding some on your iPhone." textAlignment="center" numberOfLines="0" id="inA-Zl-dTj">
-                                    <attributedString key="userComments">
-                                        <fragment content="Tells the user to add favorites on their phone to view them on their Apple Watch."/>
-                                    </attributedString>
-                                </label>
-                            </items>
-                        </group>
                     </items>
                     <connections>
-                        <outlet property="emptyGroup" destination="xow-tP-Svx" id="Ekf-fd-NRc"/>
-                        <outlet property="favoritesTable" destination="rSP-vc-3z5" id="VVl-9e-NCX"/>
+                        <outlet property="nearbyLabel" destination="AhY-pe-OXU" id="GxY-Mi-LRP"/>
+                        <outlet property="nearbyTable" destination="dIX-dn-uKm" id="wRt-nB-jKo"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="-114" y="93"/>
+        </scene>
+        <!--searchIC-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="searchIC" id="AgC-eL-Hgc" customClass="SearchInterfaceController" customModule="Aerivo_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="FAVORITES" id="qww-A5-zez">
+                            <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows favorited locations."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="uMz-ko-fiM">
+                            <items>
+                                <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
+                                        <items>
+                                            <imageView alignment="left" id="Bw7-b1-atN"/>
+                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="Rjo-RL-afe">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="tiH-f1-37e">
+                                                <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="8" right="8" top="4" bottom="4"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="address" destination="tiH-f1-37e" id="SFq-lF-F4F"/>
+                                        <outlet property="icon" destination="Bw7-b1-atN" id="2WJ-Fh-DC4"/>
+                                        <outlet property="placeName" destination="Rjo-RL-afe" id="9HX-nI-XaW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="favoritesLabel" destination="qww-A5-zez" id="mKL-dz-UBM"/>
+                        <outlet property="favoritesTable" destination="uMz-ko-fiM" id="jmv-l5-tOz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="162" y="93"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="Gold Color">
-            <color red="1" green="0.6589999794960022" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
+    <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>

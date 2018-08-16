@@ -1,5 +1,5 @@
 //
-//  FavoritesInterfaceController.swift
+//  SearchInterfaceController.swift
 //  Aerivo WatchKit Extension
 //
 //  Created by Harish Yerra on 8/13/18.
@@ -11,10 +11,12 @@ import CoreData
 import AerivoKit
 import Foundation
 
-class FavoritesInterfaceController: WKInterfaceController {
+class SearchInterfaceController: WKInterfaceController {
     
-    @IBOutlet weak var favoritesTable: WKInterfaceTable!
-    @IBOutlet weak var emptyGroup: WKInterfaceGroup!
+    static let identifier = "searchIC"
+    
+    @IBOutlet var favoritesLabel: WKInterfaceLabel!
+    @IBOutlet var favoritesTable: WKInterfaceTable!
     
     var favorites: [Favorite] = [] {
         didSet {
@@ -25,8 +27,7 @@ class FavoritesInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
-        setTitle(NSLocalizedString("Favorites", comment: "TItle of the screen that shows a user their favorites."))
-        emptyGroup.setHidden(true)
+        setTitle(NSLocalizedString("Search", comment: "TItle of the screen that allows a user to search for locations."))
         fetchFavorites()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchFavorites), name: .NSManagedObjectContextDidSave, object: nil)
     }
@@ -45,10 +46,12 @@ class FavoritesInterfaceController: WKInterfaceController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: - Table management
+    // MARK: - Favorites
     
     func reloadFavoritesTable() {
         favoritesTable.setNumberOfRows(favorites.count, withRowType: FavoritesRowController.identifier)
+        
+        favoritesLabel.setHidden(favoritesTable.numberOfRows == 0)
         
         for rowIndex in 0..<favoritesTable.numberOfRows {
             let favorite = favorites[rowIndex]
@@ -57,8 +60,6 @@ class FavoritesInterfaceController: WKInterfaceController {
             row.address.setText(favorite.formattedAddressLines?.first)
         }
     }
-    
-    // MARK: - Favorites
     
     @objc private func fetchFavorites() {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
@@ -69,6 +70,5 @@ class FavoritesInterfaceController: WKInterfaceController {
             print(error)
             #endif
         }
-        emptyGroup.setHidden(!favorites.isEmpty)
     }
 }
