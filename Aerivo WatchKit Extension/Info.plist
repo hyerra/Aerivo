@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Aerivo WatchKit Extension</string>
+	<string>Aerivo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +20,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiaHllcnJhIiwiYSI6ImNqajNubjRuYTB5OGczd3BjdXNiOGNxcTQifQ.t__Z6CTcq7DlHhSneZFlEA</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
