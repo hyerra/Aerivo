@@ -17,6 +17,9 @@
                         <group width="1" alignment="center" id="XMB-5k-U1t">
                             <items>
                                 <button width="1" alignment="left" title="Search" id="fOe-Ji-ndL">
+                                    <attributedString key="userComments">
+                                        <fragment content="Allows the user to search for a location."/>
+                                    </attributedString>
                                     <connections>
                                         <segue destination="AgC-eL-Hgc" kind="push" id="cX4-XN-vaP"/>
                                     </connections>
@@ -70,6 +73,15 @@
             <objects>
                 <controller identifier="searchIC" id="AgC-eL-Hgc" customClass="SearchInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
+                        <button width="1" alignment="left" title="Search" id="mCy-is-IYc">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <attributedString key="userComments">
+                                <fragment content="Allows the user to search for a location."/>
+                            </attributedString>
+                            <connections>
+                                <action selector="search" destination="AgC-eL-Hgc" id="kla-fy-pl1"/>
+                            </connections>
+                        </button>
                         <label alignment="left" text="FAVORITES" id="qww-A5-zez">
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
