@@ -26,7 +26,11 @@
                                 </button>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Location" id="7hG-fH-DPs"/>
+                        <button width="1" alignment="left" title="Location" id="7hG-fH-DPs">
+                            <connections>
+                                <segue destination="tgv-JQ-NU4" kind="push" id="4IA-sp-fcm"/>
+                            </connections>
+                        </button>
                         <label alignment="left" text="NEARBY" id="AhY-pe-OXU">
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
@@ -121,7 +125,25 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="162" y="93"/>
+            <point key="canvasLocation" x="189" y="-72"/>
+        </scene>
+        <!--locationIC-->
+        <scene sceneID="fDm-5s-TBD">
+            <objects>
+                <controller identifier="locationIC" id="tgv-JQ-NU4" customClass="LocationInterfaceController" customModule="Aerivo_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="Rbr-Yn-W9m">
+                            <items>
+                                <imageView alignment="center" id="RSa-vQ-dmK"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="locationInterfaceImage" destination="RSa-vQ-dmK" id="cbu-4y-aMD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="189" y="254"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>

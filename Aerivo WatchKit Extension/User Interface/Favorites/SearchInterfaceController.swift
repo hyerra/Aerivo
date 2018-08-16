@@ -56,7 +56,7 @@ class SearchInterfaceController: WKInterfaceController {
     
     // MARK: - Favorites
     
-    func reloadFavoritesTable() {
+    private func reloadFavoritesTable() {
         favoritesTable.setNumberOfRows(favorites.count, withRowType: FavoritesRowController.identifier)
         
         favoritesLabel.setHidden(favoritesTable.numberOfRows == 0)

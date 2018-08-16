@@ -43,7 +43,7 @@ class RecommendationInterfaceController: WKInterfaceController {
     
     // MARK: - Nearby
     
-    func loadNearbyResults() {
+    private func loadNearbyResults() {
         let location = CLLocationManager().location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
         
         let options = ReverseGeocodeOptions(location: location)
@@ -58,7 +58,7 @@ class RecommendationInterfaceController: WKInterfaceController {
         task.resume()
     }
     
-    func reloadNearbyTable() {
+    private func reloadNearbyTable() {
         nearbyTable.setNumberOfRows(nearbyResults.count, withRowType: NearbyTableRowController.identifier)
         
         nearbyLabel.setHidden(nearbyTable.numberOfRows == 0)
