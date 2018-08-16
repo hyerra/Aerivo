@@ -1,5 +1,6 @@
 binary "https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json" "4.3.0"
 github "52inc/Pulley" "e77c15ac88e3878fec632d11ed399dba7cabea55"
 github "mapbox/MapboxGeocoder.swift" "v0.9.0"
+github "mapbox/MapboxStatic.swift" "v0.9.1"
 github "mapbox/mapbox-events-ios" "v0.4.51"
 github "mapbox/mapbox-scenekit" "446b619be4f84d2af6ad77e0fa5c25eed612aa98"

@@ -1744,12 +1744,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/watchOS/MapboxGeocoder.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/MapboxStatic.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxGeocoder.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxStatic.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
