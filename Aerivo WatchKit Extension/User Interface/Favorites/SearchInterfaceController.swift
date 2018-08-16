@@ -46,6 +46,14 @@ class SearchInterfaceController: WKInterfaceController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - Actions
+    
+    @IBAction func search() {
+        presentTextInputController(withSuggestions: nil, allowedInputMode: .plain) { results in
+            
+        }
+    }
+    
     // MARK: - Favorites
     
     func reloadFavoritesTable() {
