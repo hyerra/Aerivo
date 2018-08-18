@@ -11,6 +11,11 @@
 		6802DF6221250BF20032024A /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
 		680352452125119F00FD53CA /* LocationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352442125119F00FD53CA /* LocationInterfaceController.swift */; };
 		680352472125126500FD53CA /* MapboxStatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680352462125126500FD53CA /* MapboxStatic.framework */; };
+		6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352492127E62700FD53CA /* PlaceDetailInterfaceController.swift */; };
+		6803524C2127E79000FD53CA /* AirQualityTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803524B2127E79000FD53CA /* AirQualityTableRowController.swift */; };
+		6803524E2127E7A300FD53CA /* WaterQualityTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803524D2127E7A300FD53CA /* WaterQualityTableRowController.swift */; };
+		680352522127EB2500FD53CA /* AirQualityInterfaceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352512127EB2500FD53CA /* AirQualityInterfaceTable.swift */; };
+		680352542127EB4000FD53CA /* WaterQualityInterfaceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352532127EB4000FD53CA /* WaterQualityInterfaceTable.swift */; };
 		680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		6811FC6B212118BE00509A37 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6811FC6D212118BE00509A37 /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
@@ -100,7 +105,7 @@
 		6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */; };
-		6819BE582121E7DD00EC7C01 /* FavoritesRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE572121E7DD00EC7C01 /* FavoritesRowController.swift */; };
+		6819BE582121E7DD00EC7C01 /* FavoritesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE572121E7DD00EC7C01 /* FavoritesTableRowController.swift */; };
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
 		681C2D5B2116B0410008F020 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5A2116B0410008F020 /* VirtualObject.swift */; };
 		681C2D5D2116B1A80008F020 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */; };
@@ -393,6 +398,11 @@
 		6801C17220FA965B00E75F01 /* CodableCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoordinate.swift; sourceTree = "<group>"; };
 		680352442125119F00FD53CA /* LocationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInterfaceController.swift; sourceTree = "<group>"; };
 		680352462125126500FD53CA /* MapboxStatic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxStatic.framework; path = Carthage/Build/watchOS/MapboxStatic.framework; sourceTree = "<group>"; };
+		680352492127E62700FD53CA /* PlaceDetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailInterfaceController.swift; sourceTree = "<group>"; };
+		6803524B2127E79000FD53CA /* AirQualityTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityTableRowController.swift; sourceTree = "<group>"; };
+		6803524D2127E7A300FD53CA /* WaterQualityTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQualityTableRowController.swift; sourceTree = "<group>"; };
+		680352512127EB2500FD53CA /* AirQualityInterfaceTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityInterfaceTable.swift; sourceTree = "<group>"; };
+		680352532127EB4000FD53CA /* WaterQualityInterfaceTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQualityInterfaceTable.swift; sourceTree = "<group>"; };
 		680A209821010F9200EDDBB5 /* NWQPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPTests.swift; sourceTree = "<group>"; };
 		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
@@ -400,7 +410,7 @@
 		6811FCC9212118BE00509A37 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811FCD02121384700509A37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInterfaceController.swift; sourceTree = "<group>"; };
-		6819BE572121E7DD00EC7C01 /* FavoritesRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRowController.swift; sourceTree = "<group>"; };
+		6819BE572121E7DD00EC7C01 /* FavoritesTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableRowController.swift; sourceTree = "<group>"; };
 		681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		681C2D5A2116B0410008F020 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		681C2D5C2116B1A80008F020 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
@@ -653,6 +663,34 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		680352482127E60000FD53CA /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				680352492127E62700FD53CA /* PlaceDetailInterfaceController.swift */,
+				6803524F2127EAF700FD53CA /* Air Quality */,
+				680352502127EB0300FD53CA /* Water Quality */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		6803524F2127EAF700FD53CA /* Air Quality */ = {
+			isa = PBXGroup;
+			children = (
+				680352512127EB2500FD53CA /* AirQualityInterfaceTable.swift */,
+				6803524B2127E79000FD53CA /* AirQualityTableRowController.swift */,
+			);
+			path = "Air Quality";
+			sourceTree = "<group>";
+		};
+		680352502127EB0300FD53CA /* Water Quality */ = {
+			isa = PBXGroup;
+			children = (
+				680352532127EB4000FD53CA /* WaterQualityInterfaceTable.swift */,
+				6803524D2127E7A300FD53CA /* WaterQualityTableRowController.swift */,
+			);
+			path = "Water Quality";
+			sourceTree = "<group>";
+		};
 		680A209721010F6500EDDBB5 /* NWQP */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +713,7 @@
 				681F3D2D2123ADF200FE7B94 /* Recommendation */,
 				6819BE562121E7CC00EC7C01 /* Favorites */,
 				680352432125119100FD53CA /* Location */,
+				680352482127E60000FD53CA /* Place */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -683,7 +722,7 @@
 			isa = PBXGroup;
 			children = (
 				6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */,
-				6819BE572121E7DD00EC7C01 /* FavoritesRowController.swift */,
+				6819BE572121E7DD00EC7C01 /* FavoritesTableRowController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -2081,8 +2120,13 @@
 			files = (
 				680352452125119F00FD53CA /* LocationInterfaceController.swift in Sources */,
 				6802DF6221250BF20032024A /* MBPlacemarkScope+Color.swift in Sources */,
-				6819BE582121E7DD00EC7C01 /* FavoritesRowController.swift in Sources */,
+				680352522127EB2500FD53CA /* AirQualityInterfaceTable.swift in Sources */,
+				6819BE582121E7DD00EC7C01 /* FavoritesTableRowController.swift in Sources */,
+				6803524E2127E7A300FD53CA /* WaterQualityTableRowController.swift in Sources */,
 				681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */,
+				6803524C2127E79000FD53CA /* AirQualityTableRowController.swift in Sources */,
+				6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */,
+				680352542127EB4000FD53CA /* WaterQualityInterfaceTable.swift in Sources */,
 				681F3D302123AE1D00FE7B94 /* NearbyTableRowController.swift in Sources */,
 				68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */,
 				6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */,
