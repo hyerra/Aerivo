@@ -1,5 +1,5 @@
 //
-//  FavoritesRowController.swift
+//  FavoritesTableRowController.swift
 //  Aerivo WatchKit Extension
 //
 //  Created by Harish Yerra on 8/13/18.
@@ -9,7 +9,7 @@
 import Foundation
 import WatchKit
 
-class FavoritesRowController: NSObject {
+class FavoritesTableRowController: NSObject {
     static let identifier = "favoritesRow"
     
     @IBOutlet var icon: WKInterfaceImage!

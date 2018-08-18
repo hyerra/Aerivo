@@ -57,13 +57,13 @@ class SearchInterfaceController: WKInterfaceController {
     // MARK: - Favorites
     
     private func reloadFavoritesTable() {
-        favoritesTable.setNumberOfRows(favorites.count, withRowType: FavoritesRowController.identifier)
+        favoritesTable.setNumberOfRows(favorites.count, withRowType: FavoritesTableRowController.identifier)
         
         favoritesLabel.setHidden(favoritesTable.numberOfRows == 0)
         
         for rowIndex in 0..<favoritesTable.numberOfRows {
             let favorite = favorites[rowIndex]
-            let row = favoritesTable.rowController(at: rowIndex) as! FavoritesRowController
+            let row = favoritesTable.rowController(at: rowIndex) as! FavoritesTableRowController
             row.placeName.setText(favorite.name)
             row.address.setText(favorite.formattedAddressLines?.first)
         }

@@ -38,7 +38,7 @@
                                 <fragment content="Title for a table that shows nearby locations."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" id="dIX-dn-uKm">
+                        <table alignment="left" pagingScroll="YES" id="dIX-dn-uKm">
                             <items>
                                 <tableRow identifier="nearbyRow" id="wMt-vT-lDm" customClass="NearbyTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
@@ -59,6 +59,7 @@
                                         <outlet property="address" destination="Lka-0k-8fd" id="P2q-pe-Bir"/>
                                         <outlet property="icon" destination="B7F-cc-IJM" id="2PW-ql-H1u"/>
                                         <outlet property="placeName" destination="xZb-CE-b1P" id="kem-nT-bQN"/>
+                                        <segue destination="FdW-AN-bjl" kind="push" id="QQv-1l-j1L"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -93,9 +94,9 @@
                                 <fragment content="Title for a table that shows favorited locations."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" id="uMz-ko-fiM">
+                        <table alignment="left" pagingScroll="YES" id="uMz-ko-fiM">
                             <items>
-                                <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesRowController" customModule="Aerivo_WatchKit_Extension">
+                                <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
                                         <items>
                                             <imageView alignment="left" id="Bw7-b1-atN"/>
@@ -114,6 +115,7 @@
                                         <outlet property="address" destination="tiH-f1-37e" id="SFq-lF-F4F"/>
                                         <outlet property="icon" destination="Bw7-b1-atN" id="2WJ-Fh-DC4"/>
                                         <outlet property="placeName" destination="Rjo-RL-afe" id="9HX-nI-XaW"/>
+                                        <segue destination="FdW-AN-bjl" kind="push" id="e5c-Oj-eFo"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -145,6 +147,77 @@
             </objects>
             <point key="canvasLocation" x="189" y="254"/>
         </scene>
+        <!--placeDetailIC-->
+        <scene sceneID="p72-6Q-6nM">
+            <objects>
+                <controller identifier="placeDetailIC" id="FdW-AN-bjl" customClass="PlaceDetailInterfaceController" customModule="Aerivo_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Location" id="BLf-N3-p74">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <button width="1" alignment="left" title="Contact Government" id="2T5-WY-I4N">
+                            <attributedString key="userComments">
+                                <fragment content="Offers the user to contact a government official."/>
+                            </attributedString>
+                        </button>
+                        <separator alignment="left" id="y37-z7-eWZ"/>
+                        <label alignment="left" text="AIR QUALITY" id="ulh-RQ-3Sp">
+                            <color key="textColor" white="1" alpha="0.80497645547945218" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows the air quality at a location."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="ZyB-uc-X4S" customClass="AirQualityInterfaceTable" customModule="Aerivo_WatchKit_Extension">
+                            <items>
+                                <tableRow identifier="airQualityRow" selectable="NO" id="Xjb-iq-E6G" customClass="AirQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="VXk-Nh-uOx">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" id="rc8-05-zYh"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="statisticLabel" destination="rc8-05-zYh" id="Uwv-iZ-moP"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label alignment="left" text="WATER QUALITY" id="yMq-9p-BcL">
+                            <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows the water quality at a location."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="g6E-mS-fun" customClass="WaterQualityInterfaceTable" customModule="Aerivo_WatchKit_Extension">
+                            <items>
+                                <tableRow identifier="waterQualityRow" selectable="NO" id="JCU-7w-ai6" customClass="WaterQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="hq8-vk-uz3">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" id="ARZ-7T-05I"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="statisticLabel" destination="ARZ-7T-05I" id="YzI-yB-W0U"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="airQualityHeading" destination="ulh-RQ-3Sp" id="mQM-xV-wu0"/>
+                        <outlet property="airQualityTable" destination="ZyB-uc-X4S" id="ZuB-XU-hFa"/>
+                        <outlet property="location" destination="BLf-N3-p74" id="Bwq-cK-El5"/>
+                        <outlet property="waterQualityHeading" destination="yMq-9p-BcL" id="gm0-vI-1pD"/>
+                        <outlet property="waterQualityTable" destination="g6E-mS-fun" id="RVb-xi-7hJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="491" y="68"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="e5c-Oj-eFo"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
