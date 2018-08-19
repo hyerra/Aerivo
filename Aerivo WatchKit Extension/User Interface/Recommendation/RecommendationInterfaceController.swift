@@ -60,7 +60,6 @@ class RecommendationInterfaceController: WKInterfaceController {
     
     private func reloadNearbyTable() {
         nearbyTable.setNumberOfRows(nearbyResults.count, withRowType: NearbyTableRowController.identifier)
-        
         nearbyLabel.setHidden(nearbyTable.numberOfRows == 0)
         
         for rowIndex in 0..<nearbyTable.numberOfRows {

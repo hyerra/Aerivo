@@ -19,13 +19,44 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     @IBOutlet var location: WKInterfaceLabel!
     @IBOutlet var contactOfficialButton: WKInterfaceButton!
     
-    @IBOutlet var airQualityHeading: WKInterfaceLabel!
+    @IBOutlet var airQualityLabel: WKInterfaceLabel!
     @IBOutlet var airQualityTable: WKInterfaceTable!
     
-    @IBOutlet var waterQualityHeading: WKInterfaceLabel!
+    @IBOutlet var waterQualityLabel: WKInterfaceLabel!
     @IBOutlet var waterQualityTable: WKInterfaceTable!
     
-    lazy var civicInformationClient = CivicInformationClient()
+    lazy var openAQClient: OpenAQClient = .shared
+    var latestAQ: LatestAQ?
+    var parametersInfo: AerivoKit.Parameter?
+    
+    lazy var nwqpClient: NWQPClient = .shared
+    var nwqpResults: [NWQPResult] = [] {
+        didSet {
+            nwqpResults = nwqpResults.filter { $0.organizations?.first?.activity.last?.results.last?.description.measurement != nil }
+        }
+    }
+    
+    lazy var civicInformationClient: CivicInformationClient = .shared
+    
+    var isAQDataLoaded = false {
+        didSet {
+            if isAQDataLoaded {
+                DispatchQueue.main.async {
+                    self.reloadAirQualityTable()
+                }
+            }
+        }
+    }
+    
+    var isNWQPDataLoaded = false {
+        didSet {
+            if isNWQPDataLoaded {
+                DispatchQueue.main.async {
+                    self.reloadWaterQualityTable()
+                }
+            }
+        }
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -33,6 +64,8 @@ class PlaceDetailInterfaceController: WKInterfaceController {
         setTitle(NSLocalizedString("Back", comment: "Allows the user to go back to the previous screen."))
         self.placemark = context as? Placemark
         location.setText(placemark.displayName)
+        loadAirQualityData()
+        loadWaterQualityData()
     }
     
     override func willActivate() {
@@ -43,6 +76,112 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    // MARK: - Air Quality
+    
+    private func loadAirQualityData() {
+        guard let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        var latestAQParams = LatestAQParameters()
+        latestAQParams.coordinates = coordinate
+        latestAQParams.radius = 800000
+        latestAQParams.orderBy = .distance
+        latestAQParams.limit = 1
+        
+        var isLatestAQLoaded = false
+        var isParametersInfoLoaded = false
+        
+        var allDataIsLoaded: Bool {
+            return isLatestAQLoaded && isParametersInfoLoaded
+        }
+        
+        openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
+            guard case let .success(latestAQ) = result else {
+                isLatestAQLoaded = true
+                if allDataIsLoaded { self?.isAQDataLoaded = true }
+                return
+            }
+            self?.latestAQ = latestAQ
+            isLatestAQLoaded = true
+            if allDataIsLoaded { self?.isAQDataLoaded = true }
+        }
+        
+        let parametersParams = ParameterParameters()
+        openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
+            guard case let .success(parameters) = result else {
+                isParametersInfoLoaded = true
+                if allDataIsLoaded { self?.isAQDataLoaded = true }
+                return
+            }
+            self?.parametersInfo = parameters
+            isParametersInfoLoaded = true
+            if allDataIsLoaded { self?.isAQDataLoaded = true }
+        }
+    }
+    
+    private func reloadAirQualityTable() {
+        airQualityTable.setNumberOfRows(latestAQ?.results.first?.measurements.count ?? 0, withRowType: AirQualityTableRowController.identifier)
+        airQualityLabel.setHidden(airQualityTable.numberOfRows == 0)
+        
+        for rowIndex in 0..<airQualityTable.numberOfRows {
+            let row = airQualityTable.rowController(at: rowIndex) as! AirQualityTableRowController
+            guard let aqResult = latestAQ?.results.first?.measurements[rowIndex] else { continue }
+            guard let parameterInfo = parametersInfo?.results.filter({ $0.id == aqResult.parameter.rawValue }).first else { continue }
+            let measurement = Measurement(value: aqResult.value, unit: aqResult.unit.standardizedUnit)
+            let measurementFormatter = MeasurementFormatter()
+            if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
+            let localizedMeasurement = measurementFormatter.string(from: measurement)
+            let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
+            row.statisticLabel.setAttributedText(attributedString)
+        }
+    }
+    
+    // MARK: - Water Quality
+    
+    private func loadWaterQualityData() {
+        guard let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let startDateComponents = Calendar(identifier: .gregorian).dateComponents([.month, .year], from: Date())
+        let startDate = Calendar(identifier: .gregorian).date(from: startDateComponents)
+        
+        var nwqpParameters = NWQPParameters()
+        nwqpParameters.latitude = coordinate.latitude
+        nwqpParameters.longitude = coordinate.longitude
+        nwqpParameters.within = 500
+        nwqpParameters.zip = .no
+        nwqpParameters.pageSize = 10
+        nwqpParameters.page = 1
+        nwqpParameters.startDate = startDate
+        
+        nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
+            for result in results {
+                guard case let .success(parameter) = result else { continue }
+                self?.nwqpResults.append(parameter)
+            }
+            self?.isNWQPDataLoaded = true
+        }
+    }
+    
+    private func reloadWaterQualityTable() {
+        waterQualityTable.setNumberOfRows(nwqpResults.count, withRowType: WaterQualityTableRowController.identifier)
+        waterQualityLabel.setHidden(waterQualityTable.numberOfRows == 0)
+        
+        for rowIndex in 0..<waterQualityTable.numberOfRows {
+            let row = waterQualityTable.rowController(at: rowIndex) as! WaterQualityTableRowController
+            guard let nwqpResult = nwqpResults[rowIndex].organizations?.first?.activity.last?.results.last else { continue }
+            guard let measurementInfo = nwqpResult.description.measurement else { continue }
+            let measurement = Measurement(value: measurementInfo.value, unit: measurementInfo.unitCode.standardizedUnit)
+            let measurementFormatter = MeasurementFormatter()
+            if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
+            let localizedMeasurement = measurementFormatter.string(from: measurement)
+            let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
+            let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
+            attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
+            row.statisticLabel.setAttributedText(attributedString)
+        }
     }
     
     // MARK: - Actions

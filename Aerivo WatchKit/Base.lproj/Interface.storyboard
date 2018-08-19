@@ -38,7 +38,7 @@
                                 <fragment content="Title for a table that shows nearby locations."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" pagingScroll="YES" id="dIX-dn-uKm">
+                        <table alignment="left" id="dIX-dn-uKm">
                             <items>
                                 <tableRow identifier="nearbyRow" id="wMt-vT-lDm" customClass="NearbyTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
@@ -94,7 +94,7 @@
                                 <fragment content="Title for a table that shows favorited locations."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" pagingScroll="YES" id="uMz-ko-fiM">
+                        <table alignment="left" id="uMz-ko-fiM">
                             <items>
                                 <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
@@ -208,11 +208,11 @@
                         </table>
                     </items>
                     <connections>
-                        <outlet property="airQualityHeading" destination="ulh-RQ-3Sp" id="mQM-xV-wu0"/>
+                        <outlet property="airQualityLabel" destination="ulh-RQ-3Sp" id="Z2m-zx-XLx"/>
                         <outlet property="airQualityTable" destination="ZyB-uc-X4S" id="ZuB-XU-hFa"/>
                         <outlet property="contactOfficialButton" destination="2T5-WY-I4N" id="XTU-mI-gmw"/>
                         <outlet property="location" destination="BLf-N3-p74" id="Bwq-cK-El5"/>
-                        <outlet property="waterQualityHeading" destination="yMq-9p-BcL" id="gm0-vI-1pD"/>
+                        <outlet property="waterQualityLabel" destination="yMq-9p-BcL" id="H8d-RY-o0O"/>
                         <outlet property="waterQualityTable" destination="g6E-mS-fun" id="RVb-xi-7hJ"/>
                     </connections>
                 </controller>
@@ -221,7 +221,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QQv-1l-j1L"/>
+        <segue reference="e5c-Oj-eFo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
