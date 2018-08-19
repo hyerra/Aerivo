@@ -20,7 +20,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     static let identifier = "placesDetailVC"
     
-    var placemark: GeocodedPlacemark?
+    var placemark: Placemark!
     var favorite: Favorite? {
         didSet {
             if favorite != nil {
@@ -32,9 +32,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             }
         }
     }
-    
-    var ofFavoritesOrigin = false
-    var tempFavorite: Favorite?
         
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -105,12 +102,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.favorite = tempFavorite
-        placeName.text = placemark?.formattedName ?? favorite?.name
-        let genre = placemark?.genres?.first ?? favorite?.genres?.first
-        let addressLine = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.first ?? favorite?.formattedAddressLines?.first
-        detail.text = genre ?? addressLine
-        address.text = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: "\n") ?? favorite?.formattedAddressLines?.joined(separator: "\n")
+        placeName.text = placemark.displayName
+        detail.text = placemark?.genres?.first ?? placemark.addressLines?.first
+        address.text = placemark.addressLines?.joined(separator: "\n")
         
         if let pulleyVC = presentingViewController?.pulleyViewController { drawerDisplayModeDidChange(drawer: pulleyVC) }
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize }
@@ -184,13 +178,14 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         guard let mapView = mapViewController.mapView else { return }
         mapView.removeAnnotations(mapView.annotations ?? [])
         
-        if let placemark = placemark, let coordinate = placemark.location?.coordinate {
-            mapViewController.annotationBackgroundColor = placemark.scope.displayColor
-            mapViewController.annotationImage = UIImage(named: "\(placemark.imageName ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+        if let latitude = placemark.latitude, let longitude = placemark.longitude {
+            let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+            mapViewController.annotationBackgroundColor = placemark.relativeScope.displayColor
+            mapViewController.annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
             
             let pointAnnotation = MGLPointAnnotation()
             pointAnnotation.coordinate = coordinate
-            pointAnnotation.title = placemark.formattedName
+            pointAnnotation.title = placemark.displayName
             pointAnnotation.subtitle = placemark.genres?.first
             mapView.addAnnotation(pointAnnotation)
             
@@ -200,36 +195,15 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             mapView.fly(to: camera) {
                 mapView.setCenter(coordinate, animated: true)
             }
-        } else if let placemark = favorite {
-            if let latitude = placemark.latitude, let longitude = placemark.longitude {
-                let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-                let scope = MBPlacemarkScope(rawValue: UInt(placemark.scope))
-                mapViewController.annotationBackgroundColor = scope.displayColor
-                mapViewController.annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
-                
-                let pointAnnotation = MGLPointAnnotation()
-                pointAnnotation.coordinate = coordinate
-                pointAnnotation.title = placemark.name
-                pointAnnotation.subtitle = placemark.genres?.first
-                mapView.addAnnotation(pointAnnotation)
-                
-                let camera = MGLMapCamera()
-                camera.centerCoordinate = coordinate
-                camera.altitude = 8000
-                mapView.fly(to: camera) {
-                    mapView.setCenter(coordinate, animated: true)
-                }
-            }
         }
-        
     }
     
     // MARK: - User Activity
     
     private func createUserActivity() -> NSUserActivity {
         let activity = NSUserActivity.viewPlaceActivity
-        activity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark?.formattedName ?? favorite?.name ?? "")
-        if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
+        activity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark.displayName ?? "")
+        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
             let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
             activity.addUserInfoEntries(from: userInfo)
         }
@@ -265,10 +239,9 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     private func donateAirQualityIntent() {
         let intent = AirQualityIntent()
         
-        if let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue, let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue {
+        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
             let location = CLLocation(latitude: latitude, longitude: longitude)
-            let name = placemark?.formattedName ?? favorite?.name
-            intent.targetLocation = CLPlacemark(location: location, name: name, postalAddress: nil)
+            intent.targetLocation = CLPlacemark(location: location, name: placemark.displayName, postalAddress: nil)
         }
         
         let interaction = INInteraction(intent: intent, response: nil)
@@ -296,10 +269,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     private func fetchAirQualityData() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
-        let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
-        guard let lat = latitude, let long = longitude else { return }
-        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        guard let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         var latestAQParams = LatestAQParameters()
         latestAQParams.coordinates = coordinate
         latestAQParams.radius = 800000
@@ -332,10 +303,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     private func fetchWaterQualityData() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue
-        let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue
-        guard let lat = latitude, let long = longitude else { return }
-        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        guard let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let startDateComponents = Calendar(identifier: .gregorian).dateComponents([.month, .year], from: Date())
         let startDate = Calendar(identifier: .gregorian).date(from: startDateComponents)
         
@@ -448,7 +417,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         sender.isUserInteractionEnabled = false
         
         var representativeInfoParams = RepresentativeInfoByAddressParameters()
-        representativeInfoParams.address = (placemark?.addressDictionary?["formattedAddressLines"] as? [String])?.joined(separator: " ") ?? favorite?.formattedAddressLines?.joined(separator: " ")
+        representativeInfoParams.address = placemark.addressLines?.joined(separator: " ")
         representativeInfoParams.levels = [.administrativeArea1, .administrativeArea2, .locality, .regional, .special, .subLocality1, .subLocality2]
         representativeInfoParams.roles = [.deputyHeadOfGovernment, .executiveCouncil, .governmentOfficer, .headOfGovernment, .headOfState, .legislatorLowerBody, .legislatorUpperBody]
         civicInformationClient.fetchRepresentativeInfo(using: representativeInfoParams) { result in
@@ -513,7 +482,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                         let composeVC = MFMailComposeViewController()
                                         composeVC.mailComposeDelegate = self
                                         composeVC.setToRecipients([email])
-                                        if let name = self.placemark?.formattedName ?? self.favorite?.name {
+                                        if let name = self.placemark.displayName {
                                             composeVC.setSubject(CivicInformationMessage.subject(placeName: name).messageValue)
                                             composeVC.setMessageBody(CivicInformationMessage.messageBody(officialsName: official.name, placeName: name).messageValue, isHTML: false)
                                         }
@@ -599,7 +568,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBAction func favoritePlacemark(_ sender: UIButton) {
         let dataController = DataController.shared
         if favorite == nil {
-            guard let placemark = placemark else { return }
+            guard let placemark = placemark as? GeocodedPlacemark else { return }
             let favorite = Favorite(placemark: placemark, insertInto: dataController.managedObjectContext)
             
             do {
@@ -615,7 +584,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             do {
                 try dataController.saveContext()
                 self.favorite = nil
-                if ofFavoritesOrigin { dismiss(animated: true) }
+                if placemark is Favorite { dismiss(animated: true) }
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Remove Favorite Location", comment: "Title of alert that tells the user that there was an error removing the location from their favorites."), message: NSLocalizedString("There was an issue removing this location from your favorites.", comment: "Message of alert that tells the user that there was an error removing the location from their favorites."), preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
@@ -630,9 +599,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             UIApplication.shared.open(url)
         } else {
             guard var urlComps = URLComponents(string: "https://www.google.com/search") else { return }
-            let qualifiedName = placemark?.qualifiedName ?? favorite?.qualifiedName
-            let name = placemark?.formattedName ?? favorite?.name
-            let searchQuery = URLQueryItem(name: "q", value: qualifiedName ?? name)
+            let searchQuery = URLQueryItem(name: "q", value: placemark.qualifiedName ?? placemark.displayName)
             urlComps.queryItems = [searchQuery]
             guard let url = urlComps.url else { return }
             UIApplication.shared.open(url)
@@ -642,8 +609,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBAction func showAR(_ sender: UIButton) {
         guard ARWorldTrackingConfiguration.isSupported else { return }
         let arPlacesVC = storyboard?.instantiateViewController(withIdentifier: ARPlacesViewController.identifier) as! ARPlacesViewController
-        guard let latitude = placemark?.location?.coordinate.latitude ?? favorite?.latitude?.doubleValue else { return }
-        guard let longitude = placemark?.location?.coordinate.longitude ?? favorite?.longitude?.doubleValue else { return }
+        guard let latitude = placemark.latitude?.doubleValue else { return }
+        guard let longitude = placemark.longitude?.doubleValue else { return }
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         arPlacesVC.location = location
         self.presentingViewController?.pulleyViewController?.setDrawerPosition(position: .open, animated: true)

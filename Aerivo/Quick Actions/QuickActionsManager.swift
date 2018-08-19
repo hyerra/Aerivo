@@ -87,8 +87,7 @@ final class QuickActionsManager: NSObject {
             guard let favoriteObjectID = DataController.shared.persistentContainer.persistentStoreCoordinator.managedObjectID(forURIRepresentation: favoriteURL) else { return false }
             guard let favorite = DataController.shared.managedObjectContext.object(with: favoriteObjectID) as? Favorite else { return false }
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-                vc.tempFavorite = favorite
-                vc.ofFavoritesOrigin = true
+                vc.placemark = favorite
                 placesVC.present(vc, animated: true) {
                     placesVC.view.alpha = 0
                     pulleyVC.setDrawerPosition(position: .open, animated: true)
