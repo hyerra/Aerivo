@@ -72,4 +72,13 @@ class RecommendationInterfaceController: WKInterfaceController {
         }
     }
     
+    // MARK: - Navigation
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        if table == nearbyTable {
+            return nearbyResults[rowIndex]
+        }
+        return nil
+    }
+    
 }
