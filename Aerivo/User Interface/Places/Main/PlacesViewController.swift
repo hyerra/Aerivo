@@ -174,8 +174,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             guard let placemark = fetchedResultsController?.fetchedObjects?[indexPath.row] else { return }
             
             if let vc = storyboard?.instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
-                vc.tempFavorite = placemark
-                vc.ofFavoritesOrigin = true
+                vc.placemark = placemark
                 present(vc, animated: true) {
                     self.view.alpha = 0
                 }
