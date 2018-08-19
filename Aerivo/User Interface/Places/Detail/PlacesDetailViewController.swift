@@ -434,7 +434,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 }
                 
                 guard let officials = representativeInfo.officials else { showNoDataAlert(); return }
-                let filteredOfficials = officials.filter { $0.emails != nil || $0.phones != nil || $0.channels != nil }
+                let filteredOfficials = officials.filter { !($0.emails ?? []).isEmpty || !($0.phones ?? []).isEmpty || !($0.channels ?? []).isEmpty }
+                guard !filteredOfficials.isEmpty else { showNoDataAlert(); return }
                 
                 let alertController = UIAlertController(title: NSLocalizedString("Government Officials", comment: "Title for a list of governement officials a user can contact."), message: NSLocalizedString("Choose one of the government officials you wish to contact.", comment: "Message for a list of government officials a user can contact."), preferredStyle: .actionSheet)
                 
@@ -448,7 +449,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 let alertController = UIAlertController(title: NSLocalizedString("Phone", comment: "Tells the user they can call their governement official."), message: NSLocalizedString("Choose a number to call your government official.", comment: "Message that tells the user to select a phone number."), preferredStyle: .actionSheet)
                                 
                                 for phone in phones {
-                                    let action = UIAlertAction(title: NSLocalizedString(phone, comment: "Tells the user they can call their governement official."), style: .default) { action in
+                                    let action = UIAlertAction(title: phone, style: .default) { action in
                                         var components = URLComponents()
                                         components.scheme = "tel"
                                         components.path = phone
@@ -557,7 +558,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let localizedMessage = String.localizedStringWithFormat("%@ is having trouble getting government representative information. This may be because the app doesn't have enough information about government officials for your area.", appName)
+                let localizedMessage = String.localizedStringWithFormat("%@ is having trouble getting government representative information. This may be caused by a network error or because the app doesn't have enough information about government officials for your area.", appName)
                 let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
