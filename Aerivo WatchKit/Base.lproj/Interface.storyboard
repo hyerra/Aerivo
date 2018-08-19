@@ -152,7 +152,7 @@
             <objects>
                 <controller identifier="placeDetailIC" id="FdW-AN-bjl" customClass="PlaceDetailInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Location" id="BLf-N3-p74">
+                        <label alignment="left" text="Location" numberOfLines="0" id="BLf-N3-p74">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <button width="1" alignment="left" title="Contact Government" id="2T5-WY-I4N">
@@ -168,12 +168,12 @@
                                 <fragment content="Title for a table that shows the air quality at a location."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" id="ZyB-uc-X4S" customClass="AirQualityInterfaceTable" customModule="Aerivo_WatchKit_Extension">
+                        <table alignment="left" id="ZyB-uc-X4S">
                             <items>
                                 <tableRow identifier="airQualityRow" selectable="NO" id="Xjb-iq-E6G" customClass="AirQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="VXk-Nh-uOx">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" id="rc8-05-zYh"/>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="rc8-05-zYh"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -189,12 +189,12 @@
                                 <fragment content="Title for a table that shows the water quality at a location."/>
                             </attributedString>
                         </label>
-                        <table alignment="left" id="g6E-mS-fun" customClass="WaterQualityInterfaceTable" customModule="Aerivo_WatchKit_Extension">
+                        <table alignment="left" id="g6E-mS-fun">
                             <items>
                                 <tableRow identifier="waterQualityRow" selectable="NO" id="JCU-7w-ai6" customClass="WaterQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="hq8-vk-uz3">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" id="ARZ-7T-05I"/>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="ARZ-7T-05I"/>
                                         </items>
                                     </group>
                                     <connections>

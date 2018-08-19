@@ -13,6 +13,8 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     
     static let identifier = "placeDetailIC"
     
+    var placemark: Placemark!
+    
     @IBOutlet var location: WKInterfaceLabel!
     
     @IBOutlet var airQualityHeading: WKInterfaceLabel!
@@ -25,6 +27,8 @@ class PlaceDetailInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         // Configure interface objects here.
         setTitle(NSLocalizedString("Back", comment: "Allows the user to go back to the previous screen."))
+        self.placemark = context as? Placemark
+        location.setText(placemark.displayName)
     }
     
     override func willActivate() {

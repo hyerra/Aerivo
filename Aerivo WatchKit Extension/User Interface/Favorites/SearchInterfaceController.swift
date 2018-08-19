@@ -79,4 +79,13 @@ class SearchInterfaceController: WKInterfaceController {
             #endif
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        if table == favoritesTable {
+            return favorites[rowIndex]
+        }
+        return nil
+    }
 }
