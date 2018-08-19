@@ -159,6 +159,9 @@
                             <attributedString key="userComments">
                                 <fragment content="Offers the user to contact a government official."/>
                             </attributedString>
+                            <connections>
+                                <action selector="contactOfficial" destination="FdW-AN-bjl" id="14a-hS-TfK"/>
+                            </connections>
                         </button>
                         <separator alignment="left" id="y37-z7-eWZ"/>
                         <label alignment="left" text="AIR QUALITY" id="ulh-RQ-3Sp">
@@ -207,6 +210,7 @@
                     <connections>
                         <outlet property="airQualityHeading" destination="ulh-RQ-3Sp" id="mQM-xV-wu0"/>
                         <outlet property="airQualityTable" destination="ZyB-uc-X4S" id="ZuB-XU-hFa"/>
+                        <outlet property="contactOfficialButton" destination="2T5-WY-I4N" id="XTU-mI-gmw"/>
                         <outlet property="location" destination="BLf-N3-p74" id="Bwq-cK-El5"/>
                         <outlet property="waterQualityHeading" destination="yMq-9p-BcL" id="gm0-vI-1pD"/>
                         <outlet property="waterQualityTable" destination="g6E-mS-fun" id="RVb-xi-7hJ"/>
@@ -217,7 +221,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e5c-Oj-eFo"/>
+        <segue reference="QQv-1l-j1L"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
