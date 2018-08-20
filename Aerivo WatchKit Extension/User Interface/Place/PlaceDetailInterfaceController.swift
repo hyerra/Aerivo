@@ -78,6 +78,11 @@ class PlaceDetailInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
+    deinit {
+        openAQClient.cancelAllPendingRequests()
+        nwqpClient.cancelAllPendingRequests()
+    }
+    
     // MARK: - Air Quality
     
     private func loadAirQualityData() {

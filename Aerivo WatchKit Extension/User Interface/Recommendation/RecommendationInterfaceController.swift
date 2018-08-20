@@ -28,6 +28,7 @@ class RecommendationInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         // Configure interface objects here.
         setTitle(Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo")
+        NotificationCenter.default.addObserver(self, selector: #selector(loadNearbyResults), name: NSNotification.Name(rawValue: "LocationDidChange"), object: nil)
         loadNearbyResults()
     }
     
@@ -36,15 +37,27 @@ class RecommendationInterfaceController: WKInterfaceController {
         super.willActivate()
     }
     
+    override func didAppear() {
+        // This method is called when watch view controller is visible to user
+        LocationManager.shared.locationManager.startUpdatingLocation()
+        super.didAppear()
+    }
+    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        LocationManager.shared.locationManager.stopUpdatingLocation()
         super.didDeactivate()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Nearby
     
+    @objc
     private func loadNearbyResults() {
-        let location = CLLocationManager().location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
+        let location = LocationManager.shared.locationManager.location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
         
         let options = ReverseGeocodeOptions(location: location)
         options.maximumResultCount = 5
