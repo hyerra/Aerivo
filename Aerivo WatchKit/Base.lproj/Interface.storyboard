@@ -139,9 +139,55 @@
                                 <imageView alignment="center" id="RSa-vQ-dmK"/>
                             </items>
                         </group>
+                        <label alignment="left" text="AIR QUALITY" id="A5s-Ax-jLf">
+                            <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows the air quality at a location."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="vM2-Ge-WFE">
+                            <items>
+                                <tableRow identifier="airQualityRow" selectable="NO" id="LeD-6m-paw" customClass="AirQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="BDd-6r-L22">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="I3B-nn-eVr"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="statisticLabel" destination="I3B-nn-eVr" id="rEe-X6-odG"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label alignment="left" text="WATER QUALITY" id="Icf-bO-fF1">
+                            <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                            <attributedString key="userComments">
+                                <fragment content="Title for a table that shows the water quality at a location."/>
+                            </attributedString>
+                        </label>
+                        <table alignment="left" id="pxz-jt-Wbz">
+                            <items>
+                                <tableRow identifier="waterQualityRow" selectable="NO" id="VUc-Ll-OeY" customClass="WaterQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="zVV-v0-rT8">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="Mkq-J1-2xY"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="statisticLabel" destination="Mkq-J1-2xY" id="q06-YP-t0K"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
+                        <outlet property="airQualityLabel" destination="A5s-Ax-jLf" id="nm4-wX-XXS"/>
+                        <outlet property="airQualityTable" destination="vM2-Ge-WFE" id="uVt-bb-gGB"/>
                         <outlet property="locationInterfaceImage" destination="RSa-vQ-dmK" id="cbu-4y-aMD"/>
+                        <outlet property="waterQualityLabel" destination="Icf-bO-fF1" id="wOW-F0-pL8"/>
+                        <outlet property="waterQualityTable" destination="pxz-jt-Wbz" id="ifa-ZV-0sl"/>
                     </connections>
                 </controller>
             </objects>
