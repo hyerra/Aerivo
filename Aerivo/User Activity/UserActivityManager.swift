@@ -51,7 +51,6 @@ class UserActivityManager: NSObject {
             handled = true
             let coordinate = CLLocation(latitude: latitude, longitude: longitude)
             let options = ReverseGeocodeOptions(location: coordinate)
-            options.maximumResultCount = 1
             options.locale = Locale.autoupdatingCurrent
             
             let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
