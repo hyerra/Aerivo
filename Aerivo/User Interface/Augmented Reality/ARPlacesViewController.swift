@@ -139,7 +139,6 @@ class ARPlacesViewController: UIViewController {
         terrainNode.geometry?.materials = defaultMaterials()
         
         self.terrain = VirtualObject(node: terrainNode)
-        
         terrainNode.fetchTerrainHeights(minWallHeight: 50.0, enableDynamicShadows: true, progress: { _, _ in }) { }
         terrainNode.fetchTerrainTexture("mapbox/satellite-v9", zoom: 14, progress: { _, _ in }, completion: { image in
             terrainNode.geometry?.materials[4].diffuse.contents = image
