@@ -204,6 +204,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         let activity = NSUserActivity.viewPlaceActivity
         activity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark.displayName ?? "")
         if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
+            if #available(iOS 12.0, *) { activity.persistentIdentifier = "latitude:\(latitude),longitude:\(longitude)" }
             let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
             activity.addUserInfoEntries(from: userInfo)
         }
