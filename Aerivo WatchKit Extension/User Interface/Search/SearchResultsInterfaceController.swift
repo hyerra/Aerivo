@@ -44,6 +44,8 @@ class SearchResultsInterfaceController: WKInterfaceController {
         for rowIndex in 0..<searchResultsTable.numberOfRows {
             let searchResult = results[rowIndex]
             let row = searchResultsTable.rowController(at: rowIndex) as! SearchResultsTableRowController
+            row.iconGroup.setBackgroundColor(searchResult.scope.displayColor)
+            row.icon.setImageNamed("\(searchResult.imageName ?? "marker")-15")
             row.placeName.setText(searchResult.name)
             row.address.setText((searchResult.addressDictionary?["formattedAddressLines"] as? [String])?.first)
         }

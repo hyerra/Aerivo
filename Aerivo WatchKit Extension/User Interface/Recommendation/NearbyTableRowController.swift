@@ -13,6 +13,7 @@ class NearbyTableRowController: NSObject {
     
     static let identifier = "nearbyRow"
     
+    @IBOutlet var iconGroup: WKInterfaceGroup!
     @IBOutlet var icon: WKInterfaceImage!
     @IBOutlet var placeName: WKInterfaceLabel!
     @IBOutlet var address: WKInterfaceLabel!

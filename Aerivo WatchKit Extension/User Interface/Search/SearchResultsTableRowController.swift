@@ -12,6 +12,7 @@ import WatchKit
 class SearchResultsTableRowController: NSObject {
     static let identifier = "searchResultsRow"
     
+    @IBOutlet var iconGroup: WKInterfaceGroup!
     @IBOutlet var icon: WKInterfaceImage!
     @IBOutlet var placeName: WKInterfaceLabel!
     @IBOutlet var address: WKInterfaceLabel!
