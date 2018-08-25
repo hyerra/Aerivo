@@ -16,7 +16,7 @@
                     <items>
                         <group width="1" alignment="center" id="XMB-5k-U1t">
                             <items>
-                                <button width="1" alignment="center" title="Search" id="fOe-Ji-ndL">
+                                <button width="1" alignment="center" accessibilityHint="Search for a place or address." accessibilityIdentifier="search" title="Search" id="fOe-Ji-ndL">
                                     <attributedString key="userComments">
                                         <fragment content="Allows the user to search for a location."/>
                                     </attributedString>
@@ -26,12 +26,12 @@
                                 </button>
                             </items>
                         </group>
-                        <button width="1" alignment="center" title="Location" id="7hG-fH-DPs">
+                        <button width="1" alignment="center" accessibilityHint="View the air and water quality data at your location." accessibilityIdentifier="location" title="Location" id="7hG-fH-DPs">
                             <connections>
                                 <segue destination="tgv-JQ-NU4" kind="push" id="4IA-sp-fcm"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="NEARBY" id="AhY-pe-OXU">
+                        <label alignment="left" accessibilityLabel="Nearby Places" accessibilityIdentifier="nearbyTitle" text="NEARBY" id="AhY-pe-OXU">
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -41,7 +41,7 @@
                         <table alignment="left" id="dIX-dn-uKm">
                             <items>
                                 <tableRow identifier="nearbyRow" id="wMt-vT-lDm" customClass="NearbyTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" isAccessibilityElement="YES" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
                                         <items>
                                             <group alignment="left" radius="15" id="PtY-dG-BOw">
                                                 <items>
@@ -49,11 +49,11 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
-                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="xZb-CE-b1P">
+                                            <label alignment="left" accessibilityIdentifier="recommendationPlaceName" text="Place Name" textAlignment="left" numberOfLines="3" id="xZb-CE-b1P">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
-                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="Lka-0k-8fd">
+                                            <label alignment="left" accessibilityIdentifier="recommendationAddress" text="Address" textAlignment="left" numberOfLines="2" id="Lka-0k-8fd">
                                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
@@ -72,7 +72,7 @@
                         </table>
                         <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="bDc-I0-KeS">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Nearby Locations" textAlignment="center" numberOfLines="0" id="J8C-QM-Fhd">
+                                <label alignment="center" verticalAlignment="center" isAccessibilityElement="NO" text="Nearby Locations" textAlignment="center" numberOfLines="0" id="J8C-QM-Fhd">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <attributedString key="userComments">
                                         <fragment content="Title for message that shows up when there are no locations near a user."/>
@@ -100,7 +100,7 @@
             <objects>
                 <controller identifier="searchIC" id="AgC-eL-Hgc" customClass="SearchInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="center" title="Search" id="mCy-is-IYc">
+                        <button width="1" alignment="center" accessibilityHint="Search for a place or address." accessibilityIdentifier="search" title="Search" id="mCy-is-IYc">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                             <attributedString key="userComments">
                                 <fragment content="Allows the user to search for a location."/>
@@ -109,7 +109,7 @@
                                 <action selector="search" destination="AgC-eL-Hgc" id="kla-fy-pl1"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="FAVORITES" id="qww-A5-zez">
+                        <label alignment="left" accessibilityLabel="Favorited Locations" accessibilityIdentifier="favoritesTitle" text="FAVORITES" id="qww-A5-zez">
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -119,7 +119,7 @@
                         <table alignment="left" id="uMz-ko-fiM">
                             <items>
                                 <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" isAccessibilityElement="YES" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
                                         <items>
                                             <group alignment="left" layout="vertical" radius="15" id="Z2H-Md-irJ">
                                                 <items>
@@ -127,11 +127,11 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
-                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="Rjo-RL-afe">
+                                            <label alignment="left" accessibilityIdentifier="favoritesPlaceName" text="Place Name" textAlignment="left" numberOfLines="3" id="Rjo-RL-afe">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
-                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="tiH-f1-37e">
+                                            <label alignment="left" accessibilityIdentifier="favoritesAddress" text="Address" textAlignment="left" numberOfLines="2" id="tiH-f1-37e">
                                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
@@ -150,7 +150,7 @@
                         </table>
                         <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="hEL-Cb-T9Z">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="No Favorites" textAlignment="center" numberOfLines="0" id="cGc-9u-Ko6">
+                                <label alignment="center" verticalAlignment="center" isAccessibilityElement="NO" text="No Favorites" textAlignment="center" numberOfLines="0" id="cGc-9u-Ko6">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <attributedString key="userComments">
                                         <fragment content="Title for message that shows up when the user tries to view favorited locations but they haven't favorited any locations."/>
@@ -183,7 +183,7 @@
                                 <imageView alignment="center" id="RSa-vQ-dmK"/>
                             </items>
                         </group>
-                        <label alignment="left" text="AIR QUALITY" id="A5s-Ax-jLf">
+                        <label alignment="left" accessibilityIdentifier="airQualityTitle" text="AIR QUALITY" id="A5s-Ax-jLf">
                             <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -193,9 +193,9 @@
                         <table alignment="left" id="vM2-Ge-WFE">
                             <items>
                                 <tableRow identifier="airQualityRow" selectable="NO" id="LeD-6m-paw" customClass="AirQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="BDd-6r-L22">
+                                    <group key="rootItem" width="1" alignment="left" isAccessibilityElement="YES" id="BDd-6r-L22">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="I3B-nn-eVr"/>
+                                            <label alignment="left" verticalAlignment="center" accessibilityIdentifier="airStatisticLabel" text="Statistic" numberOfLines="0" id="I3B-nn-eVr"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -204,7 +204,7 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <label alignment="left" text="WATER QUALITY" id="Icf-bO-fF1">
+                        <label alignment="left" accessibilityIdentifier="waterQualityTitle" text="WATER QUALITY" id="Icf-bO-fF1">
                             <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -214,9 +214,9 @@
                         <table alignment="left" id="pxz-jt-Wbz">
                             <items>
                                 <tableRow identifier="waterQualityRow" selectable="NO" id="VUc-Ll-OeY" customClass="WaterQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="zVV-v0-rT8">
+                                    <group key="rootItem" width="1" alignment="left" isAccessibilityElement="YES" id="zVV-v0-rT8">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="Mkq-J1-2xY"/>
+                                            <label alignment="left" verticalAlignment="center" accessibilityIdentifier="waterStatisticLabel" text="Statistic" numberOfLines="0" id="Mkq-J1-2xY"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -242,10 +242,10 @@
             <objects>
                 <controller identifier="placeDetailIC" id="FdW-AN-bjl" customClass="PlaceDetailInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Location" numberOfLines="0" id="BLf-N3-p74">
+                        <label alignment="left" accessibilityIdentifier="locationTitle" text="Location" numberOfLines="0" id="BLf-N3-p74">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <button width="1" alignment="center" title="Contact Government" id="2T5-WY-I4N">
+                        <button width="1" alignment="center" accessibilityHint="Contacts a government official if you are concerned about the environmental quality at this location." accessibilityIdentifier="contactGovernment" title="Contact Government" id="2T5-WY-I4N">
                             <attributedString key="userComments">
                                 <fragment content="Offers the user to contact a government official."/>
                             </attributedString>
@@ -254,7 +254,7 @@
                             </connections>
                         </button>
                         <separator alignment="left" id="y37-z7-eWZ"/>
-                        <label alignment="left" text="AIR QUALITY" id="ulh-RQ-3Sp">
+                        <label alignment="left" accessibilityIdentifier="airQualityTitle" text="AIR QUALITY" id="ulh-RQ-3Sp">
                             <color key="textColor" white="1" alpha="0.80497645547945218" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -264,9 +264,9 @@
                         <table alignment="left" id="ZyB-uc-X4S">
                             <items>
                                 <tableRow identifier="airQualityRow" selectable="NO" id="Xjb-iq-E6G" customClass="AirQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="VXk-Nh-uOx">
+                                    <group key="rootItem" width="1" alignment="left" isAccessibilityElement="YES" id="VXk-Nh-uOx">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="rc8-05-zYh"/>
+                                            <label alignment="left" verticalAlignment="center" accessibilityIdentifier="airStatisticLabel" text="Statistic" numberOfLines="0" id="rc8-05-zYh"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -275,7 +275,7 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <label alignment="left" text="WATER QUALITY" id="yMq-9p-BcL">
+                        <label alignment="left" accessibilityIdentifier="waterQualityTitle" text="WATER QUALITY" id="yMq-9p-BcL">
                             <color key="textColor" white="1" alpha="0.80497645549999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                             <attributedString key="userComments">
@@ -285,9 +285,9 @@
                         <table alignment="left" id="g6E-mS-fun">
                             <items>
                                 <tableRow identifier="waterQualityRow" selectable="NO" id="JCU-7w-ai6" customClass="WaterQualityTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="hq8-vk-uz3">
+                                    <group key="rootItem" width="1" alignment="left" isAccessibilityElement="YES" id="hq8-vk-uz3">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Statistic" numberOfLines="0" id="ARZ-7T-05I"/>
+                                            <label alignment="left" verticalAlignment="center" accessibilityIdentifier="waterStatisticLabel" text="Statistic" numberOfLines="0" id="ARZ-7T-05I"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -317,7 +317,7 @@
                         <table alignment="left" id="cgF-4t-umt">
                             <items>
                                 <tableRow identifier="searchResultsRow" id="RvM-3Q-fuo" customClass="SearchResultsTableRowController" customModule="Aerivo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="SSS-X4-34g">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" isAccessibilityElement="YES" layout="vertical" spacing="0.0" id="SSS-X4-34g">
                                         <items>
                                             <group alignment="left" radius="15" id="tpt-ok-dWs">
                                                 <items>
@@ -325,11 +325,11 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
-                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="kic-1T-xzc">
+                                            <label alignment="left" accessibilityIdentifier="searchPlaceName" text="Place Name" textAlignment="left" numberOfLines="3" id="kic-1T-xzc">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
-                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="ccy-xL-lp0">
+                                            <label alignment="left" accessibilityIdentifier="searchAddress" text="Address" textAlignment="left" numberOfLines="2" id="ccy-xL-lp0">
                                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
@@ -348,7 +348,7 @@
                         </table>
                         <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="73f-an-mr4">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="No Results" textAlignment="center" numberOfLines="0" id="eR9-0O-zXt">
+                                <label alignment="center" verticalAlignment="center" isAccessibilityElement="NO" text="No Results" textAlignment="center" numberOfLines="0" id="eR9-0O-zXt">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <attributedString key="userComments">
                                         <fragment content="Title for message that shows up when the user tries to search for a location but no results are returned."/>
@@ -372,7 +372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TZT-Zu-bx2"/>
+        <segue reference="QQv-1l-j1L"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
