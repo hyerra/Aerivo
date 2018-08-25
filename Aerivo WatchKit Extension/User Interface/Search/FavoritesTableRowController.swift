@@ -12,6 +12,7 @@ import WatchKit
 class FavoritesTableRowController: NSObject {
     static let identifier = "favoritesRow"
     
+    @IBOutlet var iconGroup: WKInterfaceGroup!
     @IBOutlet var icon: WKInterfaceImage!
     @IBOutlet var placeName: WKInterfaceLabel!
     @IBOutlet var address: WKInterfaceLabel!

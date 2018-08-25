@@ -181,7 +181,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         if let latitude = placemark.latitude, let longitude = placemark.longitude {
             let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
             mapViewController.annotationBackgroundColor = placemark.relativeScope.displayColor
-            mapViewController.annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+            mapViewController.annotationImage = UIImage(named: "\(placemark.maki ?? "marker")-15", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: traitCollection)
             
             let pointAnnotation = MGLPointAnnotation()
             pointAnnotation.coordinate = coordinate

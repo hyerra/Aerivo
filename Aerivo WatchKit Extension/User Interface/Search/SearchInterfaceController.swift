@@ -84,6 +84,8 @@ class SearchInterfaceController: WKInterfaceController {
         for rowIndex in 0..<favoritesTable.numberOfRows {
             let favorite = favorites[rowIndex]
             let row = favoritesTable.rowController(at: rowIndex) as! FavoritesTableRowController
+            row.iconGroup.setBackgroundColor(favorite.relativeScope.displayColor)
+            row.icon.setImageNamed("\(favorite.maki ?? "marker")-15")
             row.placeName.setText(favorite.name)
             row.address.setText(favorite.formattedAddressLines?.first)
         }

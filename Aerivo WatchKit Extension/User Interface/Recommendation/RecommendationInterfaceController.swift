@@ -78,7 +78,8 @@ class RecommendationInterfaceController: WKInterfaceController {
         for rowIndex in 0..<nearbyTable.numberOfRows {
             let result = nearbyResults[rowIndex]
             let row = nearbyTable.rowController(at: rowIndex) as! NearbyTableRowController
-            //row.icon.setImage(UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil))
+            row.iconGroup.setBackgroundColor(result.scope.displayColor)
+            row.icon.setImageNamed("\(result.imageName ?? "marker")-15")
             row.placeName.setText(result.formattedName)
             row.address.setText((result.addressDictionary?["formattedAddressLines"] as? [String])?.first)
         }

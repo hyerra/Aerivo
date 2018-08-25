@@ -104,7 +104,6 @@
 		6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
 		6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
-		6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */; };
 		6819BE582121E7DD00EC7C01 /* FavoritesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE572121E7DD00EC7C01 /* FavoritesTableRowController.swift */; };
 		681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C2D532116AB0E0008F020 /* FocusSquareSegment.swift */; };
@@ -141,7 +140,6 @@
 		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
 		68A30AF9212FBD4B001A55B9 /* SearchResultsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A30AF8212FBD4B001A55B9 /* SearchResultsInterfaceController.swift */; };
 		68A30AFD212FBE3D001A55B9 /* SearchResultsTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A30AFC212FBE3D001A55B9 /* SearchResultsTableRowController.swift */; };
-		68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		68AE5E0221163D5A0038EABC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
 		68AE5E0321163D5A0038EABC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
@@ -239,6 +237,9 @@
 		68ECFDEF212A1F4E00E87439 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ECFDEE212A1F4E00E87439 /* Extensions.swift */; };
 		68ECFDF1212A723700E87439 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ECFDF0212A723700E87439 /* LocationManager.swift */; };
 		68ED4F042130E90700BF6CA4 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 68ED4F032130E90700BF6CA4 /* Localizable.stringsdict */; };
+		68ED4F06213102A200BF6CA4 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
+		68ED4F07213102A400BF6CA4 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
+		68ED4F092131032800BF6CA4 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A28F20E9CA250096D60A /* MapViewController.swift */; };
 		68F9152B212100E500160B5B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F91529212100E500160B5B /* Interface.storyboard */; };
 		68F9152D212100E600160B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F9152C212100E600160B5B /* Assets.xcassets */; };
@@ -1696,7 +1697,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6811FCC5212118BE00509A37 /* AerivoKit.xcassets in Resources */,
+				68ED4F07213102A400BF6CA4 /* AerivoKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1745,7 +1746,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68AE5DFF21163D450038EABC /* AerivoKit.xcassets in Resources */,
+				68ED4F06213102A200BF6CA4 /* AerivoKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1760,6 +1761,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68ED4F092131032800BF6CA4 /* AerivoKit.xcassets in Resources */,
 				68F9152D212100E600160B5B /* Assets.xcassets in Resources */,
 				68F9152B212100E500160B5B /* Interface.storyboard in Resources */,
 			);

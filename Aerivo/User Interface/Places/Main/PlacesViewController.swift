@@ -122,7 +122,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 let cell = cell as! PlacesTableViewCell
                 let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
                 
-                cell.icon.image = UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+                cell.icon.image = UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: traitCollection)
                 
                 cell.placeName.text = result.formattedName
                 cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.first
@@ -137,7 +137,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.reuseIdentifier, for: indexPath) as! PlacesTableViewCell
             guard let favorite = fetchedResultsController?.object(at: indexPath) else { return cell }
             
-            cell.icon.image = UIImage(named: "\(favorite.maki ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: nil)
+            cell.icon.image = UIImage(named: "\(favorite.maki ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: traitCollection)
             
             cell.placeName.text = favorite.name
             cell.secondaryDetail.text = favorite.formattedAddressLines?.first

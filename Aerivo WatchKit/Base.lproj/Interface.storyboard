@@ -43,7 +43,12 @@
                                 <tableRow identifier="nearbyRow" id="wMt-vT-lDm" customClass="NearbyTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="K9U-ud-8f7">
                                         <items>
-                                            <imageView alignment="left" id="B7F-cc-IJM"/>
+                                            <group alignment="left" radius="15" id="PtY-dG-BOw">
+                                                <items>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="B7F-cc-IJM"/>
+                                                </items>
+                                                <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
+                                            </group>
                                             <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="xZb-CE-b1P">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
@@ -58,6 +63,7 @@
                                     <connections>
                                         <outlet property="address" destination="Lka-0k-8fd" id="P2q-pe-Bir"/>
                                         <outlet property="icon" destination="B7F-cc-IJM" id="2PW-ql-H1u"/>
+                                        <outlet property="iconGroup" destination="PtY-dG-BOw" id="BD4-QR-F9O"/>
                                         <outlet property="placeName" destination="xZb-CE-b1P" id="kem-nT-bQN"/>
                                         <segue destination="FdW-AN-bjl" kind="push" id="QQv-1l-j1L"/>
                                     </connections>
@@ -99,7 +105,12 @@
                                 <tableRow identifier="favoritesRow" id="ZkW-N1-AYH" customClass="FavoritesTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="2Sg-p0-YCK">
                                         <items>
-                                            <imageView alignment="left" id="Bw7-b1-atN"/>
+                                            <group alignment="left" layout="vertical" radius="15" id="Z2H-Md-irJ">
+                                                <items>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="Bw7-b1-atN"/>
+                                                </items>
+                                                <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
+                                            </group>
                                             <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="Rjo-RL-afe">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
@@ -114,6 +125,7 @@
                                     <connections>
                                         <outlet property="address" destination="tiH-f1-37e" id="SFq-lF-F4F"/>
                                         <outlet property="icon" destination="Bw7-b1-atN" id="2WJ-Fh-DC4"/>
+                                        <outlet property="iconGroup" destination="Z2H-Md-irJ" id="BzE-fF-ocx"/>
                                         <outlet property="placeName" destination="Rjo-RL-afe" id="9HX-nI-XaW"/>
                                         <segue destination="FdW-AN-bjl" kind="push" id="e5c-Oj-eFo"/>
                                     </connections>
@@ -275,7 +287,12 @@
                                 <tableRow identifier="searchResultsRow" id="RvM-3Q-fuo" customClass="SearchResultsTableRowController" customModule="Aerivo_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="SSS-X4-34g">
                                         <items>
-                                            <imageView alignment="left" id="6XQ-X1-5hh"/>
+                                            <group alignment="left" radius="15" id="tpt-ok-dWs">
+                                                <items>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="6XQ-X1-5hh"/>
+                                                </items>
+                                                <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
+                                            </group>
                                             <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="kic-1T-xzc">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
@@ -290,6 +307,7 @@
                                     <connections>
                                         <outlet property="address" destination="ccy-xL-lp0" id="Rwp-if-Gu0"/>
                                         <outlet property="icon" destination="6XQ-X1-5hh" id="bSE-02-fo0"/>
+                                        <outlet property="iconGroup" destination="tpt-ok-dWs" id="9zn-oZ-XVW"/>
                                         <outlet property="placeName" destination="kic-1T-xzc" id="imw-b4-Tlu"/>
                                         <segue destination="FdW-AN-bjl" kind="push" id="TZT-Zu-bx2"/>
                                     </connections>
@@ -306,7 +324,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TZT-Zu-bx2"/>
+        <segue reference="QQv-1l-j1L"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
