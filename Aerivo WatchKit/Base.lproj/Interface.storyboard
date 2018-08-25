@@ -263,11 +263,50 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="491" y="68"/>
+            <point key="canvasLocation" x="767" y="69"/>
+        </scene>
+        <!--searchResultsIC-->
+        <scene sceneID="CVH-Eg-XfG">
+            <objects>
+                <controller identifier="searchResultsIC" id="kHB-ef-JVn" customClass="SearchResultsInterfaceController" customModule="Aerivo_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="cgF-4t-umt">
+                            <items>
+                                <tableRow identifier="searchResultsRow" id="RvM-3Q-fuo" customClass="SearchResultsTableRowController" customModule="Aerivo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="SSS-X4-34g">
+                                        <items>
+                                            <imageView alignment="left" id="6XQ-X1-5hh"/>
+                                            <label alignment="left" text="Place Name" textAlignment="left" numberOfLines="3" id="kic-1T-xzc">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                            <label alignment="left" text="Address" textAlignment="left" numberOfLines="2" id="ccy-xL-lp0">
+                                                <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="8" right="8" top="4" bottom="4"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="address" destination="ccy-xL-lp0" id="Rwp-if-Gu0"/>
+                                        <outlet property="icon" destination="6XQ-X1-5hh" id="bSE-02-fo0"/>
+                                        <outlet property="placeName" destination="kic-1T-xzc" id="imw-b4-Tlu"/>
+                                        <segue destination="FdW-AN-bjl" kind="push" id="TZT-Zu-bx2"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="searchResultsTable" destination="cgF-4t-umt" id="jT9-yH-G4c"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="479" y="-72"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e5c-Oj-eFo"/>
+        <segue reference="TZT-Zu-bx2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>

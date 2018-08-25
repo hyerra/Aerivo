@@ -9,6 +9,7 @@
 import WatchKit
 import CoreData
 import AerivoKit
+import MapboxGeocoder
 import Foundation
 
 class SearchInterfaceController: WKInterfaceController {
@@ -50,7 +51,16 @@ class SearchInterfaceController: WKInterfaceController {
     
     @IBAction func search() {
         presentTextInputController(withSuggestions: nil, allowedInputMode: .plain) { results in
+            guard let query = results?.first as? String else { return }
+            let options = ForwardGeocodeOptions(query: query)
+            options.focalLocation = LocationManager.shared.locationManager.location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
+            options.maximumResultCount = 10
+            options.locale = Locale.autoupdatingCurrent
             
+            let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+                self.pushController(withName: SearchResultsInterfaceController.identifier, context: placemarks)
+            }
+            task.resume()
         }
     }
     
