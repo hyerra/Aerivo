@@ -17,6 +17,7 @@ class RecommendationInterfaceController: WKInterfaceController {
     
     @IBOutlet var nearbyLabel: WKInterfaceLabel!
     @IBOutlet var nearbyTable: WKInterfaceTable!
+    @IBOutlet var nearbyEmptyGroup: WKInterfaceGroup!
     
     var nearbyResults: [GeocodedPlacemark] = [] {
         didSet {
@@ -74,6 +75,7 @@ class RecommendationInterfaceController: WKInterfaceController {
     private func reloadNearbyTable() {
         nearbyTable.setNumberOfRows(nearbyResults.count, withRowType: NearbyTableRowController.identifier)
         nearbyLabel.setHidden(nearbyTable.numberOfRows == 0)
+        nearbyEmptyGroup.setHidden(nearbyTable.numberOfRows != 0)
         
         for rowIndex in 0..<nearbyTable.numberOfRows {
             let result = nearbyResults[rowIndex]

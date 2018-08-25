@@ -18,6 +18,7 @@ class SearchInterfaceController: WKInterfaceController {
     
     @IBOutlet var favoritesLabel: WKInterfaceLabel!
     @IBOutlet var favoritesTable: WKInterfaceTable!
+    @IBOutlet var favoritesEmptyGroup: WKInterfaceGroup!
     
     var favorites: [Favorite] = [] {
         didSet {
@@ -55,6 +56,7 @@ class SearchInterfaceController: WKInterfaceController {
             let options = ForwardGeocodeOptions(query: query)
             options.focalLocation = LocationManager.shared.locationManager.location ?? CLLocation(latitude: 37.3318, longitude: -122.0054)
             options.maximumResultCount = 10
+            options.autocompletesQuery = false
             options.locale = Locale.autoupdatingCurrent
             
             let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
@@ -80,6 +82,7 @@ class SearchInterfaceController: WKInterfaceController {
     private func reloadFavoritesTable() {
         favoritesTable.setNumberOfRows(favorites.count, withRowType: FavoritesTableRowController.identifier)
         favoritesLabel.setHidden(favoritesTable.numberOfRows == 0)
+        favoritesEmptyGroup.setHidden(favoritesTable.numberOfRows != 0)
         
         for rowIndex in 0..<favoritesTable.numberOfRows {
             let favorite = favorites[rowIndex]
