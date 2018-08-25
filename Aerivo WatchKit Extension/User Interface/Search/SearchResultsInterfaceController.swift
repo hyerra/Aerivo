@@ -15,6 +15,7 @@ class SearchResultsInterfaceController: WKInterfaceController {
     static let identifier = "searchResultsIC"
     
     @IBOutlet var searchResultsTable: WKInterfaceTable!
+    @IBOutlet var searchResultsEmptyGroup: WKInterfaceGroup!
     
     var results: [GeocodedPlacemark] = []
     
@@ -40,6 +41,7 @@ class SearchResultsInterfaceController: WKInterfaceController {
     
     private func reloadSearchResults() {
         searchResultsTable.setNumberOfRows(results.count, withRowType: SearchResultsTableRowController.identifier)
+        searchResultsEmptyGroup.setHidden(searchResultsTable.numberOfRows != 0)
         
         for rowIndex in 0..<searchResultsTable.numberOfRows {
             let searchResult = results[rowIndex]

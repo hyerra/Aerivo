@@ -16,7 +16,7 @@
                     <items>
                         <group width="1" alignment="center" id="XMB-5k-U1t">
                             <items>
-                                <button width="1" alignment="left" title="Search" id="fOe-Ji-ndL">
+                                <button width="1" alignment="center" title="Search" id="fOe-Ji-ndL">
                                     <attributedString key="userComments">
                                         <fragment content="Allows the user to search for a location."/>
                                     </attributedString>
@@ -26,7 +26,7 @@
                                 </button>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Location" id="7hG-fH-DPs">
+                        <button width="1" alignment="center" title="Location" id="7hG-fH-DPs">
                             <connections>
                                 <segue destination="tgv-JQ-NU4" kind="push" id="4IA-sp-fcm"/>
                             </connections>
@@ -70,8 +70,24 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="bDc-I0-KeS">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Nearby Locations" textAlignment="center" numberOfLines="0" id="J8C-QM-Fhd">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <attributedString key="userComments">
+                                        <fragment content="Title for message that shows up when there are no locations near a user."/>
+                                    </attributedString>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Couldn't locate places near you. Try searching for places instead." textAlignment="center" numberOfLines="0" id="ozN-bJ-pf4">
+                                    <attributedString key="userComments">
+                                        <fragment content="Message that shows up when there are no locations near a user."/>
+                                    </attributedString>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="nearbyEmptyGroup" destination="bDc-I0-KeS" id="5q7-RB-hoy"/>
                         <outlet property="nearbyLabel" destination="AhY-pe-OXU" id="GxY-Mi-LRP"/>
                         <outlet property="nearbyTable" destination="dIX-dn-uKm" id="wRt-nB-jKo"/>
                     </connections>
@@ -84,7 +100,7 @@
             <objects>
                 <controller identifier="searchIC" id="AgC-eL-Hgc" customClass="SearchInterfaceController" customModule="Aerivo_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Search" id="mCy-is-IYc">
+                        <button width="1" alignment="center" title="Search" id="mCy-is-IYc">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                             <attributedString key="userComments">
                                 <fragment content="Allows the user to search for a location."/>
@@ -132,8 +148,24 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="hEL-Cb-T9Z">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="No Favorites" textAlignment="center" numberOfLines="0" id="cGc-9u-Ko6">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <attributedString key="userComments">
+                                        <fragment content="Title for message that shows up when the user tries to view favorited locations but they haven't favorited any locations."/>
+                                    </attributedString>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="You haven't favorited any locations." textAlignment="center" numberOfLines="0" id="1JW-JL-RrY">
+                                    <attributedString key="userComments">
+                                        <fragment content="Message that shows up when the user tries to view favorited locations but they haven't favorited any locations."/>
+                                    </attributedString>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="favoritesEmptyGroup" destination="hEL-Cb-T9Z" id="dFC-re-raK"/>
                         <outlet property="favoritesLabel" destination="qww-A5-zez" id="mKL-dz-UBM"/>
                         <outlet property="favoritesTable" destination="uMz-ko-fiM" id="jmv-l5-tOz"/>
                     </connections>
@@ -213,7 +245,7 @@
                         <label alignment="left" text="Location" numberOfLines="0" id="BLf-N3-p74">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <button width="1" alignment="left" title="Contact Government" id="2T5-WY-I4N">
+                        <button width="1" alignment="center" title="Contact Government" id="2T5-WY-I4N">
                             <attributedString key="userComments">
                                 <fragment content="Offers the user to contact a government official."/>
                             </attributedString>
@@ -314,8 +346,24 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="73f-an-mr4">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="No Results" textAlignment="center" numberOfLines="0" id="eR9-0O-zXt">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <attributedString key="userComments">
+                                        <fragment content="Title for message that shows up when the user tries to search for a location but no results are returned."/>
+                                    </attributedString>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="There weren't any locations matching your search." textAlignment="center" numberOfLines="0" id="LrF-VH-oiH">
+                                    <attributedString key="userComments">
+                                        <fragment content="Message that shows up when the user tries to search for a location but no results are returned."/>
+                                    </attributedString>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="searchResultsEmptyGroup" destination="73f-an-mr4" id="Y39-dU-t3w"/>
                         <outlet property="searchResultsTable" destination="cgF-4t-umt" id="jT9-yH-G4c"/>
                     </connections>
                 </controller>
@@ -324,7 +372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QQv-1l-j1L"/>
+        <segue reference="TZT-Zu-bx2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
