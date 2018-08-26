@@ -40,10 +40,10 @@ class UserActivityManager: NSObject {
         switch userActivity.activityType {
         case NSUserActivity.searchActivity.activityType:
             handled = true
-            if let searchText = userActivity.userInfo?[NSUserActivity.ActivityKeys.searchText] {
-                placesVC.searchBar.text = searchText as? String
-                placesVC.searchBar.becomeFirstResponder()
+            if let searchText = userActivity.userInfo?[NSUserActivity.ActivityKeys.searchText] as? String {
+                placesVC.searchBar.text = searchText
             }
+            placesVC.searchBar.becomeFirstResponder()
         case NSUserActivity.viewPlaceActivity.activityType:
             guard let location = userActivity.userInfo?[NSUserActivity.ActivityKeys.location] as? [String: Any] else { break }
             guard let latitude = location["latitude"] as? Double else { break }
