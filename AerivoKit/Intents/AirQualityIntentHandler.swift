@@ -66,7 +66,7 @@ public class AirQualityIntentHandler: NSObject, AirQualityIntentHandling {
             let measurementFormatter = MeasurementFormatter()
             if measurement.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurementValue)
-            let localizedString = String.localizedStringWithFormat("%@ of %@", localizedMeasurement, parameterInfo.localizedName ?? parameterInfo.name)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("%@ of %@", comment: "The first token contains information about the measurement and the second token contains the parameter name. An example would be: 1 ppm of SO2."), localizedMeasurement, parameterInfo.localizedName ?? parameterInfo.name)
             result.append(localizedString)
         }
         

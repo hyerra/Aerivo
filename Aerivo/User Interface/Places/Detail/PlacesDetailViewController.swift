@@ -202,7 +202,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     private func createUserActivity() -> NSUserActivity {
         let activity = NSUserActivity.viewPlaceActivity
-        activity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark.displayName ?? "")
+        activity.title = String.localizedStringWithFormat(NSLocalizedString("Fetch environmental info for %@", comment: "String that will be displayed that allows a user to view enviornmental quality at a location."), placemark.displayName ?? "")
         if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
             if #available(iOS 12.0, *) { activity.persistentIdentifier = "latitude:\(latitude),longitude:\(longitude)" }
             let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
@@ -385,7 +385,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let measurementFormatter = MeasurementFormatter()
             if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #SO2:# 1 ppm."), parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
@@ -397,7 +397,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             let measurementFormatter = MeasurementFormatter()
             if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #Temperature, water:# 72°F."), nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: [.foregroundColor : UIAccessibility.isInvertColorsEnabled ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             cell.detail.setAttributedTitle(attributedString, for: .normal)
@@ -436,7 +436,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             if case let .success(representativeInfo) = result {
                 func showNoDataAlert() {
                     let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                    let localizedMessage = String.localizedStringWithFormat("%@ doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", appName)
+                    let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ doesn't have enough information about government officials for your area. You can try to find governement information directly or contact us directly for a request to support your area.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
                     let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: localizedMessage, preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                     self.present(alertController, animated: true)
@@ -567,7 +567,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let localizedMessage = String.localizedStringWithFormat("%@ is having trouble getting government representative information. This may be caused by a network error or because the app doesn't have enough information about government officials for your area.", appName)
+                let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ is having trouble getting government representative information. This may be caused by a network error or because the app doesn't have enough information about government officials for your area.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
                 let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)

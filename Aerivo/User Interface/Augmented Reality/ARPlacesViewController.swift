@@ -442,7 +442,7 @@ extension ARPlacesViewController {
             
             var message = trackingState.presentationString
             if let recommendation = trackingState.recommendation {
-                message = String.localizedStringWithFormat("%@: %@", message, recommendation)
+                message = String.localizedStringWithFormat(NSLocalizedString("%@: %@", comment: "The first token contains information or errors about the Augmented Reality screen while the second token provides a recommendation about how to handle any errors."), message, recommendation)
             }
             
             self?.showMessage(message, autoHide: false)

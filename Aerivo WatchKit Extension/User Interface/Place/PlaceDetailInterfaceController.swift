@@ -107,7 +107,7 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     
     private func createUserActivity() -> NSUserActivity {
         let viewPlaceActivity = NSUserActivity.viewPlaceActivity
-        viewPlaceActivity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark.displayName ?? "")
+        viewPlaceActivity.title = String.localizedStringWithFormat(NSLocalizedString("Fetch environmental info for %@", comment: "String that will be displayed that allows a user to view enviornmental quality at a location."), placemark.displayName ?? "")
         if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
             if #available(watchOS 5.0, *) { viewPlaceActivity.persistentIdentifier = "latitude:\(latitude),longitude:\(longitude)" }
             let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
@@ -170,7 +170,7 @@ class PlaceDetailInterfaceController: WKInterfaceController {
             let measurementFormatter = MeasurementFormatter()
             if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #SO2:# 1 ppm."), parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             row.statisticLabel.setAttributedText(attributedString)
@@ -215,7 +215,7 @@ class PlaceDetailInterfaceController: WKInterfaceController {
             let measurementFormatter = MeasurementFormatter()
             if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #Temperature, water:# 72°F."), nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             row.statisticLabel.setAttributedText(attributedString)
@@ -237,7 +237,7 @@ class PlaceDetailInterfaceController: WKInterfaceController {
             if case let .success(representativeInfo) = result {
                 func showNoDataAlert() {
                     let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                    let localizedMessage = String.localizedStringWithFormat("%@ doesn't have enough information about government officials for your area. Try using the iPhone app for more options of communication.", appName)
+                    let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ doesn't have enough information about government officials for your area. Try using the iPhone app for more options of communication.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
                     let cancelAction = WKAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel) { }
                     self.presentAlert(withTitle: NSLocalizedString("Oops 😣", comment: "Title of alert control for not enough data error."), message: localizedMessage, preferredStyle: .alert, actions: [cancelAction])
                 }
@@ -278,7 +278,7 @@ class PlaceDetailInterfaceController: WKInterfaceController {
                 self.presentAlert(withTitle: NSLocalizedString("Government Officials", comment: "Title for a list of governement officials a user can contact."), message: NSLocalizedString("Choose one of the government officials you wish to contact.", comment: "Message for a list of government officials a user can contact."), preferredStyle: .actionSheet, actions: actions)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let localizedMessage = String.localizedStringWithFormat("%@ is having trouble getting government representative information. This may be caused by a network error or because the app doesn't have enough information about government officials for your area.", appName)
+                let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ is having trouble getting government representative information. This may be caused by a network error or because the app doesn't have enough information about government officials for your area.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
                 let cancelAction = WKAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel) { }
                 self.presentAlert(withTitle: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert, actions: [cancelAction])
             }

@@ -27,6 +27,9 @@
                             </items>
                         </group>
                         <button width="1" alignment="center" accessibilityHint="View the air and water quality data at your location." accessibilityIdentifier="location" title="Location" id="7hG-fH-DPs">
+                            <attributedString key="userComments">
+                                <fragment content="Allows the user to view enviornmental quality information at their current location."/>
+                            </attributedString>
                             <connections>
                                 <segue destination="tgv-JQ-NU4" kind="push" id="4IA-sp-fcm"/>
                             </connections>
@@ -372,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QQv-1l-j1L"/>
+        <segue reference="TZT-Zu-bx2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38823529411764707" green="0.85490196078431369" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
 </document>
