@@ -160,7 +160,7 @@ class LocationInterfaceController: WKInterfaceController {
             let measurementFormatter = MeasurementFormatter()
             if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #SO2:# 1 ppm."), parameterInfo.localizedName ?? parameterInfo.name, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             row.statisticLabel.setAttributedText(attributedString)
@@ -205,7 +205,7 @@ class LocationInterfaceController: WKInterfaceController {
             let measurementFormatter = MeasurementFormatter()
             if measurementInfo.unitCode.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
             let localizedMeasurement = measurementFormatter.string(from: measurement)
-            let localizedString = String.localizedStringWithFormat("#%@:# %@", nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
+            let localizedString = String.localizedStringWithFormat(NSLocalizedString("#%@:# %@", comment: "The first token contains the parameter name and the second token contains the value. The # symbol should be placed around the parameter name. An example would be #Temperature, water:# 72°F."), nwqpResult.description.characteristicName.rawValue, localizedMeasurement)
             let attributedString = NSMutableAttributedString(string: localizedString, attributes: nil)
             attributedString.highlightKeywords(between: "#", with: UIColor(named: "System Green Color")!)
             row.statisticLabel.setAttributedText(attributedString)
