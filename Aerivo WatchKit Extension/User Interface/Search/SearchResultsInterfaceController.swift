@@ -8,6 +8,7 @@
 
 import WatchKit
 import MapboxGeocoder
+import AerivoKit
 import Foundation
 
 class SearchResultsInterfaceController: WKInterfaceController {

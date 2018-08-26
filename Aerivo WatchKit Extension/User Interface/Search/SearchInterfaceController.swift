@@ -32,6 +32,7 @@ class SearchInterfaceController: WKInterfaceController {
         setTitle(NSLocalizedString("Search", comment: "TItle of the screen that allows a user to search for locations."))
         fetchFavorites()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchFavorites), name: .NSManagedObjectContextDidSave, object: nil)
+        if #available(watchOS 5.0, *) { update(NSUserActivity.searchActivity) }
     }
     
     override func willActivate() {

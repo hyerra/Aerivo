@@ -8,6 +8,7 @@
 
 import WatchKit
 import AerivoKit
+import Intents
 import Foundation
 
 class PlaceDetailInterfaceController: WKInterfaceController {
@@ -66,6 +67,10 @@ class PlaceDetailInterfaceController: WKInterfaceController {
         location.setText(placemark.displayName)
         loadAirQualityData()
         loadWaterQualityData()
+        if #available(watchOS 5.0, *) {
+            donateAirQualityIntent()
+            update(createUserActivity())
+        }
     }
     
     override func willActivate() {
@@ -81,6 +86,34 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     deinit {
         openAQClient.cancelAllPendingRequests()
         nwqpClient.cancelAllPendingRequests()
+    }
+    
+    // MARK: - Intents
+    
+    @available(watchOS 5.0, *)
+    private func donateAirQualityIntent() {
+        let intent = AirQualityIntent()
+        
+        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
+            let location = CLLocation(latitude: latitude, longitude: longitude)
+            intent.targetLocation = CLPlacemark(location: location, name: placemark.displayName, postalAddress: nil)
+        }
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate()
+    }
+    
+    // MARK: - User Activity
+    
+    private func createUserActivity() -> NSUserActivity {
+        let viewPlaceActivity = NSUserActivity.viewPlaceActivity
+        viewPlaceActivity.title = String.localizedStringWithFormat("Fetch environmental info for %@", placemark.displayName ?? "")
+        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
+            if #available(watchOS 5.0, *) { viewPlaceActivity.persistentIdentifier = "latitude:\(latitude),longitude:\(longitude)" }
+            let userInfo: [String: Any] =  [NSUserActivity.ActivityKeys.location: ["latitude": latitude, "longitude": longitude]]
+            viewPlaceActivity.addUserInfoEntries(from: userInfo)
+        }
+        return viewPlaceActivity
     }
     
     // MARK: - Air Quality

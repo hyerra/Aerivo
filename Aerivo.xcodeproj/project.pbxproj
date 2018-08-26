@@ -18,6 +18,7 @@
 		6803525E2129207000FD53CA /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
 		6803525F2129207300FD53CA /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
 		680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		680FB44321321BFF0056007B /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FB44221321BFF0056007B /* UserActivityManager.swift */; };
 		6811FC6B212118BE00509A37 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6811FC6D212118BE00509A37 /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
 		6811FC6E212118BE00509A37 /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
@@ -118,6 +119,11 @@
 		681C4A1E211FA57C00D82950 /* AerivoIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 681C4A17211FA57C00D82950 /* AerivoIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		681F3D302123AE1D00FE7B94 /* NearbyTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681F3D2F2123AE1D00FE7B94 /* NearbyTableRowController.swift */; };
 		681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681F3D332123AEA800FE7B94 /* RecommendationInterfaceController.swift */; };
+		681FA046213233A200704EE2 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		681FA049213238B300704EE2 /* Aerivo.intentdefinition in Resources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		6824702D2132317E009EAC84 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6824702C2132317E009EAC84 /* IntentHandler.swift */; };
+		682470312132317E009EAC84 /* AerivoWatchKitIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
@@ -273,6 +279,13 @@
 			remoteGlobalIDString = 681C4A16211FA57C00D82950;
 			remoteInfo = AerivoIntents;
 		};
+		6824702F2132317E009EAC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 682470292132317E009EAC84;
+			remoteInfo = AerivoWatchKitIntents;
+		};
 		684BE21C20E99C1F00E74FE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
@@ -351,6 +364,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		682470352132317E009EAC84 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				682470312132317E009EAC84 /* AerivoWatchKitIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68E397CC20EFF0F3005C0722 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +436,7 @@
 		680A209A2101123E00EDDBB5 /* NWQPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPClient.swift; sourceTree = "<group>"; };
 		680A209C2101162F00EDDBB5 /* NWQPStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPStation.swift; sourceTree = "<group>"; };
 		680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMLEncoder+CustomDates.swift"; sourceTree = "<group>"; };
+		680FB44221321BFF0056007B /* UserActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityManager.swift; sourceTree = "<group>"; };
 		6811FCC9212118BE00509A37 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6811FCD02121384700509A37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInterfaceController.swift; sourceTree = "<group>"; };
@@ -429,6 +454,9 @@
 		681C4A1B211FA57C00D82950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681F3D2F2123AE1D00FE7B94 /* NearbyTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTableRowController.swift; sourceTree = "<group>"; };
 		681F3D332123AEA800FE7B94 /* RecommendationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationInterfaceController.swift; sourceTree = "<group>"; };
+		6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AerivoWatchKitIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6824702C2132317E009EAC84 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		6824702E2132317E009EAC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQParameters.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -599,6 +627,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		682470272132317E009EAC84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20420E99C1D00E74FE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +726,14 @@
 			path = NWQP;
 			sourceTree = "<group>";
 		};
+		680FB44121321BE50056007B /* User Activity */ = {
+			isa = PBXGroup;
+			children = (
+				680FB44221321BFF0056007B /* UserActivityManager.swift */,
+			);
+			path = "User Activity";
+			sourceTree = "<group>";
+		};
 		6811FCCF2121381000509A37 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +809,15 @@
 			path = Recommendation;
 			sourceTree = "<group>";
 		};
+		6824702B2132317E009EAC84 /* AerivoWatchKitIntents */ = {
+			isa = PBXGroup;
+			children = (
+				6824702C2132317E009EAC84 /* IntentHandler.swift */,
+				6824702E2132317E009EAC84 /* Info.plist */,
+			);
+			path = AerivoWatchKitIntents;
+			sourceTree = "<group>";
+		};
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +839,7 @@
 				687DBA6D2120DABE00C166FD /* AirQualityWidget */,
 				68F91528212100E500160B5B /* Aerivo WatchKit */,
 				68F91537212100E600160B5B /* Aerivo WatchKit Extension */,
+				6824702B2132317E009EAC84 /* AerivoWatchKitIntents */,
 				68CB23C72116303800B98B32 /* AerivoKit */,
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
@@ -807,6 +860,7 @@
 				68F91527212100E500160B5B /* Aerivo WatchKit.app */,
 				68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */,
 				6811FCC9212118BE00509A37 /* AerivoKit.framework */,
+				6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1086,6 +1140,7 @@
 				68ECFDEE212A1F4E00E87439 /* Extensions.swift */,
 				68ECFDF0212A723700E87439 /* LocationManager.swift */,
 				6819BE552121E68F00EC7C01 /* User Interface */,
+				680FB44121321BE50056007B /* User Activity */,
 				68ED4F022130E8E400BF6CA4 /* Resources */,
 			);
 			path = "Aerivo WatchKit Extension";
@@ -1423,6 +1478,23 @@
 			productReference = 681C4A17211FA57C00D82950 /* AerivoIntents.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		682470292132317E009EAC84 /* AerivoWatchKitIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 682470342132317E009EAC84 /* Build configuration list for PBXNativeTarget "AerivoWatchKitIntents" */;
+			buildPhases = (
+				682470262132317E009EAC84 /* Sources */,
+				682470272132317E009EAC84 /* Frameworks */,
+				682470282132317E009EAC84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AerivoWatchKitIntents;
+			productName = AerivoWatchKitIntents;
+			productReference = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */;
+			productType = "com.apple.product-type.app-extension.intents-service";
+		};
 		684BE20620E99C1D00E74FE5 /* Aerivo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 684BE22F20E99C1F00E74FE5 /* Build configuration list for PBXNativeTarget "Aerivo" */;
@@ -1566,11 +1638,13 @@
 				68F915B4212103AB00160B5B /* Embed Frameworks */,
 				68D25D612123B47E00AE963B /* Carthage Copy Frameworks */,
 				6858A1242124D9560024CD2D /* Carthage Warn Outdated */,
+				682470352132317E009EAC84 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				68C06C3821220A550094A15B /* PBXTargetDependency */,
+				682470302132317E009EAC84 /* PBXTargetDependency */,
 			);
 			name = "Aerivo WatchKit Extension";
 			productName = "Aerivo WatchKit Extension";
@@ -1594,6 +1668,9 @@
 								enabled = 1;
 							};
 						};
+					};
+					682470292132317E009EAC84 = {
+						CreatedOnToolsVersion = 10.0;
 					};
 					684BE20620E99C1D00E74FE5 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1687,6 +1764,7 @@
 				68CB23CD2116303800B98B32 /* AerivoKitTests */,
 				68F91526212100E500160B5B /* Aerivo WatchKit */,
 				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
+				682470292132317E009EAC84 /* AerivoWatchKitIntents */,
 				6811FC69212118BE00509A37 /* AerivoKit (watchOS) */,
 			);
 		};
@@ -1702,6 +1780,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		681C4A15211FA57C00D82950 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		682470282132317E009EAC84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1763,6 +1848,7 @@
 			files = (
 				68ED4F092131032800BF6CA4 /* AerivoKit.xcassets in Resources */,
 				68F9152D212100E600160B5B /* Assets.xcassets in Resources */,
+				681FA049213238B300704EE2 /* Aerivo.intentdefinition in Resources */,
 				68F9152B212100E500160B5B /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1963,6 +2049,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		682470262132317E009EAC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */,
+				6824702D2132317E009EAC84 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20320E99C1D00E74FE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2130,6 +2225,7 @@
 				680352452125119F00FD53CA /* LocationInterfaceController.swift in Sources */,
 				6819BE582121E7DD00EC7C01 /* FavoritesTableRowController.swift in Sources */,
 				68A30AFD212FBE3D001A55B9 /* SearchResultsTableRowController.swift in Sources */,
+				681FA046213233A200704EE2 /* Aerivo.intentdefinition in Sources */,
 				6803524E2127E7A300FD53CA /* WaterQualityTableRowController.swift in Sources */,
 				681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */,
 				6803524C2127E79000FD53CA /* AirQualityTableRowController.swift in Sources */,
@@ -2138,6 +2234,7 @@
 				68ECFDEF212A1F4E00E87439 /* Extensions.swift in Sources */,
 				6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */,
 				681F3D302123AE1D00FE7B94 /* NearbyTableRowController.swift in Sources */,
+				680FB44321321BFF0056007B /* UserActivityManager.swift in Sources */,
 				68A30AF9212FBD4B001A55B9 /* SearchResultsInterfaceController.swift in Sources */,
 				68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */,
 				6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */,
@@ -2152,6 +2249,11 @@
 			isa = PBXTargetDependency;
 			target = 681C4A16211FA57C00D82950 /* AerivoIntents */;
 			targetProxy = 681C4A1C211FA57C00D82950 /* PBXContainerItemProxy */;
+		};
+		682470302132317E009EAC84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 682470292132317E009EAC84 /* AerivoWatchKitIntents */;
+			targetProxy = 6824702F2132317E009EAC84 /* PBXContainerItemProxy */;
 		};
 		684BE21D20E99C1F00E74FE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2367,6 +2469,53 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		682470322132317E009EAC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoWatchKitIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension.AerivoWatchKitIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		682470332132317E009EAC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = AerivoWatchKitIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.Aerivo.watchkitapp.watchkitextension.AerivoWatchKitIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};
@@ -2890,6 +3039,15 @@
 			buildConfigurations = (
 				681C4A20211FA57C00D82950 /* Debug */,
 				681C4A21211FA57C00D82950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		682470342132317E009EAC84 /* Build configuration list for PBXNativeTarget "AerivoWatchKitIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				682470322132317E009EAC84 /* Debug */,
+				682470332132317E009EAC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
