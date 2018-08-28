@@ -58,11 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - User Activity
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        let userActivityManager = UserActivityManager(window: window)
         if #available(iOS 12.0, *), let intent = userActivity.interaction?.intent as? AirQualityIntent {
-            let userActivityManager = UserActivityManager(window: window)
             return userActivityManager.handle(airQualityIntent: intent)
         } else {
-            let userActivityManager = UserActivityManager(window: window)
             return userActivityManager.handle(userActivity: userActivity)
         }
     }
