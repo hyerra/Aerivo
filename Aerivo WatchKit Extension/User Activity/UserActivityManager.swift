@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import AerivoKit
 import MapboxGeocoder
 
 /// Handles user activities defined within the app.
@@ -20,6 +21,22 @@ class UserActivityManager: NSObject {
     /// - Parameter visibleInterfaceController: The visible interface controller to use when handling quick actions.
     init(visibleInterfaceController: WKInterfaceController?) {
         self.visibleInterfaceController = visibleInterfaceController
+    }
+    
+    /// Handles the incoming air quality intent.
+    ///
+    /// - Parameter airQualityIntent: The intent to handle.
+    @available(watchOS 5.0, *)
+    func handle(airQualityIntent: AirQualityIntent) {
+        guard let location = airQualityIntent.targetLocation?.location else { return }
+        let options = ReverseGeocodeOptions(location: location)
+        options.locale = Locale.autoupdatingCurrent
+        
+        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            guard let placemark = placemarks?.first else { return }
+            WKExtension.shared().rootInterfaceController?.pushController(withName: PlaceDetailInterfaceController.identifier, context: placemark)
+        }
+        task.resume()
     }
     
     /// Handles the incoming user activity.
@@ -40,6 +57,8 @@ class UserActivityManager: NSObject {
                    WKExtension.shared().rootInterfaceController?.pushController(withName: SearchResultsInterfaceController.identifier, context: placemarks)
                 }
                 task.resume()
+            } else {
+                WKExtension.shared().rootInterfaceController?.pushController(withName: SearchInterfaceController.identifier, context: nil)
             }
         case NSUserActivity.viewPlaceActivity.activityType:
             guard let location = userActivity.userInfo?[NSUserActivity.ActivityKeys.location] as? [String: Any] else { break }
