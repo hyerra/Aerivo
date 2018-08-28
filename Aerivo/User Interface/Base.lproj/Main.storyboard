@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="localizable" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Hb-WD-EXz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Hb-WD-EXz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -472,7 +472,7 @@
                                 <rect key="frame" x="0.0" y="99.5" width="375" height="539.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-ea-kdl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="467.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="574.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-uk-qtQ">
                                                 <rect key="frame" x="28" y="16" width="319" height="55"/>
@@ -710,28 +710,8 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-eX-fGI">
-                                                <rect key="frame" x="10" y="412" width="135" height="39.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-AK-Gwu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="20.5"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <attributedString key="userComments">
-                                                            <fragment content="Title for the address that will be displayed below this text."/>
-                                                        </attributedString>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 A Special Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-mx-JoD">
-                                                        <rect key="frame" x="0.0" y="23.5" width="135" height="16"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSJ-PY-HPX">
-                                                <rect key="frame" x="10" y="303.5" width="355" height="100"/>
+                                                <rect key="frame" x="10" y="410.5" width="355" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="niU-XK-h25"/>
@@ -797,22 +777,49 @@
                                                     <outlet property="delegate" destination="Big-CG-Gn8" id="k76-fO-0YE"/>
                                                 </connections>
                                             </collectionView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-eX-fGI">
+                                                <rect key="frame" x="10" y="519" width="135" height="39.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-AK-Gwu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="20.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <attributedString key="userComments">
+                                                            <fragment content="Title for the address that will be displayed below this text."/>
+                                                        </attributedString>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 A Special Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-mx-JoD">
+                                                        <rect key="frame" x="0.0" y="23.5" width="135" height="16"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="365" placeholderIntrinsicHeight="101" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-Q6-6GN">
+                                                <rect key="frame" x="9" y="301.5" width="357" height="101"/>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="F4v-7P-4zH" secondAttribute="trailing" constant="2" id="4QF-Do-m59"/>
                                             <constraint firstItem="tY9-eX-fGI" firstAttribute="firstBaseline" secondItem="bSJ-PY-HPX" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="BIx-yZ-JNx"/>
+                                            <constraint firstItem="pFy-Q6-6GN" firstAttribute="firstBaseline" secondItem="F4v-7P-4zH" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="FKb-dW-Wlz"/>
                                             <constraint firstItem="F4v-7P-4zH" firstAttribute="leading" secondItem="gMM-ea-kdl" secondAttribute="leadingMargin" constant="2" id="Iz9-eo-WcD"/>
-                                            <constraint firstItem="bSJ-PY-HPX" firstAttribute="firstBaseline" secondItem="F4v-7P-4zH" secondAttribute="baseline" constant="10" id="JKC-un-Lfu"/>
                                             <constraint firstItem="tY9-eX-fGI" firstAttribute="leading" secondItem="gMM-ea-kdl" secondAttribute="leadingMargin" constant="2" id="RJb-4I-hDQ"/>
+                                            <constraint firstItem="pFy-Q6-6GN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gMM-ea-kdl" secondAttribute="leadingMargin" constant="1" id="TVe-DF-hxA"/>
                                             <constraint firstItem="F4v-7P-4zH" firstAttribute="firstBaseline" secondItem="Mot-uk-qtQ" secondAttribute="baseline" constant="15" id="WDy-lj-HPB"/>
                                             <constraint firstItem="bSJ-PY-HPX" firstAttribute="leading" secondItem="gMM-ea-kdl" secondAttribute="leadingMargin" constant="2" id="Wpc-s6-Xkp"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="bSJ-PY-HPX" secondAttribute="trailing" constant="2" id="chk-qE-xvA"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pFy-Q6-6GN" secondAttribute="trailingMargin" constant="1" id="fvp-wR-hGm"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Mot-uk-qtQ" secondAttribute="trailing" constant="20" id="jxM-bq-rXO"/>
                                             <constraint firstItem="Mot-uk-qtQ" firstAttribute="top" secondItem="gMM-ea-kdl" secondAttribute="topMargin" constant="8" id="ogk-BT-U91"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tY9-eX-fGI" secondAttribute="trailing" constant="2" id="qZX-kK-5F6"/>
+                                            <constraint firstItem="bSJ-PY-HPX" firstAttribute="firstBaseline" secondItem="pFy-Q6-6GN" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="rbt-72-xSf"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="tY9-eX-fGI" secondAttribute="bottom" constant="8" id="sM5-8B-TPa"/>
                                             <constraint firstItem="F4v-7P-4zH" firstAttribute="centerX" secondItem="gMM-ea-kdl" secondAttribute="centerX" id="v0g-C7-wFi"/>
+                                            <constraint firstItem="pFy-Q6-6GN" firstAttribute="centerX" secondItem="gMM-ea-kdl" secondAttribute="centerX" id="wIy-HP-D0J"/>
                                             <constraint firstItem="Mot-uk-qtQ" firstAttribute="leading" secondItem="gMM-ea-kdl" secondAttribute="leadingMargin" constant="20" id="yql-ti-wtk"/>
                                         </constraints>
                                     </view>
@@ -885,6 +892,7 @@
                     <connections>
                         <outlet property="activityHeightConstraint" destination="lSC-iQ-Wle" id="4zc-39-u0Q"/>
                         <outlet property="activityIndicator" destination="VzW-uy-Naa" id="FEO-O4-rKx"/>
+                        <outlet property="addSiriStackView" destination="pFy-Q6-6GN" id="BLT-3b-zmL"/>
                         <outlet property="address" destination="9Hu-mx-JoD" id="yc2-Uz-WDy"/>
                         <outlet property="bottomGripperView" destination="cEZ-oX-ZLZ" id="bKc-mF-s2n"/>
                         <outlet property="bottomSeparatorView" destination="Hfu-qa-OCf" id="9hL-64-EWh"/>
@@ -1011,15 +1019,15 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
-                                <rect key="frame" x="291.5" y="30" width="67.5" height="53"/>
+                                <rect key="frame" x="292" y="30" width="67" height="53"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-SR-h5q">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xm-FK-ukx">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6">

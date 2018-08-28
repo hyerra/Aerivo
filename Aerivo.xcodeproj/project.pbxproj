@@ -15,8 +15,6 @@
 		6803524E2127E7A300FD53CA /* WaterQualityTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803524D2127E7A300FD53CA /* WaterQualityTableRowController.swift */; };
 		6803525C2129204100FD53CA /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
 		6803525D2129204300FD53CA /* MBPlacemarkScope+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDD9F211428B600C0F56B /* MBPlacemarkScope+Color.swift */; };
-		6803525E2129207000FD53CA /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
-		6803525F2129207300FD53CA /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
 		680C2763211FA5CC00F4CFF5 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		680FB44321321BFF0056007B /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FB44221321BFF0056007B /* UserActivityManager.swift */; };
 		6811FC6B212118BE00509A37 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,6 +119,10 @@
 		681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681F3D332123AEA800FE7B94 /* RecommendationInterfaceController.swift */; };
 		681FA046213233A200704EE2 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		681FA049213238B300704EE2 /* Aerivo.intentdefinition in Resources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		682461E221358F7C00C19A0F /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
+		682461E321358F7F00C19A0F /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
+		682461E421358FB300C19A0F /* AirQualityIntent+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682461DD21358EC400C19A0F /* AirQualityIntent+Placemark.swift */; };
+		682461E521358FB400C19A0F /* AirQualityIntent+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682461DD21358EC400C19A0F /* AirQualityIntent+Placemark.swift */; };
 		6824702D2132317E009EAC84 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6824702C2132317E009EAC84 /* IntentHandler.swift */; };
 		682470312132317E009EAC84 /* AerivoWatchKitIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
@@ -454,6 +456,7 @@
 		681C4A1B211FA57C00D82950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681F3D2F2123AE1D00FE7B94 /* NearbyTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTableRowController.swift; sourceTree = "<group>"; };
 		681F3D332123AEA800FE7B94 /* RecommendationInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationInterfaceController.swift; sourceTree = "<group>"; };
+		682461DD21358EC400C19A0F /* AirQualityIntent+Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirQualityIntent+Placemark.swift"; sourceTree = "<group>"; };
 		6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AerivoWatchKitIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6824702C2132317E009EAC84 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		6824702E2132317E009EAC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -786,6 +789,7 @@
 			children = (
 				681C49AC211F542D00D82950 /* Aerivo.intentdefinition */,
 				681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */,
+				682461DD21358EC400C19A0F /* AirQualityIntent+Placemark.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -2066,8 +2070,9 @@
 				6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */,
 				681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */,
 				684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */,
-				6803525E2129207000FD53CA /* Placemark.swift in Sources */,
+				682461E321358F7F00C19A0F /* Placemark.swift in Sources */,
 				682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */,
+				682461E521358FB400C19A0F /* AirQualityIntent+Placemark.swift in Sources */,
 				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
 				681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */,
@@ -2227,9 +2232,10 @@
 				68A30AFD212FBE3D001A55B9 /* SearchResultsTableRowController.swift in Sources */,
 				681FA046213233A200704EE2 /* Aerivo.intentdefinition in Sources */,
 				6803524E2127E7A300FD53CA /* WaterQualityTableRowController.swift in Sources */,
+				682461E221358F7C00C19A0F /* Placemark.swift in Sources */,
 				681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */,
 				6803524C2127E79000FD53CA /* AirQualityTableRowController.swift in Sources */,
-				6803525F2129207300FD53CA /* Placemark.swift in Sources */,
+				682461E421358FB300C19A0F /* AirQualityIntent+Placemark.swift in Sources */,
 				6803525C2129204100FD53CA /* MBPlacemarkScope+Color.swift in Sources */,
 				68ECFDEF212A1F4E00E87439 /* Extensions.swift in Sources */,
 				6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */,

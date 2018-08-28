@@ -26,6 +26,11 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     @IBOutlet var waterQualityLabel: WKInterfaceLabel!
     @IBOutlet var waterQualityTable: WKInterfaceTable!
     
+    @available(watchOS 5.0, *)
+    lazy var intent = AirQualityIntent(placemark: placemark)
+    @available(watchOS 5.0, *)
+    lazy var interaction = INInteraction(airQualityIntent: intent, response: nil)
+    
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
     var parametersInfo: AerivoKit.Parameter?
@@ -92,14 +97,6 @@ class PlaceDetailInterfaceController: WKInterfaceController {
     
     @available(watchOS 5.0, *)
     private func donateAirQualityIntent() {
-        let intent = AirQualityIntent()
-        
-        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
-            let location = CLLocation(latitude: latitude, longitude: longitude)
-            intent.targetLocation = CLPlacemark(location: location, name: placemark.displayName, postalAddress: nil)
-        }
-        
-        let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate()
     }
     

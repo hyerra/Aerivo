@@ -13,7 +13,7 @@ import ARKit
 import Mapbox
 import MapboxGeocoder
 import CoreData
-import Intents
+import IntentsUI
 import MessageUI
 
 class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -59,8 +59,15 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     
+    @IBOutlet weak var addSiriStackView: UIStackView!
+    
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerSpacingConstraint: NSLayoutConstraint!
+    
+    @available(iOS 12.0, *)
+    lazy var intent = AirQualityIntent(placemark: placemark)
+    @available(iOS 12.0, *)
+    lazy var interaction = INInteraction(airQualityIntent: intent, response: nil)
     
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
@@ -115,7 +122,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         fetchAirQualityData()
         fetchWaterQualityData()
         
-        if #available(iOS 12.0, *) { donateAirQualityIntent() }
+        if #available(iOS 12.0, *) {
+            interaction.donate()
+            showAddSiriButton()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -198,6 +208,19 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         }
     }
     
+    // MARK: - Intents
+    
+    @available(iOS 12.0, *)
+    private func showAddSiriButton() {
+        let addShortcutButton = INUIAddVoiceShortcutButton(style: .white)
+        addShortcutButton.backgroundColor = #colorLiteral(red: 0.6700000167, green: 0.6700000167, blue: 0.6700000167, alpha: 0.25)
+        addShortcutButton.shortcut = INShortcut(intent: intent)
+        addShortcutButton.delegate = self
+        
+        addShortcutButton.translatesAutoresizingMaskIntoConstraints = false
+        addSiriStackView.addArrangedSubview(addShortcutButton)
+    }
+    
     // MARK: - User Activity
     
     private func createUserActivity() -> NSUserActivity {
@@ -232,21 +255,6 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         
         topGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
         bottomGripperView.accessibilityCustomActions = [UIAccessibilityCustomAction(name: NSLocalizedString("Expand", comment: "Action for expanding the card overlay screen."), target: self, selector: #selector(expand)), UIAccessibilityCustomAction(name: NSLocalizedString("Collapse", comment: "Action for collapsing the card overlay screen."), target: self, selector: #selector(collapse))]
-    }
-    
-    // MARK: - Intents
-    
-    @available(iOS 12.0, *)
-    private func donateAirQualityIntent() {
-        let intent = AirQualityIntent()
-        
-        if let latitude = placemark.latitude?.doubleValue, let longitude = placemark.longitude?.doubleValue {
-            let location = CLLocation(latitude: latitude, longitude: longitude)
-            intent.targetLocation = CLPlacemark(location: location, name: placemark.displayName, postalAddress: nil)
-        }
-        
-        let interaction = INInteraction(intent: intent, response: nil)
-        interaction.donate()
     }
     
     // MARK: - Core Data
@@ -714,6 +722,57 @@ extension PlacesDetailViewController: MFMailComposeViewControllerDelegate {
             alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
             present(alertController, animated: true)
         }
+        controller.dismiss(animated: true)
+    }
+}
+
+// MARK: - Intents UI delegate
+
+@available(iOS 12.0, *)
+extension PlacesDetailViewController: INUIAddVoiceShortcutButtonDelegate {
+    func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+        addVoiceShortcutViewController.delegate = self
+        present(addVoiceShortcutViewController, animated: true)
+    }
+    
+    func present(_ editVoiceShortcutViewController: INUIEditVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+        editVoiceShortcutViewController.delegate = self
+        present(editVoiceShortcutViewController, animated: true)
+    }
+}
+
+@available(iOS 12.0, *)
+extension PlacesDetailViewController: INUIAddVoiceShortcutViewControllerDelegate {
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        if let error = error {
+            let alertController = UIAlertController(title: NSLocalizedString("Shortcut Couldn't Be Added", comment: "Title of error telling the shortcut couldn't be added to Siri."), message: error.localizedDescription, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+            present(alertController, animated: true)
+        }
+        controller.dismiss(animated: true)
+    }
+    
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true)
+    }
+}
+
+@available(iOS 12.0, *)
+extension PlacesDetailViewController: INUIEditVoiceShortcutViewControllerDelegate {
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+        if let error = error {
+            let alertController = UIAlertController(title: NSLocalizedString("Shortcut Couldn't Be Updated", comment: "Title of error telling the shortcut couldn't be updated to Siri."), message: error.localizedDescription, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
+            present(alertController, animated: true)
+        }
+        controller.dismiss(animated: true)
+    }
+    
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+        controller.dismiss(animated: true)
+    }
+    
+    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
         controller.dismiss(animated: true)
     }
 }
