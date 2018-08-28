@@ -62,11 +62,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     // MARK: - User Activity
     
     func handle(_ userActivity: NSUserActivity) {
+        let userActivityManager = UserActivityManager(visibleInterfaceController: WKExtension.shared().visibleInterfaceController)
         if #available(watchOS 5.0, *), let intent = userActivity.interaction?.intent as? AirQualityIntent {
-            let handler = AirQualityIntentHandler()
-            handler.handle(intent: intent) { response in }
+            userActivityManager.handle(airQualityIntent: intent)
         } else {
-            let userActivityManager = UserActivityManager(visibleInterfaceController: WKExtension.shared().visibleInterfaceController)
             userActivityManager.handle(userActivity: userActivity)
         }
     }
