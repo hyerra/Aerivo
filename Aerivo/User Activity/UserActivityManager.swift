@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MapboxGeocoder
 import CoreLocation
+import AerivoKit
 import Pulley
 
 /// Handles user activities defined within the app.
@@ -25,6 +26,39 @@ class UserActivityManager: NSObject {
         self.window = window
     }
     
+    /// Handles the incoming air quality intent.
+    ///
+    /// - Parameter airQualityIntent: The air quality intent to handle.
+    /// - Returns: Whether or not it was handled successfully.
+    @discardableResult
+    @available(iOS 12.0, *)
+    func handle(airQualityIntent: AirQualityIntent) -> Bool {
+        var handled = false
+        
+        guard let pulleyVC = window?.rootViewController as? PulleyViewController else { return handled }
+        guard let placesVC = pulleyVC.drawerContentViewController as? PlacesViewController else { return handled }
+        placesVC.dismiss(animated: true)
+        
+        guard let location = airQualityIntent.targetLocation?.location else { return handled }
+        handled = true
+        let options = ReverseGeocodeOptions(location: location)
+        options.locale = Locale.autoupdatingCurrent
+        
+        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            guard let placemark = placemarks?.first else { return }
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
+                vc.placemark = placemark
+                placesVC.present(vc, animated: true) {
+                    placesVC.view.alpha = 0
+                    pulleyVC.setDrawerPosition(position: .open, animated: true)
+                }
+            }
+        }
+        task.resume()
+        
+        return handled
+    }
+    
     /// Handles the incoming user activity.
     ///
     /// - Parameter userActivity: The user activity to handle.
@@ -33,8 +67,8 @@ class UserActivityManager: NSObject {
     func handle(userActivity: NSUserActivity) -> Bool {
         var handled = false
         
-        guard let pulleyVC = window?.rootViewController as? PulleyViewController else { return false }
-        guard let placesVC = pulleyVC.drawerContentViewController as? PlacesViewController else { return false }
+        guard let pulleyVC = window?.rootViewController as? PulleyViewController else { return handled }
+        guard let placesVC = pulleyVC.drawerContentViewController as? PlacesViewController else { return handled }
         placesVC.dismiss(animated: true)
         
         switch userActivity.activityType {
