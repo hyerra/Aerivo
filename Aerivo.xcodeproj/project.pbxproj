@@ -127,6 +127,7 @@
 		682470312132317E009EAC84 /* AerivoWatchKitIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
+		683D4C822138F66A00BDF4B1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -634,6 +635,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683D4C822138F66A00BDF4B1 /* AerivoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
