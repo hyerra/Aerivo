@@ -60,10 +60,9 @@ class SearchInterfaceController: WKInterfaceController {
             options.autocompletesQuery = false
             options.locale = Locale.autoupdatingCurrent
             
-            let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            Geocoder.shared.geocode(options) { placemarks, attribution, error in
                 self.pushController(withName: SearchResultsInterfaceController.identifier, context: placemarks)
             }
-            task.resume()
         }
     }
     

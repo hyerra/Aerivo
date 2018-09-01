@@ -10,11 +10,10 @@ import Foundation
 
 /// Types adopting the `URLRequestConvertible` protocol can be used to construct URL requests.
 protocol URLRequestConvertible {
-    /// Returns a URL request or throws if an `Error` was encountered.
+    /// Returns a URL request that can be used to make a network call.
     ///
-    /// - Returns: An `Error` if the underlying `URLRequest` is `nil`.
-    /// - Throws: A URL request.
-    func asURLRequest() throws -> URLRequest
+    /// - Returns: The URL request.
+    func asURLRequest() -> URLRequest
 }
 
 /// [HTTP Method Information](https://tools.ietf.org/html/rfc7231#section-4.3)

@@ -44,7 +44,7 @@ class UserActivityManager: NSObject {
         let options = ReverseGeocodeOptions(location: location)
         options.locale = Locale.autoupdatingCurrent
         
-        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+        Geocoder.shared.geocode(options) { placemarks, attribution, error in
             guard let placemark = placemarks?.first else { return }
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
                 vc.placemark = placemark
@@ -54,7 +54,6 @@ class UserActivityManager: NSObject {
                 }
             }
         }
-        task.resume()
         
         return handled
     }
@@ -87,7 +86,7 @@ class UserActivityManager: NSObject {
             let options = ReverseGeocodeOptions(location: coordinate)
             options.locale = Locale.autoupdatingCurrent
             
-            let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            Geocoder.shared.geocode(options) { placemarks, attribution, error in
                 guard let placemark = placemarks?.first else { return }
                 if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PlacesDetailViewController.identifier) as? PlacesDetailViewController {
                     vc.placemark = placemark
@@ -97,7 +96,6 @@ class UserActivityManager: NSObject {
                     }
                 }
             }
-            task.resume()
         default:
             break
         }

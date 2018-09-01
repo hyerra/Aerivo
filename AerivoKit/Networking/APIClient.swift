@@ -22,14 +22,13 @@ public typealias NetworkingResponse = (data: Data?, response: URLResponse?, erro
 
 /// Represents an `APIClient` to connect to endpoints and fetch data.
 protocol APIClient {
-    
     /// Connects to a server at the specified endpoint and fetches the response data.
     ///
     /// - Parameters:
     ///   - request: The url request you wish to connect to.
     ///   - completion: The result of the request.
-    /// - Returns: The data for you to parse and handle.
-    func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void)
+    /// - Returns: The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting placemarks, cancel this task.
+    func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) -> URLSessionDataTask
     
     /// Connects to a server at the specified endpoint and fetches response converted to a usable object.
     ///
@@ -37,5 +36,6 @@ protocol APIClient {
     ///   - request: The url request you wish to connect to.
     ///   - parse: How you wish to parse the data. If `nil` is provided we will attempt to use a `JSONDecoder`.
     ///   - completion: An APIResult for you to handle and use.
-    func connect<T>(to request: URLRequestConvertible, parse: ((NetworkingResponse) -> APIResult<T>)?, completion: @escaping (APIResult<T>) -> Void)
+    /// - Returns: The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting placemarks, cancel this task.
+    func connect<T>(to request: URLRequestConvertible, parse: ((NetworkingResponse) -> APIResult<T>)?, completion: @escaping (APIResult<T>) -> Void) -> URLSessionDataTask
 }

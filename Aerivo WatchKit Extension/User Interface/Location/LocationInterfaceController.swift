@@ -27,8 +27,10 @@ class LocationInterfaceController: WKInterfaceController {
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
     var parametersInfo: AerivoKit.Parameter?
+    var openAQTasks: [URLSessionDataTask] = []
     
     lazy var nwqpClient: NWQPClient = .shared
+    var nwqpTasks: [URLSessionDataTask] = []
     var nwqpResults: [NWQPResult] = [] {
         didSet {
             nwqpResults = nwqpResults.filter { $0.organizations?.first?.activity.last?.results.last?.description.measurement != nil }
@@ -87,8 +89,8 @@ class LocationInterfaceController: WKInterfaceController {
     deinit {
         NotificationCenter.default.removeObserver(self)
         imageLoadingTask?.cancel()
-        openAQClient.cancelAllPendingRequests()
-        nwqpClient.cancelAllPendingRequests()
+        openAQTasks.forEach { if $0.state == .running { $0.cancel() } }
+        nwqpTasks.forEach { if $0.state == .running { $0.cancel() } }
     }
     
     // MARK: - Location Image
@@ -124,7 +126,7 @@ class LocationInterfaceController: WKInterfaceController {
             return isLatestAQLoaded && isParametersInfoLoaded
         }
         
-        openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
+        let latestAQTask = openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
             guard case let .success(latestAQ) = result else {
                 isLatestAQLoaded = true
                 if allDataIsLoaded { self?.isAQDataLoaded = true }
@@ -134,9 +136,10 @@ class LocationInterfaceController: WKInterfaceController {
             isLatestAQLoaded = true
             if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
+        openAQTasks.append(latestAQTask)
         
         let parametersParams = ParameterParameters()
-        openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
+        let parametersTask = openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
             guard case let .success(parameters) = result else {
                 isParametersInfoLoaded = true
                 if allDataIsLoaded { self?.isAQDataLoaded = true }
@@ -146,6 +149,7 @@ class LocationInterfaceController: WKInterfaceController {
             isParametersInfoLoaded = true
             if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
+        openAQTasks.append(parametersTask)
     }
     
     private func reloadAirQualityTable() {
@@ -184,7 +188,7 @@ class LocationInterfaceController: WKInterfaceController {
         nwqpParameters.page = 1
         nwqpParameters.startDate = startDate
         
-        nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
+        nwqpTasks = nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
             for result in results {
                 guard case let .success(parameter) = result else { continue }
                 self?.nwqpResults.append(parameter)

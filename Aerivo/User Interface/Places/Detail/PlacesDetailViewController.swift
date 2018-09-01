@@ -72,8 +72,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
     var parametersInfo: AerivoKit.Parameter?
+    var openAQTasks: [URLSessionDataTask] = []
     
     lazy var nwqpClient: NWQPClient = .shared
+    var nwqpTasks: [URLSessionDataTask] = []
     var nwqpResults: [NWQPResult] = [] {
         didSet {
             nwqpResults = nwqpResults.filter { $0.organizations?.first?.activity.last?.results.last?.description.measurement != nil }
@@ -177,8 +179,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     deinit {
-        openAQClient.cancelAllPendingRequests()
-        nwqpClient.cancelAllPendingRequests()
+        openAQTasks.forEach { if $0.state == .running { $0.cancel() } }
+        nwqpTasks.forEach { if $0.state == .running { $0.cancel() } }
     }
     
     // MARK: - Update map
@@ -293,7 +295,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             return isLatestAQLoaded && isParametersInfoLoaded
         }
         
-        openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
+        let latestAQTask = openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
             guard case let .success(latestAQ) = result else {
                 isLatestAQLoaded = true
                 if allDataIsLoaded { self?.isAQDataLoaded = true }
@@ -303,9 +305,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             isLatestAQLoaded = true
             if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
+        openAQTasks.append(latestAQTask)
         
         let parametersParams = ParameterParameters()
-        openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
+        let parametersTask = openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
             guard case let .success(parameters) = result else {
                 isParametersInfoLoaded = true
                 if allDataIsLoaded { self?.isAQDataLoaded = true }
@@ -315,6 +318,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             isParametersInfoLoaded = true
             if allDataIsLoaded { self?.isAQDataLoaded = true }
         }
+        openAQTasks.append(parametersTask)
     }
     
     private func fetchWaterQualityData() {
@@ -334,7 +338,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         nwqpParameters.page = 1
         nwqpParameters.startDate = startDate
         
-        nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
+        nwqpTasks = nwqpClient.fetchAllResults(using: nwqpParameters) { [weak self] results in
             for result in results {
                 guard case let .success(parameter) = result else { continue }
                 self?.nwqpResults.append(parameter)

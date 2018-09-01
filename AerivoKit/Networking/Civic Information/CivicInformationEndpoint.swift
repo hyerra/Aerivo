@@ -36,12 +36,12 @@ public enum CivicInformationEndpoint: Endpoint {
         }
     }
     
-    func asURLRequest() throws -> URLRequest {
+    func asURLRequest() -> URLRequest {
         let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
         var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         
         params: if let parameters = parameters {
-            let dict = try JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
+            let dict = try! JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
             guard !dict.isEmpty else { break params }
             
             var urlQueryItems: [[URLQueryItem]] = []

@@ -58,12 +58,12 @@ enum OpenAQEndpoint: Endpoint {
         }
     }
     
-    func asURLRequest() throws -> URLRequest {
+    func asURLRequest() -> URLRequest {
         let url = baseURL.appendingPathComponent("v\(version)").appendingPathComponent(path)
         var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         
         params: if let parameters = parameters {
-            let dict = try JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
+            let dict = try! JSONSerialization.jsonObject(with: parameters, options: []) as! [String: Any]
             guard !dict.isEmpty else { break params }
             urlComps.queryItems = dict.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
         }
