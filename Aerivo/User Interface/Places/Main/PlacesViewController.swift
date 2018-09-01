@@ -287,11 +287,10 @@ extension PlacesViewController: UISearchBarDelegate {
         options.allowedScopes = .landmark
         options.locale = Locale.autoupdatingCurrent
         
-        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+        Geocoder.shared.geocode(options) { placemarks, attribution, error in
             self.defaultResults = placemarks ?? []
             if self.shouldShowDefaultResults { self.placesTableView.reloadData() }
         }
-        task.resume()
     }
     
     @objc private func searchMap(for query: String) {
@@ -304,7 +303,6 @@ extension PlacesViewController: UISearchBarDelegate {
             self.mapSearchResults = placemarks ?? []
         }
         previousMapSearchTask = task
-        task.resume()
     }
 }
 

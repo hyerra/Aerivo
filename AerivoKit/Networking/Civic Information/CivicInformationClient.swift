@@ -22,33 +22,34 @@ public final class CivicInformationClient: APIClient {
     /// - Parameters:
     ///   - parameters: Parameters that can be specified when fetching the representative information from the Google's Civic Information.
     ///   - completion: If successful, the representative information will be provided. If a failure occured, an error will be returned explaining what went wrong.
-    public func fetchRepresentativeInfo(using parameters: RepresentativeInfoByAddressParameters, completion: @escaping (APIResult<RepresentativeInfoByAddress>) -> Void) {
+    /// - Returns: The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting placemarks, cancel this task.
+    @discardableResult
+    public func fetchRepresentativeInfo(using parameters: RepresentativeInfoByAddressParameters, completion: @escaping (APIResult<RepresentativeInfoByAddress>) -> Void) -> URLSessionDataTask {
         let representativeInfoEndpoint = CivicInformationEndpoint.representativeInfoByAddress(parameters: parameters)
-        connect(to: representativeInfoEndpoint, completion: completion)
+        return connect(to: representativeInfoEndpoint, completion: completion)
     }
     
-    func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) {
-        do {
-            let request = try request.asURLRequest()
-            let session = URLSession.shared
-            
-            let dataTask = session.dataTask(with: request) { data, response, error in
-                DispatchQueue.main.async {
-                    #if DEBUG
-                    print(response as Any)
-                    #endif
-                    completion((data, response, error))
-                }
+    @discardableResult
+    func connect(to request: URLRequestConvertible, completion: @escaping (NetworkingResponse) -> Void) -> URLSessionDataTask {
+        let request = request.asURLRequest()
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                #if DEBUG
+                print(response as Any)
+                #endif
+                completion((data, response, error))
             }
-            
-            dataTask.resume()
-        } catch let error {
-            completion((nil, nil, error))
         }
+        
+        dataTask.resume()
+        return dataTask
     }
     
-    func connect<T>(to request: URLRequestConvertible, parse: ((NetworkingResponse) -> APIResult<T>)? = nil, completion: @escaping (APIResult<T>) -> Void) {
-        connect(to: request) { response in
+    @discardableResult
+    func connect<T>(to request: URLRequestConvertible, parse: ((NetworkingResponse) -> APIResult<T>)? = nil, completion: @escaping (APIResult<T>) -> Void) -> URLSessionDataTask {
+        return connect(to: request) { response in
             if let parse = parse {
                 let parsedValue = parse(response)
                 completion(parsedValue)

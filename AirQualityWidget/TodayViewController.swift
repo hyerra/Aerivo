@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     var latestAQ: LatestAQ?
     var parametersInfo: Parameter?
     lazy var openAQClient = OpenAQClient()
+    var openAQTasks: [URLSessionDataTask] = []
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
@@ -28,7 +29,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     }
     
     deinit {
-        openAQClient.cancelAllPendingRequests()
+        openAQTasks.forEach { if $0.state == .running { $0.cancel() } }
     }
     
     // MARK: - Air Quality
@@ -53,20 +54,22 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
             return isLatestAQLoaded && isParametersInfoLoaded
         }
         
-        openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
+        let latestAQTask = openAQClient.fetchLatestAQ(using: latestAQParams) { [weak self] result in
             guard case let .success(latestAQ) = result else { return }
             self?.latestAQ = latestAQ
             isLatestAQLoaded = true
             if allDataIsLoaded { self?.tableView.reloadData(); completionHandler(.newData) }
         }
+        openAQTasks.append(latestAQTask)
         
         let parametersParams = ParameterParameters()
-        openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
+        let parametersTask = openAQClient.fetchParameters(using: parametersParams) { [weak self] result in
             guard case let .success(parameters) = result else { return }
             self?.parametersInfo = parameters
             isParametersInfoLoaded = true
             if allDataIsLoaded { self?.tableView.reloadData(); completionHandler(.newData) }
         }
+        openAQTasks.append(parametersTask)
     }
     
     // MARK: - Table view data source

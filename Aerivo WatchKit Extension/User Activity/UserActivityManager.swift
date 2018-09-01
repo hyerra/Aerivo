@@ -32,11 +32,10 @@ class UserActivityManager: NSObject {
         let options = ReverseGeocodeOptions(location: location)
         options.locale = Locale.autoupdatingCurrent
         
-        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+        Geocoder.shared.geocode(options) { placemarks, attribution, error in
             guard let placemark = placemarks?.first else { return }
             WKExtension.shared().rootInterfaceController?.pushController(withName: PlaceDetailInterfaceController.identifier, context: placemark)
         }
-        task.resume()
     }
     
     /// Handles the incoming user activity.
@@ -53,10 +52,9 @@ class UserActivityManager: NSObject {
                 options.autocompletesQuery = false
                 options.locale = Locale.autoupdatingCurrent
                 
-                let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+                Geocoder.shared.geocode(options) { placemarks, attribution, error in
                    WKExtension.shared().rootInterfaceController?.pushController(withName: SearchResultsInterfaceController.identifier, context: placemarks)
                 }
-                task.resume()
             } else {
                 WKExtension.shared().rootInterfaceController?.pushController(withName: SearchInterfaceController.identifier, context: nil)
             }
@@ -68,11 +66,10 @@ class UserActivityManager: NSObject {
             let options = ReverseGeocodeOptions(location: coordinate)
             options.locale = Locale.autoupdatingCurrent
             
-            let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            Geocoder.shared.geocode(options) { placemarks, attribution, error in
                 guard let placemark = placemarks?.first else { return }
                 WKExtension.shared().rootInterfaceController?.pushController(withName: PlaceDetailInterfaceController.identifier, context: placemark)
             }
-            task.resume()
         default:
             break
         }

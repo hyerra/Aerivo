@@ -65,11 +65,9 @@ class RecommendationInterfaceController: WKInterfaceController {
         options.allowedScopes = .landmark
         options.locale = Locale.autoupdatingCurrent
         
-        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+        Geocoder.shared.geocode(options) { placemarks, attribution, error in
             self.nearbyResults = placemarks ?? []
         }
-        
-        task.resume()
     }
     
     private func reloadNearbyTable() {
