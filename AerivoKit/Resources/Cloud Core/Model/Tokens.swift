@@ -56,6 +56,7 @@ open class Tokens: NSObject, NSCoding {
 	
 	/// Save tokens to UserDefaults and synchronize. Key is used from `CloudCoreConfig.userDefaultsKeyTokens`
 	open func saveToUserDefaults() {
+        
 		let tokensData = NSKeyedArchiver.archivedData(withRootObject: self)
 		UserDefaults.standard.set(tokensData, forKey: CloudCore.config.userDefaultsKeyTokens)
 	}

@@ -59,16 +59,12 @@ class FetchRecordZoneChangesOperation: Operation {
 		fetchOperation.recordWithIDWasDeletedBlock = { recordID, _ in
 			self.recordWithIDWasDeletedBlock?(recordID)
 		}
-		fetchOperation.recordZoneFetchCompletionBlock = { zoneId, serverChangeToken, clientChangeTokenData, isMore, error in
-			self.tokens.tokensByRecordZoneID[zoneId] = serverChangeToken
-			
+        fetchOperation.recordZoneChangeTokensUpdatedBlock = { recordZoneID, serverChangeToken, clientChangeTokenData in
+            self.tokens.tokensByRecordZoneID[recordZoneID] = serverChangeToken
+        }
+		fetchOperation.recordZoneFetchCompletionBlock = { recordZoneID, serverChangeToken, clientChangeTokenData, moreComing, error in
 			if let error = error {
-				self.errorBlock?(zoneId, error)
-			}
-			
-			if isMore {
-				let moreOperation = self.makeFetchOperation(optionsByRecordZoneID: optionsByRecordZoneID)
-				self.fetchQueue.addOperation(moreOperation)
+				self.errorBlock?(recordZoneID, error)
 			}
 		}
 		
