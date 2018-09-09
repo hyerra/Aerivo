@@ -6,7 +6,7 @@
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for AerivoKit.
 FOUNDATION_EXPORT double AerivoKitVersionNumber;
