@@ -24,10 +24,13 @@ extension NSUserActivity {
         userActivity.requiredUserInfoKeys = []
         userActivity.isEligibleForHandoff = true
         userActivity.isEligibleForSearch = true
+        
+        #if !os(macOS)
         if #available(iOS 12.0, watchOS 5.0, *) {
             userActivity.isEligibleForPrediction = true
             userActivity.suggestedInvocationPhrase = NSLocalizedString("Find environmental quality info.", comment: "Voice shortcut suggested phrase for finding air and water quality info.")
         }
+        #endif
         
         return userActivity
     }

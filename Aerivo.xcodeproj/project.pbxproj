@@ -127,7 +127,15 @@
 		682470312132317E009EAC84 /* AerivoWatchKitIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
+		6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B45B2144741400CC3FE3 /* AppDelegate.swift */; };
+		6837B45E2144741400CC3FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B45D2144741400CC3FE3 /* ViewController.swift */; };
+		6837B4602144741500CC3FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6837B45F2144741500CC3FE3 /* Assets.xcassets */; };
+		6837B4632144741500CC3FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6837B4612144741500CC3FE3 /* Main.storyboard */; };
+		6837B46F2144741500CC3FE3 /* Aerivo_MacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B46E2144741500CC3FE3 /* Aerivo_MacOSTests.swift */; };
+		6837B47A2144741500CC3FE3 /* Aerivo_MacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B4792144741500CC3FE3 /* Aerivo_MacOSUITests.swift */; };
 		683D4C822138F66A00BDF4B1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
+		68463AA62145AF9B0041F129 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB74502145AD72001EA3A8 /* AerivoKit.framework */; };
+		68463AA72145AF9B0041F129 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB74502145AD72001EA3A8 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -147,6 +155,7 @@
 		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
 		6891C3BF20EA933E0051563F /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6891C3BE20EA933D0051563F /* PlacesViewController.swift */; };
 		6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895F72B21183931003A9FD9 /* FocusSquare.swift */; };
+		6896E8052144756B00875616 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6896E8042144756B00875616 /* CloudKit.framework */; };
 		68A30AF9212FBD4B001A55B9 /* SearchResultsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A30AF8212FBD4B001A55B9 /* SearchResultsInterfaceController.swift */; };
 		68A30AFD212FBE3D001A55B9 /* SearchResultsTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A30AFC212FBE3D001A55B9 /* SearchResultsTableRowController.swift */; };
 		68AE5E0121163D5A0038EABC /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
@@ -233,14 +242,102 @@
 		68AE5E5321163D780038EABC /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
 		68B082FA211784E4006AFC82 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B082F9211784E4006AFC82 /* Models.scnassets */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
-		68C06C3521220A550094A15B /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
-		68C06C3621220A550094A15B /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		68CB23D62116303800B98B32 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB23D52116303800B98B32 /* AerivoKitTests.swift */; };
 		68CB23D82116303800B98B32 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68CB23DB2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		68CB23DC2116303800B98B32 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
+		68CB73E421458267001EA3A8 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
+		68CB73E521458336001EA3A8 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
+		68CB73E621458336001EA3A8 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		68CB73F22145AD72001EA3A8 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68CB73F42145AD72001EA3A8 /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
+		68CB73F52145AD72001EA3A8 /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
+		68CB73F62145AD72001EA3A8 /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
+		68CB73F72145AD72001EA3A8 /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA6211428E900C0F56B /* XMLDecodingStorage.swift */; };
+		68CB73F82145AD72001EA3A8 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA7211428E900C0F56B /* XMLDecoder.swift */; };
+		68CB73F92145AD72001EA3A8 /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA9211428E900C0F56B /* XMLReferencingEncoder.swift */; };
+		68CB73FA2145AD72001EA3A8 /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAA211428E900C0F56B /* EncodingErrorExtension.swift */; };
+		68CB73FB2145AD72001EA3A8 /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAB211428E900C0F56B /* XMLEncoder.swift */; };
+		68CB73FC2145AD72001EA3A8 /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */; };
+		68CB73FD2145AD72001EA3A8 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAD211428EA00C0F56B /* ISO8601DateFormatter.swift */; };
+		68CB73FE2145AD72001EA3A8 /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAE211428EA00C0F56B /* XMLKey.swift */; };
+		68CB73FF2145AD72001EA3A8 /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
+		68CB74002145AD72001EA3A8 /* CloudCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EB210E3CF000491C3A /* CloudCore.swift */; };
+		68CB74012145AD72001EA3A8 /* ErrorBlockProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EC210E3CF000491C3A /* ErrorBlockProxy.swift */; };
+		68CB74022145AD72001EA3A8 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362ED210E3CF000491C3A /* AsynchronousOperation.swift */; };
+		68CB74032145AD72001EA3A8 /* FetchAndSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362EF210E3CF000491C3A /* FetchAndSaveOperation.swift */; };
+		68CB74042145AD72001EA3A8 /* FetchPublicSubscriptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F1210E3CF000491C3A /* FetchPublicSubscriptionsOperation.swift */; };
+		68CB74052145AD72001EA3A8 /* PublicDatabaseSubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F2210E3CF000491C3A /* PublicDatabaseSubscriptions.swift */; };
+		68CB74062145AD72001EA3A8 /* DeleteFromCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F4210E3CF000491C3A /* DeleteFromCoreDataOperation.swift */; };
+		68CB74072145AD72001EA3A8 /* FetchRecordZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F5210E3CF000491C3A /* FetchRecordZoneChangesOperation.swift */; };
+		68CB74082145AD72001EA3A8 /* PurgeLocalDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F6210E3CF000491C3A /* PurgeLocalDatabaseOperation.swift */; };
+		68CB74092145AD72001EA3A8 /* RecordToCoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F7210E3CF000491C3A /* RecordToCoreDataOperation.swift */; };
+		68CB740A2145AD72001EA3A8 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; };
+		68CB740B2145AD72001EA3A8 /* SetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362F9210E3CF000491C3A /* SetupOperation.swift */; };
+		68CB740C2145AD72001EA3A8 /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FA210E3CF000491C3A /* SubscribeOperation.swift */; };
+		68CB740D2145AD72001EA3A8 /* CreateCloudCoreZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FB210E3CF000491C3A /* CreateCloudCoreZoneOperation.swift */; };
+		68CB740E2145AD72001EA3A8 /* UploadAllLocalDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FC210E3CF000491C3A /* UploadAllLocalDataOperation.swift */; };
+		68CB740F2145AD72001EA3A8 /* CloudSaveOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362FE210E3CF000491C3A /* CloudSaveOperationQueue.swift */; };
+		68CB74102145AD72001EA3A8 /* ObjectToRecordConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336300210E3CF000491C3A /* ObjectToRecordConverter.swift */; };
+		68CB74112145AD72001EA3A8 /* ObjectToRecordOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336301210E3CF000491C3A /* ObjectToRecordOperation.swift */; };
+		68CB74122145AD72001EA3A8 /* CoreDataAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336302210E3CF000491C3A /* CoreDataAttribute.swift */; };
+		68CB74132145AD72001EA3A8 /* CoreDataRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336303210E3CF000491C3A /* CoreDataRelationship.swift */; };
+		68CB74142145AD72001EA3A8 /* RecordIDWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336305210E3CF000491C3A /* RecordIDWithDatabase.swift */; };
+		68CB74152145AD72001EA3A8 /* RecordWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336306210E3CF000491C3A /* RecordWithDatabase.swift */; };
+		68CB74162145AD72001EA3A8 /* CoreDataListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336307210E3CF000491C3A /* CoreDataListener.swift */; };
+		68CB74172145AD72001EA3A8 /* CloudCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336309210E3CF000491C3A /* CloudCoreError.swift */; };
+		68CB74182145AD72001EA3A8 /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630A210E3CF000491C3A /* FetchResult.swift */; };
+		68CB74192145AD72001EA3A8 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630B210E3CF000491C3A /* Module.swift */; };
+		68CB741A2145AD72001EA3A8 /* NSEntityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336311210E3CF000491C3A /* NSEntityDescription.swift */; };
+		68CB741B2145AD72001EA3A8 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336312210E3CF000491C3A /* NSManagedObjectModel.swift */; };
+		68CB741C2145AD72001EA3A8 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336313210E3CF000491C3A /* NSManagedObject.swift */; };
+		68CB741D2145AD72001EA3A8 /* CKRecordID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D336314210E3CF000491C3A /* CKRecordID.swift */; };
+		68CB741E2145AD72001EA3A8 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E5210E3CEF00491C3A /* Tokens.swift */; };
+		68CB741F2145AD72001EA3A8 /* CloudCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E6210E3CEF00491C3A /* CloudCoreConfig.swift */; };
+		68CB74202145AD72001EA3A8 /* CloudKitAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E7210E3CEF00491C3A /* CloudKitAttribute.swift */; };
+		68CB74212145AD72001EA3A8 /* ServiceAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E8210E3CEF00491C3A /* ServiceAttributeName.swift */; };
+		68CB74222145AD72001EA3A8 /* CKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3362E9210E3CEF00491C3A /* CKRecord.swift */; };
+		68CB74232145AD72001EA3A8 /* CloudCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D33630D210E3CF000491C3A /* CloudCoreDelegate.swift */; };
+		68CB74242145AD72001EA3A8 /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
+		68CB74252145AD72001EA3A8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648B20F848B1005A6EB1 /* Endpoint.swift */; };
+		68CB74262145AD72001EA3A8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7648D20F848CE005A6EB1 /* APIClient.swift */; };
+		68CB74272145AD72001EA3A8 /* CodableCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6801C17220FA965B00E75F01 /* CodableCoordinate.swift */; };
+		68CB74282145AD72001EA3A8 /* JSONEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5BA220FA8AE70083B943 /* JSONEncoder+CustomDates.swift */; };
+		68CB74292145AD72001EA3A8 /* XMLEncoder+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A20AD21013B2A00EDDBB5 /* XMLEncoder+CustomDates.swift */; };
+		68CB742A2145AD72001EA3A8 /* OpenAQEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */; };
+		68CB742B2145AD72001EA3A8 /* OpenAQParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */; };
+		68CB742C2145AD72001EA3A8 /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
+		68CB742D2145AD72001EA3A8 /* OpenAQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8620F993960083B943 /* OpenAQClient.swift */; };
+		68CB742E2145AD72001EA3A8 /* OpenAQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9D20FA57750083B943 /* OpenAQError.swift */; };
+		68CB742F2145AD72001EA3A8 /* OpenAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9920FA551F0083B943 /* OpenAQResponse.swift */; };
+		68CB74302145AD72001EA3A8 /* AQCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8920F996D10083B943 /* AQCity.swift */; };
+		68CB74312145AD72001EA3A8 /* AQCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8B20F9A2C00083B943 /* AQCountry.swift */; };
+		68CB74322145AD72001EA3A8 /* AirQualityIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681C49D6211F71AB00D82950 /* AirQualityIntentHandler.swift */; };
+		68CB74332145AD72001EA3A8 /* AQFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8D20F9A4810083B943 /* AQFetch.swift */; };
+		68CB74342145AD72001EA3A8 /* AQLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B8F20F9AB1E0083B943 /* AQLatest.swift */; };
+		68CB74352145AD72001EA3A8 /* AQLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9320F9BA8F0083B943 /* AQLocation.swift */; };
+		68CB74362145AD72001EA3A8 /* AQMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9520F9C2650083B943 /* AQMeasurement.swift */; };
+		68CB74372145AD72001EA3A8 /* AQParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9720FA53F40083B943 /* AQParameter.swift */; };
+		68CB74382145AD72001EA3A8 /* AQSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DD5B9B20FA566E0083B943 /* AQSource.swift */; };
+		68CB74392145AD72001EA3A8 /* NWQPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */; };
+		68CB743A2145AD72001EA3A8 /* NWQPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6894019D20FEC99400C7D8FA /* NWQPParameters.swift */; };
+		68CB743B2145AD72001EA3A8 /* NWQPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209A2101123E00EDDBB5 /* NWQPClient.swift */; };
+		68CB743C2145AD72001EA3A8 /* NWQPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE5210A4FB9003B1671 /* NWQPResponse.swift */; };
+		68CB743D2145AD72001EA3A8 /* NWQPStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A209C2101162F00EDDBB5 /* NWQPStation.swift */; };
+		68CB743E2145AD72001EA3A8 /* NWQPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68622DB22100469C0002103F /* NWQPResult.swift */; };
+		68CB743F2145AD72001EA3A8 /* CivicInformationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDC210A332F003B1671 /* CivicInformationEndpoint.swift */; };
+		68CB74402145AD72001EA3A8 /* CivicInformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EDE210A3842003B1671 /* CivicInformationParameters.swift */; };
+		68CB74412145AD72001EA3A8 /* CivicInformationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE9210A69A5003B1671 /* CivicInformationClient.swift */; };
+		68CB74422145AD72001EA3A8 /* CivicInformationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434A210BB3A600E6886A /* CivicInformationError.swift */; };
+		68CB74432145AD72001EA3A8 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
+		68CB74442145AD72001EA3A8 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
+		68CB74452145AD72001EA3A8 /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
+		68CB74462145AD72001EA3A8 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
+		68CB74472145AD72001EA3A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		68CB74492145AD72001EA3A8 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
+		68CB744C2145AD72001EA3A8 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68E551A9212936CA00EC126E /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D25D5F2123B46700AE963B /* MapboxGeocoder.framework */; };
 		68EADBBE20F30DBE00DB3425 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EADBBD20F30DBE00DB3425 /* PlacesTableViewCell.swift */; };
 		68ECFDEF212A1F4E00E87439 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ECFDEE212A1F4E00E87439 /* Extensions.swift */; };
@@ -289,6 +386,27 @@
 			remoteGlobalIDString = 682470292132317E009EAC84;
 			remoteInfo = AerivoWatchKitIntents;
 		};
+		6837B46B2144741500CC3FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6837B4582144741400CC3FE3;
+			remoteInfo = "Aerivo MacOS";
+		};
+		6837B4762144741500CC3FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6837B4582144741400CC3FE3;
+			remoteInfo = "Aerivo MacOS";
+		};
+		68463AA82145AF9B0041F129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68CB73F02145AD72001EA3A8;
+			remoteInfo = "AerivoKit macOS";
+		};
 		684BE21C20E99C1F00E74FE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
@@ -310,13 +428,6 @@
 			remoteGlobalIDString = 687DBA692120DABE00C166FD;
 			remoteInfo = AirQualityWidget;
 		};
-		68C06C3721220A550094A15B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6811FC69212118BE00509A37;
-			remoteInfo = "AerivoKit (watchOS)";
-		};
 		68CB23D02116303800B98B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
@@ -337,6 +448,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 68CB23C52116303800B98B32;
 			remoteInfo = AerivoKit;
+		};
+		68CB73E721458336001EA3A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 684BE1FF20E99C1D00E74FE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6811FC69212118BE00509A37;
+			remoteInfo = "AerivoKit watchOS";
 		};
 		68F91535212100E600160B5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -378,6 +496,28 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68CB73E921458336001EA3A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				68CB73E621458336001EA3A8 /* AerivoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68CB73EE2145834B001EA3A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				68463AA72145AF9B0041F129 /* AerivoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68E397CC20EFF0F3005C0722 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,17 +549,6 @@
 				68F91541212100E600160B5B /* Aerivo WatchKit.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F915B4212103AB00160B5B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				68C06C3621220A550094A15B /* AerivoKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -461,6 +590,19 @@
 		6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AerivoWatchKitIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6824702C2132317E009EAC84 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		6824702E2132317E009EAC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6837B4592144741400CC3FE3 /* Aerivo MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerivo MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6837B45B2144741400CC3FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6837B45D2144741400CC3FE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6837B45F2144741500CC3FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6837B4622144741500CC3FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6837B4642144741500CC3FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6837B4652144741500CC3FE3 /* Aerivo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo_MacOS.entitlements; sourceTree = "<group>"; };
+		6837B46A2144741500CC3FE3 /* Aerivo MacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aerivo MacOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6837B46E2144741500CC3FE3 /* Aerivo_MacOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aerivo_MacOSTests.swift; sourceTree = "<group>"; };
+		6837B4702144741500CC3FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6837B4752144741500CC3FE3 /* Aerivo MacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aerivo MacOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6837B4792144741500CC3FE3 /* Aerivo_MacOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aerivo_MacOSUITests.swift; sourceTree = "<group>"; };
+		6837B47B2144741600CC3FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		683B3D2520F946BF00BF3BE7 /* OpenAQParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQParameters.swift; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -492,6 +634,8 @@
 		6894019B20FEC69500C7D8FA /* NWQPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPEndpoint.swift; sourceTree = "<group>"; };
 		6894019D20FEC99400C7D8FA /* NWQPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPParameters.swift; sourceTree = "<group>"; };
 		6895F72B21183931003A9FD9 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		6896E8042144756B00875616 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		6896E8672144761800875616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/Harish/Desktop/Aerivo/Info.plist; sourceTree = "<absolute>"; };
 		68A30AF8212FBD4B001A55B9 /* SearchResultsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsInterfaceController.swift; sourceTree = "<group>"; };
 		68A30AFC212FBE3D001A55B9 /* SearchResultsTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableRowController.swift; sourceTree = "<group>"; };
 		68B082F721177F10006AFC82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -505,6 +649,7 @@
 		68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CB23D52116303800B98B32 /* AerivoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoKitTests.swift; sourceTree = "<group>"; };
 		68CB23D72116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CB74502145AD72001EA3A8 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D25D5F2123B46700AE963B /* MapboxGeocoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxGeocoder.framework; path = Carthage/Build/watchOS/MapboxGeocoder.framework; sourceTree = "<group>"; };
 		68DD5B8620F993960083B943 /* OpenAQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQClient.swift; sourceTree = "<group>"; };
 		68DD5B8920F996D10083B943 /* AQCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCity.swift; sourceTree = "<group>"; };
@@ -639,6 +784,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6837B4562144741400CC3FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6896E8052144756B00875616 /* CloudKit.framework in Frameworks */,
+				68463AA62145AF9B0041F129 /* AerivoKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4672144741500CC3FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4722144741500CC3FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20420E99C1D00E74FE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,12 +859,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68CB744A2145AD72001EA3A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68F91530212100E600160B5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6800FB042121F22C0059FFE7 /* CloudKit.framework in Frameworks */,
-				68C06C3521220A550094A15B /* AerivoKit.framework in Frameworks */,
+				68CB73E521458336001EA3A8 /* AerivoKit.framework in Frameworks */,
 				68E551A9212936CA00EC126E /* MapboxGeocoder.framework in Frameworks */,
 				680352472125126500FD53CA /* MapboxStatic.framework in Frameworks */,
 			);
@@ -824,6 +999,37 @@
 			path = AerivoWatchKitIntents;
 			sourceTree = "<group>";
 		};
+		6837B45A2144741400CC3FE3 /* Aerivo MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				6837B45B2144741400CC3FE3 /* AppDelegate.swift */,
+				6837B45D2144741400CC3FE3 /* ViewController.swift */,
+				6837B45F2144741500CC3FE3 /* Assets.xcassets */,
+				6837B4612144741500CC3FE3 /* Main.storyboard */,
+				6837B4642144741500CC3FE3 /* Info.plist */,
+				6837B4652144741500CC3FE3 /* Aerivo_MacOS.entitlements */,
+			);
+			path = "Aerivo MacOS";
+			sourceTree = "<group>";
+		};
+		6837B46D2144741500CC3FE3 /* Aerivo MacOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				6837B46E2144741500CC3FE3 /* Aerivo_MacOSTests.swift */,
+				6837B4702144741500CC3FE3 /* Info.plist */,
+			);
+			path = "Aerivo MacOSTests";
+			sourceTree = "<group>";
+		};
+		6837B4782144741500CC3FE3 /* Aerivo MacOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6837B4792144741500CC3FE3 /* Aerivo_MacOSUITests.swift */,
+				6837B47B2144741600CC3FE3 /* Info.plist */,
+			);
+			path = "Aerivo MacOSUITests";
+			sourceTree = "<group>";
+		};
 		683AE95A20EC8B7800C05B8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +1052,9 @@
 				68F91528212100E500160B5B /* Aerivo WatchKit */,
 				68F91537212100E600160B5B /* Aerivo WatchKit Extension */,
 				6824702B2132317E009EAC84 /* AerivoWatchKitIntents */,
+				6837B45A2144741400CC3FE3 /* Aerivo MacOS */,
+				6837B46D2144741500CC3FE3 /* Aerivo MacOSTests */,
+				6837B4782144741500CC3FE3 /* Aerivo MacOSUITests */,
 				68CB23C72116303800B98B32 /* AerivoKit */,
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
@@ -867,6 +1076,10 @@
 				68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */,
 				6811FCC9212118BE00509A37 /* AerivoKit.framework */,
 				6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */,
+				6837B4592144741400CC3FE3 /* Aerivo MacOS.app */,
+				6837B46A2144741500CC3FE3 /* Aerivo MacOSTests.xctest */,
+				6837B4752144741500CC3FE3 /* Aerivo MacOSUITests.xctest */,
+				68CB74502145AD72001EA3A8 /* AerivoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -982,6 +1195,14 @@
 			path = NWQP;
 			sourceTree = "<group>";
 		};
+		6896E8682144762900875616 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				6896E8672144761800875616 /* Info.plist */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
 		68B7647C20F6EDC1005A6EB1 /* Annotation View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1065,6 +1286,7 @@
 		68E397D320EFF547005C0722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6896E8042144756B00875616 /* CloudKit.framework */,
 				680352462125126500FD53CA /* MapboxStatic.framework */,
 				68D25D5F2123B46700AE963B /* MapboxGeocoder.framework */,
 				6800FB032121F22C0059FFE7 /* CloudKit.framework */,
@@ -1087,6 +1309,7 @@
 				68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */,
 				68F915AD2121029900160B5B /* iOS */,
 				6811FCCF2121381000509A37 /* watchOS */,
+				6896E8682144762900875616 /* macOS */,
 				7D3FDDA1211428C000C0F56B /* XMLParsing */,
 				7D3362E3210E3CB000491C3A /* Cloud Core */,
 			);
@@ -1446,12 +1669,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68CB73F12145AD72001EA3A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CB73F22145AD72001EA3A8 /* AerivoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6811FC69212118BE00509A37 /* AerivoKit (watchOS) */ = {
+		6811FC69212118BE00509A37 /* AerivoKit watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */;
+			buildConfigurationList = 6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit watchOS" */;
 			buildPhases = (
 				6811FC6A212118BE00509A37 /* Headers */,
 				6811FC6C212118BE00509A37 /* Sources */,
@@ -1462,7 +1693,7 @@
 			);
 			dependencies = (
 			);
-			name = "AerivoKit (watchOS)";
+			name = "AerivoKit watchOS";
 			productName = AerivoKit;
 			productReference = 6811FCC9212118BE00509A37 /* AerivoKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1500,6 +1731,61 @@
 			productName = AerivoWatchKitIntents;
 			productReference = 6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */;
 			productType = "com.apple.product-type.app-extension.intents-service";
+		};
+		6837B4582144741400CC3FE3 /* Aerivo MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6837B4822144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOS" */;
+			buildPhases = (
+				6837B4552144741400CC3FE3 /* Sources */,
+				6837B4562144741400CC3FE3 /* Frameworks */,
+				6837B4572144741400CC3FE3 /* Resources */,
+				68CB73EE2145834B001EA3A8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68463AA92145AF9B0041F129 /* PBXTargetDependency */,
+			);
+			name = "Aerivo MacOS";
+			productName = "Aerivo MacOS";
+			productReference = 6837B4592144741400CC3FE3 /* Aerivo MacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6837B4692144741500CC3FE3 /* Aerivo MacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6837B4832144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOSTests" */;
+			buildPhases = (
+				6837B4662144741500CC3FE3 /* Sources */,
+				6837B4672144741500CC3FE3 /* Frameworks */,
+				6837B4682144741500CC3FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6837B46C2144741500CC3FE3 /* PBXTargetDependency */,
+			);
+			name = "Aerivo MacOSTests";
+			productName = "Aerivo MacOSTests";
+			productReference = 6837B46A2144741500CC3FE3 /* Aerivo MacOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6837B4742144741500CC3FE3 /* Aerivo MacOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6837B4842144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOSUITests" */;
+			buildPhases = (
+				6837B4712144741500CC3FE3 /* Sources */,
+				6837B4722144741500CC3FE3 /* Frameworks */,
+				6837B4732144741500CC3FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6837B4772144741500CC3FE3 /* PBXTargetDependency */,
+			);
+			name = "Aerivo MacOSUITests";
+			productName = "Aerivo MacOSUITests";
+			productReference = 6837B4752144741500CC3FE3 /* Aerivo MacOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		684BE20620E99C1D00E74FE5 /* Aerivo */ = {
 			isa = PBXNativeTarget;
@@ -1617,6 +1903,24 @@
 			productReference = 68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		68CB73F02145AD72001EA3A8 /* AerivoKit macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68CB744D2145AD72001EA3A8 /* Build configuration list for PBXNativeTarget "AerivoKit macOS" */;
+			buildPhases = (
+				68CB73F12145AD72001EA3A8 /* Headers */,
+				68CB73F32145AD72001EA3A8 /* Sources */,
+				68CB744A2145AD72001EA3A8 /* Frameworks */,
+				68CB744B2145AD72001EA3A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AerivoKit macOS";
+			productName = AerivoKit;
+			productReference = 68CB74502145AD72001EA3A8 /* AerivoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		68F91526212100E500160B5B /* Aerivo WatchKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68F91548212100E600160B5B /* Build configuration list for PBXNativeTarget "Aerivo WatchKit" */;
@@ -1641,16 +1945,16 @@
 				68F9152F212100E600160B5B /* Sources */,
 				68F91530212100E600160B5B /* Frameworks */,
 				68F91531212100E600160B5B /* Resources */,
-				68F915B4212103AB00160B5B /* Embed Frameworks */,
 				68D25D612123B47E00AE963B /* Carthage Copy Frameworks */,
 				6858A1242124D9560024CD2D /* Carthage Warn Outdated */,
 				682470352132317E009EAC84 /* Embed App Extensions */,
+				68CB73E921458336001EA3A8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				68C06C3821220A550094A15B /* PBXTargetDependency */,
 				682470302132317E009EAC84 /* PBXTargetDependency */,
+				68CB73E821458336001EA3A8 /* PBXTargetDependency */,
 			);
 			name = "Aerivo WatchKit Extension";
 			productName = "Aerivo WatchKit Extension";
@@ -1677,6 +1981,28 @@
 					};
 					682470292132317E009EAC84 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					6837B4582144741400CC3FE3 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					6837B4692144741500CC3FE3 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 6837B4582144741400CC3FE3;
+					};
+					6837B4742144741500CC3FE3 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 6837B4582144741400CC3FE3;
 					};
 					684BE20620E99C1D00E74FE5 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1771,7 +2097,11 @@
 				68F91526212100E500160B5B /* Aerivo WatchKit */,
 				68F91532212100E600160B5B /* Aerivo WatchKit Extension */,
 				682470292132317E009EAC84 /* AerivoWatchKitIntents */,
-				6811FC69212118BE00509A37 /* AerivoKit (watchOS) */,
+				6811FC69212118BE00509A37 /* AerivoKit watchOS */,
+				6837B4582144741400CC3FE3 /* Aerivo MacOS */,
+				6837B4692144741500CC3FE3 /* Aerivo MacOSTests */,
+				6837B4742144741500CC3FE3 /* Aerivo MacOSUITests */,
+				68CB73F02145AD72001EA3A8 /* AerivoKit macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1793,6 +2123,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		682470282132317E009EAC84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4572144741400CC3FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6837B4602144741500CC3FE3 /* Assets.xcassets in Resources */,
+				6837B4632144741500CC3FE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4682144741500CC3FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4732144741500CC3FE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1845,6 +2198,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68CB744B2145AD72001EA3A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CB744C2145AD72001EA3A8 /* AerivoKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2064,6 +2425,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6837B4552144741400CC3FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6837B45E2144741400CC3FE3 /* ViewController.swift in Sources */,
+				68CB73E421458267001EA3A8 /* Placemark.swift in Sources */,
+				6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4662144741500CC3FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6837B46F2144741500CC3FE3 /* Aerivo_MacOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6837B4712144741500CC3FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6837B47A2144741500CC3FE3 /* Aerivo_MacOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684BE20320E99C1D00E74FE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2225,6 +2612,98 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68CB73F32145AD72001EA3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CB73F42145AD72001EA3A8 /* DecodingErrorExtension.swift in Sources */,
+				68CB73F52145AD72001EA3A8 /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				68CB73F62145AD72001EA3A8 /* XMLKeyedDecodingContainer.swift in Sources */,
+				68CB73F72145AD72001EA3A8 /* XMLDecodingStorage.swift in Sources */,
+				68CB73F82145AD72001EA3A8 /* XMLDecoder.swift in Sources */,
+				68CB73F92145AD72001EA3A8 /* XMLReferencingEncoder.swift in Sources */,
+				68CB73FA2145AD72001EA3A8 /* EncodingErrorExtension.swift in Sources */,
+				68CB73FB2145AD72001EA3A8 /* XMLEncoder.swift in Sources */,
+				68CB73FC2145AD72001EA3A8 /* XMLEncodingStorage.swift in Sources */,
+				68CB73FD2145AD72001EA3A8 /* ISO8601DateFormatter.swift in Sources */,
+				68CB73FE2145AD72001EA3A8 /* XMLKey.swift in Sources */,
+				68CB73FF2145AD72001EA3A8 /* XMLStackParser.swift in Sources */,
+				68CB74002145AD72001EA3A8 /* CloudCore.swift in Sources */,
+				68CB74012145AD72001EA3A8 /* ErrorBlockProxy.swift in Sources */,
+				68CB74022145AD72001EA3A8 /* AsynchronousOperation.swift in Sources */,
+				68CB74032145AD72001EA3A8 /* FetchAndSaveOperation.swift in Sources */,
+				68CB74042145AD72001EA3A8 /* FetchPublicSubscriptionsOperation.swift in Sources */,
+				68CB74052145AD72001EA3A8 /* PublicDatabaseSubscriptions.swift in Sources */,
+				68CB74062145AD72001EA3A8 /* DeleteFromCoreDataOperation.swift in Sources */,
+				68CB74072145AD72001EA3A8 /* FetchRecordZoneChangesOperation.swift in Sources */,
+				68CB74082145AD72001EA3A8 /* PurgeLocalDatabaseOperation.swift in Sources */,
+				68CB74092145AD72001EA3A8 /* RecordToCoreDataOperation.swift in Sources */,
+				68CB740A2145AD72001EA3A8 /* Aerivo.intentdefinition in Sources */,
+				68CB740B2145AD72001EA3A8 /* SetupOperation.swift in Sources */,
+				68CB740C2145AD72001EA3A8 /* SubscribeOperation.swift in Sources */,
+				68CB740D2145AD72001EA3A8 /* CreateCloudCoreZoneOperation.swift in Sources */,
+				68CB740E2145AD72001EA3A8 /* UploadAllLocalDataOperation.swift in Sources */,
+				68CB740F2145AD72001EA3A8 /* CloudSaveOperationQueue.swift in Sources */,
+				68CB74102145AD72001EA3A8 /* ObjectToRecordConverter.swift in Sources */,
+				68CB74112145AD72001EA3A8 /* ObjectToRecordOperation.swift in Sources */,
+				68CB74122145AD72001EA3A8 /* CoreDataAttribute.swift in Sources */,
+				68CB74132145AD72001EA3A8 /* CoreDataRelationship.swift in Sources */,
+				68CB74142145AD72001EA3A8 /* RecordIDWithDatabase.swift in Sources */,
+				68CB74152145AD72001EA3A8 /* RecordWithDatabase.swift in Sources */,
+				68CB74162145AD72001EA3A8 /* CoreDataListener.swift in Sources */,
+				68CB74172145AD72001EA3A8 /* CloudCoreError.swift in Sources */,
+				68CB74182145AD72001EA3A8 /* FetchResult.swift in Sources */,
+				68CB74192145AD72001EA3A8 /* Module.swift in Sources */,
+				68CB741A2145AD72001EA3A8 /* NSEntityDescription.swift in Sources */,
+				68CB741B2145AD72001EA3A8 /* NSManagedObjectModel.swift in Sources */,
+				68CB741C2145AD72001EA3A8 /* NSManagedObject.swift in Sources */,
+				68CB741D2145AD72001EA3A8 /* CKRecordID.swift in Sources */,
+				68CB741E2145AD72001EA3A8 /* Tokens.swift in Sources */,
+				68CB741F2145AD72001EA3A8 /* CloudCoreConfig.swift in Sources */,
+				68CB74202145AD72001EA3A8 /* CloudKitAttribute.swift in Sources */,
+				68CB74212145AD72001EA3A8 /* ServiceAttributeName.swift in Sources */,
+				68CB74222145AD72001EA3A8 /* CKRecord.swift in Sources */,
+				68CB74232145AD72001EA3A8 /* CloudCoreDelegate.swift in Sources */,
+				68CB74242145AD72001EA3A8 /* CloudCore+AerivoConfig.swift in Sources */,
+				68CB74252145AD72001EA3A8 /* Endpoint.swift in Sources */,
+				68CB74262145AD72001EA3A8 /* APIClient.swift in Sources */,
+				68CB74272145AD72001EA3A8 /* CodableCoordinate.swift in Sources */,
+				68CB74282145AD72001EA3A8 /* JSONEncoder+CustomDates.swift in Sources */,
+				68CB74292145AD72001EA3A8 /* XMLEncoder+CustomDates.swift in Sources */,
+				68CB742A2145AD72001EA3A8 /* OpenAQEndpoint.swift in Sources */,
+				68CB742B2145AD72001EA3A8 /* OpenAQParameters.swift in Sources */,
+				68CB742C2145AD72001EA3A8 /* NSUserActivity+Activities.swift in Sources */,
+				68CB742D2145AD72001EA3A8 /* OpenAQClient.swift in Sources */,
+				68CB742E2145AD72001EA3A8 /* OpenAQError.swift in Sources */,
+				68CB742F2145AD72001EA3A8 /* OpenAQResponse.swift in Sources */,
+				68CB74302145AD72001EA3A8 /* AQCity.swift in Sources */,
+				68CB74312145AD72001EA3A8 /* AQCountry.swift in Sources */,
+				68CB74322145AD72001EA3A8 /* AirQualityIntentHandler.swift in Sources */,
+				68CB74332145AD72001EA3A8 /* AQFetch.swift in Sources */,
+				68CB74342145AD72001EA3A8 /* AQLatest.swift in Sources */,
+				68CB74352145AD72001EA3A8 /* AQLocation.swift in Sources */,
+				68CB74362145AD72001EA3A8 /* AQMeasurement.swift in Sources */,
+				68CB74372145AD72001EA3A8 /* AQParameter.swift in Sources */,
+				68CB74382145AD72001EA3A8 /* AQSource.swift in Sources */,
+				68CB74392145AD72001EA3A8 /* NWQPEndpoint.swift in Sources */,
+				68CB743A2145AD72001EA3A8 /* NWQPParameters.swift in Sources */,
+				68CB743B2145AD72001EA3A8 /* NWQPClient.swift in Sources */,
+				68CB743C2145AD72001EA3A8 /* NWQPResponse.swift in Sources */,
+				68CB743D2145AD72001EA3A8 /* NWQPStation.swift in Sources */,
+				68CB743E2145AD72001EA3A8 /* NWQPResult.swift in Sources */,
+				68CB743F2145AD72001EA3A8 /* CivicInformationEndpoint.swift in Sources */,
+				68CB74402145AD72001EA3A8 /* CivicInformationParameters.swift in Sources */,
+				68CB74412145AD72001EA3A8 /* CivicInformationClient.swift in Sources */,
+				68CB74422145AD72001EA3A8 /* CivicInformationError.swift in Sources */,
+				68CB74432145AD72001EA3A8 /* CivicInformationResponse.swift in Sources */,
+				68CB74442145AD72001EA3A8 /* RepresentativeInfoByAddress.swift in Sources */,
+				68CB74452145AD72001EA3A8 /* CivicInformationMessage.swift in Sources */,
+				68CB74462145AD72001EA3A8 /* Aerivo.xcdatamodeld in Sources */,
+				68CB74472145AD72001EA3A8 /* CoreDataStack.swift in Sources */,
+				68CB74492145AD72001EA3A8 /* CustomUnits.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68F9152F212100E600160B5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2263,6 +2742,21 @@
 			target = 682470292132317E009EAC84 /* AerivoWatchKitIntents */;
 			targetProxy = 6824702F2132317E009EAC84 /* PBXContainerItemProxy */;
 		};
+		6837B46C2144741500CC3FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6837B4582144741400CC3FE3 /* Aerivo MacOS */;
+			targetProxy = 6837B46B2144741500CC3FE3 /* PBXContainerItemProxy */;
+		};
+		6837B4772144741500CC3FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6837B4582144741400CC3FE3 /* Aerivo MacOS */;
+			targetProxy = 6837B4762144741500CC3FE3 /* PBXContainerItemProxy */;
+		};
+		68463AA92145AF9B0041F129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68CB73F02145AD72001EA3A8 /* AerivoKit macOS */;
+			targetProxy = 68463AA82145AF9B0041F129 /* PBXContainerItemProxy */;
+		};
 		684BE21D20E99C1F00E74FE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 684BE20620E99C1D00E74FE5 /* Aerivo */;
@@ -2278,11 +2772,6 @@
 			target = 687DBA692120DABE00C166FD /* AirQualityWidget */;
 			targetProxy = 687DBA742120DABE00C166FD /* PBXContainerItemProxy */;
 		};
-		68C06C3821220A550094A15B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6811FC69212118BE00509A37 /* AerivoKit (watchOS) */;
-			targetProxy = 68C06C3721220A550094A15B /* PBXContainerItemProxy */;
-		};
 		68CB23D12116303800B98B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 68CB23C52116303800B98B32 /* AerivoKit */;
@@ -2297,6 +2786,11 @@
 			isa = PBXTargetDependency;
 			target = 68CB23C52116303800B98B32 /* AerivoKit */;
 			targetProxy = 68CB23D92116303800B98B32 /* PBXContainerItemProxy */;
+		};
+		68CB73E821458336001EA3A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6811FC69212118BE00509A37 /* AerivoKit watchOS */;
+			targetProxy = 68CB73E721458336001EA3A8 /* PBXContainerItemProxy */;
 		};
 		68F91536212100E600160B5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2317,6 +2811,14 @@
 				681C49AB211F542D00D82950 /* Base */,
 			);
 			name = Aerivo.intentdefinition;
+			sourceTree = "<group>";
+		};
+		6837B4612144741500CC3FE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6837B4622144741500CC3FE3 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		684BE20E20E99C1D00E74FE5 /* Main.storyboard */ = {
@@ -2524,6 +3026,155 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		6837B47C2144741600CC3FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Aerivo MacOS/Aerivo_MacOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		6837B47D2144741600CC3FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Aerivo MacOS/Aerivo_MacOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		6837B47E2144741600CC3FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo MacOS.app/Contents/MacOS/Aerivo MacOS";
+			};
+			name = Debug;
+		};
+		6837B47F2144741600CC3FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerivo MacOS.app/Contents/MacOS/Aerivo MacOS";
+			};
+			name = Release;
+		};
+		6837B4802144741600CC3FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "Aerivo MacOS";
+			};
+			name = Debug;
+		};
+		6837B4812144741600CC3FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				INFOPLIST_FILE = "Aerivo MacOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "Aerivo MacOS";
 			};
 			name = Release;
 		};
@@ -2930,6 +3581,79 @@
 			};
 			name = Release;
 		};
+		68CB744E2145AD72001EA3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = AerivoKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		68CB744F2145AD72001EA3A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H5SH6WNLYC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harishyerra.AerivoKit;
+				PRODUCT_NAME = AerivoKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		68F91542212100E600160B5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3033,7 +3757,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit (watchOS)" */ = {
+		6811FCC6212118BE00509A37 /* Build configuration list for PBXNativeTarget "AerivoKit watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6811FCC7212118BE00509A37 /* Debug */,
@@ -3056,6 +3780,33 @@
 			buildConfigurations = (
 				682470322132317E009EAC84 /* Debug */,
 				682470332132317E009EAC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6837B4822144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6837B47C2144741600CC3FE3 /* Debug */,
+				6837B47D2144741600CC3FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6837B4832144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6837B47E2144741600CC3FE3 /* Debug */,
+				6837B47F2144741600CC3FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6837B4842144741600CC3FE3 /* Build configuration list for PBXNativeTarget "Aerivo MacOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6837B4802144741600CC3FE3 /* Debug */,
+				6837B4812144741600CC3FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3119,6 +3870,15 @@
 			buildConfigurations = (
 				68CB23E12116303800B98B32 /* Debug */,
 				68CB23E22116303800B98B32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68CB744D2145AD72001EA3A8 /* Build configuration list for PBXNativeTarget "AerivoKit macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68CB744E2145AD72001EA3A8 /* Debug */,
+				68CB744F2145AD72001EA3A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
