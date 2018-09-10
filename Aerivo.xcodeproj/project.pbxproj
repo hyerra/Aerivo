@@ -249,7 +249,6 @@
 		68CB23DB2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		68CB23DC2116303800B98B32 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
-		68CB73E421458267001EA3A8 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803525621291E6900FD53CA /* Placemark.swift */; };
 		68CB73E521458336001EA3A8 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; };
 		68CB73E621458336001EA3A8 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6811FCC9212118BE00509A37 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68CB73F22145AD72001EA3A8 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2431,7 +2430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6837B45E2144741400CC3FE3 /* ViewController.swift in Sources */,
-				68CB73E421458267001EA3A8 /* Placemark.swift in Sources */,
 				68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */,
 				6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */,
 			);
