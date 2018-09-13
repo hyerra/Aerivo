@@ -1,4 +1,5 @@
 binary "https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json"
+binary "https://mapbox.github.io/mapbox-gl-native/macos/Mapbox-macOS-SDK.json"
 github "52inc/Pulley" "swift-4.2"
 github "mapbox/MapboxGeocoder.swift"
 github "mapbox/mapbox-scenekit" "master"
