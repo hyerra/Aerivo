@@ -1031,8 +1031,7 @@
 			children = (
 				6837B4652144741500CC3FE3 /* Aerivo_MacOS.entitlements */,
 				6837B45B2144741400CC3FE3 /* AppDelegate.swift */,
-				6837B45D2144741400CC3FE3 /* MapViewController.swift */,
-				6837B4612144741500CC3FE3 /* Main.storyboard */,
+				68B74E4E214B70380038492F /* User Interface */,
 				68B74E4D214B62C90038492F /* Resources */,
 			);
 			path = "Aerivo MacOS";
@@ -1241,6 +1240,15 @@
 				6837B45F2144741500CC3FE3 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		68B74E4E214B70380038492F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				6837B4612144741500CC3FE3 /* Main.storyboard */,
+				6837B45D2144741400CC3FE3 /* MapViewController.swift */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 		68B7647C20F6EDC1005A6EB1 /* Annotation View */ = {
