@@ -32,5 +32,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiaHllcnJhIiwiYSI6ImNqajNubjRuYTB5OGczd3BjdXNiOGNxcTQifQ.t__Z6CTcq7DlHhSneZFlEA</string>
 </dict>
 </plist>

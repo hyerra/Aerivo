@@ -128,7 +128,7 @@
 		682470362132322C009EAC84 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		682CC56021210BA7006FC746 /* Favorite+Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */; };
 		6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B45B2144741400CC3FE3 /* AppDelegate.swift */; };
-		6837B45E2144741400CC3FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B45D2144741400CC3FE3 /* ViewController.swift */; };
+		6837B45E2144741400CC3FE3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B45D2144741400CC3FE3 /* MapViewController.swift */; };
 		6837B4602144741500CC3FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6837B45F2144741500CC3FE3 /* Assets.xcassets */; };
 		6837B4632144741500CC3FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6837B4612144741500CC3FE3 /* Main.storyboard */; };
 		6837B46F2144741500CC3FE3 /* Aerivo_MacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837B46E2144741500CC3FE3 /* Aerivo_MacOSTests.swift */; };
@@ -151,6 +151,12 @@
 		687DBA762120DABE00C166FD /* AirQualityWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 687DBA6A2120DABE00C166FD /* AirQualityWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		687DBA7A2120DB3300C166FD /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		687DBA7C2120E38700C166FD /* AirQualityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */; };
+		687FCFDA214B5DEE00337FC4 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687FCFD9214B5DEE00337FC4 /* Mapbox.framework */; };
+		687FCFDB214B5DEE00337FC4 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 687FCFD9214B5DEE00337FC4 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		687FCFE1214B5E4800337FC4 /* Mapbox.framework.dSYM in Carthage Copy Files */ = {isa = PBXBuildFile; fileRef = 687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */; };
+		687FCFE3214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM in Carthage Copy Files */ = {isa = PBXBuildFile; fileRef = 687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */; };
+		687FCFE5214B5E6200337FC4 /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */; };
+		687FCFE6214B5E6200337FC4 /* MapboxGeocoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C863C21026944000C47FF /* PlacesDetailViewController.swift */; };
 		688D77CD211FBC8000E27EA1 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		688D77D2211FE5B100E27EA1 /* QuickActionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */; };
@@ -496,6 +502,18 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		687FCFDF214B5E2900337FC4 /* Carthage Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				687FCFE1214B5E4800337FC4 /* Mapbox.framework.dSYM in Carthage Copy Files */,
+				687FCFE3214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM in Carthage Copy Files */,
+			);
+			name = "Carthage Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68CB73E921458336001EA3A8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,7 +531,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				687FCFE6214B5E6200337FC4 /* MapboxGeocoder.framework in Embed Frameworks */,
 				68463AA72145AF9B0041F129 /* AerivoKit.framework in Embed Frameworks */,
+				687FCFDB214B5DEE00337FC4 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +612,7 @@
 		6824702E2132317E009EAC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6837B4592144741400CC3FE3 /* Aerivo MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerivo MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6837B45B2144741400CC3FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6837B45D2144741400CC3FE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6837B45D2144741400CC3FE3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6837B45F2144741500CC3FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6837B4622144741500CC3FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6837B4642144741500CC3FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -626,6 +646,11 @@
 		687DBA712120DABE00C166FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		687DBA732120DABE00C166FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		687DBA7B2120E38700C166FD /* AirQualityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityTableViewCell.swift; sourceTree = "<group>"; };
+		687FCFD9214B5DEE00337FC4 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/Mac/Mapbox.framework; sourceTree = "<group>"; };
+		687FCFDC214B5E0C00337FC4 /* MapboxGeocoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxGeocoder.framework; path = Carthage/Build/Mac/MapboxGeocoder.framework; sourceTree = "<group>"; };
+		687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mapbox.framework.dSYM; path = Carthage/Build/Mac/Mapbox.framework.dSYM; sourceTree = "<group>"; };
+		687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MapboxGeocoder.framework.dSYM; path = Carthage/Build/Mac/MapboxGeocoder.framework.dSYM; sourceTree = "<group>"; };
+		687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxGeocoder.framework; path = Carthage/Build/Mac/MapboxGeocoder.framework; sourceTree = "<group>"; };
 		688C863C21026944000C47FF /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		688D77CE211FCA4200E27EA1 /* AerivoIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerivoIntents.entitlements; sourceTree = "<group>"; };
 		688D77D1211FE5B100E27EA1 /* QuickActionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsManager.swift; sourceTree = "<group>"; };
@@ -790,6 +815,8 @@
 			files = (
 				6896E8052144756B00875616 /* CloudKit.framework in Frameworks */,
 				68463AA62145AF9B0041F129 /* AerivoKit.framework in Frameworks */,
+				687FCFDA214B5DEE00337FC4 /* Mapbox.framework in Frameworks */,
+				687FCFE5214B5E6200337FC4 /* MapboxGeocoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,12 +1029,11 @@
 		6837B45A2144741400CC3FE3 /* Aerivo MacOS */ = {
 			isa = PBXGroup;
 			children = (
-				6837B45B2144741400CC3FE3 /* AppDelegate.swift */,
-				6837B45D2144741400CC3FE3 /* ViewController.swift */,
-				6837B45F2144741500CC3FE3 /* Assets.xcassets */,
-				6837B4612144741500CC3FE3 /* Main.storyboard */,
-				6837B4642144741500CC3FE3 /* Info.plist */,
 				6837B4652144741500CC3FE3 /* Aerivo_MacOS.entitlements */,
+				6837B45B2144741400CC3FE3 /* AppDelegate.swift */,
+				6837B45D2144741400CC3FE3 /* MapViewController.swift */,
+				6837B4612144741500CC3FE3 /* Main.storyboard */,
+				68B74E4D214B62C90038492F /* Resources */,
 			);
 			path = "Aerivo MacOS";
 			sourceTree = "<group>";
@@ -1044,6 +1070,11 @@
 		684BE1FE20E99C1D00E74FE5 = {
 			isa = PBXGroup;
 			children = (
+				687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */,
+				687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */,
+				687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */,
+				687FCFDC214B5E0C00337FC4 /* MapboxGeocoder.framework */,
+				687FCFD9214B5DEE00337FC4 /* Mapbox.framework */,
 				684BE20920E99C1D00E74FE5 /* Aerivo */,
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
@@ -1201,6 +1232,15 @@
 				6896E8672144761800875616 /* Info.plist */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		68B74E4D214B62C90038492F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6837B4642144741500CC3FE3 /* Info.plist */,
+				6837B45F2144741500CC3FE3 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		68B7647C20F6EDC1005A6EB1 /* Annotation View */ = {
@@ -1740,6 +1780,7 @@
 				6837B4562144741400CC3FE3 /* Frameworks */,
 				6837B4572144741400CC3FE3 /* Resources */,
 				68CB73EE2145834B001EA3A8 /* Embed Frameworks */,
+				687FCFDF214B5E2900337FC4 /* Carthage Copy Files */,
 			);
 			buildRules = (
 			);
@@ -2429,7 +2470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6837B45E2144741400CC3FE3 /* ViewController.swift in Sources */,
+				6837B45E2144741400CC3FE3 /* MapViewController.swift in Sources */,
 				68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */,
 				6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */,
 			);
@@ -3039,7 +3080,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
-				INFOPLIST_FILE = "Aerivo MacOS/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Aerivo MacOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -3064,7 +3109,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H5SH6WNLYC;
-				INFOPLIST_FILE = "Aerivo MacOS/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Aerivo MacOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
