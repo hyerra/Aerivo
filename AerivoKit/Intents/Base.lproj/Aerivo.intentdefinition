@@ -9,7 +9,7 @@
 	<key>INIntentDefinitionSystemVersion</key>
 	<string>17G65</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>10L221o</string>
+	<string>10L232m</string>
 	<key>INIntentDefinitionToolsVersion</key>
 	<string>10.0</string>
 	<key>INIntents</key>
@@ -32,13 +32,13 @@
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string>View the air quality at ${targetLocation}.</string>
+					<string></string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>lgOm8k</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Air Quality - ${targetLocation}</string>
+					<string>View the air quality at ${targetLocation}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>8rUeRK</string>
 				</dict>
