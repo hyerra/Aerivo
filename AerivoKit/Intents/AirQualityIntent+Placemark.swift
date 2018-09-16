@@ -24,7 +24,7 @@ extension AirQualityIntent {
         }
         
         if let name = placemark.displayName {
-            self.suggestedInvocationPhrase = String.localizedStringWithFormat(NSLocalizedString("Air quality at %@", comment: "A short phrase that is a command to find the air quality at a specific location."), name)
+            self.suggestedInvocationPhrase = NSLocalizedString("Air quality", comment: "A Siri suggested invocation phrase that is a short command to find the air quality at a specific location.")
         }
     }
 }

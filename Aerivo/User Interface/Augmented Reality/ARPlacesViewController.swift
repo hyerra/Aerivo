@@ -140,13 +140,13 @@ class ARPlacesViewController: UIViewController {
         
         self.terrain = VirtualObject(node: terrainNode)
         terrainNode.fetchTerrainAndTexture(textureStyle: "mapbox/satellite-v9", heightCompletion: { fetchError in
-            if let fetchError != nil {
+            if fetchError != nil {
                 self.showMessage(NSLocalizedString("TERRAIN DOWNLOAD FAILED", comment: "An error that will appear when the app failed to download the terrain (image of a location) to display to the user."))
             }
         }, textureCompletion: { image, fetchError in
             terrainNode.geometry?.materials[4].diffuse.contents = image
             if fetchError != nil {
-                self.showMessage(NSLocalizedString("TERRAIN DOWNLOAD FAILED", comment: "An error that will appear when the app failed to download the terrain (image of a location) to display to the user.")))
+                self.showMessage(NSLocalizedString("TERRAIN DOWNLOAD FAILED", comment: "An error that will appear when the app failed to download the terrain (image of a location) to display to the user."))
             }
         })
     }
