@@ -689,10 +689,19 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Map View" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="B3956483-4573-455D-AF93-7CD4B1139CA3" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="lTF-DA-b0h">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="sh2-yO-aUj"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="wf3-Tc-4Wl"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="N9e-Zm-oWK"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="k33-oP-uqc"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
