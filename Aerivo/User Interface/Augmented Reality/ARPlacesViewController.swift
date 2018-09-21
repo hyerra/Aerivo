@@ -109,9 +109,9 @@ class ARPlacesViewController: UIViewController {
     private func positionAddTerrainButton() {
         if let pulleyVC = presentingViewController?.presentingViewController?.pulleyViewController {
             switch pulleyVC.currentDisplayMode {
-            case .bottomDrawer:
+            case .drawer:
                 addTerrainBottomConstraint.constant = pulleyVC.bounceOverflowMargin + 15
-            case .leftSide:
+            case .panel:
                 addTerrainBottomConstraint.constant = 15
             case .automatic:
                 addTerrainBottomConstraint.constant = 15

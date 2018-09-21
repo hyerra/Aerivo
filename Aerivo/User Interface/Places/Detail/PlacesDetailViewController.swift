@@ -699,7 +699,7 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
     }
     
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
-        if drawer.currentDisplayMode == .bottomDrawer {
+        if drawer.currentDisplayMode == .drawer {
             topGripperView.alpha = 1
             bottomGripperView.alpha = 0
         } else {
@@ -707,7 +707,7 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
             bottomGripperView.alpha = 1
         }
         
-        if drawer.currentDisplayMode == .leftSide {
+        if drawer.currentDisplayMode == .panel {
             topSeparatorView.isHidden = drawer.drawerPosition == .collapsed
             bottomSeparatorView.isHidden = drawer.drawerPosition == .collapsed
         } else {

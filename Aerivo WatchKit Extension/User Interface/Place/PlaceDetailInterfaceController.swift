@@ -74,19 +74,20 @@ class PlaceDetailInterfaceController: WKInterfaceController {
         location.setText(placemark.displayName)
         loadAirQualityData()
         loadWaterQualityData()
-        if #available(watchOS 5.0, *) {
-            interaction.donate()
-            update(createUserActivity())
-        }
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        if #available(watchOS 5.0, *) {
+            interaction.donate()
+            update(createUserActivity())
+        }
         super.willActivate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        invalidateUserActivity()
         super.didDeactivate()
     }
     

@@ -23,9 +23,7 @@ extension AirQualityIntent {
             self.targetLocation = CLPlacemark(location: location, name: placemark.displayName, postalAddress: nil)
         }
         
-        if let name = placemark.displayName {
-            self.suggestedInvocationPhrase = NSLocalizedString("Air quality", comment: "A Siri suggested invocation phrase that is a short command to find the air quality at a specific location.")
-        }
+        self.suggestedInvocationPhrase = NSLocalizedString("Air quality", comment: "A Siri suggested invocation phrase that is a short command to find the air quality at a specific location.")
     }
 }
 
