@@ -48,7 +48,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: PulleyPrimaryContentControllerDelegate {
     func makeUIAdjustmentsForFullscreen(progress: CGFloat, bottomSafeArea: CGFloat) {
-        guard pulleyViewController?.currentDisplayMode == .bottomDrawer else {
+        guard pulleyViewController?.currentDisplayMode == .drawer else {
             mapView.logoView.alpha = 1.0
             mapView.attributionButton.alpha = 1.0
             return
@@ -72,7 +72,7 @@ extension MapViewController: PulleyPrimaryContentControllerDelegate {
     private func positionMapboxAttribution(in pulleyVC: PulleyViewController, with bottomDistance: CGFloat) {
         mapView.logoView.translatesAutoresizingMaskIntoConstraints = false
         mapView.attributionButton.translatesAutoresizingMaskIntoConstraints = false
-        guard pulleyVC.currentDisplayMode == .bottomDrawer else {
+        guard pulleyVC.currentDisplayMode == .drawer else {
             // Set the frame in case the view was rotated.
             mapView.logoView.frame = CGRect(x: mapView.directionalLayoutMargins.leading, y: mapView.directionalLayoutMargins.bottom - mapView.logoView.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.logoView.bounds.width, height: mapView.logoView.bounds.height)
             mapView.attributionButton.frame = CGRect(x: mapView.bounds.maxX - mapView.directionalLayoutMargins.trailing - mapView.attributionButton.bounds.width, y: mapView.directionalLayoutMargins.bottom - mapView.attributionButton.bounds.height - mapboxAttributionNonBottomDrawerSeperation, width: mapView.attributionButton.bounds.width, height: mapView.attributionButton.bounds.height)

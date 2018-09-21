@@ -32,16 +32,17 @@ class SearchInterfaceController: WKInterfaceController {
         setTitle(NSLocalizedString("Search", comment: "TItle of the screen that allows a user to search for locations."))
         fetchFavorites()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchFavorites), name: .NSManagedObjectContextDidSave, object: nil)
-        if #available(watchOS 5.0, *) { update(NSUserActivity.searchActivity) }
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        if #available(watchOS 5.0, *) { update(NSUserActivity.searchActivity) }
         super.willActivate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        invalidateUserActivity()
         super.didDeactivate()
     }
     

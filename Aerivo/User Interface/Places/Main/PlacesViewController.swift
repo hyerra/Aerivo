@@ -232,7 +232,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
         
         headerSpacingConstraint.constant = drawer.drawerPosition == .collapsed ? bottomSafeArea : 0
                 
-        placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .leftSide
+        placesTableView.isScrollEnabled = drawer.drawerPosition == .open || drawer.currentDisplayMode == .panel
         if drawer.drawerPosition != .open { searchBar.text = nil; searchBar.resignFirstResponder() }
         
         topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription
@@ -245,7 +245,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
     func drawerDisplayModeDidChange(drawer: PulleyViewController) {
         if let presentedVC = presentedViewController as? PulleyDrawerViewControllerDelegate { presentedVC.drawerDisplayModeDidChange?(drawer: drawer) }
         
-        if drawer.currentDisplayMode == .bottomDrawer {
+        if drawer.currentDisplayMode == .drawer {
             topGripperView.alpha = 1
             bottomGripperView.alpha = 0
         } else {
@@ -253,7 +253,7 @@ extension PlacesViewController: PulleyDrawerViewControllerDelegate {
             bottomGripperView.alpha = 1
         }
         
-        if drawer.currentDisplayMode == .leftSide {
+        if drawer.currentDisplayMode == .panel {
             topSeparatorView.isHidden = drawer.drawerPosition == .collapsed
             bottomSeparatorView.isHidden = drawer.drawerPosition == .collapsed
         } else {
