@@ -611,7 +611,7 @@
 		6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AerivoWatchKitIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6824702C2132317E009EAC84 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		6824702E2132317E009EAC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6837B4592144741400CC3FE3 /* Aerivo MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerivo MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6837B4592144741400CC3FE3 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6837B45B2144741400CC3FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6837B45D2144741400CC3FE3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6837B45F2144741500CC3FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1108,7 +1108,7 @@
 				68F91533212100E600160B5B /* Aerivo WatchKit Extension.appex */,
 				6811FCC9212118BE00509A37 /* AerivoKit.framework */,
 				6824702A2132317E009EAC84 /* AerivoWatchKitIntents.appex */,
-				6837B4592144741400CC3FE3 /* Aerivo MacOS.app */,
+				6837B4592144741400CC3FE3 /* Aerivo.app */,
 				6837B46A2144741500CC3FE3 /* Aerivo MacOSTests.xctest */,
 				6837B4752144741500CC3FE3 /* Aerivo MacOSUITests.xctest */,
 				68CB74502145AD72001EA3A8 /* AerivoKit.framework */,
@@ -1800,7 +1800,7 @@
 			);
 			name = "Aerivo MacOS";
 			productName = "Aerivo MacOS";
-			productReference = 6837B4592144741400CC3FE3 /* Aerivo MacOS.app */;
+			productReference = 6837B4592144741400CC3FE3 /* Aerivo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6837B4692144741500CC3FE3 /* Aerivo MacOSTests */ = {
@@ -3109,7 +3109,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aerivo;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
 			};
@@ -3138,7 +3138,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harishyerra.Aerivo.Aerivo-MacOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aerivo;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
 			};
