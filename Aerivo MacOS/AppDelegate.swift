@@ -7,12 +7,23 @@
 //
 
 import Cocoa
+import AerivoKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        if #available(macOS 10.14, *) { NSApplication.shared.registerForRemoteNotifications() }
+        CloudCore.config = .aerivoSharedConfig
+        CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
+    }
+    
+    func application(_ application: NSApplication, didReceiveRemoteNotification userInfo: [String : Any]) {
+        if CloudCore.isCloudCoreNotification(withUserInfo: userInfo) {
+            CloudCore.fetchAndSave(using: userInfo, to: DataController.shared.persistentContainer, error: nil) { fetchResult in
+            }
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
