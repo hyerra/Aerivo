@@ -1071,11 +1071,6 @@
 		684BE1FE20E99C1D00E74FE5 = {
 			isa = PBXGroup;
 			children = (
-				687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */,
-				687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */,
-				687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */,
-				687FCFDC214B5E0C00337FC4 /* MapboxGeocoder.framework */,
-				687FCFD9214B5DEE00337FC4 /* Mapbox.framework */,
 				684BE20920E99C1D00E74FE5 /* Aerivo */,
 				684BE21E20E99C1F00E74FE5 /* AerivoTests */,
 				684BE22920E99C1F00E74FE5 /* AerivoUITests */,
@@ -1091,6 +1086,11 @@
 				68CB23D42116303800B98B32 /* AerivoKitTests */,
 				684BE20820E99C1D00E74FE5 /* Products */,
 				68E397D320EFF547005C0722 /* Frameworks */,
+				687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */,
+				687FCFD9214B5DEE00337FC4 /* Mapbox.framework */,
+				687FCFDC214B5E0C00337FC4 /* MapboxGeocoder.framework */,
+				687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */,
+				687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */,
 			);
 			sourceTree = "<group>";
 		};
