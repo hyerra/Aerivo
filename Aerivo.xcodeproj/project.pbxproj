@@ -143,6 +143,7 @@
 		684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */; };
 		684BE22020E99C1F00E74FE5 /* AerivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */; };
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
+		6872FD5D21570F570071FBD8 /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6872FD5C21570F570071FBD8 /* MapWindowController.swift */; };
 		687DBA622120A09600C166FD /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
 		687DBA652120AA2500C166FD /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA642120AA2500C166FD /* UserActivityManager.swift */; };
 		687DBA6C2120DABE00C166FD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687DBA6B2120DABE00C166FD /* NotificationCenter.framework */; };
@@ -637,6 +638,7 @@
 		684BE22C20E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		684E995221177D580075FCAC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
+		6872FD5C21570F570071FBD8 /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
 		687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+Activities.swift"; sourceTree = "<group>"; };
 		687DBA642120AA2500C166FD /* UserActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityManager.swift; sourceTree = "<group>"; };
@@ -1246,6 +1248,7 @@
 			isa = PBXGroup;
 			children = (
 				6837B4612144741500CC3FE3 /* Main.storyboard */,
+				6872FD5C21570F570071FBD8 /* MapWindowController.swift */,
 				6837B45D2144741400CC3FE3 /* MapViewController.swift */,
 			);
 			path = "User Interface";
@@ -2483,6 +2486,7 @@
 			files = (
 				6837B45E2144741400CC3FE3 /* MapViewController.swift in Sources */,
 				68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */,
+				6872FD5D21570F570071FBD8 /* MapWindowController.swift in Sources */,
 				6837B45C2144741400CC3FE3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
