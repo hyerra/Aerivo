@@ -8,7 +8,7 @@
 
 import WatchKit
 import MapboxGeocoder
-import CoreLocation
+import AerivoKit
 import Foundation
 
 class RecommendationInterfaceController: WKInterfaceController {

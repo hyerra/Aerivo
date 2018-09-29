@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreLocation
 import Mapbox
 
 class MapViewController: NSViewController {
