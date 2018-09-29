@@ -1,31 +1,34 @@
 //
 //  TodayViewController.swift
-//  AirQualityWidget
+//  AirQualityWidget MacOS
 //
-//  Created by Harish Yerra on 8/12/18.
+//  Created by Harish Yerra on 9/26/18.
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
-import UIKit
-import CoreLocation
+import Cocoa
 import AerivoKit
+import CoreLocation
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataSource, UITableViewDelegate {
+class TodayViewController: NSViewController, NCWidgetProviding, NSTableViewDataSource, NSTableViewDelegate {
     
     var latestAQ: LatestAQ?
     var parametersInfo: Parameter?
     lazy var openAQClient = OpenAQClient()
     var openAQTasks: [URLSessionDataTask] = []
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var tableView: NSTableView!
+    
+    override var nibName: NSNib.Name? {
+        return NSNib.Name("TodayViewController")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-        tableView.separatorEffect = UIBlurEffect(style: .extraLight)
-        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     deinit {
@@ -74,44 +77,31 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     
     // MARK: - Table view data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        guard latestAQ?.results.first?.measurements.count != nil else { return 0 }
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return latestAQ?.results.first?.measurements.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AirQualityTableViewCell.identifier, for: indexPath) as! AirQualityTableViewCell
-        guard let aqResult = latestAQ?.results.first?.measurements[indexPath.row] else { return cell }
-        guard let parameterInfo = parametersInfo?.results.filter({ $0.id == aqResult.parameter.rawValue }).first else { return cell }
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: AirQualityTableCellView.identifier), owner: self) as? AirQualityTableCellView else { return nil }
+        guard let aqResult = latestAQ?.results.first?.measurements[row] else { return nil }
+        guard let parameterInfo = parametersInfo?.results.filter({ $0.id == aqResult.parameter.rawValue }).first else { return nil }
         let measurement = Measurement(value: aqResult.value, unit: aqResult.unit.standardizedUnit)
         let measurementFormatter = MeasurementFormatter()
         if aqResult.unit.isCustomUnit { measurementFormatter.unitOptions = .providedUnit /* Custom dimensions don't support natural scaling at the moment. */ }
         let localizedMeasurement = measurementFormatter.string(from: measurement)
-        cell.parameter.text = parameterInfo.localizedName ?? parameterInfo.name
-        cell.value.text = localizedMeasurement
-        return cell
+        view.parameter.stringValue = parameterInfo.localizedName ?? parameterInfo.name
+        view.value.stringValue = localizedMeasurement
+        return view
     }
     
     // MARK: - Table view delegate
     
     // MARK: - Widget providing
-    
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        let expanded = activeDisplayMode == .expanded
-        preferredContentSize = expanded ? tableView.contentSize : maxSize
-    }
-    
+
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
+        // Update your data and prepare for a snapshot. Call completion handler when you are done
+        // with NoData if nothing has changed or NewData if there is new data since the last
+        // time we called you
         fetchAirQuality(completionHandler: completionHandler)
     }
     
