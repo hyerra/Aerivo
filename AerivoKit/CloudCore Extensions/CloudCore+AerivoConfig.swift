@@ -7,6 +7,7 @@
 //
 
 import CloudKit
+import CloudCore
 
 extension CloudCoreConfig {
     /// The custom cloud core configuration for Aerivo.

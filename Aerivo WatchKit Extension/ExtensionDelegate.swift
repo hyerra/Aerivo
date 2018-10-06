@@ -8,6 +8,7 @@
 
 import WatchKit
 import AerivoKit
+import CloudCore
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 

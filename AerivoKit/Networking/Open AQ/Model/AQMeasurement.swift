@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 /// Represents data about an individual measurement.
 public struct Measurement: OpenAQResponse {

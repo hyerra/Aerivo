@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import MapboxGeocoder
-import CoreLocation
 import AerivoKit
 import Pulley
 

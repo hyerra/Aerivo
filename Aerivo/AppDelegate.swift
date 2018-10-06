@@ -8,6 +8,7 @@
 
 import UIKit
 import AerivoKit
+import CloudCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
