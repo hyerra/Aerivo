@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 import AerivoKit
 import NotificationCenter
 

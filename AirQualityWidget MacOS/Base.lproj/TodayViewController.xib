@@ -17,13 +17,13 @@
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="82" horizontalPageScroll="10" verticalLineScroll="82" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-Us-LDD">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="94" horizontalPageScroll="10" verticalLineScroll="94" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-Us-LDD">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
                     <clipView key="contentView" drawsBackground="NO" id="iTd-EQ-dzS">
                         <rect key="frame" x="1" y="1" width="371" height="90"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="80" viewBased="YES" floatsGroupRows="NO" id="Lbq-hK-9aN">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="92" viewBased="YES" floatsGroupRows="NO" id="Lbq-hK-9aN">
                                 <rect key="frame" x="0.0" y="0.0" width="371" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -80,6 +80,9 @@
                                                                 <font key="titleFont" metaFont="system"/>
                                                             </box>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="dG4-OY-Xdm"/>
+                                                        </constraints>
                                                         <visibilityPriorities>
                                                             <integer value="1000"/>
                                                             <integer value="1000"/>
@@ -92,7 +95,6 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="noH-ga-Ufl" secondAttribute="trailing" constant="10" id="crq-qy-IJG"/>
-                                                    <constraint firstAttribute="bottom" secondItem="noH-ga-Ufl" secondAttribute="bottom" constant="10" id="dEE-6e-iYm"/>
                                                     <constraint firstItem="noH-ga-Ufl" firstAttribute="top" secondItem="vDv-em-bUv" secondAttribute="top" constant="10" id="e4O-03-3fB"/>
                                                     <constraint firstItem="noH-ga-Ufl" firstAttribute="leading" secondItem="vDv-em-bUv" secondAttribute="leading" constant="10" id="zdA-dP-ReH"/>
                                                 </constraints>

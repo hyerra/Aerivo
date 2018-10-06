@@ -8,7 +8,6 @@
 
 import Cocoa
 import AerivoKit
-import CoreLocation
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding, NSTableViewDataSource, NSTableViewDelegate {

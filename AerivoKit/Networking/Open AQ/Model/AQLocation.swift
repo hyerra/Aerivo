@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 /// Represents a location that is used to measure air quality within Open AQ.
 public struct Location: OpenAQResponse {
