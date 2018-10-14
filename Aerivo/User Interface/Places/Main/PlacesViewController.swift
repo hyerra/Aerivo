@@ -27,7 +27,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var bottomSeparatorView: UIView!
-        
+    
     var previousMapSearchTask: URLSessionDataTask?
     
     var shouldShowDefaultResults = true { didSet { placesTableView.reloadData() } }
@@ -123,7 +123,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 let result = !shouldShowDefaultResults ? mapSearchResults[indexPath.row] : defaultResults[indexPath.row]
                 
                 cell.icon.image = UIImage(named: "\(result.imageName ?? "marker")-11", in: Bundle(identifier: "com.harishyerra.AerivoKit"), compatibleWith: traitCollection)
-                
                 cell.placeName.text = result.formattedName
                 cell.secondaryDetail.text = (result.addressDictionary?["formattedAddressLines"] as? [String])?.first
                 cell.iconBackgroundView.backgroundColor = result.scope.displayColor

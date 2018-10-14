@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+            <connections>
+                <outlet property="view" destination="1" id="20"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1" customClass="HighlightingView" customModule="Aerivo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="478" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YE-Vs-zMd">
+                    <rect key="frame" x="8" y="5" width="34" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5YE-Vs-zMd" secondAttribute="height" multiplier="1:1" id="dRV-ab-x9K"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="lav-Md-DTy"/>
+                    <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                </imageView>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCP-zS-QEu">
+                    <rect key="frame" x="50" y="5" width="74" height="34"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-JP-zII">
+                            <rect key="frame" x="-2" y="17" width="78" height="17"/>
+                            <textFieldCell key="cell" selectable="YES" title="Place Name" id="iaP-4a-T1M">
+                                <font key="font" metaFont="systemMedium" size="13"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="5BC-TH-n0u">
+                            <rect key="frame" x="-2" y="0.0" width="56" height="17"/>
+                            <textFieldCell key="cell" selectable="YES" title="Location" id="PEX-V0-zM7">
+                                <font key="font" metaFont="systemLight" size="13"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cCP-zS-QEu" firstAttribute="leading" secondItem="5YE-Vs-zMd" secondAttribute="trailing" constant="8" id="Jz4-jz-XqQ"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cCP-zS-QEu" secondAttribute="trailing" constant="20" symbolic="YES" id="LtZ-NT-jV2"/>
+                <constraint firstItem="5YE-Vs-zMd" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="8" id="S0o-71-GR0"/>
+                <constraint firstItem="5YE-Vs-zMd" firstAttribute="bottom" secondItem="cCP-zS-QEu" secondAttribute="bottom" id="Tx3-1A-xo8"/>
+                <constraint firstItem="cCP-zS-QEu" firstAttribute="top" secondItem="1" secondAttribute="top" constant="5" id="XCr-SN-MgD"/>
+                <constraint firstAttribute="bottom" secondItem="cCP-zS-QEu" secondAttribute="bottom" constant="5" id="bd9-oF-yzP"/>
+                <constraint firstItem="5YE-Vs-zMd" firstAttribute="top" secondItem="cCP-zS-QEu" secondAttribute="top" id="hQE-43-gXq"/>
+            </constraints>
+            <connections>
+                <outlet property="icon" destination="5YE-Vs-zMd" id="GJA-HW-8RV"/>
+                <outlet property="placeName" destination="ryb-JP-zII" id="ifp-ag-fY6"/>
+                <outlet property="secondaryDetail" destination="5BC-TH-n0u" id="EU5-KU-5MB"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="163"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="2TI-Qs-qVk"/>
+    </objects>
+</document>
