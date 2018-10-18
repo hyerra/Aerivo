@@ -29,6 +29,21 @@ class MapWindowController: NSWindowController {
         placesSearchField.delegate = self
     }
     
+    // MARK: - Search Map
+    
+    @objc private func searchMap(for query: String) {
+        let options = ForwardGeocodeOptions(query: query)
+        //FIXME: Get user's location
+        //options.focalLocation = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView.userLocation?.location
+        options.maximumResultCount = 10
+        options.locale = Locale.autoupdatingCurrent
+        
+        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
+            self.mapSearchResults = placemarks ?? []
+        }
+        previousMapSearchTask = task
+    }
+    
 }
 
 // MARK: - Search field delegate
@@ -49,6 +64,28 @@ extension MapWindowController: NSSearchFieldDelegate {
         suggestionsController.cancelSuggestions()
     }
     
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        
+        if commandSelector == #selector(NSResponder.moveUp(_:)) {
+            // Move up in the suggested selections list
+            suggestionsController.moveUp(placesSearchField)
+            return true
+        } else if commandSelector == #selector(NSResponder.moveDown(_:)) {
+            // Move down in the suggested selections list
+            suggestionsController.moveDown(placesSearchField)
+            return true
+        } else if commandSelector == #selector(NSResponder.complete(_:)) {
+            // The user has pressed the key combination for auto completion. AppKit has a built in auto completion. By overriding this command we prevent AppKit's auto completion and can respond to the user's intention by showing or cancelling our custom suggestions window.
+            if let window = suggestionsController.window, window.isVisible {
+                suggestionsController.cancelSuggestions()
+            }
+            
+            return true
+        }
+        // This is a command that we don't specifically handle, let the field editor do the appropriate thing.
+        return false
+    }
+    
     private func update(fieldEditor: NSText?, with suggestion: String?) {
         let selection = NSRange(location: fieldEditor?.selectedRange.location ?? 0, length: suggestion?.count ?? 0)
         fieldEditor?.string = suggestion ?? ""
@@ -63,19 +100,6 @@ extension MapWindowController: NSSearchFieldDelegate {
                 update(fieldEditor: fieldEditor, with: entry?.formattedName)
             }
         }
-    }
-    
-    @objc private func searchMap(for query: String) {
-        let options = ForwardGeocodeOptions(query: query)
-        //FIXME: Get user's location
-        //options.focalLocation = (pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView.userLocation?.location
-        options.maximumResultCount = 10
-        options.locale = Locale.autoupdatingCurrent
-        
-        let task = Geocoder.shared.geocode(options) { placemarks, attribution, error in
-            self.mapSearchResults = placemarks ?? []
-        }
-        previousMapSearchTask = task
     }
     
     func updateSuggestions(from searchField: NSSearchField) {
