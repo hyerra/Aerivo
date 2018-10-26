@@ -251,6 +251,7 @@
 		68CB74472145AD72001EA3A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		68CB74492145AD72001EA3A8 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		68CB744C2145AD72001EA3A8 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
+		68D4B15A2182C02C00E67550 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D4B1592182C02C00E67550 /* Polyline.framework */; };
 		68E551A9212936CA00EC126E /* MapboxGeocoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D25D5F2123B46700AE963B /* MapboxGeocoder.framework */; };
 		68E879062172C3F100B98937 /* SuggestionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E879012172C3F000B98937 /* SuggestionsWindow.swift */; };
 		68E879072172C3F100B98937 /* SuggestionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E879022172C3F000B98937 /* SuggestionsWindowController.swift */; };
@@ -621,6 +622,7 @@
 		68CB23D72116303800B98B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68CB74502145AD72001EA3A8 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D25D5F2123B46700AE963B /* MapboxGeocoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxGeocoder.framework; path = Carthage/Build/watchOS/MapboxGeocoder.framework; sourceTree = "<group>"; };
+		68D4B1592182C02C00E67550 /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/watchOS/Polyline.framework; sourceTree = "<group>"; };
 		68DD5B8620F993960083B943 /* OpenAQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQClient.swift; sourceTree = "<group>"; };
 		68DD5B8920F996D10083B943 /* AQCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCity.swift; sourceTree = "<group>"; };
 		68DD5B8B20F9A2C00083B943 /* AQCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCountry.swift; sourceTree = "<group>"; };
@@ -832,6 +834,7 @@
 				68E551A9212936CA00EC126E /* MapboxGeocoder.framework in Frameworks */,
 				680352472125126500FD53CA /* MapboxStatic.framework in Frameworks */,
 				68C992E4216840380081692F /* CloudCore.framework in Frameworks */,
+				68D4B15A2182C02C00E67550 /* Polyline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,6 +1283,7 @@
 		68E397D320EFF547005C0722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68D4B1592182C02C00E67550 /* Polyline.framework */,
 				68C992E1216840000081692F /* CloudCore.framework */,
 				68C992E3216840380081692F /* CloudCore.framework */,
 				6896E8042144756B00875616 /* CloudKit.framework */,
@@ -2189,6 +2193,7 @@
 				"$(SRCROOT)/Carthage/Build/watchOS/MapboxGeocoder.framework",
 				"$(SRCROOT)/Carthage/Build/watchOS/MapboxStatic.framework",
 				"$(SRCROOT)/Carthage/Build/watchOS/CloudCore.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Polyline.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -2197,6 +2202,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxGeocoder.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxStatic.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CloudCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Polyline.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
