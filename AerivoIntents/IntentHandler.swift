@@ -11,6 +11,7 @@ import AerivoKit
 
 class IntentHandler: INExtension {
     override func handler(for intent: INIntent) -> Any? {
+        guard #available(iOSApplicationExtension 12.0, *) else { return nil }
         switch intent {
         case is AirQualityIntent:
             return AirQualityIntentHandler()
