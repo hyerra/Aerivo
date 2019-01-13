@@ -15,6 +15,7 @@ import MapboxGeocoder
 import CoreData
 import IntentsUI
 import MessageUI
+import SafariServices
 
 class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -618,13 +619,17 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBAction func showInfo(_ sender: UIButton) {
         if let wikiID = placemark?.wikidataItemIdentifier ?? favorite?.wikidataItemIdentifier {
             guard let url = URL(string: "https://www.wikidata.org/wiki/\(wikiID)") else { return }
-            UIApplication.shared.open(url)
+            let webViewController = SFSafariViewController(url: url)
+            webViewController.preferredControlTintColor = UIColor(named: "System Green Color")
+            present(webViewController, animated: true)
         } else {
             guard var urlComps = URLComponents(string: "https://www.google.com/search") else { return }
             let searchQuery = URLQueryItem(name: "q", value: placemark.qualifiedName ?? placemark.displayName)
             urlComps.queryItems = [searchQuery]
             guard let url = urlComps.url else { return }
-            UIApplication.shared.open(url)
+            let webViewController = SFSafariViewController(url: url)
+            webViewController.preferredControlTintColor = UIColor(named: "System Green Color")
+            present(webViewController, animated: true)
         }
     }
     
