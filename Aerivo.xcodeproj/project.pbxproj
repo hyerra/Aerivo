@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6800FB042121F22C0059FFE7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6800FB032121F22C0059FFE7 /* CloudKit.framework */; };
 		680352452125119F00FD53CA /* LocationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352442125119F00FD53CA /* LocationInterfaceController.swift */; };
 		680352472125126500FD53CA /* MapboxStatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680352462125126500FD53CA /* MapboxStatic.framework */; };
 		6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680352492127E62700FD53CA /* PlaceDetailInterfaceController.swift */; };
@@ -106,6 +105,8 @@
 		68463AA62145AF9B0041F129 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB74502145AD72001EA3A8 /* AerivoKit.framework */; };
 		68463AA72145AF9B0041F129 /* AerivoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB74502145AD72001EA3A8 /* AerivoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		684ACBBC21EDAAE6008B2CF0 /* Seam3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684ACBBB21EDAAE6008B2CF0 /* Seam3.framework */; };
+		684ACBBE21EDAAFF008B2CF0 /* Seam3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684ACBBD21EDAAFF008B2CF0 /* Seam3.framework */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -184,11 +185,6 @@
 		68AE5E3021163D780038EABC /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
 		68B082FA211784E4006AFC82 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B082F9211784E4006AFC82 /* Models.scnassets */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
-		68C992E2216840000081692F /* CloudCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C992E1216840000081692F /* CloudCore.framework */; };
-		68C992E4216840380081692F /* CloudCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C992E3216840380081692F /* CloudCore.framework */; };
-		68C992E6216840810081692F /* CloudCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C992E5216840810081692F /* CloudCore.framework */; };
-		68C992E7216840810081692F /* CloudCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68C992E5216840810081692F /* CloudCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		68C992E9216840960081692F /* CloudCore.framework.dSYM in Carthage Copy Files */ = {isa = PBXBuildFile; fileRef = 68C992E8216840950081692F /* CloudCore.framework.dSYM */; };
 		68C992EA216840A60081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		68C992EB216840AA0081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		68C992EC216840AB0081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
@@ -434,7 +430,6 @@
 			files = (
 				687FCFE1214B5E4800337FC4 /* Mapbox.framework.dSYM in Carthage Copy Files */,
 				687FCFE3214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM in Carthage Copy Files */,
-				68C992E9216840960081692F /* CloudCore.framework.dSYM in Carthage Copy Files */,
 			);
 			name = "Carthage Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +454,6 @@
 				687FCFE6214B5E6200337FC4 /* MapboxGeocoder.framework in Embed Frameworks */,
 				68463AA72145AF9B0041F129 /* AerivoKit.framework in Embed Frameworks */,
 				687FCFDB214B5DEE00337FC4 /* Mapbox.framework in Embed Frameworks */,
-				68C992E7216840810081692F /* CloudCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +558,8 @@
 		6841DF70215F302300346AAB /* AirQualityWidget MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AirQualityWidget MacOS.entitlements"; sourceTree = "<group>"; };
 		6841DF73215F3BAF00346AAB /* AirQualityTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityTableCellView.swift; sourceTree = "<group>"; };
 		6841DF76215F411B00346AAB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		684ACBBB21EDAAE6008B2CF0 /* Seam3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Seam3.framework; path = Carthage/Build/iOS/Seam3.framework; sourceTree = "<group>"; };
+		684ACBBD21EDAAFF008B2CF0 /* Seam3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Seam3.framework; path = Carthage/Build/watchOS/Seam3.framework; sourceTree = "<group>"; };
 		684BE20720E99C1D00E74FE5 /* Aerivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aerivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		684BE20F20E99C1D00E74FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -613,8 +609,6 @@
 		68B7649020F84D25005A6EB1 /* OpenAQEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAQEndpoint.swift; sourceTree = "<group>"; };
 		68C992E1216840000081692F /* CloudCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudCore.framework; path = Carthage/Build/iOS/CloudCore.framework; sourceTree = "<group>"; };
 		68C992E3216840380081692F /* CloudCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudCore.framework; path = Carthage/Build/watchOS/CloudCore.framework; sourceTree = "<group>"; };
-		68C992E5216840810081692F /* CloudCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudCore.framework; path = Carthage/Build/Mac/CloudCore.framework; sourceTree = "<group>"; };
-		68C992E8216840950081692F /* CloudCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CloudCore.framework.dSYM; path = Carthage/Build/Mac/CloudCore.framework.dSYM; sourceTree = "<group>"; };
 		68CB23C62116303800B98B32 /* AerivoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AerivoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CB23C82116303800B98B32 /* AerivoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AerivoKit.h; sourceTree = "<group>"; };
 		68CB23CE2116303800B98B32 /* AerivoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AerivoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -737,7 +731,6 @@
 				6896E8052144756B00875616 /* CloudKit.framework in Frameworks */,
 				68463AA62145AF9B0041F129 /* AerivoKit.framework in Frameworks */,
 				687FCFDA214B5DEE00337FC4 /* Mapbox.framework in Frameworks */,
-				68C992E6216840810081692F /* CloudCore.framework in Frameworks */,
 				687FCFE5214B5E6200337FC4 /* MapboxGeocoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,7 +760,7 @@
 				7DC7D91121141DAD00681860 /* Pulley.framework in Frameworks */,
 				7D8F0E272114F42600A799F2 /* MapboxSceneKit.framework in Frameworks */,
 				7D8F0E252114F42300A799F2 /* MapboxMobileEvents.framework in Frameworks */,
-				68C992E2216840000081692F /* CloudCore.framework in Frameworks */,
+				684ACBBC21EDAAE6008B2CF0 /* Seam3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,12 +822,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6800FB042121F22C0059FFE7 /* CloudKit.framework in Frameworks */,
 				68CB73E521458336001EA3A8 /* AerivoKit.framework in Frameworks */,
 				68E551A9212936CA00EC126E /* MapboxGeocoder.framework in Frameworks */,
 				680352472125126500FD53CA /* MapboxStatic.framework in Frameworks */,
-				68C992E4216840380081692F /* CloudCore.framework in Frameworks */,
 				68D4B15A2182C02C00E67550 /* Polyline.framework in Frameworks */,
+				684ACBBE21EDAAFF008B2CF0 /* Seam3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,10 +1022,8 @@
 				687FCFE4214B5E6200337FC4 /* MapboxGeocoder.framework */,
 				687FCFD9214B5DEE00337FC4 /* Mapbox.framework */,
 				687FCFDC214B5E0C00337FC4 /* MapboxGeocoder.framework */,
-				68C992E5216840810081692F /* CloudCore.framework */,
 				687FCFE0214B5E4800337FC4 /* Mapbox.framework.dSYM */,
 				687FCFE2214B5E4E00337FC4 /* MapboxGeocoder.framework.dSYM */,
-				68C992E8216840950081692F /* CloudCore.framework.dSYM */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1283,6 +1273,8 @@
 		68E397D320EFF547005C0722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				684ACBBB21EDAAE6008B2CF0 /* Seam3.framework */,
+				684ACBBD21EDAAFF008B2CF0 /* Seam3.framework */,
 				68D4B1592182C02C00E67550 /* Polyline.framework */,
 				68C992E1216840000081692F /* CloudCore.framework */,
 				68C992E3216840380081692F /* CloudCore.framework */,
@@ -2192,7 +2184,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/watchOS/MapboxGeocoder.framework",
 				"$(SRCROOT)/Carthage/Build/watchOS/MapboxStatic.framework",
-				"$(SRCROOT)/Carthage/Build/watchOS/CloudCore.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Seam3.framework",
 				"$(SRCROOT)/Carthage/Build/watchOS/Polyline.framework",
 			);
 			name = "Carthage Copy Frameworks";
@@ -2201,7 +2193,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxGeocoder.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxStatic.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CloudCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Seam3.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Polyline.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2221,7 +2213,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Pulley.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MapboxSceneKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MapboxMobileEvents.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CloudCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Seam3.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -2230,7 +2222,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pulley.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxSceneKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MapboxMobileEvents.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CloudCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Seam3.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
