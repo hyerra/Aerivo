@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Seam3
 
 /// A container that encapsulates the Core Data stack into the application.
 public class AEPersistentContainer: NSPersistentContainer {
@@ -39,6 +40,12 @@ public final class DataController: NSObject {
     /// Returns a persistent container that encapsulates the Core Data stack into the application.
     public internal(set) lazy var persistentContainer: NSPersistentContainer = {
         let container = AEPersistentContainer(name: "Aerivo")
+        SMStore.registerStoreClass()
+        
+        let storeDescription = NSPersistentStoreDescription()
+        storeDescription.type = SMStore.type
+        storeDescription.setOption("iCloud.com.harishyerra.Aerivo.shared" as NSString, forKey: SMStore.SMStoreContainerOption)
+        container.persistentStoreDescriptions = [storeDescription]
         
         container.loadPersistentStores { storeDescription, error in
             #if DEBUG

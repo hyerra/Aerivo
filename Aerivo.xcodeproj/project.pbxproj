@@ -63,8 +63,6 @@
 		6811FCBC212118BE00509A37 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
 		6811FCBD212118BE00509A37 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
 		6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
-		6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
-		6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE532121E68700EC7C01 /* SearchInterfaceController.swift */; };
 		6819BE582121E7DD00EC7C01 /* FavoritesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819BE572121E7DD00EC7C01 /* FavoritesTableRowController.swift */; };
@@ -107,6 +105,11 @@
 		68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 681C49AC211F542D00D82950 /* Aerivo.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		684ACBBC21EDAAE6008B2CF0 /* Seam3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684ACBBB21EDAAE6008B2CF0 /* Seam3.framework */; };
 		684ACBBE21EDAAFF008B2CF0 /* Seam3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684ACBBD21EDAAFF008B2CF0 /* Seam3.framework */; };
+		684ACC2A21EEF38A008B2CF0 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
+		684ACC2B21EEF38B008B2CF0 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
+		684ACC2C21EEF397008B2CF0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		684ACC2D21EEF398008B2CF0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
+		684ACC2E21EEF39C008B2CF0 /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
 		684BE20B20E99C1D00E74FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE20A20E99C1D00E74FE5 /* AppDelegate.swift */; };
 		684BE21020E99C1D00E74FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE20E20E99C1D00E74FE5 /* Main.storyboard */; };
 		684BE21220E99C1F00E74FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21120E99C1F00E74FE5 /* Assets.xcassets */; };
@@ -168,9 +171,6 @@
 		68AE5E1E21163D5A0038EABC /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
 		68AE5E1F21163D5A0038EABC /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
 		68AE5E2021163D5A0038EABC /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
-		68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
-		68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
-		68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C92B8211514B20082D935 /* FavoriteFetchedResultsController.swift */; };
 		68AE5E2521163D780038EABC /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA3211428E900C0F56B /* DecodingErrorExtension.swift */; };
 		68AE5E2621163D780038EABC /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA4211428E900C0F56B /* XMLUnkeyedDecodingContainer.swift */; };
 		68AE5E2721163D780038EABC /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDA5211428E900C0F56B /* XMLKeyedDecodingContainer.swift */; };
@@ -185,9 +185,6 @@
 		68AE5E3021163D780038EABC /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */; };
 		68B082FA211784E4006AFC82 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B082F9211784E4006AFC82 /* Models.scnassets */; };
 		68B7647E20F6EDF9005A6EB1 /* AOAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B7647D20F6EDF9005A6EB1 /* AOAnnotationView.swift */; };
-		68C992EA216840A60081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
-		68C992EB216840AA0081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
-		68C992EC216840AB0081692F /* CloudCore+AerivoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */; };
 		68CB23CF2116303800B98B32 /* AerivoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CB23C62116303800B98B32 /* AerivoKit.framework */; };
 		68CB23D62116303800B98B32 /* AerivoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB23D52116303800B98B32 /* AerivoKitTests.swift */; };
 		68CB23D82116303800B98B32 /* AerivoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CB23C82116303800B98B32 /* AerivoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -243,8 +240,6 @@
 		68CB74432145AD72001EA3A8 /* CivicInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE7210A500B003B1671 /* CivicInformationResponse.swift */; };
 		68CB74442145AD72001EA3A8 /* RepresentativeInfoByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9EE3210A4F91003B1671 /* RepresentativeInfoByAddress.swift */; };
 		68CB74452145AD72001EA3A8 /* CivicInformationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */; };
-		68CB74462145AD72001EA3A8 /* Aerivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDBEA210D1DA90074FFA5 /* Aerivo.xcdatamodeld */; };
-		68CB74472145AD72001EA3A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36D598210D3A33000BF77B /* CoreDataStack.swift */; };
 		68CB74492145AD72001EA3A8 /* CustomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9ED521083681003B1671 /* CustomUnits.swift */; };
 		68CB744C2145AD72001EA3A8 /* AerivoKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EADBBA20F2F72800DB3425 /* AerivoKit.xcassets */; };
 		68D4B15A2182C02C00E67550 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D4B1592182C02C00E67550 /* Polyline.framework */; };
@@ -674,7 +669,6 @@
 		7D3FDDAE211428EA00C0F56B /* XMLKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLKey.swift; sourceTree = "<group>"; };
 		7D3FDDAF211428EA00C0F56B /* XMLStackParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLStackParser.swift; sourceTree = "<group>"; };
 		7D51A333210FA13F00E4969B /* Favorite+Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Placemark.swift"; sourceTree = "<group>"; };
-		7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudCore+AerivoConfig.swift"; sourceTree = "<group>"; };
 		7D5D434A210BB3A600E6886A /* CivicInformationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationError.swift; sourceTree = "<group>"; };
 		7D5D434C210BD16C00E6886A /* CivicInformationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicInformationMessage.swift; sourceTree = "<group>"; };
 		7D8F0E242114F42300A799F2 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
@@ -1231,7 +1225,6 @@
 				7DAD9ED521083681003B1671 /* CustomUnits.swift */,
 				6803525621291E6900FD53CA /* Placemark.swift */,
 				7D3FDD9E211428A500C0F56B /* Geocoder Extensions */,
-				7D51A335210FA95F00E4969B /* CloudCore Extensions */,
 				68B7648A20F8480F005A6EB1 /* Networking */,
 				7DBFDBE9210D1AD70074FFA5 /* Core Data */,
 				687DBA602120A07E00C166FD /* User Activity */,
@@ -1464,14 +1457,6 @@
 				7D3FDDAC211428E900C0F56B /* XMLEncodingStorage.swift */,
 			);
 			path = Encoder;
-			sourceTree = "<group>";
-		};
-		7D51A335210FA95F00E4969B /* CloudCore Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7D51A336210FA97800E4969B /* CloudCore+AerivoConfig.swift */,
-			);
-			path = "CloudCore Extensions";
 			sourceTree = "<group>";
 		};
 		7DAD9EDB21097C99003B1671 /* Civic Information */ = {
@@ -2296,8 +2281,6 @@
 				6811FCBC212118BE00509A37 /* CivicInformationResponse.swift in Sources */,
 				6811FCBD212118BE00509A37 /* RepresentativeInfoByAddress.swift in Sources */,
 				6811FCBE212118BE00509A37 /* CivicInformationMessage.swift in Sources */,
-				6811FCBF212118BE00509A37 /* Aerivo.xcdatamodeld in Sources */,
-				6811FCC0212118BE00509A37 /* CoreDataStack.swift in Sources */,
 				6811FCC2212118BE00509A37 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2325,7 +2308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6837B45E2144741400CC3FE3 /* MapViewController.swift in Sources */,
-				68C992EC216840AB0081692F /* CloudCore+AerivoConfig.swift in Sources */,
 				68E879082172C3F100B98937 /* HighlightingView.swift in Sources */,
 				68463AAA2145AFF40041F129 /* Aerivo.intentdefinition in Sources */,
 				68E8790A2172C3F100B98937 /* SuggestibleTextFieldCell.swift in Sources */,
@@ -2357,6 +2339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684ACC2E21EEF39C008B2CF0 /* FavoriteFetchedResultsController.swift in Sources */,
 				681C2D612116B2420008F020 /* VirtualObjectARView.swift in Sources */,
 				6895F72C21183931003A9FD9 /* FocusSquare.swift in Sources */,
 				681C49A9211F542D00D82950 /* Aerivo.intentdefinition in Sources */,
@@ -2366,12 +2349,13 @@
 				682461E521358FB400C19A0F /* AirQualityIntent+Placemark.swift in Sources */,
 				7DAD9EDA2109232A003B1671 /* ParameterDescriptionDelegate.swift in Sources */,
 				7DCFD7E0210643C800F86474 /* PlacesDetailCollectionViewCell.swift in Sources */,
+				684ACC2A21EEF38A008B2CF0 /* Aerivo.xcdatamodeld in Sources */,
 				681C2D5F2116B1EB0008F020 /* VirtualObjectInteraction.swift in Sources */,
 				6803525D2129204300FD53CA /* MBPlacemarkScope+Color.swift in Sources */,
 				688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */,
-				68C992EA216840A60081692F /* CloudCore+AerivoConfig.swift in Sources */,
 				7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
+				684ACC2C21EEF397008B2CF0 /* CoreDataStack.swift in Sources */,
 				7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */,
 				681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */,
 				7D336382210EF17100491C3A /* PlacesDetailHeaderCollectionReusableView.swift in Sources */,
@@ -2465,9 +2449,6 @@
 				68AE5E1E21163D5A0038EABC /* CivicInformationResponse.swift in Sources */,
 				68AE5E1F21163D5A0038EABC /* RepresentativeInfoByAddress.swift in Sources */,
 				68AE5E2021163D5A0038EABC /* CivicInformationMessage.swift in Sources */,
-				68AE5E2121163D5A0038EABC /* Aerivo.xcdatamodeld in Sources */,
-				68AE5E2221163D5A0038EABC /* CoreDataStack.swift in Sources */,
-				68AE5E2321163D5A0038EABC /* FavoriteFetchedResultsController.swift in Sources */,
 				68CB23E32116305200B98B32 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2531,8 +2512,6 @@
 				68CB74432145AD72001EA3A8 /* CivicInformationResponse.swift in Sources */,
 				68CB74442145AD72001EA3A8 /* RepresentativeInfoByAddress.swift in Sources */,
 				68CB74452145AD72001EA3A8 /* CivicInformationMessage.swift in Sources */,
-				68CB74462145AD72001EA3A8 /* Aerivo.xcdatamodeld in Sources */,
-				68CB74472145AD72001EA3A8 /* CoreDataStack.swift in Sources */,
 				68CB74492145AD72001EA3A8 /* CustomUnits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2558,13 +2537,14 @@
 				682461E221358F7C00C19A0F /* Placemark.swift in Sources */,
 				681F3D342123AEA800FE7B94 /* RecommendationInterfaceController.swift in Sources */,
 				6803524C2127E79000FD53CA /* AirQualityTableRowController.swift in Sources */,
+				684ACC2D21EEF398008B2CF0 /* CoreDataStack.swift in Sources */,
 				682461E421358FB300C19A0F /* AirQualityIntent+Placemark.swift in Sources */,
+				684ACC2B21EEF38B008B2CF0 /* Aerivo.xcdatamodeld in Sources */,
 				6803525C2129204100FD53CA /* MBPlacemarkScope+Color.swift in Sources */,
 				68ECFDEF212A1F4E00E87439 /* Extensions.swift in Sources */,
 				6803524A2127E62700FD53CA /* PlaceDetailInterfaceController.swift in Sources */,
 				681F3D302123AE1D00FE7B94 /* NearbyTableRowController.swift in Sources */,
 				680FB44321321BFF0056007B /* UserActivityManager.swift in Sources */,
-				68C992EB216840AA0081692F /* CloudCore+AerivoConfig.swift in Sources */,
 				68A30AF9212FBD4B001A55B9 /* SearchResultsInterfaceController.swift in Sources */,
 				68F9153B212100E600160B5B /* ExtensionDelegate.swift in Sources */,
 				6819BE542121E68700EC7C01 /* SearchInterfaceController.swift in Sources */,
@@ -2750,6 +2730,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2787,6 +2768,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AerivoKit/Resources/watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
