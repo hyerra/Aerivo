@@ -19,9 +19,9 @@ public class AEPersistentContainer: NSPersistentContainer {
     
     public override class func defaultDirectoryURL() -> URL {
         #if os(iOS)
-        return applicationSharedGroupContainer.appendingPathComponent("AerivoModel")
+        return applicationSharedGroupContainer
         #else
-        return super.defaultDirectoryURL().appendingPathComponent("AerivoModel")
+        return super.defaultDirectoryURL()
         #endif
     }
 }
@@ -39,7 +39,7 @@ public final class DataController: NSObject {
     
     /// Returns a persistent container that encapsulates the Core Data stack into the application.
     public internal(set) lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Aerivo")
+        let container = AEPersistentContainer(name: "Aerivo")
         
         let storeDescription = container.persistentStoreDescriptions.first
         storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
