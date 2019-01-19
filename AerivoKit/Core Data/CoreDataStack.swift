@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import Seam3
+import CloudCore
 
 /// A container that encapsulates the Core Data stack into the application.
 public class AEPersistentContainer: NSPersistentContainer {
@@ -39,13 +39,10 @@ public final class DataController: NSObject {
     
     /// Returns a persistent container that encapsulates the Core Data stack into the application.
     public internal(set) lazy var persistentContainer: NSPersistentContainer = {
-        let container = AEPersistentContainer(name: "Aerivo")
-        SMStore.registerStoreClass()
+        let container = NSPersistentContainer(name: "Aerivo")
         
-        let storeDescription = NSPersistentStoreDescription()
-        storeDescription.type = SMStore.type
-        storeDescription.setOption("iCloud.com.harishyerra.Aerivo.shared" as NSString, forKey: SMStore.SMStoreContainerOption)
-        container.persistentStoreDescriptions = [storeDescription]
+        let storeDescription = container.persistentStoreDescriptions.first
+        storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         
         container.loadPersistentStores { storeDescription, error in
             #if DEBUG
@@ -60,14 +57,17 @@ public final class DataController: NSObject {
     
     /// Returns the managed object context that works as a *scratchpad* for changes before they get persisted.
     public internal(set) lazy var managedObjectContext: NSManagedObjectContext = {
-        return persistentContainer.viewContext
+        let context = persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
+        return context
     }()
     
-    /// Persists the changes in the managed object context.
+    /// Persists the changes in a the managed object context while making sure it is synced with `CloudCore`.
     ///
+    /// - Parameter context: The context to be saved.
     /// - Throws: Throws any errors that can occur when attempting to save.
-    public func saveContext() throws {
-        guard managedObjectContext.hasChanges else { return }
-        try managedObjectContext.save()
+    public func save(context: NSManagedObjectContext) throws {
+        context.name = CloudCore.config.pushContextName
+        try context.save()
     }
 }

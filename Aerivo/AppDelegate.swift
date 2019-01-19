@@ -8,7 +8,7 @@
 
 import UIKit
 import AerivoKit
-import Seam3
+import CloudCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // Override point for customization after application launch.
         application.registerForRemoteNotifications()
-        triggerCloudKitSync()
+        CloudCore.configureForAerivo()
+        CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
+        
         let quickActionsManager = QuickActionsManager(window: nil)
         application.shortcutItems = quickActionsManager.dynamicShortcutItems()
         return true
@@ -43,36 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        let persistentStore = DataController.shared.persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
-        persistentStore?.handlePush(userInfo: userInfo) { (result) in
-            completionHandler(result.uiBackgroundFetchResult)
+        if CloudCore.isCloudCoreNotification(withUserInfo: userInfo) {
+            // Fetch changed data from iCloud.
+            CloudCore.pull(using: userInfo, to: DataController.shared.persistentContainer, error: nil) { fetchResult in
+                completionHandler(fetchResult.uiBackgroundFetchResult)
+            }
         }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-    // MARK: - Cloud Kit
-    
-    func triggerCloudKitSync() {
-        let persistentStore = DataController.shared.persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
-        persistentStore?.verifyCloudKitConnectionAndUser { status, user, error in
-            guard status == .available, error == nil else { return }
-            guard let currentUser = user else { return }
-            
-            var completeSync = false
-            
-            let previousUser = UserDefaults.standard.string(forKey: "CloudKitUserID")
-            if  previousUser != currentUser {
-                try? persistentStore?.resetBackingStore()
-                completeSync = true
-            }
-            
-            UserDefaults.standard.set(currentUser, forKey:"CloudKitUserID")
-            
-            persistentStore?.triggerSync(complete: completeSync)
-        }
     }
     
     // MARK: - User Activity

@@ -70,6 +70,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
     @available(iOS 12.0, *)
     lazy var interaction = INInteraction(airQualityIntent: intent, response: nil)
     
+    lazy var managedObjectContext = DataController.shared.persistentContainer.newBackgroundContext()
+    
     lazy var openAQClient: OpenAQClient = .shared
     var latestAQ: LatestAQ?
     var parametersInfo: AerivoKit.Parameter?
@@ -592,10 +594,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         let dataController = DataController.shared
         if favorite == nil {
             guard let placemark = placemark as? GeocodedPlacemark else { return }
-            let favorite = Favorite(placemark: placemark, insertInto: dataController.managedObjectContext)
+            let favorite = Favorite(placemark: placemark, insertInto: managedObjectContext)
             
             do {
-                try dataController.saveContext()
+                try dataController.save(context: managedObjectContext)
                 self.favorite = favorite
             } catch {
                 let alertController = UIAlertController(title: NSLocalizedString("Couldn't Favorite Location", comment: "Title of alert that tells the user that there was an error saving the location to their favorites."), message: NSLocalizedString("There was an issue saving this location to your favorites.", comment: "Message of alert that tells the user that there was an error saving the location to their favorites."), preferredStyle: .alert)
@@ -603,9 +605,10 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             }
         } else if let favorite = favorite {
-            dataController.managedObjectContext.delete(favorite)
             do {
-                try dataController.saveContext()
+                let favorite = try managedObjectContext.existingObject(with: favorite.objectID)
+                managedObjectContext.delete(favorite)
+                try dataController.save(context: managedObjectContext)
                 self.favorite = nil
                 if placemark is Favorite { dismiss(animated: true) }
             } catch {
