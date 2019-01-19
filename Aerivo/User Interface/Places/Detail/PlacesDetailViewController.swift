@@ -168,6 +168,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
         tempPresentingVC = presentingViewController
         tempPresentingVC?.pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
         tempPresentingVC?.view.alpha = 1
+        (tempPresentingVC as? PlacesViewController)?.isShowingFavorites = false
         if let mapView = (tempPresentingVC?.pulleyViewController?.primaryContentViewController as? MapViewController)?.mapView {
             mapView.removeAnnotations(mapView.annotations ?? [])
         }
