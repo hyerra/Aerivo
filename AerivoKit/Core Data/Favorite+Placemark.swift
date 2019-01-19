@@ -6,7 +6,6 @@
 //  Copyright © 2018 Harish Yerra. All rights reserved.
 //
 
-import AerivoKit
 import CoreData
 import Contacts
 import MapboxGeocoder

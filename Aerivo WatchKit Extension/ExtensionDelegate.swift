@@ -8,17 +8,18 @@
 
 import WatchKit
 import AerivoKit
-import Seam3
+import CloudCore
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        CloudCore.configureForAerivo()
     }
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        triggerCloudKitSync()
+        CloudCore.enable(persistentContainer: DataController.shared.persistentContainer)
     }
     
     func applicationWillResignActive() {
@@ -56,28 +57,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // make sure to complete unhandled task types
                 task.setTaskCompletedWithSnapshot(false)
             }
-        }
-    }
-    
-    // MARK: - Cloud Kit
-    
-    func triggerCloudKitSync() {
-        let persistentStore = DataController.shared.persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
-        persistentStore?.verifyCloudKitConnectionAndUser { status, user, error in
-            guard status == .available, error == nil else { return }
-            guard let currentUser = user else { return }
-            
-            var completeSync = false
-            
-            let previousUser = UserDefaults.standard.string(forKey: "CloudKitUserID")
-            if  previousUser != currentUser {
-                try? persistentStore?.resetBackingStore()
-                completeSync = true
-            }
-            
-            UserDefaults.standard.set(currentUser, forKey:"CloudKitUserID")
-            
-            persistentStore?.triggerSync(complete: completeSync)
         }
     }
     

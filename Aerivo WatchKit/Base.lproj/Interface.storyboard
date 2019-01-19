@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.13.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TpH-bG-gV9">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TpH-bG-gV9">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.4.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--recommendationIC-->
@@ -48,7 +48,9 @@
                                         <items>
                                             <group alignment="left" radius="15" id="PtY-dG-BOw">
                                                 <items>
-                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="B7F-cc-IJM"/>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="B7F-cc-IJM">
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
@@ -126,7 +128,9 @@
                                         <items>
                                             <group alignment="left" layout="vertical" radius="15" id="Z2H-Md-irJ">
                                                 <items>
-                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="Bw7-b1-atN"/>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="Bw7-b1-atN">
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
@@ -324,7 +328,9 @@
                                         <items>
                                             <group alignment="left" radius="15" id="tpt-ok-dWs">
                                                 <items>
-                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="6XQ-X1-5hh"/>
+                                                    <imageView width="15" height="15" alignment="center" verticalAlignment="center" contentMode="center" id="6XQ-X1-5hh">
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
                                                 </items>
                                                 <edgeInsets key="margins" left="8" right="8" top="8" bottom="8"/>
                                             </group>
