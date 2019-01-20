@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>AirQualityIntent</string>
-		<string>com.harishyerra.Aerivo.search</string>
-		<string>com.harishyerra.Aerivo.viewPlace</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Aerivo needs your location to position you on the map and provide air and water quality information at your location.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -27,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiaHllcnJhIiwiYSI6ImNqajNubjRuYTB5OGczd3BjdXNiOGNxcTQifQ.t__Z6CTcq7DlHhSneZFlEA</string>
 	<key>NSExtension</key>
@@ -40,6 +32,14 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Aerivo needs your location to position you on the map and provide air and water quality information at your location.</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>AirQualityIntent</string>
+		<string>com.harishyerra.Aerivo.search</string>
+		<string>com.harishyerra.Aerivo.viewPlace</string>
+	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 </dict>
