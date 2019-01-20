@@ -1,7 +1,7 @@
 binary "https://mapbox.github.io/mapbox-gl-native/macos/Mapbox-macOS-SDK.json" "0.13.0"
 binary "https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json" "4.7.1"
 github "52inc/Pulley" "2.6.2"
-github "deeje/CloudCore" "6603267ae88bd1a5ad5625669b06c78ccad096b9"
+github "hyerra/CloudCore" "5a6a56d4eca76a8610bdd0d4858e73fc5b26551b"
 github "mapbox/MapboxGeocoder.swift" "v0.10.1"
 github "mapbox/MapboxStatic.swift" "v0.10.0"
 github "mapbox/mapbox-events-ios" "v0.4.51"
