@@ -583,7 +583,7 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
                 self.present(alertController, animated: true)
             } else {
                 let appName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String ?? Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Aerivo"
-                let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ is having trouble getting government representative information. This is likely do to a lack of government representative data for this region.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
+                let localizedMessage = String.localizedStringWithFormat(NSLocalizedString("%@ is having trouble getting government representative information. This is likely due to a lack of government representative data for this region.", comment: "An error message that notifies the user that there isn't enough data about governement officials in a specified region."), appName)
                 let alertController = UIAlertController(title: NSLocalizedString("Oops 😣", comment: "Title of alert control for network error."), message: localizedMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Title of cancel alert control action."), style: .cancel))
                 self.present(alertController, animated: true)
