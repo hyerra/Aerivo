@@ -61,7 +61,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewWillAppear(animated)
         // Do any additional setup right before the view will appear.
         isShowingFavorites = false
-        pulleyViewController?.feedbackGenerator = UIImpactFeedbackGenerator()
+        pulleyViewController?.feedbackGenerator = UISelectionFeedbackGenerator()
     }
     
     override func didReceiveMemoryWarning() {
