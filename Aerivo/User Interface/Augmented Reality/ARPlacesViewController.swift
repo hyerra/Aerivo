@@ -251,7 +251,9 @@ class ARPlacesViewController: UIViewController {
             self.sceneView.scene.rootNode.addChildNode(virtualObject)
             self.sceneView.addOrUpdateAnchor(for: virtualObject)
             self.cancelScheduledMessage(for: .contentPlacement)
-            feedbackGenerator.notificationOccurred(.success)
+            DispatchQueue.main.async {
+                feedbackGenerator.notificationOccurred(.success)
+            }
         }
         
         plusPanel.isHidden = true
