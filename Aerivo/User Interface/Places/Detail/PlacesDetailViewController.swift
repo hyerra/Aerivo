@@ -131,6 +131,8 @@ class PlacesDetailViewController: UIViewController, UICollectionViewDataSource, 
             interaction.donate()
             showAddSiriButton()
         }
+        
+        ReviewManager.requestReview(for: .locationViewed)
     }
     
     override func viewWillAppear(_ animated: Bool) {

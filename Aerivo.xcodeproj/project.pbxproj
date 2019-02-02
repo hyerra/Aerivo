@@ -110,6 +110,7 @@
 		684BE21520E99C1F00E74FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684BE21320E99C1F00E74FE5 /* LaunchScreen.storyboard */; };
 		684BE22020E99C1F00E74FE5 /* AerivoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE21F20E99C1F00E74FE5 /* AerivoTests.swift */; };
 		684BE22B20E99C1F00E74FE5 /* AerivoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */; };
+		685985C5220659D50036E6FA /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685985C4220659D50036E6FA /* ReviewManager.swift */; };
 		6872FD5D21570F570071FBD8 /* MapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6872FD5C21570F570071FBD8 /* MapWindowController.swift */; };
 		687DBA622120A09600C166FD /* NSUserActivity+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA612120A09600C166FD /* NSUserActivity+Activities.swift */; };
 		687DBA652120AA2500C166FD /* UserActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687DBA642120AA2500C166FD /* UserActivityManager.swift */; };
@@ -572,6 +573,7 @@
 		684BE22A20E99C1F00E74FE5 /* AerivoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerivoUITests.swift; sourceTree = "<group>"; };
 		684BE22C20E99C1F00E74FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		684E995221177D580075FCAC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685985C4220659D50036E6FA /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		68622DB22100469C0002103F /* NWQPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWQPResult.swift; sourceTree = "<group>"; };
 		6872FD5C21570F570071FBD8 /* MapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWindowController.swift; sourceTree = "<group>"; };
 		687A3C1120E9DB1600251836 /* Aerivo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aerivo.entitlements; sourceTree = "<group>"; };
@@ -1105,6 +1107,7 @@
 			isa = PBXGroup;
 			children = (
 				687DBA642120AA2500C166FD /* UserActivityManager.swift */,
+				685985C4220659D50036E6FA /* ReviewManager.swift */,
 			);
 			path = "User Activity";
 			sourceTree = "<group>";
@@ -2367,6 +2370,7 @@
 				6803525D2129204300FD53CA /* MBPlacemarkScope+Color.swift in Sources */,
 				688C863D21026944000C47FF /* PlacesDetailViewController.swift in Sources */,
 				7DCFD7DC210595AD00F86474 /* DarkeningButton.swift in Sources */,
+				685985C5220659D50036E6FA /* ReviewManager.swift in Sources */,
 				68F3A29020E9CA250096D60A /* MapViewController.swift in Sources */,
 				7DAD9ED821092073003B1671 /* ParameterDescriptionPopoverViewController.swift in Sources */,
 				681C2D552116AB0E0008F020 /* FocusSquareSegment.swift in Sources */,
