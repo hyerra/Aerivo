@@ -24,12 +24,12 @@ class ReviewManager: NSObject {
     class func requestReview(for event: ReviewEvent) {
         switch event {
         case .locationViewed:
-            let numberOfLocationViewedEvents = UserDefaults.standard.integer(forKey: ReviewEvent.locationViewed.rawValue)
+            let numberOfLocationViewedEvents = UserDefaults.standard.integer(forKey: ReviewEvent.locationViewed.rawValue) + 1
+            UserDefaults.standard.set(numberOfLocationViewedEvents, forKey: ReviewEvent.locationViewed.rawValue)
             if numberOfLocationViewedEvents > Int.random(in: 10...20) {
                 SKStoreReviewController.requestReview()
                 UserDefaults.standard.set(0, forKey: ReviewEvent.locationViewed.rawValue)
             }
-            UserDefaults.standard.set(numberOfLocationViewedEvents + 1, forKey: ReviewEvent.locationViewed.rawValue)
         }
     }
     
