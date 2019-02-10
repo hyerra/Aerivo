@@ -689,16 +689,10 @@ extension PlacesDetailViewController: PulleyDrawerViewControllerDelegate {
         loadViewIfNeeded()
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomSafeArea, right: 0)
         
-        if drawer.drawerPosition == .collapsed {
-            headerSpacingConstraint.constant = bottomSafeArea
-        } else {
-            headerSpacingConstraint.constant = 0
-        }
+        headerSpacingConstraint.constant = drawer.drawerPosition == .collapsed ? bottomSafeArea : 0
         
         if drawer.drawerPosition != .open {
-            if let presentedVC = presentedViewController {
-                presentedVC.dismiss(animated: true)
-            }
+            presentedViewController?.dismiss(animated: true)
         }
         
         topGripperView.accessibilityValue = drawer.drawerPosition.localizedDescription

@@ -1022,15 +1022,15 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Qb-azY" userLabel="Done Panel">
-                                <rect key="frame" x="291" y="30" width="68" height="53"/>
+                                <rect key="frame" x="292" y="30" width="67" height="53"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="coz-z5-a3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-SR-h5q">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xm-FK-ukx">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-BM-rN6">
@@ -1312,7 +1312,7 @@
             <objects>
                 <viewController storyboardIdentifier="mapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" customModule="Aerivo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUh-Af-rqj" customClass="MGLMapView">
