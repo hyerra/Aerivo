@@ -22,7 +22,7 @@ public struct RepresentativeInfoByAddressParameters: CivicInformationParameters 
     /// A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
     public var roles: [Role]?
     /// The API Key that should be included with all requests to identify this project.
-    public var key: String? = "AIzaSyDJdkhIiRkxUaen6td3LMoNQLlDYvVoJiA"
+    public var key: String? = "YOUR API KEY HERE"
     
     public init() { }
     
